@@ -17,22 +17,57 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     ></script>
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
   </head>
   <body>
     <h1 class="heading">Conway's Game of Life</h1>
     <div class="game">
-      <div id="gridContainer">
-        <!-- The grid will be dynamically generated here -->
+      <div class="gridContainer">
+        <div class="mainGrid" id="mainGrid">
+          <!-- The grid will be dynamically generated here -->
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
       </div>
       <div id="controls">
         <button id="fastReverseButton">
-          <img id="fastReverseIcon" src="./images/Microsoft-Fluentui-Emoji-Mono-Fast-Reverse-Button.svg" alt="Play" />
-          </button>
+          <img
+            id="fastReverseIcon"
+            src="./images/Microsoft-Fluentui-Emoji-Mono-Fast-Reverse-Button.svg"
+            alt="Play"
+          />
+        </button>
         <button id="playPauseButton">
-          <img id="playPauseIcon" src="./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg" alt="Slow" />
+          <img
+            id="playPauseIcon"
+            src="./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg"
+            alt="Slow"
+          />
         </button>
         <button id="fastForwardButton">
-          <img id="fastForwardIcon" src="./images/Microsoft-Fluentui-Emoji-Mono-Fast-Forward-Button.svg" alt="Fast" />
+          <img
+            id="fastForwardIcon"
+            src="./images/Microsoft-Fluentui-Emoji-Mono-Fast-Forward-Button.svg"
+            alt="Fast"
+          />
         </button>
       </div>
     </div>
