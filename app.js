@@ -14,7 +14,7 @@ let isAnimating = false; // Declaration of isAnimating variable
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the grid container
-  const gridContainer = document.getElementById("mainGrid");
+  const gridContainer = document.getElementById("main-grid");
 
   // Generate the grid
   for (let i = 0; i < HEIGHT; i++) {
@@ -47,7 +47,7 @@ function initGrid() {
 // draw the cells according to the state
 // we're using style of "cell" class to change the color of the cell, iterate over it
 function drawCells() {
-  const gridContainer = document.getElementById("mainGrid");
+  const gridContainer = document.getElementById("main-grid");
   const cellElements = gridContainer.querySelectorAll(".cell");
   for (let i = 0; i < cells.length; i++) {
     cellElements[i].style.backgroundColor =
@@ -57,7 +57,7 @@ function drawCells() {
 
 function startAnimation() {
   isAnimating = !isAnimating;
-  const playPauseIcon = document.getElementById("playPauseIcon");
+  const playPauseIcon = document.getElementById("play-pause-icon");
   playPauseIcon.src = isAnimating
     ? "./images/Microsoft-Fluentui-Emoji-Mono-Pause-Button.svg"
     : "./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg";
@@ -110,7 +110,7 @@ function animate() {
 }
 
 document
-  .getElementById("playPauseButton")
+  .getElementById("play-pause-button")
   .addEventListener("click", startAnimation);
 
 // Ensure the canvas size matches the grid dimensions

@@ -32,7 +32,7 @@ button {
   outline: none; /* Removes focus outline */
 }
 
-.gridContainer {
+.grid-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -40,7 +40,7 @@ button {
   border: solid 1px #000;
 }
 
-.mainGrid {
+.main-grid {
   display: grid;
   justify-content: center;
   margin: auto;
@@ -50,6 +50,7 @@ button {
   min-height: 60vh;
   background-color: #fff;
 }
+
 .cell {
   /* grid */
   /* matrix */
