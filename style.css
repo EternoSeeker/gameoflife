@@ -4,8 +4,10 @@
 
 .heading {
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .game {
@@ -46,9 +48,7 @@ button {
   margin: auto;
   max-width: 100%;
   max-height: 100%;
-  min-width: 60vh;
-  min-height: 60vh;
-  background-color: #fff;
+  background-color: inherit;
 }
 
 .cell {
@@ -57,6 +57,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 0.001rem #dcdcdc;
   /* border: solid 0.03rem #b2b2b2; */
   cursor: pointer;
 }
