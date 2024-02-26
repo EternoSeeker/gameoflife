@@ -1,7 +1,7 @@
-const WIDTH = 66;
+const WIDTH = 72;
 const HEIGHT = 36;
 
-const ALIVE_COLOR = "#daf8e3";
+const ALIVE_COLOR = "#c6e6ee";
 const DEAD_COLOR = "#000000";
 
 const ALIVE = 1;
@@ -9,6 +9,9 @@ const DEAD = 0;
 
 const gridContainer = document.getElementById("main-grid");
 let cells = []; // 2D array to hold cell states
+
+let animationInterval;
+let animationSpeed = 400;
 
 let isAnimating = false;
 
@@ -30,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gridContainer.style.gridTemplateColumns = `repeat(${WIDTH}, calc((100%) / ${WIDTH}))`;
   // set grid container size according to ratio
   gridContainer.style.minHeight = "30vw";
-  gridContainer.style.minWidth = "55vw";
+  gridContainer.style.minWidth = "60vw";
   drawCells();
 });
 
@@ -44,6 +47,16 @@ function drawCells() {
         cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
     });
   });
+}
+
+function increaseSpeed() {
+  if (animationSpeed > 1) {
+    animationSpeed /= 1.1;
+  }
+}
+
+function decreaseSpeed() {
+  animationSpeed *= 1.1;
 }
 
 function startAnimation() {
@@ -89,8 +102,10 @@ function animate() {
   }
 
   cells = nextGeneration; // Update cells with the new generation
-  drawCells();
-  if (isAnimating) {
-    requestAnimationFrame(animate); // Keep animating
-  }
+  setTimeout(() => {
+    drawCells(); // Draw cells after a delay
+    if (isAnimating) {
+      requestAnimationFrame(animate); // Keep animating
+    }
+  }, animationSpeed);
 }

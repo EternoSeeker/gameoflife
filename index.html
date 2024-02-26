@@ -22,12 +22,10 @@
     <h1 class="heading">Conway's Game of Life</h1>
     <div class="game">
       <div class="grid-container">
-        <div id="main-grid" class="main-grid">
-
-        </div>
+        <div id="main-grid" class="main-grid"></div>
       </div>
       <div id="controls">
-        <button id="fast-reverse-button">
+        <button id="fast-reverse-button" onclick="decreaseSpeed()">
           <img
             id="fast-reverse-icon"
             src="./images/Microsoft-Fluentui-Emoji-Mono-Fast-Reverse-Button.svg"
@@ -41,7 +39,7 @@
             alt="Slow"
           />
         </button>
-        <button id="fast-forward-button">
+        <button id="fast-forward-button" onclick="increaseSpeed()">
           <img
             id="fast-forward-icon"
             src="./images/Microsoft-Fluentui-Emoji-Mono-Fast-Forward-Button.svg"

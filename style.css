@@ -17,23 +17,6 @@
   justify-content: center;
 }
 
-.controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-}
-
-button {
-  border: none;
-  background: none;
-  margin: 0.5rem;
-  padding: 1rem;
-  cursor: pointer;
-  outline: none; /* Removes focus outline */
-}
-
 .grid-container {
   display: flex;
   flex-direction: row;
@@ -52,12 +35,36 @@ button {
 }
 
 .cell {
-  /* grid */
-  /* matrix */
   display: flex;
   justify-content: center;
   align-items: center;
   border: solid 0.001rem #dcdcdc;
-  /* border: solid 0.03rem #b2b2b2; */
   cursor: pointer;
 }
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+button {
+  border: none;
+  background: none;
+  margin: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+/* button:hover {
+  background-color: #d8edff;
+  box-shadow: 0.05rem 0.05rem 0.05rem #a5a5a5;
+}
+
+button:active{
+  box-shadow: 0.05rem 0.05rem 0.05rem #151515;
+  transform: translateY(0.2rem);
+} */
