@@ -1,20 +1,36 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  background-color: var(--background-col);
 }
+
+:root{
+  --primary-color: #0f045a;
+  --shadow-color1: #352a7e;
+  --shadow-color2: #101536;
+  --border-color1: #080126;
+  --secondary-color: #dcdcdc;
+  --tertiary-color: #4e4e4e;
+  --background-col: #c6cede;
+}
+
 
 .heading {
   text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 .game {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .grid-container {
@@ -45,7 +61,7 @@
 .controls {
   display: flex;
   flex-direction: row;
-  max-width: 40vw;
+  min-width: 40vw;
   height: 5rem;
   justify-content: center;
   align-items: center;
@@ -61,16 +77,22 @@ button {
 }
 
 .icon{
-  width: 2.5rem;
-  height: 2.5rem;
+  width: calc((30vw)/8);
+  height: calc((30vw)/8);
 }
 
 .clear-button, .random-button{
   border: solid 0.1rem #000000;
   border-radius: 0.6rem;
-  height: calc((100%)/2);
+  height: calc((100%)/1.8);
+  width: auto;
   text-align: center;
-  padding: 0.4rem;
+  padding: 0.5rem;
+  border-color: var(--border-color1);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary-color);
 }
 
 .clear-button{
@@ -82,11 +104,11 @@ button {
 }
 
 .clear-button:hover, .random-button:hover {
-  box-shadow: 0.1rem 0.1rem #4e4e4e;
+  box-shadow: 0.1rem 0.1rem var(--shadow-color1);
 }
 
 .clear-button:active, .random-button:active{
-  box-shadow: 0.1rem 0.1rem #000000;
+  box-shadow: 0.1rem 0.1rem var(--shadow-color2);
   transform: translateY(0.1rem);
 }
 

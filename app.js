@@ -1,14 +1,17 @@
 const WIDTH = 70;
 const HEIGHT = 35;
 
-const ALIVE_COLOR = "#c6e6ee";
+const ALIVE_COLOR = "#d4f3ff";
 const DEAD_COLOR = "#000000";
 
 const ALIVE = 1;
 const DEAD = 0;
 
 const gridContainer = document.getElementById("main-grid");
-let cells = []; // 2D array to hold cell states
+let cells = new Array(HEIGHT);
+for (let i = 0; i < HEIGHT; i++) {
+    cells[i] = new Array(WIDTH);
+} // 2D array to hold cell states
 
 let animationInterval;
 let animationSpeed = 400;
@@ -18,10 +21,9 @@ let isStarted = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
-  for (let i = 0; i < HEIGHT; i++) {
-    cells.push([]); // Push an empty array for each row
+  for (let i = 0; i < HEIGHT; i++) { // Push an empty array for each row
     for (let j = 0; j < WIDTH; j++) {
-      cells[i].push(Math.random() < 0.2 ? ALIVE : DEAD); // Initialize cell state
+      cells[i][j] = DEAD; // Initialize cell state
       // Create a new cell element
       const cell = document.createElement("div");
       cell.classList.add("cell");
@@ -39,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // draw the cells according to the state
-// we're using style of "cell" class to change the color of the cell, iterate over it
+// using style of "cell" class to change the color of the cell, 
+// iterate over it
 function drawCells() {
   const cellElements = gridContainer.querySelectorAll(".cell");
   cells.forEach((row, i) => {
@@ -48,6 +51,17 @@ function drawCells() {
         cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
     });
   });
+}
+
+function isEmpty() {
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      if (cells[i][j] === ALIVE) {
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 function increaseSpeed() {
@@ -61,19 +75,55 @@ function decreaseSpeed() {
 }
 
 function startAnimation() {
-  isAnimating = !isAnimating;
-  const playPauseIcon = document.getElementById("play-pause-icon");
-  playPauseIcon.src = isAnimating
-    ? "./images/Microsoft-Fluentui-Emoji-Mono-Pause-Button.svg"
-    : "./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg";
+  // check if the grid is empty, 
+  // if not then start the animation and start the game 
+  if (!isEmpty()) {
+    // if game is not started, set it to true
+    // if pause is clicked, pause the game
+    isAnimating = !isAnimating;
+    // check if the game is started
+    // if not, set it to true
+    if (isStarted == false) {
+      isStarted = true;
+    }
+    const playPauseIcon = document.getElementById("play-pause-icon");
+    // change the icon according to the state
+    playPauseIcon.src = isAnimating
+      ? "./images/Microsoft-Fluentui-Emoji-Mono-Pause-Button.svg"
+      : "./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg";
+  }
   if (isAnimating) {
     animate();
   }
 }
 
 //randomGrid()
-//clearGrid()
+function randomGrid() {
+  // if the game is not started and not animating
+  // then allow user to set the cells to random state
+  if (!isStarted && !isAnimating) {
+    for (let i = 0; i < HEIGHT; i++) {
+      for (let j = 0; j < WIDTH; j++) {
+        cells[i][j] = Math.random() < 0.2 ? ALIVE : DEAD;
+      }
+    }
+    drawCells();
+  }
+}
 
+function clearGrid() {
+  // if the game is paused
+  // then allow user to clear the grid
+  if (!isAnimating) {
+    for (let i = 0; i < HEIGHT; i++) {
+      for (let j = 0; j < WIDTH; j++) {
+        cells[i][j] = DEAD;
+      }
+    }
+    drawCells();
+  }
+  isStarted = false;
+}
 
 function animate() {
   const nextGeneration = [];
