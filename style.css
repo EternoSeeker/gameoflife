@@ -45,6 +45,8 @@
 .controls {
   display: flex;
   flex-direction: row;
+  max-width: 40vw;
+  height: 5rem;
   justify-content: center;
   align-items: center;
   margin: 1rem;
@@ -53,18 +55,42 @@
 button {
   border: none;
   background: none;
-  margin: 0.5rem;
   padding: 1rem;
   cursor: pointer;
   outline: none;
 }
 
-/* button:hover {
-  background-color: #d8edff;
-  box-shadow: 0.05rem 0.05rem 0.05rem #a5a5a5;
+.icon{
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
-button:active{
-  box-shadow: 0.05rem 0.05rem 0.05rem #151515;
-  transform: translateY(0.2rem);
-} */
+.clear-button, .random-button{
+  border: solid 0.1rem #000000;
+  border-radius: 0.6rem;
+  height: calc((100%)/2);
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.clear-button{
+  margin-right: 1rem;
+}
+
+.random-button{
+  margin-left: 1rem;
+}
+
+.clear-button:hover, .random-button:hover {
+  box-shadow: 0.1rem 0.1rem #4e4e4e;
+}
+
+.clear-button:active, .random-button:active{
+  box-shadow: 0.1rem 0.1rem #000000;
+  transform: translateY(0.1rem);
+}
+
+.icon:active{
+  transform: translateY(0.1rem);
+}
+

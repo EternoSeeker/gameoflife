@@ -1,5 +1,5 @@
-const WIDTH = 72;
-const HEIGHT = 36;
+const WIDTH = 70;
+const HEIGHT = 35;
 
 const ALIVE_COLOR = "#c6e6ee";
 const DEAD_COLOR = "#000000";
@@ -14,6 +14,7 @@ let animationInterval;
 let animationSpeed = 400;
 
 let isAnimating = false;
+let isStarted = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
@@ -69,6 +70,10 @@ function startAnimation() {
     animate();
   }
 }
+
+//randomGrid()
+//clearGrid()
+
 
 function animate() {
   const nextGeneration = [];
