@@ -8,16 +8,17 @@ const ALIVE = 1;
 const DEAD = 0;
 
 const gridContainer = document.getElementById("main-grid");
+
+// 2D array to hold cell states
 let cells = new Array(HEIGHT);
 for (let i = 0; i < HEIGHT; i++) {
   cells[i] = new Array(WIDTH);
-} // 2D array to hold cell states
+}
 
-let animationInterval;
 let animationSpeed = 400;
-
 let isAnimating = false;
 let isStarted = false;
+let areEventListenersremoved = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
@@ -38,20 +39,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // set grid container size according to ratio
   gridContainer.style.minHeight = "30vw";
   gridContainer.style.minWidth = "60vw";
+  addEventListenersToCells();
   drawCells();
 });
+
+// Map to store event listener functions for each cell
+const cellEventListeners = new Map();
 
 function addEventListenersToCells() {
   const cellElements = document.querySelectorAll(".cell");
   cellElements.forEach((cell, index) => {
-    cell.addEventListener("click", () => handleClick(index));
+    // Create a new function for each cell and store it in the map
+    const listener = () => handleClick(index);
+    cellEventListeners.set(cell, listener);
+    cell.addEventListener("click", listener);
   });
 }
 
 function removeEventListenersFromCells() {
   const cellElements = document.querySelectorAll(".cell");
-  cellElements.forEach((cell, index) => {
-    cell.removeEventListener("click", () => handleClick(index));
+  cellElements.forEach((cell) => {
+    // Retrieve the stored event listener function for each cell
+    const listener = cellEventListeners.get(cell);
+    if (listener) {
+      cell.removeEventListener("click", listener);
+      // Remove the listener from the map
+      cellEventListeners.delete(cell);
+    }
   });
 }
 
@@ -64,9 +78,20 @@ function handleClick(i) {
   drawCells();
 }
 
+function increaseSpeed() {
+  // increase the speed of the animation
+  if (animationSpeed > 1) {
+    animationSpeed /= 1.1;
+  }
+}
+
+function decreaseSpeed() {
+  // decrease the speed of the animation
+  animationSpeed *= 1.1;
+}
+
 // draw the cells according to the state
-// using style of "cell" class to change the color of the cell,
-// iterate over it
+// using style of "cell" class to change the color of the cell, iterate over it
 function drawCells() {
   const cellElements = gridContainer.querySelectorAll(".cell");
   cells.forEach((row, i) => {
@@ -88,22 +113,13 @@ function isEmpty() {
   return true;
 }
 
-function increaseSpeed() {
-  if (animationSpeed > 1) {
-    animationSpeed /= 1.1;
-  }
-}
-
-function decreaseSpeed() {
-  animationSpeed *= 1.1;
-}
-
 function startAnimation() {
   // check if the grid is empty,
   // if not then start the animation and start the game
-  // if(isStarted){
-  //   removeEventListenersFromCells();
-  // }
+  if (!areEventListenersremoved) {
+    areEventListenersremoved = true;
+    removeEventListenersFromCells();
+  }
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
     playPauseIcon.src =
@@ -156,6 +172,8 @@ function clearGrid() {
     drawCells();
   }
   isStarted = false;
+  areEventListenersremoved = false;
+  addEventListenersToCells();
 }
 
 function animate() {
