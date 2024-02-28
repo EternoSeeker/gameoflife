@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 0.001rem #dcdcdc;
+  border: solid 0.001rem var(--border-color1);
 }
 
 .controls {
@@ -93,7 +93,7 @@
   border-color: var(--border-color1);
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--primary-color);
 }
 

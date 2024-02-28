@@ -1,8 +1,8 @@
 const WIDTH = 60;
 const HEIGHT = 30;
 
-const ALIVE_COLOR = "#d4f3ff";
-const DEAD_COLOR = "#000000";
+const ALIVE_COLOR = "#00246B";
+const DEAD_COLOR = "#CADCFC";
 
 const ALIVE = 1;
 const DEAD = 0;
