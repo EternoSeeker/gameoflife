@@ -38,7 +38,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: solid 1px #000;
+  border: solid 0.2rem #000;
+  max-width: 62vw;
+  max-height: 31vw;
+  margin: auto;
 }
 
 .main-grid {
@@ -55,7 +58,6 @@
   justify-content: center;
   align-items: center;
   border: solid 0.001rem #dcdcdc;
-  cursor: pointer;
 }
 
 .controls {
@@ -68,7 +70,7 @@
   margin: 1rem;
 }
 
-button {
+.control-button {
   border: none;
   background: none;
   padding: 1rem;

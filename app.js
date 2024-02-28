@@ -1,5 +1,5 @@
-const WIDTH = 70;
-const HEIGHT = 35;
+const WIDTH = 60;
+const HEIGHT = 30;
 
 const ALIVE_COLOR = "#d4f3ff";
 const DEAD_COLOR = "#000000";
@@ -10,7 +10,7 @@ const DEAD = 0;
 const gridContainer = document.getElementById("main-grid");
 let cells = new Array(HEIGHT);
 for (let i = 0; i < HEIGHT; i++) {
-    cells[i] = new Array(WIDTH);
+  cells[i] = new Array(WIDTH);
 } // 2D array to hold cell states
 
 let animationInterval;
@@ -21,7 +21,8 @@ let isStarted = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
-  for (let i = 0; i < HEIGHT; i++) { // Push an empty array for each row
+  for (let i = 0; i < HEIGHT; i++) {
+    // Push an empty array for each row
     for (let j = 0; j < WIDTH; j++) {
       cells[i][j] = DEAD; // Initialize cell state
       // Create a new cell element
@@ -40,8 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
   drawCells();
 });
 
+function addEventListenersToCells() {
+  const cellElements = document.querySelectorAll(".cell");
+  cellElements.forEach((cell, index) => {
+    cell.addEventListener("click", () => handleClick(index));
+  });
+}
+
+function removeEventListenersFromCells() {
+  const cellElements = document.querySelectorAll(".cell");
+  cellElements.forEach((cell, index) => {
+    cell.removeEventListener("click", () => handleClick(index));
+  });
+}
+
+function handleClick(i) {
+  const row = Math.floor(i / WIDTH);
+  const col = i % WIDTH;
+  // Toggle cell state
+  cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
+  // Redraw cells
+  drawCells();
+}
+
 // draw the cells according to the state
-// using style of "cell" class to change the color of the cell, 
+// using style of "cell" class to change the color of the cell,
 // iterate over it
 function drawCells() {
   const cellElements = gridContainer.querySelectorAll(".cell");
@@ -75,8 +99,18 @@ function decreaseSpeed() {
 }
 
 function startAnimation() {
-  // check if the grid is empty, 
-  // if not then start the animation and start the game 
+  // check if the grid is empty,
+  // if not then start the animation and start the game
+  // if(isStarted){
+  //   removeEventListenersFromCells();
+  // }
+  const playPauseIcon = document.getElementById("play-pause-icon");
+  if (isEmpty()) {
+    playPauseIcon.src =
+      "./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg";
+    isAnimating = false;
+    isStarted = false;
+  }
   if (!isEmpty()) {
     // if game is not started, set it to true
     // if pause is clicked, pause the game
@@ -86,7 +120,6 @@ function startAnimation() {
     if (isStarted == false) {
       isStarted = true;
     }
-    const playPauseIcon = document.getElementById("play-pause-icon");
     // change the icon according to the state
     playPauseIcon.src = isAnimating
       ? "./images/Microsoft-Fluentui-Emoji-Mono-Pause-Button.svg"
