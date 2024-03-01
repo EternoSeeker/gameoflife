@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // set grid container size according to ratio
   gridContainer.style.minHeight = "30vw";
   gridContainer.style.minWidth = "60vw";
+  handleDropdowns();
   addEventListenersToCells();
   drawCells();
 });
@@ -172,7 +173,7 @@ function clearGrid() {
     drawCells();
   }
   isStarted = false;
-  if(areEventListenersremoved){
+  if (areEventListenersremoved) {
     addEventListenersToCells();
     areEventListenersremoved = false;
   }
@@ -216,4 +217,32 @@ function animate() {
       requestAnimationFrame(animate); // Keep animating
     }
   }, animationSpeed);
+}
+
+//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+function handleDropdowns() {
+  var themesDropdown = document.getElementsByClassName("color-themes");
+  var presetsDropdown = document.getElementsByClassName("presets");
+  for (let i = 0; i < themesDropdown.length; i++) {
+    themesDropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+  for (let i = 0; i < presetsDropdown.length; i++) {
+    presetsDropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
 }

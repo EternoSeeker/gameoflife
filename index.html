@@ -27,14 +27,81 @@
     ></script>
   </head>
   <body>
-    <div class="heading">Conway's Game of Life</div>
+    <div class="game-settings">
+      <div class="sidenav">
+        <div class="other-settings">Settings</div>
+        <div class="other-settings-container">
+          <div class="grid-toggle">
+            <input
+              type="checkbox"
+              checked
+              id="grid-toggle"
+              class="grid-checkbox"
+              onclick="toggleGrid()"
+            />
+            <label for="grid-toggle">Grid</label>
+          </div>
+          <div class="warp-on-edges">
+            <input
+              type="checkbox"
+              id="warp-on-edges"
+              class="warp-checkbox"
+              onclick="toggleWarp()"
+            />
+            <label for="warp-on-edges">Warp on Edges</label>
+          </div>
+        </div>
+        <div class="color-themes has-dropdown">Themes</div>
+        <div class="themes-container">
+          <div>
+            <input
+              type="radio"
+              id="red-theme"
+              name="theme"
+              onclick="selectTheme('red')"
+            />
+            <label for="red-theme">Red</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="green-theme"
+              name="theme"
+              onclick="selectTheme('green')"
+            />
+            <label for="green-theme">Green</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="blue-theme"
+              name="theme"
+              onclick="selectTheme('blue')"
+            />
+            <label for="blue-theme">Blue</label>
+          </div>
+        </div>
+        <div class="presets has-dropdown">Presets</div>
+        <div class="presets-container">
+          <button class="themes-list">Gosper Glider Gun</button>
+        </div>
+        <div class="history">History</div>
+      </div>
+    </div>
     <div class="game">
+      <div class="heading">Conway's Game of Life</div>
       <div class="grid-container">
         <div id="main-grid" class="main-grid"></div>
       </div>
       <div class="controls">
-        <button class="clear-button" id="clear-button" onclick="clearGrid()">Clear</button>
-        <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
+        <button class="clear-button" id="clear-button" onclick="clearGrid()">
+          Clear
+        </button>
+        <button
+          class="control-button"
+          id="fast-reverse-button"
+          onclick="decreaseSpeed()"
+        >
           <img
             class="icon"
             id="fast-reverse-icon"
@@ -42,7 +109,11 @@
             alt="Play"
           />
         </button>
-        <button class="control-button" id="play-pause-button" onclick="startAnimation()">
+        <button
+          class="control-button"
+          id="play-pause-button"
+          onclick="startAnimation()"
+        >
           <img
             class="icon"
             id="play-pause-icon"
@@ -50,7 +121,11 @@
             alt="Slow"
           />
         </button>
-        <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
+        <button
+          class="control-button"
+          id="fast-forward-button"
+          onclick="increaseSpeed()"
+        >
           <img
             class="icon"
             id="fast-forward-icon"
@@ -58,7 +133,9 @@
             alt="Fast"
           />
         </button>
-        <button class="random-button" id="random-button" onclick="randomGrid()">Random</button>
+        <button class="random-button" id="random-button" onclick="randomGrid()">
+          Random
+        </button>
       </div>
     </div>
   </body>
