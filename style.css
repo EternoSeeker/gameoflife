@@ -32,6 +32,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   margin-left: 20vw;
   background-color: var(--background-col);
 }
@@ -50,8 +51,6 @@
   display: grid;
   justify-content: center;
   margin: auto;
-  max-width: 100%;
-  max-height: 100%;
   background-color: inherit;
 }
 
@@ -70,7 +69,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1rem;
 }
 
 .control-button {
@@ -146,7 +145,7 @@
 .themes-container div,
 .presets,
 .history {
-  padding: 0.8rem 1rem 0.8rem 2rem;
+  padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
   color: #818181;
