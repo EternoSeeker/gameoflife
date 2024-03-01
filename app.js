@@ -117,8 +117,8 @@ function startAnimation() {
   // check if the grid is empty,
   // if not then start the animation and start the game
   if (!areEventListenersremoved) {
-    areEventListenersremoved = true;
     removeEventListenersFromCells();
+    areEventListenersremoved = true;
   }
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
@@ -172,8 +172,10 @@ function clearGrid() {
     drawCells();
   }
   isStarted = false;
-  areEventListenersremoved = false;
-  addEventListenersToCells();
+  if(areEventListenersremoved){
+    addEventListenersToCells();
+    areEventListenersremoved = false;
+  }
 }
 
 function animate() {
