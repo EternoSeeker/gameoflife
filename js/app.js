@@ -176,7 +176,7 @@ function clearGrid() {
   isStarted = false;
   if (!areEventListenersAdded) {
     addEventListenersToCells();
-    areEventListenersAdded = false;
+    areEventListenersAdded = true;
   }
 }
 
