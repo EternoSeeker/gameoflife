@@ -19,6 +19,8 @@ let animationSpeed = 400;
 let isAnimating = false;
 let isStarted = false;
 let areEventListenersAdded = true;
+let isWarpEnabled = true;
+let isGridVisible = true;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
@@ -180,7 +182,7 @@ function clearGrid() {
   }
 }
 
-function animate() {
+function warpOnEdges(cells) {
   const nextGeneration = [];
 
   for (let i = 0; i < HEIGHT; i++) {
@@ -192,6 +194,7 @@ function animate() {
       const below = (i + 1) % HEIGHT;
 
       let numNeighbors = 0;
+      // Check all 8 neighbors
       if (cells[above][left] === ALIVE) numNeighbors++;
       if (cells[above][j] === ALIVE) numNeighbors++;
       if (cells[above][right] === ALIVE) numNeighbors++;
@@ -211,7 +214,60 @@ function animate() {
     }
   }
 
-  cells = nextGeneration; // Update cells with the new generation
+  return nextGeneration;
+}
+
+function noWarpOnEdges(cells) {
+  const nextGeneration = [];
+  for (let i = 0; i < HEIGHT; i++) {
+    nextGeneration.push([]);
+    for (let j = 0; j < WIDTH; j++) {
+      const left = j - 1;
+      const right = j + 1;
+      const above = i - 1;
+      const below = i + 1;
+
+      let numNeighbors = 0;
+      // Check all 8 neighbors
+      if (j > 0 && cells[i][left] === ALIVE) numNeighbors++;
+      if (j < WIDTH - 1 && cells[i][right] === ALIVE) numNeighbors++;
+      if (i > 0 && cells[above][j] === ALIVE) numNeighbors++;
+      if (i < HEIGHT - 1 && cells[below][j] === ALIVE) numNeighbors++;
+      if (i > 0 && j > 0 && cells[above][left] === ALIVE) numNeighbors++;
+      if (i > 0 && j < WIDTH - 1 && cells[above][right] === ALIVE)
+        numNeighbors++;
+      if (i < HEIGHT - 1 && j > 0 && cells[below][left] === ALIVE)
+        numNeighbors++;
+      if (i < HEIGHT - 1 && j < WIDTH - 1 && cells[below][right] === ALIVE)
+        numNeighbors++;
+
+      if (
+        cells[i][j] === ALIVE &&
+        (numNeighbors === 2 || numNeighbors === 3)
+      ) {
+        nextGeneration[i][j] = ALIVE;
+      } else if (cells[i][j] === DEAD && numNeighbors === 3) {
+        nextGeneration[i][j] = ALIVE;
+      } else {
+        nextGeneration[i][j] = DEAD;
+      }
+    }
+  }
+
+  return nextGeneration;
+}
+
+function toggleWarp() {
+  isWarpEnabled = !isWarpEnabled;
+}
+
+function animate() {
+  // Update cells with the new generation
+  if (isWarpEnabled) {
+    cells = warpOnEdges(cells);
+  } else {
+    cells = noWarpOnEdges(cells);
+  }
   setTimeout(() => {
     drawCells(); // Draw cells after a delay
     if (isAnimating) {
