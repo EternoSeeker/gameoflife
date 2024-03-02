@@ -182,6 +182,24 @@ function clearGrid() {
   }
 }
 
+function toggleWarp() {
+  isWarpEnabled = !isWarpEnabled;
+}
+
+function toggleGrid() {
+  isGridVisible = !isGridVisible;
+  var root = document.documentElement;
+  // Get the computed styles of the root element
+  var style = getComputedStyle(root);
+  // get border-color1 from the root
+  let borderColor = style.getPropertyValue("--border-color1");
+  let borderVal = isGridVisible ? `solid 0.001rem ${borderColor}` : "none";
+  const cellElements = gridContainer.querySelectorAll(".cell");
+  cellElements.forEach((cell) => {
+    cell.style.border = borderVal;
+  });
+}
+
 function warpOnEdges(cells) {
   const nextGeneration = [];
 
@@ -241,10 +259,7 @@ function noWarpOnEdges(cells) {
       if (i < HEIGHT - 1 && j < WIDTH - 1 && cells[below][right] === ALIVE)
         numNeighbors++;
 
-      if (
-        cells[i][j] === ALIVE &&
-        (numNeighbors === 2 || numNeighbors === 3)
-      ) {
+      if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
@@ -255,10 +270,6 @@ function noWarpOnEdges(cells) {
   }
 
   return nextGeneration;
-}
-
-function toggleWarp() {
-  isWarpEnabled = !isWarpEnabled;
 }
 
 function animate() {
