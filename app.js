@@ -18,7 +18,7 @@ for (let i = 0; i < HEIGHT; i++) {
 let animationSpeed = 400;
 let isAnimating = false;
 let isStarted = false;
-let areEventListenersremoved = false;
+let areEventListenersAdded = true;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
@@ -49,9 +49,10 @@ const cellEventListeners = new Map();
 
 function addEventListenersToCells() {
   const cellElements = document.querySelectorAll(".cell");
-  cellElements.forEach((cell, index) => {
-    // Create a new function for each cell and store it in the map
-    const listener = () => handleClick(index);
+  cellElements.forEach(function (cell, index) {
+    const listener = function () {
+      handleClick(index);
+    };
     cellEventListeners.set(cell, listener);
     cell.addEventListener("click", listener);
   });
@@ -59,12 +60,10 @@ function addEventListenersToCells() {
 
 function removeEventListenersFromCells() {
   const cellElements = document.querySelectorAll(".cell");
-  cellElements.forEach((cell) => {
-    // Retrieve the stored event listener function for each cell
+  cellElements.forEach(function (cell) {
     const listener = cellEventListeners.get(cell);
     if (listener) {
       cell.removeEventListener("click", listener);
-      // Remove the listener from the map
       cellEventListeners.delete(cell);
     }
   });
@@ -117,18 +116,20 @@ function isEmpty() {
 function startAnimation() {
   // check if the grid is empty,
   // if not then start the animation and start the game
-  if (!areEventListenersremoved) {
+  if (areEventListenersAdded) {
     removeEventListenersFromCells();
-    areEventListenersremoved = true;
+    areEventListenersAdded = false;
   }
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
-    playPauseIcon.src =
-      "./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg";
+    playPauseIcon.src = "./images/Play-Button.svg";
+    if (!areEventListenersAdded) {
+      addEventListenersToCells();
+      areEventListenersAdded = true;
+    }
     isAnimating = false;
     isStarted = false;
-  }
-  if (!isEmpty()) {
+  } else {
     // if game is not started, set it to true
     // if pause is clicked, pause the game
     isAnimating = !isAnimating;
@@ -139,8 +140,8 @@ function startAnimation() {
     }
     // change the icon according to the state
     playPauseIcon.src = isAnimating
-      ? "./images/Microsoft-Fluentui-Emoji-Mono-Pause-Button.svg"
-      : "./images/Microsoft-Fluentui-Emoji-Mono-Play-Button.svg";
+      ? "./images/Pause-Button.svg"
+      : "./images/Play-Button.svg";
   }
   if (isAnimating) {
     animate();
@@ -173,9 +174,9 @@ function clearGrid() {
     drawCells();
   }
   isStarted = false;
-  if (areEventListenersremoved) {
+  if (!areEventListenersAdded) {
     addEventListenersToCells();
-    areEventListenersremoved = false;
+    areEventListenersAdded = false;
   }
 }
 
