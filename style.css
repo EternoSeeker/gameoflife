@@ -6,13 +6,11 @@
 :root {
   --primary-color: #0f045a;
   --theme-color1: #7582b2;
-  --theme-color2: #8b8f9c;
-  --theme-color3: #036c96;
+  --theme-color2: #036c96;
+  --theme-color3: #ebf2ff;
   --shadow-color1: #352a7e;
   --shadow-color2: #101536;
   --border-color1: #080126;
-  --secondary-color: #dcdcdc;
-  --tertiary-color: #4e4e4e;
   --background-col: #c6cede;
 }
 
@@ -42,7 +40,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: solid 0.2rem #000;
+  border: solid 0.2rem var(--border-color1);
   max-width: 62vw;
   max-height: 31vw;
 }
@@ -87,18 +85,18 @@
 
 .clear-button,
 .random-button {
-  border: solid 0.1rem #000000;
+  border: solid 0.1rem var(--border-color1);
   border-radius: 0.6rem;
   height: calc((100%) / 1.8);
   width: auto;
   text-align: center;
   padding: 0.5rem;
-  border-color: var(--border-color1);
   /* roboto mono*/
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   font-size: 1.1rem;
   color: var(--primary-color);
+  background-color: var(--theme-color3);
 }
 
 .clear-button {
@@ -168,7 +166,7 @@
 
 /* Add an active class to the active dropdown button */
 .active {
-  background-color: var(--theme-color3);
+  background-color: var(--theme-color2);
   color: white;
 }
 

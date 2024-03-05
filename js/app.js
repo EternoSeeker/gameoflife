@@ -1,8 +1,8 @@
 const WIDTH = 60;
 const HEIGHT = 30;
 
-const ALIVE_COLOR = "#00246B";
-const DEAD_COLOR = "#CADCFC";
+let ALIVE_COLOR = "#00246B";
+let DEAD_COLOR = "#CADCFC";
 
 const ALIVE = 1;
 const DEAD = 0;
@@ -21,6 +21,45 @@ let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
+
+const themeslist = {
+  blue: {
+    "--primary-color": "#0f045a",
+    "--theme-color1": "#7582b2",
+    "--theme-color2": "#036c96",
+    "--theme-color3": "#ebf2ff",
+    "--shadow-color1": "#352a7e",
+    "--shadow-color2": "#101536",
+    "--border-color1": "#080126",
+    "--background-col": "#c6cede",
+    "ALIVE_COLOR": "#00246B",
+    "DEAD_COLOR": "#CADCFC",
+  },
+  green: {
+    "--primary-color": "#0a5e05",
+    "--theme-color1": "#63b163",
+    "--theme-color2": "#04883e",
+    "--theme-color3": "#e1f0e1",
+    "--shadow-color1": "#306830",
+    "--shadow-color2": "#0d2b0d",
+    "--border-color1": "#032e03",
+    "--background-col": "#c3e2c3",
+    "ALIVE_COLOR": "#006b07", 
+    "DEAD_COLOR": "#cafccf", 
+  },
+  red: {
+    "--primary-color": "#a60909",
+    "--theme-color1": "#f27474",
+    "--theme-color2": "#920404",
+    "--theme-color3": "#ffe6e6",
+    "--shadow-color1": "#660303",
+    "--shadow-color2": "#1e0101",
+    "--border-color1": "#200000",
+    "--background-col": "#edc9c9",
+    "ALIVE_COLOR": "#6b0000", 
+    "DEAD_COLOR": "#fccaca", 
+  },
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
@@ -77,6 +116,19 @@ function handleClick(i) {
   // Toggle cell state
   cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
   // Redraw cells
+  drawCells();
+}
+
+function selectTheme(themeName) {
+  const theme = themeslist[themeName];
+  if (theme) {
+    const root = document.documentElement;
+    for (const key in theme) {
+      root.style.setProperty(key, theme[key]);
+    }
+    ALIVE_COLOR = theme["ALIVE_COLOR"];
+    DEAD_COLOR = theme["DEAD_COLOR"];
+  }
   drawCells();
 }
 
