@@ -193,3 +193,7 @@
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
 }
+
+.presets-list:active{
+  color: #fff;
+}

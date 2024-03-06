@@ -48,6 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
   drawCells();
 });
 
+// draw the cells according to the state
+// using style of "cell" class to change the color of the cell, iterate over it
+function drawCells() {
+  const cellElements = gridContainer.querySelectorAll(".cell");
+  cells.forEach((row, i) => {
+    row.forEach((cell, j) => {
+      cellElements[i * WIDTH + j].style.backgroundColor =
+        cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
+    });
+  });
+}
+
 // Map to store event listener functions for each cell
 const cellEventListeners = new Map();
 
@@ -82,13 +94,50 @@ function handleClick(i) {
   drawCells();
 }
 
+async function getPresets() {
+  try {
+    const response = await fetch("../data/presets.json");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function drawPresetPattern(presetName) {
+  try {
+    const presetsList = await getPresets();
+    if (!presetsList) {
+      return;
+    }
+    const preset = presetsList[presetName];
+    if (preset) {
+      if (!isStarted && !isAnimating) {
+        // Clear the grid
+        clearGrid();
+        preset.forEach((coord) => {
+          let [x, y] = coord;
+          // Ensure coordinates are within the bounds of the cells array
+          if (x >= 0 && x < HEIGHT && y >= 0 && y < WIDTH) {
+            cells[x][y] = ALIVE;
+          }
+        });
+        // Call drawCells to update the grid
+        drawCells();
+      }
+    }
+    drawCells();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
 async function getThemes() {
   try {
     const response = await fetch("../data/themes.json");
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error:", error);
     return null;
   }
 }
@@ -97,7 +146,6 @@ async function selectTheme(themeName) {
   try {
     const themesList = await getThemes();
     if (!themesList) {
-      console.error("Themes list is null");
       return;
     }
 
@@ -128,18 +176,6 @@ function increaseSpeed() {
 function decreaseSpeed() {
   // decrease the speed of the animation
   animationSpeed *= 1.1;
-}
-
-// draw the cells according to the state
-// using style of "cell" class to change the color of the cell, iterate over it
-function drawCells() {
-  const cellElements = gridContainer.querySelectorAll(".cell");
-  cells.forEach((row, i) => {
-    row.forEach((cell, j) => {
-      cellElements[i * WIDTH + j].style.backgroundColor =
-        cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
-    });
-  });
 }
 
 function isEmpty() {
