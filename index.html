@@ -55,19 +55,16 @@
             />
             <label for="warp-on-edges">Warp on Edges</label>
           </div>
-          <div class="sliderContainer">
-            <label for="randomVal">Randomness</label>
-            <div class="slider-and-value">
-              <input
-                type="range"
-                min="1"
-                max="100"
-                value="20"
-                class="slider"
-                id="randomVal"
-              />
-              <span id="randomValOutput">20</span>
-            </div>
+          <div class="randomness-container">
+            <label class="randomness-value"><span>Randomness</span><span id="randomValOutput">20</span></label>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="20"
+              class="slider"
+              id="randomVal"
+            />
           </div>
         </div>
         <div class="color-themes has-dropdown">Themes</div>
@@ -121,10 +118,7 @@
         </div>
         <div class="presets has-dropdown">Presets</div>
         <div class="presets-container">
-          <button
-            class="presets-list"
-            onclick="drawPresetPattern('GliderGun')"
-          >
+          <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
             Glider Gun
           </button>
           <button
