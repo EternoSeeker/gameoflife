@@ -199,6 +199,29 @@
   color: #fff;
 }
 
+.slider-and-value {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.slider {
+  border-radius: 0.5rem;
+  background: var(--theme-color3);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
 @media screen and (max-width: 750px) {
   .sidenav {
     width: 100vw;

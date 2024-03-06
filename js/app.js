@@ -18,11 +18,21 @@ for (let i = 0; i < HEIGHT; i++) {
 }
 
 let animationSpeed = 400;
+let randomValue = 20;
 let isAnimating = false;
 let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
+
+var slider = document.getElementById("randomVal");
+var output = document.getElementById("randomValOutput");
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+  output.innerHTML = this.value;
+  randomValue = this.value;
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
@@ -231,7 +241,7 @@ function randomGrid() {
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
-        cells[i][j] = Math.random() < 0.2 ? ALIVE : DEAD;
+        cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
       }
     }
     drawCells();
