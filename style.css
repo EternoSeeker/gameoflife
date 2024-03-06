@@ -19,7 +19,7 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   margin-top: 0.5rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
@@ -31,6 +31,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  max-width: 100vw;
   margin-left: 20vw;
   background-color: var(--background-col);
 }
@@ -92,7 +93,7 @@
   text-align: center;
   padding: 0.5rem;
   /* roboto mono*/
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bold;
   font-size: 1.1rem;
   color: var(--primary-color);
@@ -148,7 +149,7 @@
   text-decoration: none;
   font-size: 1rem;
   color: #818181;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -194,6 +195,57 @@
   padding-left: 0.2rem;
 }
 
-.presets-list:active{
+.presets-list:active {
   color: #fff;
+}
+
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    padding-top: 0.5rem;
+  }
+  .sidenav button,
+  .other-settings,
+  .other-settings-container div,
+  .presets-container div,
+  .color-themes,
+  .themes-container div,
+  .presets,
+  .history {
+    padding: 0.6rem 0.4rem 0.6rem 1.2rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .game {
+    width: 100vw;
+    margin: 0;
+  }
+  .clear-button,
+  .random-button {
+    height: calc((100%) / 2.5);
+    width: auto;
+    text-align: center;
+    padding: 0.4rem;
+    font-size: 0.7rem;
+  }
+  .heading {
+    padding-top: 1rem;
+    padding-bottom: 1.2rem;
+    margin-top: 0.2rem;
+    font-size: 1.5rem;
+  }
+  .active {
+    background-color: var(--theme-color2);
+    color: white;
+  }
 }
