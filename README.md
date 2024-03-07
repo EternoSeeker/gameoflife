@@ -41,7 +41,7 @@ The big glider was found by Dean Hickerson in December 1989 and was the first kn
 The Gosper glider gun is the first known gun, and indeed the first known finite pattern with unbounded growth, found by Bill Gosper in November 1970. It consists of two queen bee shuttles stabilized by two blocks.
 
 <div>
-  <img src="data/game-images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150">
+  <img src="data/game-images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150" width="514">
   <img src="https://conwaylife.com/w/images/b/b6/Gosperglidergun.gif" height="150">
 </div>
 
