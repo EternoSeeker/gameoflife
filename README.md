@@ -17,10 +17,13 @@ The universe of the Game of Life is an infinite, two-dimensional orthogonal grid
 The first generation is created by applying the above rules simultaneously to every cell in the seed, live or dead; 
 births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one.
 
-## Footnote
-Conway's Game of Life is a fascinating exploration of life, death, and the rules that govern them. Despite its simplicity, it can lead to complex and beautiful patterns.
+## Resources - more stuff
 
-Game of Life offers a unique way to explore the unpredictable beauty of life itself.
+#### Spark your interest
+
+https://www.youtube.com/watch?v=R9Plq-D1gEk
+
+https://youtu.be/C2vgICfQawE?si=yWqN0BOSBOMaujkI
 
 #### Also try playing it here
 
@@ -33,3 +36,8 @@ https://conwaylife.com/
 https://conwaylife.com/wiki/
 
 https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+## Footnote
+Conway's Game of Life is a fascinating exploration of life, death, and the rules that govern them. Despite its simplicity, it can lead to complex and beautiful patterns.
+
+Game of Life offers a unique way to explore the unpredictable beauty of life itself.
