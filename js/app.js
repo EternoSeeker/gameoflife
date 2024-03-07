@@ -223,6 +223,8 @@ function startAnimation() {
     // if not, set it to true
     if (isStarted == false) {
       isStarted = true;
+      storePattern(cells);
+      appendPatternButtons();
     }
     // change the icon according to the state
     playPauseIcon.src = isAnimating
@@ -375,10 +377,11 @@ function animate() {
 function handleDropdowns() {
   var themesDropdown = document.getElementsByClassName("color-themes");
   var presetsDropdown = document.getElementsByClassName("presets");
+  var historyDropdown = document.getElementsByClassName("history");
   for (let i = 0; i < themesDropdown.length; i++) {
     themesDropdown[i].addEventListener("click", function () {
       this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
+      let dropdownContent = this.nextElementSibling;
       if (dropdownContent.style.display === "block") {
         dropdownContent.style.display = "none";
       } else {
@@ -389,7 +392,18 @@ function handleDropdowns() {
   for (let i = 0; i < presetsDropdown.length; i++) {
     presetsDropdown[i].addEventListener("click", function () {
       this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
+      let dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+  for (let i = 0; i < historyDropdown.length; i++) {
+    historyDropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      let dropdownContent = this.nextElementSibling;
       if (dropdownContent.style.display === "block") {
         dropdownContent.style.display = "none";
       } else {
@@ -399,14 +413,64 @@ function handleDropdowns() {
   }
 }
 
-// anime({
-//   targets: "div.heading",
-//   translateY: [
-//     { value: 200, duration: 500 },
-//     { value: 0, duration: 800 },
-//   ],
-//   delay: function (el, i, l) {
-//     return i * 1000;
-//   },
-//   loop: true,
-// });
+let historyCount = 0;
+
+function storePattern(pattern) {
+  // Convert the 2D array to a JSON string
+  const patternJson = JSON.stringify(pattern);
+
+  // Retrieve the current history from session storage
+  let history = sessionStorage.getItem("patternHistory");
+  if (history) {
+    history = JSON.parse(history);
+  } else {
+    history = [];
+  }
+
+  // Add the new pattern to the history
+  history.unshift(patternJson); // Add to the beginning
+
+  // Check if the history exceeds 5 patterns
+  if (history.length > 5) {
+    // Remove the oldest pattern
+    history.pop();
+  }
+  historyCount = history.length;
+
+  // Store the updated history back in session storage
+  sessionStorage.setItem("patternHistory", JSON.stringify(history));
+}
+
+function getPatternHistory() {
+  // Retrieve the pattern history from session storage
+  const historyJson = sessionStorage.getItem("patternHistory");
+  if (historyJson) {
+    // Parse the JSON string back into an array
+    const history = JSON.parse(historyJson);
+    // Convert each pattern JSON string back into a 2D array
+    return history.map((patternJson) => JSON.parse(patternJson));
+  }
+  return [];
+}
+
+function appendPatternButtons() {
+  const historyContainer = document.querySelector(".history-container");
+  const patterns = getPatternHistory(); // Retrieve the pattern history
+
+  // Clear the container first
+  historyContainer.innerHTML = "";
+
+  // Loop through the patterns and create a button for each
+  patterns.forEach((pattern, index) => {
+    const button = document.createElement("button");
+    button.textContent = `${index + 1}`; // Button names start from the most recent
+    button.addEventListener("click", () => {
+      // When a button is clicked, set the cells array to the corresponding pattern
+      if(!isAnimating && !isStarted){
+        cells = pattern;
+      }
+      drawCells(); // Assuming drawCells is a function you have that draws the cells on the screen
+    });
+    historyContainer.appendChild(button);
+  });
+}

@@ -189,13 +189,14 @@
 
 /* Dropdown container (hidden by default) */
 .themes-container,
-.presets-container {
+.presets-container,
+.history-container {
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
 }
 
-.presets-list:active {
+.presets-list:active, .history-container button:active{
   color: #fff;
 }
 
