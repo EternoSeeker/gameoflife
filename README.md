@@ -5,17 +5,52 @@ Conway's Game of Life, or simply "Life," is a cellular automaton devised by Brit
 
 ### The Universe
 
-The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead. Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
+The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, 
+
+Each cell is in one of two possible states, `ALIVE` or `DEAD`. 
+
+Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
 
 ## The Rules
 
-1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+1. Any live cell with fewer than two live neighbors dies, as if by **underpopulation**.
 2. Any live cell with two or three live neighbors lives on to the next generation.
-3. Any live cell with more than three live neighbors dies, as if by overpopulation.
-4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+3. Any live cell with more than three live neighbors dies, as if by **overpopulation**.
+4. Any dead cell with exactly three live neighbors becomes a live cell, as if by **reproduction**.
 
-The first generation is created by applying the above rules simultaneously to every cell in the seed, live or dead; 
+The first generation is created by applying the above rules simultaneously to every cell in the seed, alive or dead; 
 births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one.
+
+## Presets
+### Glider
+
+The glider is the smallest, most common, and first-discovered spaceship in Game of Life. It travels diagonally across the grid, Gliders are important because they are easily produced (by glider guns and rakes) can be collided with each other to form more complicated patterns, and can be used to transmit information over long distances.
+
+<div>
+      <img src="data/game-images/Small-Glider.png" alt="Small Glider" height="150">
+      <img src="https://conwaylife.com/w/images/8/81/Glider.gif" height="150">
+</div>
+
+### Big Glider
+
+The big glider was found by Dean Hickerson in December 1989 and was the first known diagonal spaceship other than the glider. Two gliders can be temporarily seen at the front of the ship; these do not stay gliders but still move like them.
+
+<div>
+  <img src="data/game-images/Big-Glider.png" alt="Big Glider" height="150">
+  <img src="https://conwaylife.com/w/images/f/fd/Bigglider.gif" height="150">
+</div>
+
+### Gosper Glider Gun
+
+The Gosper glider gun is the first known gun, and indeed the first known finite pattern with unbounded growth, found by Bill Gosper in November 1970. It consists of two queen bee shuttles stabilized by two blocks.
+
+<img src="data/game-images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150">
+<img src="https://conwaylife.com/w/images/b/b6/Gosperglidergun.gif" height="150">
+
+
+#### More Configurations
+
+https://conwaylife.com/wiki/Category:Patterns
 
 ## Resources - more stuff
 
