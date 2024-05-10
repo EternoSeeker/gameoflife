@@ -9,6 +9,8 @@
 
 ## Current behaviour
 
+<!-- Add Screenshots if necessary>
+
 <!-- If the current behavior is a bug, please provide the steps to reproduce -->
 
 <!-- What is the expected behavior incase of a bug -->
