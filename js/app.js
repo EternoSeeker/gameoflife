@@ -24,6 +24,7 @@ let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
+let aliveCount = 0;
 
 var slider = document.getElementById("randomVal");
 var output = document.getElementById("randomValOutput");
@@ -99,7 +100,13 @@ function handleClick(i) {
   const row = Math.floor(i / WIDTH);
   const col = i % WIDTH;
   // Toggle cell state
-  cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
+  if (cells[row][col] === ALIVE) {
+    cells[row][col] = DEAD;
+    aliveCount--; // Decrement count when a cell dies
+  } else {
+    cells[row][col] = ALIVE;
+    aliveCount++; // Increment count when a cell becomes alive
+  }
   // Redraw cells
   drawCells();
 }
@@ -189,14 +196,7 @@ function decreaseSpeed() {
 }
 
 function isEmpty() {
-  for (let i = 0; i < HEIGHT; i++) {
-    for (let j = 0; j < WIDTH; j++) {
-      if (cells[i][j] === ALIVE) {
-        return false;
-      }
-    }
-  }
-  return true;
+  return (aliveCount==0);
 }
 
 function startAnimation() {
@@ -240,10 +240,17 @@ function startAnimation() {
 function randomGrid() {
   // if the game is not started and not animating
   // then allow user to set the cells to random state
+  aliveCount = 0;
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
-        cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
+        if(Math.random() * 100 < randomValue) {
+          cells[i][j] = ALIVE;
+          aliveCount++;
+        }
+        else {
+          cells[i][j] = DEAD;
+        }
       }
     }
     drawCells();
@@ -254,6 +261,7 @@ function clearGrid() {
   // if the game is paused
   // then allow user to clear the grid
   if (!isAnimating) {
+    aliveCount = 0;
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = DEAD;
@@ -288,7 +296,7 @@ function toggleGrid() {
 
 function warpOnEdges(cells) {
   const nextGeneration = [];
-
+  let aliveCountTemp = 0;
   for (let i = 0; i < HEIGHT; i++) {
     nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
@@ -310,19 +318,22 @@ function warpOnEdges(cells) {
 
       if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
+        aliveCountTemp++;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
+        aliveCountTemp++;
       } else {
         nextGeneration[i][j] = DEAD;
       }
     }
   }
-
+  aliveCount = aliveCountTemp;
   return nextGeneration;
 }
 
 function noWarpOnEdges(cells) {
   const nextGeneration = [];
+  let aliveCountTemp = 0;
   for (let i = 0; i < HEIGHT; i++) {
     nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
@@ -347,14 +358,16 @@ function noWarpOnEdges(cells) {
 
       if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
+        aliveCountTemp++;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
+        aliveCountTemp++;
       } else {
         nextGeneration[i][j] = DEAD;
       }
     }
   }
-
+  aliveCount = aliveCountTemp;
   return nextGeneration;
 }
 
