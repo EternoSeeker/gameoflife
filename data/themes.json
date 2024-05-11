@@ -35,7 +35,7 @@
         "ALIVE_COLOR": "#6b0000",
         "DEAD_COLOR": "#fccaca"
     },
-    "purple":{
+    "purple": {
         "--primary-color": "#5a045a",
         "--theme-color1": "#B275B2",
         "--theme-color2": "#960396",
@@ -47,7 +47,7 @@
         "ALIVE_COLOR": "#6b006b",
         "DEAD_COLOR": "#fcafcf"
     },
-    "darkCyan":{
+    "darkCyan": {
         "--primary-color": "#045a5a",
         "--theme-color1": "#75B2B2",
         "--theme-color2": "#039696",
@@ -58,5 +58,17 @@
         "--background-col": "#C6DEDE",
         "ALIVE_COLOR": "#006b6b",
         "DEAD_COLOR": "#cafcfc"
+    },
+    "black": {
+        "--primary-color": "#000000",
+        "--theme-color1": "#CCCCCC",
+        "--theme-color2": "#999999",
+        "--theme-color3": "#FFFFFF",
+        "--shadow-color1": "#666666",
+        "--shadow-color2": "#333333",
+        "--border-color1": "#000000",
+        "--background-col": "#000000",
+        "ALIVE_COLOR": "#000000",
+        "DEAD_COLOR": "#FFFFFF"
     }
 }
