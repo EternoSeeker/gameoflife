@@ -232,6 +232,7 @@
   .color-themes,
   .themes-container div,
   .presets,
+  .share
   .history {
     padding: 0.6rem 0.4rem 0.6rem 1rem;
     text-decoration: none;
@@ -281,4 +282,40 @@
   .slider{
     width: 30%;
   }
+}
+
+.history {
+  cursor: pointer;
+  color: blue;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.share {
+  padding: 0.8rem 0.5rem 0.8rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: "Roboto Mono", monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.share:hover {
+  color: #fff;
 }

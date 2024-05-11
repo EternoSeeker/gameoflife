@@ -474,3 +474,23 @@ function appendPatternButtons() {
     historyContainer.appendChild(button);
   });
 }
+
+// for the Pop_up of share
+document.addEventListener('DOMContentLoaded', function() {
+  var historyBtn = document.querySelector('.share');
+  var popup = document.getElementById('popup');
+
+  historyBtn.addEventListener('click', function() {
+    var textToCopy = "Hey! I am inviting you to this awesome game : https://eternalgameoflife.netlify.app"; 
+    navigator.clipboard.writeText(textToCopy)
+      .then(function() {
+        popup.style.display = 'block';
+        setTimeout(function() {
+          popup.style.display = 'none';
+        }, 4000);
+      })
+      .catch(function(err) {
+        console.error('Failed to copy: ', err);
+      });
+  });
+});
