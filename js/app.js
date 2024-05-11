@@ -267,6 +267,23 @@ function clearGrid() {
     areEventListenersAdded = true;
   }
 }
+function shareGame() {
+  // Check if the Web Share API is supported by the browser
+  if (navigator.share) {
+    // Call the share() method of the navigator object
+    navigator.share({
+      title: "Share Conway's Game of Life",
+      text: "Check out this awesome game!",
+      url: window.location.href // Share the current URL of the page
+    })
+      .then(() => console.log('Shared successfully'))
+      .catch((error) => console.error('Error sharing:', error));
+  } else {
+    // Fallback for browsers that do not support the Web Share API
+    alert('Sharing is not supported in this browser.');
+  }
+}
+
 
 function toggleWarp() {
   isWarpEnabled = !isWarpEnabled;

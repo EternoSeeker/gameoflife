@@ -282,3 +282,28 @@
     width: 30%;
   }
 }
+/* New share button styles */
+.share-button {
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.6rem;
+  height: calc((100%) / 1.8);
+  width: auto;
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  background-color: var(--theme-color3);
+  margin-left: 1rem; /* Adjust the spacing between buttons */
+}
+
+.share-button:hover {
+  box-shadow: 0.1rem 0.1rem var(--shadow-color1);
+}
+
+.share-button:active {
+  box-shadow: 0.1rem 0.1rem var(--shadow-color2);
+  transform: translateY(0.1rem);
+}
+
