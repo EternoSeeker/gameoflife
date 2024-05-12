@@ -115,6 +115,23 @@
             />
             <label for="darkcyan-theme">Dark Cyan</label>
           </div>
+                    <!-- Gradient Theme Button --><div>
+<button id="gradient-theme-btn" class="has-dropdown">Switch to Gradient Theme</button>
+<div id="gradient-colors-container" style="display: none;">
+  <div class="gradient-settings-container">
+    <input type="color" id="color1" value="#ff7e5f">
+    <input type="color" id="color2" value="#feb47b">
+    <select id="gradient-direction" class="gradient-direction-select">
+      <option value="to top">Top</option>
+      <option value="to right">Right</option>
+      <option value="to bottom">Bottom</option>
+      <option value="to left">Left</option>
+    </select>    
+  </div>
+  
+    <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
+</div>
+</div>
         </div>
         <div class="presets has-dropdown">Presets</div>
         <div class="presets-container">
@@ -187,5 +204,6 @@
     </div>
     <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/gradient.js"></script>
   </body>
 </html>

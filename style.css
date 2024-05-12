@@ -282,3 +282,76 @@
     width: 30%;
   }
 }
+
+#gradient-theme-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--shadow-color2);
+  color: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Gradient theme */
+.gradient-theme {
+  background: linear-gradient(to right, var(--primary-color), var(--shadow-color1)); /* Example gradient colors */
+  color: #FFFFFF; /* Example text color */
+}
+
+.gradient-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.gradient-button:hover {
+  background-color: var(--theme-color2);
+  color : white /* Darker green */
+}
+
+
+/* Style for the container of color inputs and gradient direction dropdown */
+.gradient-settings-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the start of the container */
+}
+
+/* Style for color input */
+input[type="color"] {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin: 10px 10px; /* Add margin bottom to separate color inputs */
+  cursor: pointer;
+  outline: none;
+}
+
+/* Style for gradient direction dropdown */
+.gradient-direction-select {
+  width: 100%;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--shadow-color2);
+  color: #e4dddd;
+}
+
+/* Style for the button when active */
+#gradient-theme-btn:hover {
+  background-color: var(--theme-color2);
+  color: var(--theme-color3);
+}
