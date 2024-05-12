@@ -141,48 +141,17 @@
         <div id="main-grid" class="main-grid"></div>
       </div>
       <div class="controls">
-        <button class="clear-button" id="clear-button" onclick="clearGrid()">
-          Clear
+        <button class="clear-button" id="clear-button" onclick="clearGrid()" aria-label="Clear Grid">Clear</button>
+        <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()" aria-label="Decrease Animation Speed">
+          <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Decrease Speed">
         </button>
-        <button
-          class="control-button"
-          id="fast-reverse-button"
-          onclick="decreaseSpeed()"
-        >
-          <img
-            class="icon"
-            id="fast-reverse-icon"
-            src="./images/Fast-Reverse-Button.svg"
-            alt="Play"
-          />
+        <button class="control-button" id="play-pause-button" onclick="startAnimation()" aria-label="Start/Pause Animation">
+          <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Start/Pause">
         </button>
-        <button
-          class="control-button"
-          id="play-pause-button"
-          onclick="startAnimation()"
-        >
-          <img
-            class="icon"
-            id="play-pause-icon"
-            src="./images/Play-Button.svg"
-            alt="Slow"
-          />
+        <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()" aria-label="Increase Animation Speed">
+          <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Increase Speed">
         </button>
-        <button
-          class="control-button"
-          id="fast-forward-button"
-          onclick="increaseSpeed()"
-        >
-          <img
-            class="icon"
-            id="fast-forward-icon"
-            src="./images/Fast-Forward-Button.svg"
-            alt="Fast"
-          />
-        </button>
-        <button class="random-button" id="random-button" onclick="randomGrid()">
-          Random
-        </button>
+        <button class="random-button" id="random-button" onclick="randomGrid()" aria-label="Generate Random Grid">Random</button>
       </div>
     </div>
     <script src="node_modules/animejs/lib/anime.min.js"></script>
