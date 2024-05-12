@@ -1,191 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto Mono"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
-    />
-    <meta
-      name="keywords"
-      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970"
-    />
-    <title>Conway's Game of Life</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="game-settings">
-      <div class="sidenav">
-        <div class="other-settings">Settings</div>
-        <div class="other-settings-container">
-          <div class="grid-toggle">
-            <input
-              type="checkbox"
-              checked
-              id="grid-toggle"
-              class="grid-checkbox"
-              onclick="toggleGrid()"
-            />
-            <label for="grid-toggle">Gridlines</label>
-          </div>
-          <div class="warp-on-edges">
-            <input
-              type="checkbox"
-              checked
-              id="warp-on-edges"
-              class="warp-checkbox"
-              onclick="toggleWarp()"
-            />
-            <label for="warp-on-edges">Warp on Edges</label>
-          </div>
-          <div class="randomness-container">
-            <label class="randomness-value"><span>Randomness</span><span id="randomValOutput">20</span></label>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="20"
-              class="slider"
-              id="randomVal"
-            />
-          </div>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet" />
+  <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970." />
+  <meta name="keywords" content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970" />
+  <title>Conway's Game of Life</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="game-settings">
+
+    <div class="sidenav">
+      <div class="other-settings">Settings</div>
+
+      <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
+          color="#ffffff" fill="none">
+          <path d="M19.0005 4.99988L5.00045 18.9999M5.00045 4.99988L19.0005 18.9999" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></div>
+
+      <div class="other-settings-container">
+        <div class="grid-toggle">
+          <input type="checkbox" checked id="grid-toggle" class="grid-checkbox" onclick="toggleGrid()" />
+          <label for="grid-toggle">Gridlines</label>
         </div>
-        <div class="color-themes has-dropdown">Themes</div>
-        <div class="themes-container">
-          <div>
-            <input
-              type="radio"
-              id="red-theme"
-              name="theme"
-              onclick="selectTheme('red')"
-            />
-            <label for="red-theme">Red</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="green-theme"
-              name="theme"
-              onclick="selectTheme('green')"
-            />
-            <label for="green-theme">Green</label>
-          </div>
-          <div>
-            <input
-              checked
-              type="radio"
-              id="blue-theme"
-              name="theme"
-              onclick="selectTheme('blue')"
-            />
-            <label for="blue-theme">Blue</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="purple-theme"
-              name="theme"
-              onclick="selectTheme('purple')"
-            />
-            <label for="purple-theme">Purple</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="darkcyan-theme"
-              name="theme"
-              onclick="selectTheme('darkCyan')"
-            />
-            <label for="darkcyan-theme">Dark Cyan</label>
-          </div>
+        <div class="warp-on-edges">
+          <input type="checkbox" checked id="warp-on-edges" class="warp-checkbox" onclick="toggleWarp()" />
+          <label for="warp-on-edges">Warp on Edges</label>
         </div>
-        <div class="presets has-dropdown">Presets</div>
-        <div class="presets-container">
-          <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
-            Glider Gun
-          </button>
-          <button
-            class="presets-list"
-            onclick="drawPresetPattern('smallGlider')"
-          >
-            Small Glider
-          </button>
-          <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
-            Big Glider
-          </button>
-        </div>
-        <div class="history has-dropdown">History</div>
-        <div class="history-container"></div>
+        <p class="randomness-container">
+          <label class="randomness-value"><span>Randomness</span><span id="randomValOutput">20</span></label>
+          <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
+        </p>
       </div>
+      <div class="color-themes has-dropdown">Themes</div>
+      <div class="themes-container">
+        <div>
+          <input type="radio" id="red-theme" name="theme" onclick="selectTheme('red')" />
+          <label for="red-theme">Red</label>
+        </div>
+        <div>
+          <input type="radio" id="green-theme" name="theme" onclick="selectTheme('green')" />
+          <label for="green-theme">Green</label>
+        </div>
+        <div>
+          <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
+          <label for="blue-theme">Blue</label>
+        </div>
+        <div>
+          <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
+          <label for="purple-theme">Purple</label>
+        </div>
+        <div>
+          <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
+          <label for="darkcyan-theme">Dark Cyan</label>
+        </div>
+      </div>
+      <div class="presets has-dropdown">Presets</div>
+      <div class="presets-container">
+        <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
+          Glider Gun
+        </button>
+        <button class="presets-list" onclick="drawPresetPattern('smallGlider')">
+          Small Glider
+        </button>
+        <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
+          Big Glider
+        </button>
+      </div>
+      <div class="history has-dropdown">History</div>
+      <div class="history-container"></div>
     </div>
-    <div class="game">
-      <div class="heading">Conway's Game of Life</div>
-      <div class="grid-container">
-        <div id="main-grid" class="main-grid"></div>
-      </div>
-      <div class="controls">
-        <button class="clear-button" id="clear-button" onclick="clearGrid()">
-          Clear
-        </button>
-        <button
-          class="control-button"
-          id="fast-reverse-button"
-          onclick="decreaseSpeed()"
-        >
-          <img
-            class="icon"
-            id="fast-reverse-icon"
-            src="./images/Fast-Reverse-Button.svg"
-            alt="Play"
-          />
-        </button>
-        <button
-          class="control-button"
-          id="play-pause-button"
-          onclick="startAnimation()"
-        >
-          <img
-            class="icon"
-            id="play-pause-icon"
-            src="./images/Play-Button.svg"
-            alt="Slow"
-          />
-        </button>
-        <button
-          class="control-button"
-          id="fast-forward-button"
-          onclick="increaseSpeed()"
-        >
-          <img
-            class="icon"
-            id="fast-forward-icon"
-            src="./images/Fast-Forward-Button.svg"
-            alt="Fast"
-          />
-        </button>
-        <button class="random-button" id="random-button" onclick="randomGrid()">
-          Random
-        </button>
-      </div>
+
+  </div>
+  <div class="game">
+    <div class="hamburger">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+        <path d="M4 5L20 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 12L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 19L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
     </div>
-    <script src="node_modules/animejs/lib/anime.min.js"></script>
-    <script src="./js/app.js"></script>
-  </body>
+    <div class="heading">Conway's Game of Life</div>
+    <div class="grid-container">
+      <div id="main-grid" class="main-grid"></div>
+    </div>
+    <div class="controls">
+      <button class="clear-button" id="clear-button" onclick="clearGrid()">
+        Clear
+      </button>
+      <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
+        <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Play" />
+      </button>
+      <button class="control-button" id="play-pause-button" onclick="startAnimation()">
+        <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Slow" />
+      </button>
+      <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
+        <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast" />
+      </button>
+      <button class="random-button" id="random-button" onclick="randomGrid()">
+        Random
+      </button>
+    </div>
+  </div>
+  <script src="node_modules/animejs/lib/anime.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
 </html>
