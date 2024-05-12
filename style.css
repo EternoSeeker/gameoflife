@@ -14,6 +14,18 @@
   --background-col: #c6cede;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shadow-color2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+}
+
 .heading {
   text-align: center;
   padding-top: 1.5rem;
