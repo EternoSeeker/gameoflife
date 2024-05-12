@@ -25,6 +25,33 @@ let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
 
+
+
+function onResizeAboveThreshold() {
+  const thresholdWidth = 750;
+  const currentWidth = window.innerWidth;
+
+  if (currentWidth >= thresholdWidth) {
+    document.querySelector(".sidenav").style.left = "0px"
+  }else{
+    document.querySelector(".sidenav").style.left = "-255px"
+  }
+}
+onResizeAboveThreshold();
+window.addEventListener('resize', onResizeAboveThreshold);
+
+
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".sidenav").style.left = "0px"
+})
+
+
+
+document.querySelector(".cross").addEventListener("click", () => {
+  document.querySelector(".sidenav").style.left = "-250px"
+})
+
+
 var slider = document.getElementById("randomVal");
 var output = document.getElementById("randomValOutput");
 output.innerHTML = slider.value;
@@ -161,6 +188,30 @@ async function getThemes() {
   }
 }
 
+// async function selectTheme(themeName) {
+//   try {
+//     const themesList = await getThemes();
+//     if (!themesList) {
+//       return;
+//     }
+
+//     const theme = themesList[themeName];
+//     if (theme) {
+//       const root = document.documentElement;
+//       for (const key in theme) {
+//         root.style.setProperty(key, theme[key]);
+//       }
+//       ALIVE_COLOR = theme["ALIVE_COLOR"];
+//       DEAD_COLOR = theme["DEAD_COLOR"];
+//     } else {
+//       console.error("Theme not found");
+//     }
+//     drawCells();
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
+
 async function selectTheme(themeName) {
   try {
     const themesList = await getThemes();
@@ -169,21 +220,27 @@ async function selectTheme(themeName) {
     }
 
     const theme = themesList[themeName];
-    if (theme) {
+    if (theme)
+    {
       const root = document.documentElement;
       for (const key in theme) {
         root.style.setProperty(key, theme[key]);
       }
+      root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
-    } else {
+    }
+    else
+    {
       console.error("Theme not found");
     }
     drawCells();
-  } catch (error) {
+  }
+  catch (error) {
     console.error("Error:", error);
   }
 }
+
 
 function increaseSpeed() {
   // increase the speed of the animation
@@ -475,7 +532,7 @@ function appendPatternButtons() {
     button.textContent = `${index + 1}`; // Button names start from the most recent
     button.addEventListener("click", () => {
       // When a button is clicked, set the cells array to the corresponding pattern
-      if(!isAnimating && !isStarted){
+      if (!isAnimating && !isStarted) {
         cells = pattern;
       }
       drawCells(); // Assuming drawCells is a function you have that draws the cells on the screen
