@@ -35,11 +35,10 @@
           <input type="checkbox" checked id="grid-toggle" class="grid-checkbox" onclick="toggleGrid()" />
           <label for="grid-toggle">Gridlines</label>
         </div>
-        
-<div class="warp-on-edges">
-  <input type="checkbox" checked id="warp-on-edges" class="warp-checkbox" onclick="toggleWarp()" />
-  <label for="warp-on-edges">Warp on Edges</label>
-</div>
+        <div class="warp-on-edges">
+          <input type="checkbox" checked id="warp-on-edges" class="warp-checkbox" onclick="toggleWarp()" />
+          <label for="warp-on-edges">Warp on Edges</label>
+        </div>
         <p class="randomness-container">
           <label class="randomness-value"><span>Randomness</span><span id="randomValOutput">20</span></label>
           <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
@@ -67,26 +66,25 @@
           <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
           <label for="darkcyan-theme">Dark Cyan</label>
         </div>
+        <div>
+          <button id="gradient-theme-btn" class="has-dropdown">
+            Switch to Gradient Theme
+          </button>
+          <div id="gradient-colors-container" style="display: none;">
+            <div class="gradient-settings-container">
+              <input type="color" id="color1" value="#ff7e5f">
+              <input type="color" id="color2" value="#feb47b">
+              <select id="gradient-direction" class="gradient-direction-select">
+                <option value="to top">Top</option>
+                <option value="to right">Right</option>
+                <option value="to bottom">Bottom</option>
+                <option value="to left">Left</option>
+              </select>    
+            </div>
+              <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
+          </div>
+          </div>
       </div>
-          <!-- Gradient Theme Button -->
-  <div>
-    <button id="gradient-theme-btn" class="has-dropdown">Switch to Gradient Theme</button>
-    <div id="gradient-colors-container" style="display: none;">
-      <div class="gradient-settings-container">
-        <input type="color" id="color1" value="#ff7e5f">
-        <input type="color" id="color2" value="#feb47b">
-        <select id="gradient-direction" class="gradient-direction-select">
-          <option value="to top">Top</option>
-          <option value="to right">Right</option>
-          <option value="to bottom">Bottom</option>
-          <option value="to left">Left</option>
-        </select>    
-      </div>
-      <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
-    </div>
-  </div>
-</div>
-    <div>
       <div class="presets has-dropdown">Presets</div>
       <div class="presets-container">
         <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
@@ -133,9 +131,9 @@
         Random
       </button>
     </div>
-    <script src="node_modules/animejs/lib/anime.min.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="./js/gradient.js"></script>
-  </body>
+  </div>
+  <script src="node_modules/animejs/lib/anime.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/gradient.js"></script>
+</body>
 </html>
-
