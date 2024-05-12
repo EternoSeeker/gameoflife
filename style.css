@@ -14,6 +14,18 @@
   --background-col: #c6cede;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shadow-color2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+}
+
 .heading {
   text-align: center;
   padding-top: 1.5rem;
@@ -26,6 +38,7 @@
 }
 
 .game {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,10 +143,18 @@
   position: absolute;
   z-index: 1;
   top: 0;
-  left: 0;
+  left: 0px;
   background-color: var(--border-color1);
   overflow-x: hidden;
   padding-top: 2rem;
+}
+
+.sidenav .cross{
+  cursor: pointer;
+  position: absolute;
+  top: 45px;
+  right: 15px;
+  display: none;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -158,6 +179,29 @@
   text-align: left;
   cursor: pointer;
   outline: none;
+}
+
+.other-settings-container .randomness-container {
+  padding: 0.8rem 0.5rem 0.8rem 1.6rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #818181;
+  font-family: "Roboto Mono", monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.hamburger {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  display: none;
 }
 
 /* On mouse-over exclude .other-settings*/
@@ -196,8 +240,9 @@
   padding-left: 0.2rem;
 }
 
-.presets-list:active, .history-container button:active{
-  color: #fff;
+.presets-list:active,
+.history-container button:active {
+  color: #ffffff;
 }
 
 .randomness-value {
@@ -220,11 +265,61 @@
 
 @media screen and (max-width: 750px) {
   .sidenav {
-    width: 100vw;
     height: auto;
-    position: relative;
+    position: absolute;
     padding-top: 0.5rem;
+    left: -250px;
+    height: 100vh;
+    width: 35vw;
   }
+
+  .hamburger {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    display: block;
+  }
+
+  .sidenav .cross{
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    display: block;
+  }
+
+  .sidenav .randomness-container input {
+    padding: 0.6rem 0.4rem 0.6rem 1rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+  }
+
+  .sidenav .randomness-container label {
+    padding: 0.6rem 6.4rem 0.6rem 0.5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+  }
+
+
+
   .sidenav button,
   .other-settings,
   .other-settings-container div,
@@ -250,6 +345,7 @@
     width: 100vw;
     margin: 0;
   }
+
   .clear-button,
   .random-button {
     height: calc((100%) / 2.5);
@@ -258,12 +354,14 @@
     padding: 0.4rem;
     font-size: 0.7rem;
   }
+
   .heading {
     padding-top: 1rem;
     padding-bottom: 1.2rem;
     margin-top: 0.2rem;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
   }
+
   .active {
     background-color: var(--theme-color2);
     color: white;
@@ -278,11 +376,10 @@
     text-align: center;
   }
 
-  .slider{
+  .slider {
     width: 30%;
   }
 }
-
 #gradient-theme-btn {
   margin-top: 10px;
   padding: 10px 20px;

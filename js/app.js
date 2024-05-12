@@ -24,7 +24,31 @@ let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
-let aliveCount = 0;
+
+
+function onResizeAboveThreshold() {
+  const thresholdWidth = 750;
+  const currentWidth = window.innerWidth;
+
+  if (currentWidth >= thresholdWidth) {
+    document.querySelector(".sidenav").style.left = "0px"
+  }else{
+    document.querySelector(".sidenav").style.left = "-255px"
+  }
+}
+onResizeAboveThreshold();
+window.addEventListener('resize', onResizeAboveThreshold);
+
+
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".sidenav").style.left = "0px"
+})
+
+
+
+document.querySelector(".cross").addEventListener("click", () => {
+  document.querySelector(".sidenav").style.left = "-250px"
+})
 
 var slider = document.getElementById("randomVal");
 var output = document.getElementById("randomValOutput");
@@ -100,13 +124,7 @@ function handleClick(i) {
   const row = Math.floor(i / WIDTH);
   const col = i % WIDTH;
   // Toggle cell state
-  if (cells[row][col] === ALIVE) {
-    cells[row][col] = DEAD;
-    aliveCount--; // Decrement count when a cell dies
-  } else {
-    cells[row][col] = ALIVE;
-    aliveCount++; // Increment count when a cell becomes alive
-  }
+  cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
   // Redraw cells
   drawCells();
 }
@@ -159,6 +177,30 @@ async function getThemes() {
   }
 }
 
+// async function selectTheme(themeName) {
+//   try {
+//     const themesList = await getThemes();
+//     if (!themesList) {
+//       return;
+//     }
+
+//     const theme = themesList[themeName];
+//     if (theme) {
+//       const root = document.documentElement;
+//       for (const key in theme) {
+//         root.style.setProperty(key, theme[key]);
+//       }
+//       ALIVE_COLOR = theme["ALIVE_COLOR"];
+//       DEAD_COLOR = theme["DEAD_COLOR"];
+//     } else {
+//       console.error("Theme not found");
+//     }
+//     drawCells();
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
+
 async function selectTheme(themeName) {
   try {
     const themesList = await getThemes();
@@ -167,21 +209,27 @@ async function selectTheme(themeName) {
     }
 
     const theme = themesList[themeName];
-    if (theme) {
+    if (theme)
+    {
       const root = document.documentElement;
       for (const key in theme) {
         root.style.setProperty(key, theme[key]);
       }
+      root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
-    } else {
+    }
+    else
+    {
       console.error("Theme not found");
     }
     drawCells();
-  } catch (error) {
+  }
+  catch (error) {
     console.error("Error:", error);
   }
 }
+
 
 function increaseSpeed() {
   // increase the speed of the animation
@@ -196,7 +244,14 @@ function decreaseSpeed() {
 }
 
 function isEmpty() {
-  return (aliveCount==0);
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      if (cells[i][j] === ALIVE) {
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 function startAnimation() {
@@ -240,17 +295,10 @@ function startAnimation() {
 function randomGrid() {
   // if the game is not started and not animating
   // then allow user to set the cells to random state
-  aliveCount = 0;
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
-        if(Math.random() * 100 < randomValue) {
-          cells[i][j] = ALIVE;
-          aliveCount++;
-        }
-        else {
-          cells[i][j] = DEAD;
-        }
+        cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
       }
     }
     drawCells();
@@ -261,7 +309,6 @@ function clearGrid() {
   // if the game is paused
   // then allow user to clear the grid
   if (!isAnimating) {
-    aliveCount = 0;
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = DEAD;
@@ -296,7 +343,7 @@ function toggleGrid() {
 
 function warpOnEdges(cells) {
   const nextGeneration = [];
-  let aliveCountTemp = 0;
+
   for (let i = 0; i < HEIGHT; i++) {
     nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
@@ -318,22 +365,19 @@ function warpOnEdges(cells) {
 
       if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else {
         nextGeneration[i][j] = DEAD;
       }
     }
   }
-  aliveCount = aliveCountTemp;
+
   return nextGeneration;
 }
 
 function noWarpOnEdges(cells) {
   const nextGeneration = [];
-  let aliveCountTemp = 0;
   for (let i = 0; i < HEIGHT; i++) {
     nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
@@ -358,16 +402,14 @@ function noWarpOnEdges(cells) {
 
       if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else {
         nextGeneration[i][j] = DEAD;
       }
     }
   }
-  aliveCount = aliveCountTemp;
+
   return nextGeneration;
 }
 
@@ -479,7 +521,7 @@ function appendPatternButtons() {
     button.textContent = `${index + 1}`; // Button names start from the most recent
     button.addEventListener("click", () => {
       // When a button is clicked, set the cells array to the corresponding pattern
-      if(!isAnimating && !isStarted){
+      if (!isAnimating && !isStarted) {
         cells = pattern;
       }
       drawCells(); // Assuming drawCells is a function you have that draws the cells on the screen
