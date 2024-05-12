@@ -159,6 +159,30 @@ async function getThemes() {
   }
 }
 
+// async function selectTheme(themeName) {
+//   try {
+//     const themesList = await getThemes();
+//     if (!themesList) {
+//       return;
+//     }
+
+//     const theme = themesList[themeName];
+//     if (theme) {
+//       const root = document.documentElement;
+//       for (const key in theme) {
+//         root.style.setProperty(key, theme[key]);
+//       }
+//       ALIVE_COLOR = theme["ALIVE_COLOR"];
+//       DEAD_COLOR = theme["DEAD_COLOR"];
+//     } else {
+//       console.error("Theme not found");
+//     }
+//     drawCells();
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
+
 async function selectTheme(themeName) {
   try {
     const themesList = await getThemes();
@@ -167,21 +191,27 @@ async function selectTheme(themeName) {
     }
 
     const theme = themesList[themeName];
-    if (theme) {
+    if (theme)
+    {
       const root = document.documentElement;
       for (const key in theme) {
         root.style.setProperty(key, theme[key]);
       }
+      root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
-    } else {
+    }
+    else
+    {
       console.error("Theme not found");
     }
     drawCells();
-  } catch (error) {
+  }
+  catch (error) {
     console.error("Error:", error);
   }
 }
+
 
 function increaseSpeed() {
   // increase the speed of the animation
