@@ -133,7 +133,7 @@ async function drawPresetPattern(presetName) {
         clearGrid();
         preset.forEach((coord) => {
           let [x, y] = coord;
-          console.log("Coordinates:", x, y); // Log individual coordinates being processed
+          //console.log("Coordinates:", x, y); // Log individual coordinates being processed
           // Ensure coordinates are within the bounds of the cells array
           if (x >= 0 && x < HEIGHT && y >= 0 && y < WIDTH) {
             cells[x][y] = ALIVE;
