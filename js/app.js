@@ -26,6 +26,31 @@ let isWarpEnabled = true;
 let isGridVisible = true;
 let aliveCount = 0;
 
+
+function onResizeAboveThreshold() {
+  const thresholdWidth = 750;
+  const currentWidth = window.innerWidth;
+
+  if (currentWidth >= thresholdWidth) {
+    document.querySelector(".sidenav").style.left = "0px"
+  }else{
+    document.querySelector(".sidenav").style.left = "-255px"
+  }
+}
+onResizeAboveThreshold();
+window.addEventListener('resize', onResizeAboveThreshold);
+
+
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".sidenav").style.left = "0px"
+})
+
+
+
+document.querySelector(".cross").addEventListener("click", () => {
+  document.querySelector(".sidenav").style.left = "-250px"
+})
+
 var slider = document.getElementById("randomVal");
 var output = document.getElementById("randomValOutput");
 output.innerHTML = slider.value;
@@ -509,7 +534,7 @@ function appendPatternButtons() {
     button.textContent = `${index + 1}`; // Button names start from the most recent
     button.addEventListener("click", () => {
       // When a button is clicked, set the cells array to the corresponding pattern
-      if(!isAnimating && !isStarted){
+      if (!isAnimating && !isStarted) {
         cells = pattern;
       }
       drawCells(); // Assuming drawCells is a function you have that draws the cells on the screen
