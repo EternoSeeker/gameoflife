@@ -24,7 +24,6 @@ let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
-let aliveCount = 0;
 
 var slider = document.getElementById("randomVal");
 var output = document.getElementById("randomValOutput");
@@ -100,20 +99,14 @@ function handleClick(i) {
   const row = Math.floor(i / WIDTH);
   const col = i % WIDTH;
   // Toggle cell state
-  if (cells[row][col] === ALIVE) {
-    cells[row][col] = DEAD;
-    aliveCount--; // Decrement count when a cell dies
-  } else {
-    cells[row][col] = ALIVE;
-    aliveCount++; // Increment count when a cell becomes alive
-  }
+  cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
   // Redraw cells
   drawCells();
 }
 
 async function getPresets() {
   try {
-    const response = await fetch("../data/presets.json");
+    const response = await fetch("./data/presets.json");
     const data = await response.json();
     return data;
   } catch (error) {
@@ -124,16 +117,23 @@ async function getPresets() {
 async function drawPresetPattern(presetName) {
   try {
     const presetsList = await getPresets();
+    console.log("Presets List:", presetsList); // Log the entire presets list
+    
     if (!presetsList) {
+      console.log("Presets list is empty or null.");
       return;
     }
+    
     const preset = presetsList[presetName];
+    console.log("Selected Preset:", preset); // Log the selected preset
+    
     if (preset) {
       if (!isStarted && !isAnimating) {
         // Clear the grid
         clearGrid();
         preset.forEach((coord) => {
           let [x, y] = coord;
+          console.log("Coordinates:", x, y); // Log individual coordinates being processed
           // Ensure coordinates are within the bounds of the cells array
           if (x >= 0 && x < HEIGHT && y >= 0 && y < WIDTH) {
             cells[x][y] = ALIVE;
@@ -142,8 +142,10 @@ async function drawPresetPattern(presetName) {
         // Call drawCells to update the grid
         drawCells();
       }
+    } else {
+      console.log("Preset not found.");
     }
-    drawCells();
+    drawCells(); // Redundant call to drawCells, consider removing if not needed for debugging
   } catch (error) {
     console.error("Error:", error);
   }
@@ -151,7 +153,7 @@ async function drawPresetPattern(presetName) {
 
 async function getThemes() {
   try {
-    const response = await fetch("../data/themes.json");
+    const response = await fetch("./data/themes.json");
     const data = await response.json();
     return data;
   } catch (error) {
@@ -196,7 +198,14 @@ function decreaseSpeed() {
 }
 
 function isEmpty() {
-  return (aliveCount==0);
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      if (cells[i][j] === ALIVE) {
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 function startAnimation() {
@@ -240,17 +249,10 @@ function startAnimation() {
 function randomGrid() {
   // if the game is not started and not animating
   // then allow user to set the cells to random state
-  aliveCount = 0;
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
-        if(Math.random() * 100 < randomValue) {
-          cells[i][j] = ALIVE;
-          aliveCount++;
-        }
-        else {
-          cells[i][j] = DEAD;
-        }
+        cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
       }
     }
     drawCells();
@@ -261,7 +263,6 @@ function clearGrid() {
   // if the game is paused
   // then allow user to clear the grid
   if (!isAnimating) {
-    aliveCount = 0;
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = DEAD;
@@ -296,7 +297,7 @@ function toggleGrid() {
 
 function warpOnEdges(cells) {
   const nextGeneration = [];
-  let aliveCountTemp = 0;
+
   for (let i = 0; i < HEIGHT; i++) {
     nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
@@ -318,22 +319,19 @@ function warpOnEdges(cells) {
 
       if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else {
         nextGeneration[i][j] = DEAD;
       }
     }
   }
-  aliveCount = aliveCountTemp;
+
   return nextGeneration;
 }
 
 function noWarpOnEdges(cells) {
   const nextGeneration = [];
-  let aliveCountTemp = 0;
   for (let i = 0; i < HEIGHT; i++) {
     nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
@@ -358,16 +356,14 @@ function noWarpOnEdges(cells) {
 
       if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else if (cells[i][j] === DEAD && numNeighbors === 3) {
         nextGeneration[i][j] = ALIVE;
-        aliveCountTemp++;
       } else {
         nextGeneration[i][j] = DEAD;
       }
     }
   }
-  aliveCount = aliveCountTemp;
+
   return nextGeneration;
 }
 
