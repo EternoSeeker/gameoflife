@@ -26,18 +26,18 @@ let isWarpEnabled = true;
 let isGridVisible = true;
 
 
-function onResizeAboveThreshold() {
-  const thresholdWidth = 750;
-  const currentWidth = window.innerWidth;
+// function onResizeAboveThreshold() {
+//   const thresholdWidth = 750;
+//   const currentWidth = window.innerWidth;
 
-  if (currentWidth >= thresholdWidth) {
-    document.querySelector(".sidenav").style.left = "0px"
-  }else{
-    document.querySelector(".sidenav").style.left = "-255px"
-  }
-}
-onResizeAboveThreshold();
-window.addEventListener('resize', onResizeAboveThreshold);
+//   if (currentWidth >= thresholdWidth) {
+//     document.querySelector(".sidenav").style.left = "0px"
+//   }else{
+//     document.querySelector(".sidenav").style.left = "-255px"
+//   }
+// }
+// onResizeAboveThreshold();
+// window.addEventListener('resize', onResizeAboveThreshold);
 
 
 document.querySelector(".hamburger").addEventListener("click", () => {

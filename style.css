@@ -25,16 +25,23 @@
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
 }
-
+body{
+  background-color: var(--background-col);
+}
 .heading {
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   margin-top: 0.5rem;
-  font-family: "Roboto Mono", monospace;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: var(--primary-color);
+}
+
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-style: normal;
 }
 
 .game {
@@ -48,7 +55,9 @@
   margin-left: 20vw;
   background-color: var(--background-col);
 }
-
+.full-width{
+  margin-left: 0;
+}
 .grid-container {
   display: flex;
   flex-direction: row;
@@ -136,20 +145,36 @@
   transform: translateY(0.1rem);
 }
 
+  #toggleButton {
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1.7rem;
+    background: none;
+    margin: 1px;
+    z-index: 10;
+    position: absolute;
+    left: 10px;
+}
+
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100vh;
   width: 20vw;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
   top: 0;
-  left: 0px;
+  left: 0;
+  transition: left 0.3s ease;
   background-color: var(--border-color1);
   overflow-x: hidden;
   padding-top: 2rem;
 }
+/* Hide the nav bar */
+.hide-nav  {
+  display: none;
+}
 
-.sidenav .cross{
+.sidenav .cross {
   cursor: pointer;
   position: absolute;
   top: 45px;
@@ -280,7 +305,7 @@
     display: block;
   }
 
-  .sidenav .cross{
+  .sidenav .cross {
     cursor: pointer;
     position: absolute;
     top: 13px;
