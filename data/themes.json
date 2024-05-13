@@ -58,5 +58,18 @@
         "--background-col": "#C6DEDE",
         "ALIVE_COLOR": "#006b6b",
         "DEAD_COLOR": "#cafcfc"
+    },
+    "black":{
+        "--primary-color": "#000000",
+        "--theme-color1": "#808080",
+        "--theme-color2": "#808080",
+        "--theme-color3": "#FFFFFF",
+        "--shadow-color1": "#808080",
+        "--shadow-color2": "#000000",
+        "--border-color1": "#000000",
+        "--background-col": "#FFFFFF",
+        "ALIVE_COLOR": "#000000",
+        "DEAD_COLOR": "#FFFFFF"
     }
+
 }
