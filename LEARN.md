@@ -34,9 +34,11 @@ Welcome to the Conway's Game of Life project! This document will guide you on ho
 
 ---
 
-## Commit Conventions
+## 📜 Commit Conventions
 
 For managing commits in this project, we follow the conventional commit specification. You can find more information about the conventions at [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Following these conventions helps maintain a clean and structured commit history.
+
+---
 
 ## Other Resources
 
