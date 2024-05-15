@@ -1,4 +1,10 @@
-# Conway's Game of Life
+<div align="center">
+  <h1>Conway's Game of Life</h1>
+  <p>A cellular automaton devised by British mathematician John Horton Conway in 1970.</p>
+  <img src="https://github.com/HimanshuNarware/Devlabs/assets/83147410/a508cf73-6724-46d3-a66d-6b9a7811bfdd" alt="Conway's Game of Life" height="300">
+</div>
+
+---
 ## What is it?
 
 Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
