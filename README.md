@@ -4,18 +4,17 @@
 </div>
 
 ---
-## What is it?
+## ✨ What is it?
 
 Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
 
-### The Universe
+---
 
-The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, 
+## 🌌 The Universe
 
-Each cell is in one of two possible states, `ALIVE` or `DEAD`. 
+The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells. Each cell is in one of two possible states: `ALIVE` or `DEAD`. Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
 
-Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
-
+---
 ## The Rules
 
 1. Any live cell with fewer than two live neighbors dies, as if by **underpopulation**.
