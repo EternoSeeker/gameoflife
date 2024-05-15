@@ -15,15 +15,16 @@ Conway's Game of Life, or simply "Life," is a cellular automaton devised by Brit
 The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells. Each cell is in one of two possible states: `ALIVE` or `DEAD`. Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
 
 ---
-## The Rules
+## 📜 The Rules
 
 1. Any live cell with fewer than two live neighbors dies, as if by **underpopulation**.
 2. Any live cell with two or three live neighbors lives on to the next generation.
 3. Any live cell with more than three live neighbors dies, as if by **overpopulation**.
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by **reproduction**.
 
-The first generation is created by applying the above rules simultaneously to every cell in the seed, alive or dead; 
-births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one.
+The first generation is created by applying the above rules simultaneously to every cell in the seed, alive or dead; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one.
+
+---
 
 ## The Game
 
