@@ -58,5 +58,18 @@
         "--background-col": "#C6DEDE",
         "ALIVE_COLOR": "#006b6b",
         "DEAD_COLOR": "#cafcfc"
-    }
+    },
+   "neon": {
+    "--primary-color": "#d0ff00",
+    "--theme-color1": "#00cc26",
+    "--theme-color2": "#00b81b",
+    "--theme-color3": "#004640",
+    "--shadow-color1": "#fc0101",
+    "--shadow-color2": "#000000",
+    "--border-color1": "#002628",
+    "--background-col": "#000525",
+    "ALIVE_COLOR": "#9800f5",
+    "DEAD_COLOR": "#80ffff"
+}
+
 }
