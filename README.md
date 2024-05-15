@@ -105,27 +105,25 @@ Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Categ
 
 ---
 
-## The Resources
+## 📚 Resources
 
-#### Spark your interest
+### Spark your interest
 
-https://www.youtube.com/watch?v=R9Plq-D1gEk
+- [The Game of Life | John Conway | TEDxDanubia](https://www.youtube.com/watch?v=R9Plq-D1gEk)
+- [Conway's Game of Life Explained](https://youtu.be/C2vgICfQawE?si=yWqN0BOSBOMaujkI)
 
-https://youtu.be/C2vgICfQawE?si=yWqN0BOSBOMaujkI
+### Try playing it here
 
-#### Also try playing it here
+- [Play Game of Life](https://playgameoflife.com/)
+- [Conway Life](https://conwaylife.com/)
 
-https://playgameoflife.com/
+### Further Reading
 
-https://conwaylife.com/
+- [Conway's Game of Life Wiki](https://conwaylife.com/wiki/)
+- [Wikipedia: Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-#### Further Reading
+---
 
-https://conwaylife.com/wiki/
-
-https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-
-## Footnote
-Conway's Game of Life is a fascinating exploration of life, death, and the rules that govern them. Despite its simplicity, it can lead to complex and beautiful patterns.
-
-Game of Life offers a unique way to explore the unpredictable beauty of life itself.
+<div align="center">
+  <h2>Conway's Game of Life offers a unique way to explore the unpredictable beauty of life itself.</h2>
+</div>
