@@ -42,15 +42,16 @@ The first generation is created by applying the above rules simultaneously to ev
 | `Random` | Randomly initializes the grid with initial randomness as 20% |
 
 
-### The Settings
+### ⚙️ The Settings
 
-<img src="data/game-images/Game-Sidebar.png" height="350">
+![Game Sidebar](data/game-images/Game-Sidebar.png)
 
 | Settings | What are they for? |
 | --- | --- |
 | `Gridlines` | Toggles visibility of the gridlines |
 | `Warp on Edges` | Warps the patterns across the edges - Initially set as true |
 | `Randomness` | Allows you to set custom randomness percent for random initialization |
+
 
 ### The Themes
 
