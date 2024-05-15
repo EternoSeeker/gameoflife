@@ -20,7 +20,7 @@ Welcome to the Conway's Game of Life project! This document will guide you on ho
 5. Your default web browser should automatically open, displaying the Conway's Game of Life project.
 
 
-### Guide to playing the game
+### Guide to Playing the Game
 
 1. Click on the cells to toggle them between alive and dead states.
 
@@ -30,7 +30,9 @@ Welcome to the Conway's Game of Life project! This document will guide you on ho
    - **Clear**: Clear the board.
    - **Random**: Randomly set cells to alive or dead.
 
-#### You can also check the [Step by Step Guide](https://scribehow.com/shared/Customize_Game_of_Life_Simulation_Visuals_and_Patterns__n1LPE5YdTHSDSydMI76yfQ)
+#### For a detailed walkthrough, check the [Step by Step Guide](https://scribehow.com/shared/Customize_Game_of_Life_Simulation_Visuals_and_Patterns__n1LPE5YdTHSDSydMI76yfQ)
+
+---
 
 ## Commit Conventions
 
