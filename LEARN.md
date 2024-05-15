@@ -40,7 +40,7 @@ For managing commits in this project, we follow the conventional commit specific
 
 ---
 
-## Other Resources
+## 🌐 Other Resources
 
 ### Try Playing It Online
 
@@ -53,3 +53,7 @@ For managing commits in this project, we follow the conventional commit specific
 - [Conway's Game of Life - Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 Explore these resources to dive deeper into Conway's Game of Life and enhance your understanding of the game's principles, patterns, and applications.
+
+<div align="center">
+  <h2>Enjoy exploring the intricate world of Conway's Game of Life!</h2>
+</div>
