@@ -2,6 +2,7 @@
 
 Welcome to the Conway's Game of Life project! This document will guide you on how to run the project and provide additional resources to learn more about the game.
 
+---
 ## Running the Project
 
 ### Using a Live Server Extension
