@@ -26,12 +26,11 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ---
 
-## The Game
+## 🎮 The Game
 
+### 🖼️ The Canvas / Grid
 
-### The Canvas / Grid
-
-<img src="data/game-images/Game-Grid.png" height="300">
+![Game Grid](data/game-images/Game-Grid.png)
 
 | Buttons | What they do |
 | --- | --- |
@@ -41,6 +40,7 @@ The first generation is created by applying the above rules simultaneously to ev
 |![](images/Fast-Reverse-Button.svg)| Decreases the speed of the animation |
 | `Clear` | Clears the grid on click, only if the game is not animating at that moment |
 | `Random` | Randomly initializes the grid with initial randomness as 20% |
+
 
 ### The Settings
 
