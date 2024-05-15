@@ -70,14 +70,15 @@ Stores history of patterns that user has played with, up to 5 recent patterns.
 
 ---
 
-## The Presets
+## 🔮 The Presets
+
 ### Glider
 
-The glider is the smallest, most common, and first-discovered spaceship in Game of Life. It travels diagonally across the grid, Gliders are important because they are easily produced (by glider guns and rakes) can be collided with each other to form more complicated patterns, and can be used to transmit information over long distances.
+The glider is the smallest, most common, and first-discovered spaceship in Game of Life. It travels diagonally across the grid. Gliders are important because they are easily produced, can be collided with each other to form more complicated patterns, and can be used to transmit information over long distances.
 
 <div>
-      <img src="data/game-images/Small-Glider.png" alt="Small Glider" height="150">
-      <img src="https://conwaylife.com/w/images/8/81/Glider.gif" height="150">
+  <img src="data/game-images/Small-Glider.png" alt="Small Glider" height="150">
+  <img src="https://conwaylife.com/w/images/8/81/Glider.gif" height="150">
 </div>
 
 ### Big Glider
