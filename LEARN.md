@@ -3,7 +3,7 @@
 Welcome to the Conway's Game of Life project! This document will guide you on how to run the project and provide additional resources to learn more about the game.
 
 ---
-## Running the Project
+## 🚀 Running the Project
 
 ### Using a Live Server Extension
 
@@ -18,6 +18,7 @@ Welcome to the Conway's Game of Life project! This document will guide you on ho
 4. Select the option to "Open with Live Server" or a similar option provided by your extension.
 
 5. Your default web browser should automatically open, displaying the Conway's Game of Life project.
+
 
 ### Guide to playing the game
 
