@@ -1,7 +1,6 @@
 <div align="center">
   <h1>Conway's Game of Life</h1>
   <p>A cellular automaton devised by British mathematician John Horton Conway in 1970.</p>
-  <img src="https://github.com/HimanshuNarware/Devlabs/assets/83147410/a508cf73-6724-46d3-a66d-6b9a7811bfdd" alt="Conway's Game of Life" height="300">
 </div>
 
 ---
