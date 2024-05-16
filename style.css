@@ -2,6 +2,15 @@
   box-sizing: border-box;
   margin: 0;
 }
+ body {
+        font-family: Arial, sans-serif;
+    }
+    .grid-toggle, .warp-toggle, .theme-toggle {
+        margin: 10px 0;
+    }
+    .slider-container {
+        margin: 20px 0;
+    }
 
 :root {
   --primary-color: #0f045a;
