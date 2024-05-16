@@ -51,26 +51,42 @@
       </div>
       <div class="color-themes has-dropdown">Themes</div>
       <div class="themes-container">
-        <div>
-          <input type="radio" id="red-theme" name="theme" onclick="selectTheme('red')" />
-          <label for="red-theme">Red</label>
-        </div>
-        <div>
-          <input type="radio" id="green-theme" name="theme" onclick="selectTheme('green')" />
-          <label for="green-theme">Green</label>
-        </div>
-        <div>
-          <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
-          <label for="blue-theme">Blue</label>
-        </div>
-        <div>
-          <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
-          <label for="purple-theme">Purple</label>
-        </div>
-        <div>
-          <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
-          <label for="darkcyan-theme">Dark Cyan</label>
-        </div>
+        <li>
+          <div>
+            <input type="radio" id="red-theme" name="theme" onclick="selectTheme('red')" />
+            <label for="red-theme">Red</label>
+          </div>
+        </li>
+        <li>
+            <div>
+            <input type="radio" id="green-theme" name="theme" onclick="selectTheme('green')" />
+            <label for="green-theme">Green</label>
+          </div>
+        </li>
+        <li>
+          <div>
+            <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
+            <label for="blue-theme">Blue</label>
+          </div>
+        </li>
+        <li>
+          <div>
+            <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
+            <label for="purple-theme">Purple</label>
+          </div>
+        </li>
+        <li>
+          <div>
+            <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
+            <label for="darkcyan-theme">Dark Cyan</label>
+          </div>
+        </li>
+        <li>
+          <div>
+            <input type="radio" id="black-theme" name="theme" onclick="selectTheme('black')" />
+            <label for="black-theme">Black & White</label>
+          </div>
+        </li>
         <div>
           <input type="radio" id="neon-theme" name="theme" onclick="selectTheme('neon')" />
           <label for="neon-theme">Dark Neon</label>
@@ -96,15 +112,21 @@
       </div>
       <div class="presets has-dropdown">Presets</div>
       <div class="presets-container">
-        <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
-          Glider Gun
-        </button>
-        <button class="presets-list" onclick="drawPresetPattern('smallGlider')">
-          Small Glider
-        </button>
-        <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
-          Big Glider
-        </button>
+        <li>
+          <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
+            Glider Gun
+          </button>
+        </li>
+        <li>
+          <button class="presets-list" onclick="drawPresetPattern('smallGlider')">
+            Small Glider
+          </button>
+        </li>
+        <li>
+          <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
+            Big Glider
+          </button>
+        </li>
       </div>
       <div class="history has-dropdown">History</div>
       <div class="history-container"></div>
