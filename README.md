@@ -1,32 +1,36 @@
-# Conway's Game of Life
-## What is it?
+<div align="center">
+  <h1>Conway's Game of Life</h1>
+  <p>A cellular automaton devised by British mathematician John Horton Conway in 1970.</p>
+</div>
+
+---
+## ✨ What is it?
 
 Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
 
-### The Universe
+---
 
-The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, 
+## 🌌 The Universe
 
-Each cell is in one of two possible states, `ALIVE` or `DEAD`. 
+The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells. Each cell is in one of two possible states: `ALIVE` or `DEAD`. Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
 
-Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
-
-## The Rules
+---
+## 📜 The Rules
 
 1. Any live cell with fewer than two live neighbors dies, as if by **underpopulation**.
 2. Any live cell with two or three live neighbors lives on to the next generation.
 3. Any live cell with more than three live neighbors dies, as if by **overpopulation**.
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by **reproduction**.
 
-The first generation is created by applying the above rules simultaneously to every cell in the seed, alive or dead; 
-births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one.
+The first generation is created by applying the above rules simultaneously to every cell in the seed, alive or dead; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one.
 
-## The Game
+---
 
+## 🎮 The Game
 
-### The Canvas / Grid
+### 🖼️ The Canvas / Grid
 
-<img src="data/game-images/Game-Grid.png" height="300">
+![Game Grid](data/game-images/Game-Grid.png)
 
 | Buttons | What they do |
 | --- | --- |
@@ -37,9 +41,10 @@ births and deaths occur simultaneously, and the discrete moment at which this ha
 | `Clear` | Clears the grid on click, only if the game is not animating at that moment |
 | `Random` | Randomly initializes the grid with initial randomness as 20% |
 
-### The Settings
 
-<img src="data/game-images/Game-Sidebar.png" height="350">
+### ⚙️ The Settings
+
+![Game Sidebar](data/game-images/Game-Sidebar.png)
 
 | Settings | What are they for? |
 | --- | --- |
@@ -47,7 +52,8 @@ births and deaths occur simultaneously, and the discrete moment at which this ha
 | `Warp on Edges` | Warps the patterns across the edges - Initially set as true |
 | `Randomness` | Allows you to set custom randomness percent for random initialization |
 
-### The Themes
+
+### 🎨 The Themes
 
 | Themes | The Colors |
 | --- | --- |
@@ -57,18 +63,22 @@ births and deaths occur simultaneously, and the discrete moment at which this ha
 | Purple | ![#5a045a](https://placehold.co/15x15/5a045a/5a045a.png) ![#B275B2](https://placehold.co/15x15/B275B2/B275B2.png) ![#960396](https://placehold.co/15x15/960396/960396.png) ![#FFEBFF](https://placehold.co/15x15/FFEBFF/FFEBFF.png) ![#7E2A7E](https://placehold.co/15x15/7E2A7E/7E2A7E.png) ![#361036](https://placehold.co/15x15/361036/361036.png) ![#260126](https://placehold.co/15x15/260126/260126.png) ![#DEC6DE](https://placehold.co/15x15/DEC6DE/DEC6DE.png) ![#6b006b](https://placehold.co/15x15/6b006b/6b006b.png) ![#fcafcf](https://placehold.co/15x15/fcafcf/fcafcf.png) |
 | Dark Cyan | ![#045a5a](https://placehold.co/15x15/045a5a/045a5a.png) ![#75B2B2](https://placehold.co/15x15/75B2B2/75B2B2.png) ![#039696](https://placehold.co/15x15/039696/039696.png) ![#EBFFFF](https://placehold.co/15x15/EBFFFF/EBFFFF.png) ![#2A7E7E](https://placehold.co/15x15/2A7E7E/2A7E7E.png) ![#103636](https://placehold.co/15x15/103636/103636.png) ![#012626](https://placehold.co/15x15/012626/012626.png) ![#C6DEDE](https://placehold.co/15x15/C6DEDE/C6DEDE.png) ![#006b6b](https://placehold.co/15x15/006b6b/006b6b.png) ![#cafcfc](https://placehold.co/15x15/cafcfc/cafcfc.png) |
 
-### History
 
-> Also stores history of patterns that user has played with, up to 5 recent patterns
+### ⏳ History
 
-## The Presets
+Stores history of patterns that user has played with, up to 5 recent patterns.
+
+---
+
+## 🔮 The Presets
+
 ### Glider
 
-The glider is the smallest, most common, and first-discovered spaceship in Game of Life. It travels diagonally across the grid, Gliders are important because they are easily produced (by glider guns and rakes) can be collided with each other to form more complicated patterns, and can be used to transmit information over long distances.
+The glider is the smallest, most common, and first-discovered spaceship in Game of Life. It travels diagonally across the grid. Gliders are important because they are easily produced, can be collided with each other to form more complicated patterns, and can be used to transmit information over long distances.
 
 <div>
-      <img src="data/game-images/Small-Glider.png" alt="Small Glider" height="150">
-      <img src="https://conwaylife.com/w/images/8/81/Glider.gif" height="150">
+  <img src="data/game-images/Small-Glider.png" alt="Small Glider" height="150">
+  <img src="https://conwaylife.com/w/images/8/81/Glider.gif" height="150">
 </div>
 
 ### Big Glider
@@ -84,35 +94,36 @@ The big glider was found by Dean Hickerson in December 1989 and was the first kn
 
 The Gosper glider gun is the first known gun, and indeed the first known finite pattern with unbounded growth, found by Bill Gosper in November 1970. It consists of two queen bee shuttles stabilized by two blocks.
 
-<img src="data/game-images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150">
-<img src="https://conwaylife.com/w/images/b/b6/Gosperglidergun.gif" height="150">
+<div>
+  <img src="data/game-images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150">
+  <img src="https://conwaylife.com/w/images/b/b6/Gosperglidergun.gif" height="150">
+</div>
 
+### More Configurations
 
-#### More Configurations
+Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Category:Patterns).
 
-https://conwaylife.com/wiki/Category:Patterns
+---
 
-## The Resources
+## 📚 Resources
 
-#### Spark your interest
+### Spark your interest
 
-https://www.youtube.com/watch?v=R9Plq-D1gEk
+- [The Game of Life | John Conway | TEDxDanubia](https://www.youtube.com/watch?v=R9Plq-D1gEk)
+- [Conway's Game of Life Explained](https://youtu.be/C2vgICfQawE?si=yWqN0BOSBOMaujkI)
 
-https://youtu.be/C2vgICfQawE?si=yWqN0BOSBOMaujkI
+### Try playing it here
 
-#### Also try playing it here
+- [Play Game of Life](https://playgameoflife.com/)
+- [Conway Life](https://conwaylife.com/)
 
-https://playgameoflife.com/
+### Further Reading
 
-https://conwaylife.com/
+- [Conway's Game of Life Wiki](https://conwaylife.com/wiki/)
+- [Wikipedia: Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-#### Further Reading
+---
 
-https://conwaylife.com/wiki/
-
-https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-
-## Footnote
-Conway's Game of Life is a fascinating exploration of life, death, and the rules that govern them. Despite its simplicity, it can lead to complex and beautiful patterns.
-
-Game of Life offers a unique way to explore the unpredictable beauty of life itself.
+<div align="center">
+  <h2>Conway's Game of Life offers a unique way to explore the unpredictable beauty of life itself.</h2>
+</div>
