@@ -187,7 +187,7 @@
   background: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
+  /* cursor: pointer; */
   outline: none;
 }
 
@@ -256,6 +256,9 @@
 .history-container,
 .about-container button:active {
   color: #ffffff;
+}
+.color-label:hover{
+  cursor: pointer;
 }
 
 .randomness-value {
@@ -354,11 +357,11 @@
     background: none;
     width: 100%;
     text-align: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     outline: none;
     align-items: center;
   }
-
+  
   .game {
     width: 100vw;
     margin: 0;
