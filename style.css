@@ -97,9 +97,7 @@ body {
 }
 .controls {
   display: flex;
-  flex-direction: row;
-  min-width: 40vw;
-  height: 5rem;
+  flex-direction: row; /* Ensure buttons are in a row */
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
@@ -139,8 +137,8 @@ body {
   color: var(--primary-color);
   background-color: var(--theme-color3);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
+  margin: 0 0.5rem; /* Add margin to separate buttons */
 }
-
 .clear-button {
   margin-right: 1rem;
 }
@@ -297,6 +295,11 @@ body {
 }
 
 @media screen and (max-width: 750px) {
+  .controls {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: center; /* Center buttons vertically */
+  }
+
   .sidenav {
     height: auto;
     position: absolute;
@@ -366,18 +369,9 @@ body {
 
   .clear-button,
   .random-button {
-    border: solid 0.1rem var(--border-color1);
-    border-radius: 0.6rem;
-    height: calc((100%) / 1.8);
-    width: auto;
-    text-align: center;
-    padding: 0.5rem;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
-    font-size: 0.8rem;
-    color: var(--primary-color);
-    background-color: var(--theme-color3);
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+    padding: 0.3rem 0.8rem; /* Adjust padding for smaller screens */
+    margin: 0.5rem 0; /* Add margin to separate buttons vertically */
   }
 
   .grid-container {
