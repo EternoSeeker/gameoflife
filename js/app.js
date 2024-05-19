@@ -1,5 +1,4 @@
 // const { get } = require("animejs");
-
 const WIDTH = 60;
 const HEIGHT = 30;
 
@@ -9,7 +8,6 @@ let DEAD_COLOR = "#CADCFC";
 const ALIVE = 1;
 const DEAD = 0;
 
-const gridContainer = document.getElementById("main-grid");
 
 // 2D array to hold cell states
 let cells = new Array(HEIGHT);
@@ -501,3 +499,4 @@ function appendPatternButtons() {
     historyContainer.appendChild(button);
   });
 }
+const gridContainer = document.getElementById("main-grid");

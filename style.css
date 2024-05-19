@@ -84,8 +84,17 @@ body {
   justify-content: center;
   align-items: center;
   border: solid 0.001rem var(--border-color1);
+  cursor: pointer;
+  scale: 1;
+  transition:0.2s ease;
 }
-
+.cell:hover{
+  scale: 1.3;
+  border:1px solid white ;
+}
+.cell:active{
+  scale: 1;
+}
 .controls {
   display: flex;
   flex-direction: row;
