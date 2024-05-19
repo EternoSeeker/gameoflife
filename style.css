@@ -38,9 +38,10 @@ body{
   color: var(--primary-color);
 }
 
-.parisienne-regular {
-  font-family: "Parisienne", cursive;
-  font-weight: bold;
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  /* font-weight: 400; */
+  letter-spacing: 1px;
   font-style: normal;
 }
 
