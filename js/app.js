@@ -1,5 +1,4 @@
 // const { get } = require("animejs");
-
 const WIDTH = 60;
 const HEIGHT = 30;
 
@@ -9,7 +8,6 @@ let DEAD_COLOR = "#CADCFC";
 const ALIVE = 1;
 const DEAD = 0;
 
-const gridContainer = document.getElementById("main-grid");
 
 // 2D array to hold cell states
 let cells = new Array(HEIGHT);
@@ -24,6 +22,7 @@ let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
+let aliveCount = 0;
 
 
 function onResizeAboveThreshold() {
@@ -89,8 +88,12 @@ function drawCells() {
   const cellElements = gridContainer.querySelectorAll(".cell");
   cells.forEach((row, i) => {
     row.forEach((cell, j) => {
-      cellElements[i * WIDTH + j].style.backgroundColor =
-        cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
+      const cellDiv = cellElements[i * WIDTH + j];
+      const newColor = cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
+      // Only update if colour changes
+      if (cellDiv.style.backgroundColor !== newColor) {
+          cellDiv.style.backgroundColor = newColor;
+      }
     });
   });
 }
@@ -125,6 +128,10 @@ function handleClick(i) {
   const col = i % WIDTH;
   // Toggle cell state
   cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
+
+  if(cells[row][col] == ALIVE) aliveCount++;
+  else aliveCount--;
+
   // Redraw cells
   drawCells();
 }
@@ -155,6 +162,7 @@ async function drawPresetPattern(presetName) {
           // Ensure coordinates are within the bounds of the cells array
           if (x >= 0 && x < HEIGHT && y >= 0 && y < WIDTH) {
             cells[x][y] = ALIVE;
+            aliveCount++;
           }
         });
         // Call drawCells to update the grid
@@ -244,14 +252,7 @@ function decreaseSpeed() {
 }
 
 function isEmpty() {
-  for (let i = 0; i < HEIGHT; i++) {
-    for (let j = 0; j < WIDTH; j++) {
-      if (cells[i][j] === ALIVE) {
-        return false;
-      }
-    }
-  }
-  return true;
+  return (aliveCount==0);
 }
 
 function startAnimation() {
@@ -278,7 +279,8 @@ function startAnimation() {
     // if not, set it to true
     if (isStarted == false) {
       isStarted = true;
-      storePattern(cells);
+      // storePattern(cells);
+      storePattern(cells, aliveCount);
       appendPatternButtons();
     }
     // change the icon according to the state
@@ -295,10 +297,12 @@ function startAnimation() {
 function randomGrid() {
   // if the game is not started and not animating
   // then allow user to set the cells to random state
+  aliveCount = 0;
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
+        if(cells[i][j] == ALIVE) aliveCount++;
       }
     }
     drawCells();
@@ -309,6 +313,7 @@ function clearGrid() {
   // if the game is paused
   // then allow user to clear the grid
   if (!isAnimating) {
+    aliveCount = 0;
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = DEAD;
@@ -341,85 +346,49 @@ function toggleGrid() {
   });
 }
 
-function warpOnEdges(cells) {
-  const nextGeneration = [];
+function countNeighbors(cells, x, y, wrapEdges) {
+  const positions = [
+    [-1,-1], [-1, 0], [-1, 1],
+    [ 0,-1],          [ 0, 1],
+    [ 1,-1], [ 1, 0], [ 1, 1]
+  ];
 
-  for (let i = 0; i < HEIGHT; i++) {
-    nextGeneration.push([]);
-    for (let j = 0; j < WIDTH; j++) {
-      const left = (j - 1 + WIDTH) % WIDTH;
-      const right = (j + 1) % WIDTH;
-      const above = (i - 1 + HEIGHT) % HEIGHT;
-      const below = (i + 1) % HEIGHT;
-
-      let numNeighbors = 0;
-      // Check all 8 neighbors
-      if (cells[above][left] === ALIVE) numNeighbors++;
-      if (cells[above][j] === ALIVE) numNeighbors++;
-      if (cells[above][right] === ALIVE) numNeighbors++;
-      if (cells[i][left] === ALIVE) numNeighbors++;
-      if (cells[i][right] === ALIVE) numNeighbors++;
-      if (cells[below][left] === ALIVE) numNeighbors++;
-      if (cells[below][j] === ALIVE) numNeighbors++;
-      if (cells[below][right] === ALIVE) numNeighbors++;
-
-      if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
-        nextGeneration[i][j] = ALIVE;
-      } else if (cells[i][j] === DEAD && numNeighbors === 3) {
-        nextGeneration[i][j] = ALIVE;
-      } else {
-        nextGeneration[i][j] = DEAD;
-      }
+  return positions.reduce((acc, [dx, dy]) => {
+    const nx = wrapEdges ? (x + dx + HEIGHT) % HEIGHT : x + dx;
+    const ny = wrapEdges ? (y + dy + WIDTH) % WIDTH : y + dy;
+    if (nx >= 0 && nx < HEIGHT && ny >= 0 && ny < WIDTH && cells[nx][ny] === ALIVE) {
+      acc++;
     }
-  }
-
-  return nextGeneration;
+    return acc;
+  }, 0);
 }
 
-function noWarpOnEdges(cells) {
-  const nextGeneration = [];
+function calculateNextGeneration(cells, wrapEdges) {
+  const nextGeneration = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(DEAD));
+  let aliveCountTemp = 0;
+
   for (let i = 0; i < HEIGHT; i++) {
-    nextGeneration.push([]);
     for (let j = 0; j < WIDTH; j++) {
-      const left = j - 1;
-      const right = j + 1;
-      const above = i - 1;
-      const below = i + 1;
+      const numNeighbors = countNeighbors(cells, i, j, wrapEdges);
 
-      let numNeighbors = 0;
-      // Check all 8 neighbors
-      if (j > 0 && cells[i][left] === ALIVE) numNeighbors++;
-      if (j < WIDTH - 1 && cells[i][right] === ALIVE) numNeighbors++;
-      if (i > 0 && cells[above][j] === ALIVE) numNeighbors++;
-      if (i < HEIGHT - 1 && cells[below][j] === ALIVE) numNeighbors++;
-      if (i > 0 && j > 0 && cells[above][left] === ALIVE) numNeighbors++;
-      if (i > 0 && j < WIDTH - 1 && cells[above][right] === ALIVE)
-        numNeighbors++;
-      if (i < HEIGHT - 1 && j > 0 && cells[below][left] === ALIVE)
-        numNeighbors++;
-      if (i < HEIGHT - 1 && j < WIDTH - 1 && cells[below][right] === ALIVE)
-        numNeighbors++;
-
-      if (cells[i][j] === ALIVE && (numNeighbors === 2 || numNeighbors === 3)) {
+      //Rule 1: Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+      //Rule 2: Any live cell with two or three live neighbors lives on to the next generation.
+      //Rule 3: Any live cell with more than three live neighbors dies, as if by overpopulation.
+      //Rule 4: Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+      const isAlive = (cells[i][j] === ALIVE);
+      if ((isAlive && (numNeighbors === 2 || numNeighbors === 3)) || (!isAlive && numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
-      } else if (cells[i][j] === DEAD && numNeighbors === 3) {
-        nextGeneration[i][j] = ALIVE;
-      } else {
-        nextGeneration[i][j] = DEAD;
+        aliveCountTemp++;
       }
     }
   }
-
+  aliveCount = aliveCountTemp;
   return nextGeneration;
 }
 
 function animate() {
   // Update cells with the new generation
-  if (isWarpEnabled) {
-    cells = warpOnEdges(cells);
-  } else {
-    cells = noWarpOnEdges(cells);
-  }
+  cells = calculateNextGeneration(cells, isWarpEnabled);
   setTimeout(() => {
     drawCells(); // Draw cells after a delay
     if (isAnimating) {
@@ -523,9 +492,11 @@ function appendPatternButtons() {
       // When a button is clicked, set the cells array to the corresponding pattern
       if (!isAnimating && !isStarted) {
         cells = pattern;
+        aliveCount = (cells.flat().filter(cell => cell === ALIVE).length);
       }
       drawCells(); // Assuming drawCells is a function you have that draws the cells on the screen
     });
     historyContainer.appendChild(button);
   });
 }
+const gridContainer = document.getElementById("main-grid");
