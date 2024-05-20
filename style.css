@@ -34,18 +34,26 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
 }
-
+body{
+  background-color: var(--background-col);
+}
 .heading {
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   margin-top: 0.5rem;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: var(--primary-color);
   text-shadow: 2px 2px 4px var(--shadow-color1);
   transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  /* font-weight: 400; */
+  letter-spacing: 1px;
+  font-style: normal;
 }
 
 .game {
@@ -60,7 +68,9 @@ body {
   background-color: var(--background-col);
   transition: background-color 0.5s ease;
 }
-
+.full-width{
+  margin-left: 0;
+}
 .grid-container {
   display: flex;
   flex-direction: row;
@@ -161,18 +171,32 @@ body {
 .icon:active {
   transform: translateY(0.1rem);
 }
-
+#toggleButton {
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1.7rem;
+    background: none;
+    margin: 1px;
+    z-index: 10;
+    position: absolute;
+    left: 10px;
+}
 .sidenav {
   height: 100vh;
   width: 20vw;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
   top: 0;
-  left: 0px;
+  left: 0;
+  transition: left 0.3s ease;
   background-color: var(--border-color1);
   overflow-x: hidden;
   padding-top: 2rem;
   transition: width 0.3s ease;
+}
+/* Hide the nav bar */
+.hide-nav  {
+  display: none;
 }
 
 .sidenav .cross {
