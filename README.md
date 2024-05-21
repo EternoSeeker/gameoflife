@@ -128,3 +128,51 @@ Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Categ
 <div align="center">
   <h2>Conway's Game of Life offers a unique way to explore the unpredictable beauty of life itself.</h2>
 </div>
+
+<!-- Open Source Programs -->
+  <div>
+    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" >Open Source Programs</h2>
+  </div>
+
+  This project is part of GirlScript Summer of Code. We welcome contributions from the community to help enhance gameoflife.
+  
+![gssoc](https://github.com/d1vyadharsh1n1/Flipkart_Clone/assets/146218077/dd4ffa29-2d52-47ad-9967-d0d6f8aff717)
+
+<hr>
+
+<!-- Code of conduct -->
+<div>
+<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
+</div>
+
+Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+<hr>
+
+<!-- License -->
+<div>
+<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Page%20with%20Curl.png" width="35" height="35"> License</h2>
+</div>
+
+This project is licensed under the [GPL-3.0 License](LICENSE.md).
+
+<hr>
+
+## Contact Us
+<div>
+<a href="https://www.linkedin.com/in/shriharimagar/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/shriharimagar/" height="30" width="40" /></a>
+</div>
+
+<hr>
+ <!-- Cotributors -->
+<div>
+  <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h2>
+</div>
+
+Thank you for contributing to our project! Your help is greatly appreciated in making gameoflife even better. 😊
+
+<center>
+<a href="https://github.com/EternoSeeker/gameoflife/contributors">
+  <img src="https://contrib.rocks/image?repo=EternoSeeker/gameoflife" />
+</a>
+</center>
