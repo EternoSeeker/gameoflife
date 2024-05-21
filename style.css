@@ -166,7 +166,9 @@
 .themes-container div,
 .presets,
 .history,
-.about {
+.about,
+.game-rules,
+.game-rules-container{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
@@ -220,7 +222,8 @@
 .color-themes,
 .presets,
 .history
-.about {
+.about,
+.game-rules{
   font-size: 1.2rem;
 }
 
@@ -237,7 +240,8 @@
 .themes-container,
 .presets-container,
 .history-container,
-.about-container {
+.about-container,
+.game-rules-container{
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
@@ -336,7 +340,8 @@
   .themes-container div,
   .presets,
   .history,
-  .about {
+  .about,
+  .game-rules{
     padding: 0.6rem 0.4rem 0.6rem 1rem;
     text-decoration: none;
     font-size: 0.8rem;
