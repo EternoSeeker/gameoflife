@@ -51,46 +51,62 @@
       </div>
       <div class="color-themes has-dropdown">Themes</div>
       <div class="themes-container">
+        <ol>
         <li>
           <div>
             <input type="radio" id="red-theme" name="theme" onclick="selectTheme('red')" />
             <label for="red-theme">Red</label>
           </div>
         </li>
+      </ol>
+      <ol>
         <li>
             <div>
             <input type="radio" id="green-theme" name="theme" onclick="selectTheme('green')" />
             <label for="green-theme">Green</label>
           </div>
         </li>
+      </ol>
+      <ol>
         <li>
-          <div>
-            <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
-            <label for="blue-theme">Blue</label>
-          </div>
-        </li>
+        <div>
+          <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
+          <label for="blue-theme">Blue</label>
+        </div>
+      </li>
+    </ol>
+    <ol> 
         <li>
           <div>
             <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
             <label for="purple-theme">Purple</label>
           </div>
         </li>
+      </ol> 
+      <ol>
         <li>
           <div>
             <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
             <label for="darkcyan-theme">Dark Cyan</label>
           </div>
         </li>
+      </ol>
+      <ol>
         <li>
           <div>
             <input type="radio" id="black-theme" name="theme" onclick="selectTheme('black')" />
             <label for="black-theme">Black & White</label>
           </div>
         </li>
+      </ol>
+      <ol>
+      <li>
         <div>
           <input type="radio" id="neon-theme" name="theme" onclick="selectTheme('neon')" />
           <label for="neon-theme">Dark Neon</label>
         </div>
+      </li>
+    </ol>
         <div>
           <button id="gradient-theme-btn" class="has-dropdown">
             Switch to Gradient Theme
@@ -112,41 +128,55 @@
       </div>
       <div class="presets has-dropdown">Presets</div>
       <div class="presets-container">
+        <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
             Glider Gun
           </button>
         </li>
+      </ol>
+      <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('smallGlider')">
             Small Glider
           </button>
         </li>
+      </ol>
+      <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
             Big Glider
           </button>
         </li>
+      </ol>
+      <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('Pulsar')">
             Pulsar
           </button>
         </li>
+      </ol>
+      <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('CircleOfFire')">
             Circle of Fire
           </button>
         </li>
+      </ol>
+      <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('Quadpole')">
             Quadpole
           </button>
         </li>
+      </ol>
+      <ol>
         <li>
           <button class="presets-list" onclick="drawPresetPattern('Spider')">
             Spider
           </button>
         </li>
+      </ol>
       </div>
       <div class="history has-dropdown">History</div>
       <div class="history-container"></div>
