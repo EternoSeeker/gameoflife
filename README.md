@@ -34,10 +34,10 @@ The first generation is created by applying the above rules simultaneously to ev
 
 | Buttons | What they do |
 | --- | --- |
-| ![](images/Play-Button.svg) | Starts the animation after you've set the initial pattern |
-| ![](images/Pause-Button.svg) | Pauses the animation |
-|![](images/Fast-Forward-Button.svg)| Increases the speed of the animation |
-|![](images/Fast-Reverse-Button.svg)| Decreases the speed of the animation |
+|   ▶️   | Starts the animation after you've set the initial pattern |
+|   ⏸️   | Pauses the animation |
+|   ⏩   | Increases the speed of the animation |
+|   ⏪   | Decreases the speed of the animation |
 | `Clear` | Clears the grid on click, only if the game is not animating at that moment |
 | `Random` | Randomly initializes the grid with initial randomness as 20% |
 
