@@ -26,7 +26,7 @@
 <body>
   <div class="game-settings">
     <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
-    <div class="sidenav" id="sideNav">
+    <div class="sidenav fromLeft" id="sideNav">
       <div class="other-settings">Settings</div>
 
       <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
@@ -35,7 +35,7 @@
             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg></div>
 
-      <div class="other-settings-container">
+      <div class="other-settings-container fromTop">
         <div class="grid-toggle">
           <input type="checkbox" checked id="grid-toggle" class="grid-checkbox" onclick="toggleGrid()" />
           <label for="grid-toggle">Gridlines</label>
@@ -49,8 +49,9 @@
           <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
         </p>
       </div>
+      <div class="fromTop">
       <div class="color-themes has-dropdown">Themes</div>
-      <div class="themes-container">
+      <div class="themes-container fromTop">
         <li>
           <div>
             <input type="radio" id="red-theme" name="theme" onclick="selectTheme('red')" />
@@ -111,7 +112,7 @@
           </div>
       </div>
       <div class="presets has-dropdown">Presets</div>
-      <div class="presets-container">
+      <div class="presets-container fromTop">
         <li>
           <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
             Glider Gun
@@ -153,9 +154,9 @@
       <div class="about has-dropdown" onclick="redirectToReadme()">
         <span>About</span>
     </div>
+  </div>
       <div class="about-container"></div>
     </div>
-
   </div>
   <div class="game">
     <div class="hamburger">
@@ -165,11 +166,11 @@
         <path d="M4 19L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </div>
-    <div class="heading great-vibes-regular">Conway's Game of Life</div>
-    <div class="grid-container">
+    <div class="heading great-vibes-regular fromTop">Conway's Game of Life</div>
+    <div class="grid-container zoomIn">
       <div id="main-grid" class="main-grid"></div>
     </div>
-    <div class="controls">
+    <div class="controls fromBottom">
       <button class="clear-button" id="clear-button" onclick="clearGrid()">
         Clear
       </button>
