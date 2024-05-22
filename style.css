@@ -460,3 +460,38 @@ body{
     padding-bottom: 0.7rem;
   }
 }
+
+/* -----------  Contact us section   ---------------------------*/
+.socialIcons {
+  display: none;
+  justify-content: center;
+  background: transparent;
+  border: 2px;
+  border-color: #a254e6;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fff;
+  margin: 10px; /* Reduced margin */
+  border-radius: 50%;
+}
+.socialIcons a img {
+  width: 20px; /* Adjusted icon size */
+  height: 20px;
+}
+
+.socialIcons a:hover {
+  background-color: #4f66c1;
+  transition: 0.5s;
+}
+
+.socialIcons a:hover img {
+  filter: invert(1); /* Invert icon color on hover */
+  transition: 0.5s;
+
+}
+/*-----------------------------------------*/
