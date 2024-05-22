@@ -28,7 +28,6 @@
     <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
     <div class="sidenav" id="sideNav">
       <div class="other-settings">Settings</div>
-
       <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
           color="#ffffff" fill="none">
           <path d="M19.0005 4.99988L5.00045 18.9999M5.00045 4.99988L19.0005 18.9999" stroke="currentColor"
@@ -54,16 +53,16 @@
         <ol>
         <li>
           <div>
-            <input type="radio" id="red-theme" name="theme" onclick="selectTheme('red')" />
-            <label for="red-theme">Red</label>
+            <input type="radio" class="color-label" id="red-theme" name="theme" onclick="selectTheme('red')" />
+            <label for="red-theme" class="color-label">Red</label>
           </div>
         </li>
       </ol>
       <ol>
         <li>
             <div>
-            <input type="radio" id="green-theme" name="theme" onclick="selectTheme('green')" />
-            <label for="green-theme">Green</label>
+            <input type="radio" class="color-label" id="green-theme" name="theme" onclick="selectTheme('green')" />
+            <label for="green-theme" class="color-label">Green</label>
           </div>
         </li>
       </ol>
@@ -78,32 +77,32 @@
     <ol> 
         <li>
           <div>
-            <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
-            <label for="purple-theme">Purple</label>
+            <input type="radio" class="color-label" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
+            <label for="purple-theme" class="color-label">Purple</label>
           </div>
         </li>
       </ol> 
       <ol>
         <li>
           <div>
-            <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
-            <label for="darkcyan-theme">Dark Cyan</label>
+            <input type="radio" class="color-label" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
+            <label for="darkcyan-theme" class="color-label">Dark Cyan</label>
           </div>
         </li>
       </ol>
       <ol>
         <li>
           <div>
-            <input type="radio" id="black-theme" name="theme" onclick="selectTheme('black')" />
-            <label for="black-theme">Black & White</label>
+            <input type="radio" class="color-label" id="black-theme" name="theme" onclick="selectTheme('black')" />
+            <label for="black-theme" class="color-label">Black & White</label>
           </div>
         </li>
       </ol>
       <ol>
       <li>
         <div>
-          <input type="radio" id="neon-theme" name="theme" onclick="selectTheme('neon')" />
-          <label for="neon-theme">Dark Neon</label>
+          <input type="radio" id="neon-theme" class="color-label" name="theme" onclick="selectTheme('neon')" />
+          <label for="neon-theme" class="color-label">Dark Neon</label>
         </div>
       </li>
     </ol>
@@ -177,15 +176,30 @@
           </button>
         </li>
       </ol>
-      </div>
+      </div> 
+<!-- ----------------------   Contact us section      ---------------------------------------------------- -->
+<div class="color-themes has-dropdown">Contact Us</div>
+
+<div class="socialIcons">
+  <a href="mailto:shriharimagar1@gmail.com" ><img  src="https://cdn-icons-png.flaticon.com/128/732/732200.png"></a>
+    <a href="https://github.com/EternoSeeker"><img  src="https://cdn-icons-png.flaticon.com/128/733/733553.png"></a>
+  <a href="https://www.linkedin.com/in/shriharimagar/"><img src="https://cdn-icons-png.flaticon.com/128/2504/2504923.png"></a>
+  <a href="https://leetcode.com/EternoSeeker/"><img  src="https://cdn-icons-png.flaticon.com/128/1828/1828231.png"></a>
+</div>
+<!-- ----------------------------------------------------------------------------- -->
       <div class="history has-dropdown">History</div>
       <div class="history-container"></div>
+      <div class="game-rules has-dropdown">
+        <button class="game-rules has-dropdown" style="font-size: 1.24rem; margin-left:-1.7rem; padding-top:3px;" onclick="location.href='gamerules.html'">
+          Game Rules
+        </button>
+       
+      </div>
       <div class="about has-dropdown" onclick="redirectToReadme()">
         <span>About</span>
     </div>
       <div class="about-container"></div>
     </div>
-
   </div>
   <div class="game">
     <div class="hamburger">

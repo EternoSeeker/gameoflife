@@ -215,7 +215,9 @@ body{
 .themes-container div,
 .presets,
 .history,
-.about {
+.about,
+.game-rules,
+.game-rules-container{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
@@ -227,7 +229,7 @@ body{
   background: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
+  /* cursor: pointer; */
   outline: none;
   transition: color 0.3s ease;
 }
@@ -267,8 +269,9 @@ body{
 .other-settings,
 .color-themes,
 .presets,
-.history,
-.about {
+.history
+.about,
+.game-rules{
   font-size: 1.2rem;
 }
 
@@ -284,7 +287,8 @@ body{
 .themes-container,
 .presets-container,
 .history-container,
-.about-container {
+.about-container,
+.game-rules-container{
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
@@ -294,6 +298,9 @@ body{
 .history-container,
 .about-container button:active {
   color: #ffffff;
+}
+.color-label:hover{
+  cursor: pointer;
 }
 
 .randomness-value {
@@ -378,7 +385,39 @@ body{
     outline: none;
     align-items: center;
   }
+  .about a {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+  }
 
+  .sidenav button,
+  .other-settings,
+  .other-settings-container div,
+  .presets-container div,
+  .color-themes,
+  .themes-container div,
+  .presets,
+  .history,
+  .about,
+  .game-rules{
+    padding: 0.6rem 0.4rem 0.6rem 1rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+  }
+  
+  .game {
+    width: 100vw;
+    margin: 0;
+  }
   .controls {
     display: flex;
     flex-direction: column;
@@ -421,3 +460,38 @@ body{
     padding-bottom: 0.7rem;
   }
 }
+
+/* -----------  Contact us section   ---------------------------*/
+.socialIcons {
+  display: none;
+  justify-content: center;
+  background: transparent;
+  border: 2px;
+  border-color: #a254e6;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fff;
+  margin: 10px; /* Reduced margin */
+  border-radius: 50%;
+}
+.socialIcons a img {
+  width: 20px; /* Adjusted icon size */
+  height: 20px;
+}
+
+.socialIcons a:hover {
+  background-color: #4f66c1;
+  transition: 0.5s;
+}
+
+.socialIcons a:hover img {
+  filter: invert(1); /* Invert icon color on hover */
+  transition: 0.5s;
+
+}
+/*-----------------------------------------*/
