@@ -215,7 +215,9 @@ body{
 .themes-container div,
 .presets,
 .history,
-.about {
+.about,
+.game-rules,
+.game-rules-container{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
@@ -267,8 +269,9 @@ body{
 .other-settings,
 .color-themes,
 .presets,
-.history,
-.about {
+.history
+.about,
+.game-rules{
   font-size: 1.2rem;
 }
 
@@ -284,7 +287,8 @@ body{
 .themes-container,
 .presets-container,
 .history-container,
-.about-container {
+.about-container,
+.game-rules-container{
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
@@ -381,12 +385,11 @@ body{
     outline: none;
     align-items: center;
   }
-
   .about a {
     text-decoration: none; 
     color: inherit; 
     cursor: pointer; 
-}
+  }
 
   .sidenav button,
   .other-settings,
@@ -396,7 +399,8 @@ body{
   .themes-container div,
   .presets,
   .history,
-  .about {
+  .about,
+  .game-rules{
     padding: 0.6rem 0.4rem 0.6rem 1rem;
     text-decoration: none;
     font-size: 0.8rem;
@@ -405,7 +409,7 @@ body{
     background: none;
     width: 100%;
     text-align: center;
-    /* cursor: pointer; */
+    cursor: pointer;
     outline: none;
     align-items: center;
   }
