@@ -229,7 +229,7 @@ body{
   background: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
+  /* cursor: pointer; */
   outline: none;
   transition: color 0.3s ease;
 }
@@ -298,6 +298,9 @@ body{
 .history-container,
 .about-container button:active {
   color: #ffffff;
+}
+.color-label:hover{
+  cursor: pointer;
 }
 
 .randomness-value {
@@ -382,8 +385,11 @@ body{
     outline: none;
     align-items: center;
   }
-
-
+  .about a {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+  }
 
   .sidenav button,
   .other-settings,
@@ -405,6 +411,12 @@ body{
     text-align: center;
     cursor: pointer;
     outline: none;
+    align-items: center;
+  }
+  
+  .game {
+    width: 100vw;
+    margin: 0;
   }
   .controls {
     display: flex;
