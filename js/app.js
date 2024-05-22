@@ -25,6 +25,7 @@ let isGridVisible = true;
 let aliveCount = 0;
 
 
+
 function onResizeAboveThreshold() {
   const thresholdWidth = 750;
   const currentWidth = window.innerWidth;
@@ -223,9 +224,24 @@ async function selectTheme(themeName) {
       for (const key in theme) {
         root.style.setProperty(key, theme[key]);
       }
+      
+
       root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
+      let reverse_button = document.getElementById('fast-reverse-button')
+      let forward = document.getElementById('fast-forward-button')
+      let pause_button = document.getElementById('play-pause-button')
+
+      if(theme["DEAD_COLOR"]=="#80ffff"){
+        reverse_button.innerHTML="<img class=icon id=fast-reverse-icon src=./images/Fast-Reverse-Button-Dark.svg alt=Play />"
+        forward.innerHTML="<img class=icon id=fast-forward-icon src=./images/Fast-Forward-Button-Dark.svg alt=Fast />"
+        pause_button.innerHTML="<img class=icon id=play-pause-icon src=./images/Play-Button-Dark.svg alt=Slow />"
+      }else{
+        reverse_button.innerHTML="<img class=icon id=fast-reverse-icon src=./images/Fast-Reverse-Button.svg alt=Play />"
+        forward.innerHTML="<img class=icon id=fast-forward-icon src=./images/Fast-Forward-Button.svg alt=Fast />"
+        pause_button.innerHTML="<img class=icon id=play-pause-icon src=./images/Play-Button.svg alt=Slow />"
+      }
     }
     else
     {
@@ -264,7 +280,7 @@ function startAnimation() {
   }
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
-    playPauseIcon.src = "./images/Play-Button.svg";
+    playPauseIcon.src = DEAD_COLOR=="#80ffff"?"./images/Play-Button-Dark.svg": "./images/Play-Button.svg";
     if (!areEventListenersAdded) {
       addEventListenersToCells();
       areEventListenersAdded = true;
@@ -284,9 +300,16 @@ function startAnimation() {
       appendPatternButtons();
     }
     // change the icon according to the state
-    playPauseIcon.src = isAnimating
-      ? "./images/Pause-Button.svg"
-      : "./images/Play-Button.svg";
+    if(DEAD_COLOR=="#80ffff"){
+      console.log('ggggg')
+      playPauseIcon.src=isAnimating
+      ? "./images/Pause-Button-Dark.svg"
+      : "./images/Play-Button-Dark.svg";
+    }else{
+      playPauseIcon.src = isAnimating
+        ? "./images/Pause-Button.svg"
+        : "./images/Play-Button.svg";
+    }
   }
   if (isAnimating) {
     animate();

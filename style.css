@@ -227,7 +227,7 @@ body{
   background: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
+  /* cursor: pointer; */
   outline: none;
   transition: color 0.3s ease;
 }
@@ -294,6 +294,9 @@ body{
 .history-container,
 .about-container button:active {
   color: #ffffff;
+}
+.color-label:hover{
+  cursor: pointer;
 }
 
 .randomness-value {
@@ -379,6 +382,38 @@ body{
     align-items: center;
   }
 
+  .about a {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+}
+
+  .sidenav button,
+  .other-settings,
+  .other-settings-container div,
+  .presets-container div,
+  .color-themes,
+  .themes-container div,
+  .presets,
+  .history,
+  .about {
+    padding: 0.6rem 0.4rem 0.6rem 1rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: center;
+    /* cursor: pointer; */
+    outline: none;
+    align-items: center;
+  }
+  
+  .game {
+    width: 100vw;
+    margin: 0;
+  }
   .controls {
     display: flex;
     flex-direction: column;
