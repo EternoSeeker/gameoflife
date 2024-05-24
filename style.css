@@ -204,7 +204,7 @@ body{
   position: absolute;
   top: 45px;
   right: 15px;
-  display: none;
+  display: block;
 }
 
 .sidenav button,
@@ -333,7 +333,7 @@ body{
 
   .sidenav {
     height: auto;
-    position: absolute;
+    position: sticky;
     padding-top: 0.5rem;
     left: -250px;
     height: 100vh;
@@ -345,7 +345,7 @@ body{
     position: absolute;
     left: 10px;
     top: 5px;
-    display: block;
+    display: none;
   }
 
   .sidenav .cross {
