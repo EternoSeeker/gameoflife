@@ -25,6 +25,7 @@ let isGridVisible = true;
 let aliveCount = 0;
 
 
+
 function onResizeAboveThreshold() {
   const thresholdWidth = 750;
   const currentWidth = window.innerWidth;
@@ -46,7 +47,7 @@ document.querySelector(".hamburger").addEventListener("click", () => {
 
 
 document.querySelector(".cross").addEventListener("click", () => {
-  document.querySelector(".sidenav").style.left = "-250px"
+  document.querySelector(".sidenav").style.left = "0px"
 })
 
 var slider = document.getElementById("randomVal");
@@ -217,26 +218,55 @@ async function selectTheme(themeName) {
     }
 
     const theme = themesList[themeName];
-    if (theme)
-    {
+    if (theme) {
       const root = document.documentElement;
+      const backgroundContainer = document.body; // Change this to the appropriate container if needed
+
       for (const key in theme) {
         root.style.setProperty(key, theme[key]);
       }
+
+      // Check if the theme contains a gradient
+      if (theme["background-image"]) {
+        backgroundContainer.style.backgroundImage = theme["background-image"];
+        backgroundContainer.style.backgroundColor = ''; // Reset background color
+      } else {
+        backgroundContainer.style.backgroundImage = 'none'; // Remove gradient
+        backgroundContainer.style.backgroundColor = theme["background-color"]; // Apply solid color
+        var container = document.querySelector('.game');
+        container.style.background = '';
+      }
+
       root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
-    }
-    else
-    {
+      let reverse_button = document.getElementById('fast-reverse-button');
+      let forward = document.getElementById('fast-forward-button');
+      let pause_button = document.getElementById('play-pause-button');
+
+      if (theme["DEAD_COLOR"] == "#80ffff") {
+        reverse_button.innerHTML = "<img class=icon id=fast-reverse-icon src=./images/Fast-Reverse-Button-Dark.svg alt=Play />";
+        forward.innerHTML = "<img class=icon id=fast-forward-icon src=./images/Fast-Forward-Button-Dark.svg alt=Fast />";
+        pause_button.innerHTML = "<img class=icon id=play-pause-icon src=./images/Play-Button-Dark.svg alt=Slow />";
+      } else {
+        reverse_button.innerHTML = "<img class=icon id=fast-reverse-icon src=./images/Fast-Reverse-Button.svg alt=Play />";
+        forward.innerHTML = "<img class=icon id=fast-forward-icon src=./images/Fast-Forward-Button.svg alt=Fast />";
+        pause_button.innerHTML = "<img class=icon id=play-pause-icon src=./images/Play-Button.svg alt=Slow />";
+      }
+
+      // If switching from a gradient theme to a solid color theme, reset the background
+      if (!theme["background-image"]) {
+        backgroundContainer.style.backgroundImage = 'none';
+      }
+    } else {
       console.error("Theme not found");
     }
     drawCells();
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error:", error);
   }
 }
+
 
 
 function increaseSpeed() {
@@ -264,7 +294,7 @@ function startAnimation() {
   }
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
-    playPauseIcon.src = "./images/Play-Button.svg";
+    playPauseIcon.src = DEAD_COLOR=="#80ffff"?"./images/Play-Button-Dark.svg": "./images/Play-Button.svg";
     if (!areEventListenersAdded) {
       addEventListenersToCells();
       areEventListenersAdded = true;
@@ -284,9 +314,16 @@ function startAnimation() {
       appendPatternButtons();
     }
     // change the icon according to the state
-    playPauseIcon.src = isAnimating
-      ? "./images/Pause-Button.svg"
-      : "./images/Play-Button.svg";
+    if(DEAD_COLOR=="#80ffff"){
+      console.log('ggggg')
+      playPauseIcon.src=isAnimating
+      ? "./images/Pause-Button-Dark.svg"
+      : "./images/Play-Button-Dark.svg";
+    }else{
+      playPauseIcon.src = isAnimating
+        ? "./images/Pause-Button.svg"
+        : "./images/Play-Button.svg";
+    }
   }
   if (isAnimating) {
     animate();
