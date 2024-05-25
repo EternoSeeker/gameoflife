@@ -494,4 +494,13 @@ body{
   transition: 0.5s;
 
 }
+.warp-on-edges:hover{
+    color:white;
+}
+.grid-toggle:hover{
+  color:white;
+}
+.randomness-container:hover{
+  color:white;
+}
 /*-----------------------------------------*/
