@@ -132,14 +132,24 @@ body{
   cursor: pointer;
   scale: 1;
   transition:0.2s ease;
+  border-radius:50%;
 }
 .cell:hover{
   scale: 1.3;
   border:1px solid white ;
+  z-index: 1;
 }
 .cell:active{
   scale: 1;
 }
+
+.controls input{
+  height: auto;
+  width:auto;
+  border-radius: 6px;
+  gap: 10px;
+}
+
 .controls {
   display: flex;
   flex-direction: row; /* Ensure buttons are in a row */
@@ -157,6 +167,7 @@ body{
   cursor: pointer;
   outline: none;
   transition: transform 0.2s ease;
+  font-size: 1.1rem;
 }
 
 .control-button:hover {
@@ -257,6 +268,7 @@ body{
   text-decoration: none;
   font-size: 1rem;
   color: #818181;
+  cursor: pointer;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;

@@ -1,6 +1,6 @@
 // const { get } = require("animejs");
-const WIDTH = 60;
-const HEIGHT = 30;
+let WIDTH = 60;
+let HEIGHT = 30;
 
 let ALIVE_COLOR = "#00246B";
 let DEAD_COLOR = "#CADCFC";
@@ -36,8 +36,8 @@ function onResizeAboveThreshold() {
     document.querySelector(".sidenav").style.left = "-255px"
   }
 }
-onResizeAboveThreshold();
-window.addEventListener('resize', onResizeAboveThreshold);
+// onResizeAboveThreshold();
+// window.addEventListener('resize', onResizeAboveThreshold);
 
 
 document.querySelector(".hamburger").addEventListener("click", () => {
@@ -61,6 +61,7 @@ slider.oninput = function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
+  const gridContainer = document.getElementById('main-grid');
   for (let i = 0; i < HEIGHT; i++) {
     // Push an empty array for each row
     for (let j = 0; j < WIDTH; j++) {
@@ -78,14 +79,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // set grid container size according to ratio
   gridContainer.style.minHeight = "30vw";
   gridContainer.style.minWidth = "60vw";
-  handleDropdowns();
-  addEventListenersToCells();
   drawCells();
+  addEventListenersToCells();
+  handleDropdowns();
+  onResizeAboveThreshold();
+  window.addEventListener('resize', onResizeAboveThreshold);
 });
 
 // draw the cells according to the state
 // using style of "cell" class to change the color of the cell, iterate over it
 function drawCells() {
+  const gridContainer = document.getElementById('main-grid');
   const cellElements = gridContainer.querySelectorAll(".cell");
   cells.forEach((row, i) => {
     row.forEach((cell, j) => {
@@ -295,6 +299,7 @@ function startAnimation() {
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
     playPauseIcon.src = DEAD_COLOR=="#80ffff"?"./images/Play-Button-Dark.svg": "./images/Play-Button.svg";
+    // playPauseIcon.src = "./images/Play-Button.svg";
     if (!areEventListenersAdded) {
       addEventListenersToCells();
       areEventListenersAdded = true;
@@ -329,6 +334,74 @@ function startAnimation() {
     animate();
   }
 }
+
+
+function toggleWarp() {
+  isWarpEnabled = !isWarpEnabled;
+}
+
+//function to change grid size
+function changeGridSize() {
+  const newWidth = parseInt(document.getElementById('new-width').value);
+  const newHeight = parseInt(document.getElementById('new-height').value);
+
+  if (isNaN(newWidth) || isNaN(newHeight) || newWidth <= 0 || newHeight <= 0) {
+    alert('Please enter valid dimensions');
+    return;
+  }
+
+  WIDTH = newWidth;
+  HEIGHT = newHeight;
+
+  cells = new Array(HEIGHT);
+  for (let i = 0; i < HEIGHT; i++) {
+    cells[i] = new Array(WIDTH).fill(DEAD);
+  }
+
+  // Redraw the grid
+  const gridContainer = document.getElementById('main-grid');
+  gridContainer.innerHTML = ''; // Clear existing grid
+
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      gridContainer.appendChild(cell);
+    }
+  }
+
+  gridContainer.style.gridTemplateRows = `repeat(${HEIGHT}, calc((100%) / ${HEIGHT}))`;
+  gridContainer.style.gridTemplateColumns = `repeat(${WIDTH}, calc((100%) / ${WIDTH}))`;
+  drawCells();
+  addEventListenersToCells();
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  initializeGrid();
+});
+
+function initializeGrid() {
+  const gridContainer = document.getElementById('main-grid');
+  gridContainer.innerHTML = '';
+
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      cells[i][j] = DEAD; // Initialize cell state
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      gridContainer.appendChild(cell);
+    }
+  }
+
+  gridContainer.style.gridTemplateRows = `repeat(${HEIGHT}, calc((100%) / ${HEIGHT}))`;
+  gridContainer.style.gridTemplateColumns = `repeat(${WIDTH}, calc((100%) / ${WIDTH}))`;
+
+  drawCells();
+  addEventListenersToCells();
+}
+
 
 //randomGrid()
 function randomGrid() {
