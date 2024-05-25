@@ -36,14 +36,14 @@
   <div class="game-settings">
     <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
     <div class="sidenav" id="sideNav">
-      <div class="other-settings">Settings</div>
+      <div class="other-settings animate">Settings</div>
       <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
           color="#ffffff" fill="none">
           <path d="M19.0005 4.99988L5.00045 18.9999M5.00045 4.99988L19.0005 18.9999" stroke="currentColor"
             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg></div>
 
-      <div class="other-settings-container">
+      <div class="other-settings-container animate">
         <div class="grid-toggle">
           <input type="checkbox" checked id="grid-toggle" class="grid-checkbox" onclick="toggleGrid()" />
           <label for="grid-toggle">Gridlines</label>
@@ -57,7 +57,7 @@
           <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
         </p>
       </div>
-      <div class="color-themes has-dropdown">Themes</div>
+      <div class="color-themes has-dropdown animate">Themes</div>
       <div class="themes-container">
         <ul style="list-style-type: none">
         <li>
@@ -116,7 +116,7 @@
       </li>
     </ul>
         <div>
-          <button id="gradient-theme-btn" class="has-dropdown">
+          <button id="gradient-theme-btn animate" class="has-dropdown">
             Switch to Gradient Theme
           </button>
           <div id="gradient-colors-container" style="display: none;">
@@ -134,7 +134,7 @@
           </div>
           </div>
       </div>
-      <div class="presets has-dropdown">Presets</div>
+      <div class="presets has-dropdown animate">Presets</div>
       <div class="presets-container">
         <ul style="list-style-type: none">
         <li>
@@ -187,7 +187,7 @@
       </ul>
       </div> 
 <!-- ----------------------   Contact us section      ---------------------------------------------------- -->
-<div class="color-themes has-dropdown">Contact Us</div>
+<div class="color-themes has-dropdown animate">Contact Us</div>
 
 <div class="socialIcons">
   <a href="mailto:shriharimagar1@gmail.com" ><img  src="https://cdn-icons-png.flaticon.com/128/732/732200.png"></a>
@@ -196,15 +196,15 @@
   <a href="https://leetcode.com/EternoSeeker/"><img  src="https://cdn-icons-png.flaticon.com/128/1828/1828231.png"></a>
 </div>
 <!-- ----------------------------------------------------------------------------- -->
-      <div class="history has-dropdown">History</div>
+      <div class="history has-dropdown animate">History</div>
       <div class="history-container"></div>
-      <div class="game-rules has-dropdown">
+      <div class="game-rules has-dropdown animate">
         <button class="game-rules has-dropdown" style="font-size: 1.24rem; margin-left:-1.7rem; padding-top:3px;" onclick="location.href='gamerules.html'">
           Game Rules
         </button>
        
       </div>
-      <div class="about has-dropdown" onclick="redirectToReadme()">
+      <div class="about has-dropdown animate" onclick="redirectToReadme()">
         <span>About</span>
     </div>
       <div class="about-container"></div>
@@ -223,7 +223,7 @@
       <div id="main-grid" class="main-grid"></div>
     </div>
     <div class="controls">
-      <button class="clear-button" id="clear-button" onclick="clearGrid()">
+      <button class="clear-button  button-73" id="clear-button" onclick="clearGrid()">
         Clear
       </button>
       <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
@@ -235,7 +235,7 @@
       <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
         <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast" />
       </button>
-      <button class="random-button" id="random-button" onclick="randomGrid()">
+      <button class="random-button button-73" id="random-button" onclick="randomGrid()">
         Random
       </button>
     </div>
@@ -251,4 +251,8 @@ document.getElementById("toggleButton").addEventListener("click", function () {
   });
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="animation.js"></script>
 </html>
