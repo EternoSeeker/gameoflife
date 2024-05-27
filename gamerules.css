@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     background-color: #c6cede;
+    user-select:none;
   }
   p,ol{
     font-family: "Roboto Mono", monospace;
