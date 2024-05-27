@@ -49,3 +49,7 @@
     font-size: 3rem;
     color: #3c0654;
   }
+  body{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
