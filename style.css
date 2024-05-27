@@ -5,6 +5,13 @@
   user-select:none;
 }
 
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard syntax */
+}
+
 :root {
   --primary-color: #0f045a;
   --theme-color1: #7582b2;
