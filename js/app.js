@@ -536,4 +536,32 @@ function appendPatternButtons() {
     historyContainer.appendChild(button);
   });
 }
+
+document.querySelectorAll('[data-tooltip]').forEach(elem => {
+  let tooltipTimeout;
+
+  elem.addEventListener('mouseenter', function() {
+    tooltipTimeout = setTimeout(() => {
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.innerText = elem.getAttribute('data-tooltip');
+      document.body.appendChild(tooltip);
+
+      const rect = elem.getBoundingClientRect();
+      tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
+      tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+
+      elem._tooltip = tooltip;
+    }, 500); // Delay of 500ms
+  });
+
+  elem.addEventListener('mouseleave', function() {
+    clearTimeout(tooltipTimeout);
+    if (elem._tooltip) {
+      elem._tooltip.remove();
+      elem._tooltip = null;
+    }
+  });
+});
+
 const gridContainer = document.getElementById("main-grid");
