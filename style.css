@@ -360,7 +360,7 @@ body{
   opacity: 1;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .controls {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
     align-items: center; /* Center buttons vertically */
@@ -372,8 +372,7 @@ body{
     padding-top: 0.5rem;
     left: -250px;
     height: 100vh;
-    width: max-content;
-    /*content will not wrap even if it causes overflows*/
+    width: max-content;  /*content will not wrap even if it causes overflows*/
     transition: width 0.3s ease;
   }
 
@@ -393,7 +392,6 @@ body{
   }
 
   .sidenav .randomness-container input {
-    /* padding: 0.6rem 0.4rem 0.6rem 1rem; */
     text-decoration: none;
     font-size: 0.8rem;
     display: block;
@@ -407,14 +405,13 @@ body{
   }
 
   .sidenav .randomness-container label {
-    padding: 0.6rem 4.6rem 0.6rem 0.5rem;
+    padding: 0.6rem 4.4rem 0.6rem 0;
     text-decoration: none;
     font-size: 1rem;
     display: block;
     border: none;
     background: none;
     width: 50%;
-    text-align: center;
     cursor: pointer;
     outline: none;
   }
@@ -439,19 +436,6 @@ body{
     border: none;
     background: none;
     width: 100%;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-  }
-  .game-rules{
-    padding: 0.6rem 0.4rem 0.6rem 1rem;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: center;
     cursor: pointer;
     outline: none;
   }
