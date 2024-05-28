@@ -539,3 +539,51 @@ body{
   color:white;
 }
 /*-----------------------------------------*/
+
+/* Tooltip container */
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Tooltip text */
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 150%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--shadow-color1);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 0.8rem;
+  text-align: center;
+  z-index: 1000; /* Ensure tooltips appear above other elements */
+}
+
+/* Tooltip arrow */
+[data-tooltip]::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: var(--shadow-color1) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show the tooltip text when hovering over the element */
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
