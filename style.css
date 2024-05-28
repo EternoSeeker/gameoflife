@@ -2,6 +2,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select:none;
+}
+
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard syntax */
 }
 
 :root {
@@ -372,7 +380,7 @@ body{
   opacity: 1;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   .controls {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
     align-items: center; /* Center buttons vertically */
@@ -384,7 +392,7 @@ body{
     padding-top: 0.5rem;
     left: -250px;
     height: 100vh;
-    width: 35vw;
+    width: max-content;
     transition: width 0.3s ease;
   }
 
@@ -404,14 +412,12 @@ body{
   }
 
   .sidenav .randomness-container input {
-    padding: 0.6rem 0.4rem 0.6rem 1rem;
     text-decoration: none;
     font-size: 0.8rem;
     display: block;
     border: none;
     background: none;
-    width: 50%;
-    margin: auto;
+    width: 50%; 
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -419,18 +425,15 @@ body{
   }
 
   .sidenav .randomness-container label {
-    padding: 0.6rem 6.4rem 0.6rem 0.5rem;
+    padding: 0.6rem 4.4rem 0.6rem 0;
     text-decoration: none;
-    font-size: 0.8rem;
-    display: block;
+    font-size: 1rem;
+    display:block;
     border: none;
     background: none;
     width: 50%;
-    margin: auto;
-    text-align: center;
     cursor: pointer;
     outline: none;
-    align-items: center;
   }
   .about a {
     text-decoration: none; 
@@ -439,26 +442,27 @@ body{
   }
 
   .sidenav button,
-  .other-settings,
   .other-settings-container div,
   .presets-container div,
   .color-themes,
   .themes-container div,
   .presets,
   .history,
-  .about,
-  .game-rules{
+  .about{
     padding: 0.6rem 0.4rem 0.6rem 1rem;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: block;
     border: none;
     background: none;
     width: 100%;
-    text-align: center;
     cursor: pointer;
     outline: none;
-    align-items: center;
+  }
+
+  .other-settings{
+    padding: 3px;
+    text-align: center;
   }
   
   .game {

@@ -47,7 +47,7 @@ document.querySelector(".hamburger").addEventListener("click", () => {
 
 
 document.querySelector(".cross").addEventListener("click", () => {
-  document.querySelector(".sidenav").style.left = "-250px"
+  document.querySelector(".sidenav").style.left = "0px"
 })
 
 var slider = document.getElementById("randomVal");
