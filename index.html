@@ -226,19 +226,19 @@
       <div id="main-grid" class="main-grid"></div>
     </div>
     <div class="controls">
-      <button class="clear-button  button-73" id="clear-button" onclick="clearGrid()">
+      <button class="clear-button  button-73" id="clear-button" data-tooltip="Clear the grid" onclick="clearGrid()">
         Clear
       </button>
-      <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
+      <button class="control-button" id="fast-reverse-button" data-tooltip="Rewind" onclick="decreaseSpeed()">
         <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Play" />
       </button>
-      <button class="control-button" id="play-pause-button" onclick="startAnimation()">
+      <button class="control-button" id="play-pause-button" data-tooltip="Start or Pause the animation" onclick="startAnimation()">
         <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Slow" />
       </button>
-      <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
+      <button class="control-button" id="fast-forward-button" data-tooltip="Fast Forward" onclick="increaseSpeed()">
         <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast" />
       </button>
-      <button class="random-button button-73" id="random-button" onclick="randomGrid()">
+      <button class="random-button button-73" id="random-button" data-tooltip="Random" onclick="randomGrid()">
         Random
       </button>
     </div>
