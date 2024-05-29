@@ -541,49 +541,42 @@ body{
 /*-----------------------------------------*/
 
 /* Tooltip container */
-[data-tooltip] {
+.tooltip-container {
   position: relative;
-  cursor: pointer;
+  display: inline-block;
 }
 
 /* Tooltip text */
-[data-tooltip]::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 150%; /* Position above the element */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--shadow-color1);
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--theme-color2);
   color: #fff;
-  padding: 0.5rem;
-  border-radius: 0.3rem;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  font-size: 0.8rem;
   text-align: center;
-  z-index: 1000; /* Ensure tooltips appear above other elements */
-}
-
-/* Tooltip arrow */
-[data-tooltip]::after {
-  content: '';
+  padding: 5px 0;
+  border-radius: 6px;
   position: absolute;
-  bottom: 100%;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the button */
   left: 50%;
-  transform: translateX(-50%);
-  border-width: 0.4rem;
-  border-style: solid;
-  border-color: var(--shadow-color1) transparent transparent transparent;
+  margin-left: -60px;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s;
 }
 
-/* Show the tooltip text when hovering over the element */
-[data-tooltip]:hover::before,
-[data-tooltip]:hover::after {
-  opacity: 1;
+.tooltip-container:hover .tooltip-text,
+.tooltip-container:focus .tooltip-text {
   visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--theme-color2) transparent transparent transparent;
 }
