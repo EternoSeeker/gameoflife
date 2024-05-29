@@ -1,6 +1,13 @@
 * {
     box-sizing: border-box;
     background-color: #c6cede;
+    user-select:none;
+  }
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard syntax */
   }
   p,ol{
     font-family: "Roboto Mono", monospace;
@@ -48,4 +55,8 @@
     text-align: center;
     font-size: 3rem;
     color: #3c0654;
+  }
+  body{
+    padding-left: 50px;
+    padding-right: 50px;
   }
