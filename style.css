@@ -138,11 +138,10 @@ body{
   align-items: center;
   border: solid 0.001rem var(--border-color1);
   cursor: pointer;
-  scale: 1;
   transition:0.2s ease;
 }
 .cell:hover{
-  scale: 1.3;
+  transform: scale(1.3);
   border:1px solid white ;
 }
 .cell:active{
@@ -231,11 +230,10 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  transition: left 0.3s ease;
   background-color: var(--border-color1);
-  overflow-x: hidden;
+  overflow-x:hidden;
   padding-top: 2rem;
-  transition: width 0.3s ease;
+  transition: left 0.3s ease, width 0.3s ease;
 }
 /* Hide the nav bar */
 .hide-nav  {
@@ -372,6 +370,8 @@ body{
   .controls {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
     align-items: center; /* Center buttons vertically */
+    min-width: 25vw;
+    margin: none;
   }
 
   .sidenav {
@@ -380,7 +380,7 @@ body{
     padding-top: 0.5rem;
     left: -250px;
     height: 100vh;
-    width: max-content;
+    width: max-content;  /*content will not wrap even if it causes overflows*/
     transition: width 0.3s ease;
   }
 
@@ -405,7 +405,7 @@ body{
     display: block;
     border: none;
     background: none;
-    width: 50%; 
+    width: 50%;
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -416,7 +416,7 @@ body{
     padding: 0.6rem 4.4rem 0.6rem 0;
     text-decoration: none;
     font-size: 1rem;
-    display:block;
+    display: block;
     border: none;
     background: none;
     width: 50%;
@@ -471,9 +471,12 @@ body{
 
   .clear-button,
   .random-button {
-    font-size: 0.8rem; /* Adjust font size for smaller screens */
-    padding: 0.3rem 0.8rem; /* Adjust padding for smaller screens */
-    margin: 0.5rem 0; /* Add margin to separate buttons vertically */
+    font-size: 0.8rem; 
+    /* Adjust font size for smaller screens */
+    padding: 0.3rem 0.8rem; 
+    /* Adjust padding for smaller screens */
+    margin: 0.5rem 0; 
+    /* Add margin to separate buttons vertically */
   }
 
   .grid-container {
@@ -533,12 +536,10 @@ body{
   transition: 0.5s;
 
 }
-.warp-on-edges:hover{
-    color:white;
-}
-.grid-toggle:hover{
-  color:white;
-}
+
+/* Hover Effects  */
+.warp-on-edges:hover,
+.grid-toggle:hover,
 .randomness-container:hover{
   color:white;
 }
