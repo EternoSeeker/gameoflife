@@ -63,7 +63,7 @@ body {
 /* css for home button starts here */
   .back-button { 
     position: fixed;
-    bottom: 92%;
+    bottom: 91%;
     left: 2%;
     transform: translateX(-50%);
     text-align: center;
