@@ -214,15 +214,16 @@ body{
   transform: translateY(0.1rem);
 }
 #toggleButton {
-    color: white;
+    color: black;
     border-radius: 5px;
     border-style: none;
     font-size: 1.7rem;
     background: none;
     margin: 1px;
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    left: 10px;
+    left: 2rem;
+    top: 1.8rem;
 }
 .sidenav {
   height: 100vh;
@@ -230,6 +231,7 @@ body{
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   background-color: var(--border-color1);
   overflow-x:hidden;
   padding-top: 2rem;
@@ -376,12 +378,13 @@ body{
 
   .sidenav {
     height: auto;
-    position: sticky;
+    position: fixed;
     padding-top: 0.5rem;
     left: -250px;
     height: 100vh;
-    width: max-content;  /*content will not wrap even if it causes overflows*/
     transition: width 0.3s ease;
+    width: 20rem;
+    padding-top: 2rem;
   }
 
   .hamburger {
@@ -397,6 +400,7 @@ body{
     top: 13px;
     right: 10px;
     display: block;
+    padding-top: 1.6rem;
   }
 
   .sidenav .randomness-container input {
@@ -459,7 +463,7 @@ body{
   }
   .controls {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-width: 25vw;
     height: auto;
     justify-content: center;
@@ -587,3 +591,36 @@ body{
   border-color: var(--theme-color2) transparent transparent transparent;
 }
 
+@media screen and (max-width: 425px) {
+  .sidenav {
+    width: 100vw;
+    left: -550px ;
+    transition: width 0.3s ease;
+  }
+
+  #toggleButton {
+    left: 1.4rem;
+    top: 1rem;
+  }
+
+  .clear-button,
+  .random-button {
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
+    height: calc((100%) / 1.8);
+    width: auto;
+    text-align: center;
+    padding: 0.3rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 0.5rem;
+    color: var(--primary-color);
+    background-color: var(--theme-color3);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    margin: 0 0.5rem; /* Add margin to separate buttons */
+  }
+
+  .control-button {
+    transform: scale(1.4);
+  }
+}
