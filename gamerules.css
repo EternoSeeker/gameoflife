@@ -60,3 +60,29 @@ body {
     padding-left: 50px;
     padding-right: 50px;
   }
+/* css for home button starts here */
+  .back-button {
+    position: fixed;
+    bottom: 90%;
+    left: 95%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.home-icon {
+    width: 50px;
+    height: 50px;
+}
+.homeButton{
+    text-align: center;
+}
+.back-to-home {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4a3286;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
