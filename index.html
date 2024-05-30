@@ -51,18 +51,18 @@
       <div class="other-settings-container animate">
         <div class="grid-toggle">
           <input type="checkbox" checked id="grid-toggle" class="grid-checkbox" onclick="toggleGrid()" />
-          <label for="grid-toggle">Gridlines</label>
+          <label for="grid-toggle" style="cursor: pointer;">Gridlines</label>
         </div>
         <div class="warp-on-edges">
           <input type="checkbox" checked id="warp-on-edges" class="warp-checkbox" onclick="toggleWarp()" />
-          <label for="warp-on-edges">Warp on Edges</label>
+          <label for="warp-on-edges" style="cursor: pointer;">Warp on Edges</label>
         </div>
         <p class="randomness-container">
-          <label class="randomness-value"><span>Randomness</span><span id="randomValOutput">20</span></label>
+          <label class="randomness-value" style="cursor: pointer;"><span>Randomness</span><span id="randomValOutput">20</span></label>
           <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
         </p>
       </div>
-      <div class="color-themes has-dropdown animate">Themes</div>
+      <div class="color-themes has-dropdown animate" style="cursor: pointer;">Themes</div>
       <div class="themes-container animate">
         <ul>
         <li>
@@ -145,7 +145,7 @@
           </div>
           </div>
       </div>
-      <div class="presets has-dropdown animate">Presets</div>
+      <div class="presets has-dropdown animate" style="cursor: pointer;">Presets</div>
       <div class="presets-container animate">
         <ul>
         <li>
@@ -197,7 +197,7 @@
         </li>
       </ul>
       </div>
-      <div class="history has-dropdown animate">History</div>
+      <div class="history has-dropdown animate" style="font-size: 1.24rem; cursor: pointer;">History</div>
       <div class="history-container animate"></div>
       <div class="game-rules has-dropdown animate">
         <button class="game-rules has-dropdown" style="font-size: 1.24rem; margin-left:-1.7rem; padding-top:3px;" onclick="location.href='gamerules.html'">
@@ -205,7 +205,7 @@
         </button>
        
       </div>
-      <div class="about has-dropdown animate" onclick="redirectToReadme()">
+      <div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         <span>About</span>
     </div>
       <div class="about-container animate"></div>
