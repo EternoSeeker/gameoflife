@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="gamerules.css">
     <title>Game Rules</title>
+    <style>
+     .back-button {
+    position: fixed;
+    bottom: 90%;
+    left: 95%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.home-icon {
+    width: 50px;
+    height: 50px;
+}
+.homeButton{
+    text-align: center;
+}
+.back-to-home {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4a3286;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+    </style>
 </head>
 <body>
+    <div class="back-button">
+        <a href="index.html">
+            <img src="./images/home.png" alt="Back to Home" class="home-icon">
+        </a>
+    </div>
     <h1>How To Play?</h1>
     <hr>
     <h2>Convoy's Game of Life</h2>
@@ -90,5 +122,9 @@
          it can lead to complex and beautiful patterns.
         Game of Life offers a unique way to explore the unpredictable beauty of life itself.</p>
     <p class="footer">Enjoy the Game!</p>
+<div class = "homeButton">
+    <a href="index.html" class="back-to-home">Back to Home</a>
+</div>
+    
 </body>
 </html>
