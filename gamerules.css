@@ -61,10 +61,10 @@ body {
     padding-right: 50px;
   }
 /* css for home button starts here */
-  .back-button {
+  .back-button { 
     position: fixed;
-    bottom: 90%;
-    left: 95%;
+    bottom: 92%;
+    left: 2%;
     transform: translateX(-50%);
     text-align: center;
 }
