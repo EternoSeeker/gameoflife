@@ -44,8 +44,6 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ### ⚙️ The Settings
 
-![Game Sidebar](data/game-images/Game-Sidebar.png)
-
 | Settings | What are they for? |
 | --- | --- |
 | `Gridlines` | Toggles visibility of the gridlines |
