@@ -142,3 +142,28 @@ hr {
   background: linear-gradient(to right, var(--primary-color), var(--theme-color3), var(--primary-color));
   margin: 30px 0;
 }
+  .back-button { 
+    position: fixed;
+    bottom: 90%;
+    left: 4%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.home-icon {
+    width: 50px;
+    height: 50px;
+}
+.homeButton{
+    text-align: center;
+}
+.back-to-home {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4a3286;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
