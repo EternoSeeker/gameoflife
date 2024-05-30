@@ -33,7 +33,7 @@ function onResizeAboveThreshold() {
   if (currentWidth >= thresholdWidth) {
     document.querySelector(".sidenav").style.left = "0px"
   }else{
-    document.querySelector(".sidenav").style.left = "-255px"
+    document.querySelector(".sidenav").style.left = "0px"
   }
 }
 onResizeAboveThreshold();
