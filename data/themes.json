@@ -82,5 +82,17 @@
     "--background-col": "#FFFFFF",
     "ALIVE_COLOR": "#000000",
     "DEAD_COLOR": "#FFFFFF"
-  }
+  },"cyberpunk": {
+    "--primary-color": "#FCE4EC",       
+    "--theme-color1": "#EC407A",       
+    "--theme-color2": "#D81B60",       
+    "--theme-color3": "#AD1457",        
+    "--shadow-color1": "#FF0056",       
+    "--shadow-color2": "#C2185B",       
+    "--border-color1": "#880E4F",       
+    "--background-col": "#FFF0F5",       
+    "ALIVE_COLOR": "#EC407A",           
+    "DEAD_COLOR": "#FCE4EC"            
+}
+
 }
