@@ -218,22 +218,34 @@
       <div id="main-grid" class="main-grid"></div>
     </div>
     <div class="controls">
-      <button class="clear-button  button-73" id="clear-button" onclick="clearGrid()">
-        Clear
-      </button>
-      <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
-        <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Play" />
-      </button>
-      <button class="control-button" id="play-pause-button" onclick="startAnimation()">
-        <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Slow" />
-      </button>
-      <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
-        <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast" />
-      </button>
-      <button class="random-button button-73" id="random-button" onclick="randomGrid()">
-        Random
-      </button>
-    </div>
+  <div class="tooltip-container">
+    <button class="clear-button button-73" id="clear-button" onclick="clearGrid()">Clear</button>
+    <span class="tooltip-text">Clear the grid</span>
+  </div>
+  <div class="tooltip-container">
+    <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
+      <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Rewind" />
+    </button>
+    <span class="tooltip-text">Rewind</span>
+  </div>
+  <div class="tooltip-container">
+    <button class="control-button" id="play-pause-button" onclick="startAnimation()">
+      <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Start or Pause" />
+    </button>
+    <span class="tooltip-text">Start or Pause the animation</span>
+  </div>
+  <div class="tooltip-container">
+    <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
+      <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast Forward" />
+    </button>
+    <span class="tooltip-text">Fast Forward</span>
+  </div>
+  <div class="tooltip-container">
+    <button class="random-button button-73" id="random-button" onclick="randomGrid()">Random</button>
+    <span class="tooltip-text">Random</span>
+  </div>
+</div>
+
   </div>
   <script src="node_modules/animejs/lib/anime.min.js"></script>
   <script src="./js/app.js"></script>
