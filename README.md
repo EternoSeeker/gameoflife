@@ -30,7 +30,7 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ### 🖼️ The Canvas / Grid
 
-![Game Grid](data/game-images/Game-Grid.png)
+![Game Grid](data/game-images/grid.png)
 
 | Buttons | What they do |
 | --- | --- |
@@ -40,6 +40,7 @@ The first generation is created by applying the above rules simultaneously to ev
 |   ⏪   | Decreases the speed of the animation |
 | `Clear` | Clears the grid on click, only if the game is not animating at that moment |
 | `Random` | Randomly initializes the grid with initial randomness as 20% |
+|`Change grid size`| This function allow you to change the size of grid according to your preference|
 
 
 ### ⚙️ The Settings
