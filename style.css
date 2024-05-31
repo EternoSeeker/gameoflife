@@ -142,7 +142,6 @@ body{
   border: solid 0.001rem var(--border-color1);
   cursor: pointer;
   transition:0.2s ease;
-  border-radius:50%;
 }
 .cell:hover{
   transform: scale(1.3);
