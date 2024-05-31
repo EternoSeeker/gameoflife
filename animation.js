@@ -38,3 +38,53 @@ gsap.from(".grid-container", {
     ease: "power1.inOut",
     stagger: 0.2
 });
+
+function changeToGif1() {
+    document.getElementById('image1').src = 'images/Moving-Glider.gif';
+}
+function changeToStatic1() {
+    document.getElementById('image1').src = 'images/Small-Glider.png';
+}
+
+function changeToGif2() {
+    document.getElementById('image2').src = 'images/Moving-Big-Glider.gif';
+}
+function changeToStatic2() {
+    document.getElementById('image2').src = 'images/Big-Glider.png';
+}
+
+function changeToGif3() {
+    document.getElementById('image3').src = 'images/Moving-Gosper-Glider-Gun.gif';
+}
+function changeToStatic3() {
+    document.getElementById('image3').src = 'images/Gosper-Glider-Gun.png';
+}
+
+function changeToGif4() {
+    document.getElementById('image4').src = 'images/Moving-Pulsar.gif';
+}
+function changeToStatic4() {
+    document.getElementById('image4').src = 'images/Pulsar.png';
+}
+
+function changeToGif5() {
+    document.getElementById('image5').src = 'images/moving-circle.gif';
+}
+function changeToStatic5() {
+    document.getElementById('image5').src = 'images/Circle-of-Fire.png';
+
+}
+function changeToGif6() {
+    document.getElementById('image6').src = 'images/Moving-Quadpole.gif';
+}
+function changeToStatic6() {
+    document.getElementById('image6').src = 'images/Quadpole.png';
+}
+
+function changeToGif7() {
+    document.getElementById('image7').src = 'images/Moving-Spider.gif';
+}
+
+function changeToStatic7() {
+    document.getElementById('image7').src = 'images/Spider.png';
+}
