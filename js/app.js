@@ -1,6 +1,6 @@
 // const { get } = require("animejs");
-const WIDTH = 60;
-const HEIGHT = 30;
+let WIDTH = 60;
+let HEIGHT = 30;
 
 let ALIVE_COLOR = "#00246B";
 let DEAD_COLOR = "#CADCFC";
@@ -583,6 +583,57 @@ document.querySelectorAll('.tooltip-container').forEach(container => {
   container.addEventListener('mouseenter', showTooltip);
   container.addEventListener('mouseleave', hideTooltip);
 });
+
+
+function changeGridSize() {
+  const newHeight = parseInt(document.getElementById('new-height').value);
+
+  if (isNaN(newHeight) || newHeight <= 0) {
+    alert('Please enter a valid height value.');
+    return;
+  }
+
+  const newWidth = newHeight * 2;
+
+  // Update global WIDTH and HEIGHT
+  WIDTH = newWidth;
+  HEIGHT = newHeight;
+
+  // Reinitialize cells array
+  cells = new Array(HEIGHT);
+  for (let i = 0; i < HEIGHT; i++) {
+    cells[i] = new Array(WIDTH).fill(DEAD);
+  }
+
+  // Update grid container CSS properties
+  gridContainer.style.gridTemplateRows = `repeat(${HEIGHT}, calc(100% / ${HEIGHT}))`;
+  gridContainer.style.gridTemplateColumns = `repeat(${WIDTH}, calc(100% / ${WIDTH}))`;
+  gridContainer.style.minHeight = `${HEIGHT}vw`;
+  gridContainer.style.minWidth = `${WIDTH}vw`;
+
+  // Clear the current grid elements
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
+  }
+
+  // Generate new grid elements
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      gridContainer.appendChild(cell);
+    }
+  }
+
+  // Add event listeners to new grid elements
+  addEventListenersToCells();
+
+  // Redraw the grid
+  drawCells();
+}
+
+document.getElementById('change-grid-button').addEventListener('click', changeGridSize);
+
 
 
 const gridContainer = document.getElementById("main-grid");

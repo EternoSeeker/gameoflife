@@ -81,6 +81,9 @@ body{
   transform: scale(1.025);
 }
 .heading {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -120,8 +123,8 @@ body{
   justify-content: center;
   align-items: center;
   border: solid 0.2rem var(--border-color1);
-  max-width: 62vw;
-  max-height: 31vw;
+  /* max-width: 62vw;
+  max-height: 31vw; */
   transition: border-color 0.3s ease;
 }
 
