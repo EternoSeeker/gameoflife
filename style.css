@@ -135,6 +135,8 @@ body{
 .cell {
   display: flex;
   justify-content: center;
+  height: 10px;
+  width: 10px;
   align-items: center;
   border: solid 0.001rem var(--border-color1);
   cursor: pointer;
