@@ -255,13 +255,58 @@ body{
 .other-settings-container div,
 .presets-container div,
 .color-themes,
-.themes-container div,
 .presets,
-.history,
-.about,
-.game-rules,
-.game-rules-container{
+.history{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+.game-rules{
+  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+.about{
+  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.themes-container div{
+  padding: 0.4rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
   color: #818181;
@@ -312,10 +357,14 @@ body{
 .other-settings,
 .color-themes,
 .presets,
-.history
+.history,
 .about,
 .game-rules{
   font-size: 1.2rem;
+}
+
+.about button{
+  margin-left: -1.7rem;
 }
 
 .other-settings {
@@ -402,18 +451,16 @@ body{
     display: block;
     padding-top: 1.6rem;
   }
-
   .sidenav .randomness-container input {
     text-decoration: none;
     font-size: 0.8rem;
     display: block;
     border: none;
     background: none;
-    width: 50%;
-    text-align: center;
+    width: 90%;
     cursor: pointer;
     outline: none;
-    align-items: center;
+    align-items:center;
   }
 
   .sidenav .randomness-container label {
@@ -427,10 +474,13 @@ body{
     cursor: pointer;
     outline: none;
   }
-  .about a {
+  /*.about a {
     text-decoration: none; 
     color: inherit; 
     cursor: pointer; 
+  }*/
+  .about button{
+    margin-left: -1.1rem;
   }
 
   .sidenav button,
@@ -439,9 +489,19 @@ body{
   .color-themes,
   .themes-container div,
   .presets,
-  .history,
+  .history{
+    padding: 0.3rem 0.4rem 0.3rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+  }
   .about{
-    padding: 0.6rem 0.4rem 0.6rem 1rem;
+    padding: 0.0rem 0.4rem 0.0rem 1rem;
     text-decoration: none;
     font-size: 1rem;
     display: block;
@@ -454,7 +514,9 @@ body{
 
   .other-settings{
     padding: 3px;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 10px;
   }
   
   .game {
