@@ -228,7 +228,9 @@ border-radius: 50%;
           <label for="neon-theme" class="color-label">Dark Neon</label>
         </div>
       </li>
-      <li>
+      </ul>
+      <ul>
+        <li>
         <div>
           <input type="radio" id="cyberpunk-theme" class="color-label" name="theme" onclick="selectTheme('cyberpunk')" />
           <label for="cyberpunk-theme"  class="color-label">Cyberpunk</label>
@@ -306,16 +308,21 @@ border-radius: 50%;
         </li>
       </ul>
       </div>
-      <div class="history has-dropdown animate" style="font-size: 1.24rem; cursor: pointer;">History</div>
+      <div class="history has-dropdown animate" style=" cursor: pointer;">History</div>
       <div class="history-container animate"></div>
       <div class="game-rules has-dropdown animate">
-        <button class="game-rules has-dropdown" style="font-size: 1.24rem; margin-left:-1.7rem; padding-top:3px;" onclick="location.href='gamerules.html'">
+        <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer;" onclick="location.href='gamerules.html'">
           Game Rules
         </button>
        
       </div>
-      <div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
+      <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         <span>About</span>
+    </div>-->
+    <div class="about has-dropdown animate">
+      <button class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
+        About
+      </button>
     </div>
       <div class="about-container animate"></div>
     </div>
