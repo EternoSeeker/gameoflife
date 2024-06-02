@@ -68,7 +68,7 @@ function changeToStatic4() {
 }
 
 function changeToGif5() {
-    document.getElementById('image5').src = 'images/moving-circle.gif';
+    document.getElementById('image5').src = 'images/moving-fire-circle.gif';
 }
 function changeToStatic5() {
     document.getElementById('image5').src = 'images/Circle-of-Fire.png';
