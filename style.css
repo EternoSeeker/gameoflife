@@ -21,7 +21,7 @@ body {
   --shadow-color2: #101536;
   --border-color1: #080126;
   --background-col: #c6cede;
-  --scrollbar-color: #555555;
+  --scrollbar-color: #77bdec;
 }
 
 body {
@@ -32,15 +32,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--shadow-color2);
+  border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
+  border-radius: 30px;
 }
 body{
   background-color: var(--background-col);
