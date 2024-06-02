@@ -117,32 +117,69 @@ body{
 .full-width{
   margin-left: 0;
 }
-.grid-container {
+/* .grid-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border: solid 0.2rem var(--border-color1);
-  /* max-width: 62vw;
-  max-height: 31vw; */
+  max-width: 62vw;
+  max-height: 31vw;
   transition: border-color 0.3s ease;
-}
+} */
 
-.main-grid {
+/* .main-grid {
   display: grid;
   justify-content: center;
   margin: auto;
   background-color: inherit;
-}
+} */
 
-.cell {
+/* .cell {
   display: flex;
   justify-content: center;
   align-items: center;
   border: solid 0.001rem var(--border-color1);
   cursor: pointer;
   transition:0.2s ease;
+} */
+
+
+
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* transition: border-color 0.3s ease; */
 }
+
+.main-grid {
+  display: grid;
+  width: 60vw;
+  height: 30vw;
+  min-width: 60vw;
+  min-height: 30vw;
+  /* border: 1px solid #ccc; */
+}
+
+.cell {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: solid 0.001rem var(--border-color1);
+  background-color: #CADCFC;
+  cursor: pointer;
+  transition:0.2s ease;
+}
+
+.cell.alive {
+  background-color: #00246B;
+}
+
+
 .cell:hover{
   transform: scale(1.3);
   border:1px solid white ;
