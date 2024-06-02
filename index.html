@@ -83,32 +83,32 @@
       <ul>
         <li>
         <div>
-          <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
-          <label for="blue-theme">Blue</label>
+          <input checked type="radio" id="blue-theme" class="color-label" name="theme" onclick="selectTheme('blue')" />
+          <label for="blue-theme" class="color-label">Blue</label>
         </div>
       </li>
     </ul>
     <ul> 
         <li>
           <div>
-            <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
-            <label for="purple-theme">Purple</label>
+            <input type="radio" id="purple-theme" class="color-label" name="theme" onclick="selectTheme('purple')" />
+            <label for="purple-theme" class="color-label">Purple</label>
           </div>
         </li>
       </ul> 
       <ul>
         <li>
           <div>
-            <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
-            <label for="darkcyan-theme">Dark Cyan</label>
+            <input type="radio" id="darkcyan-theme" class="color-label" name="theme" onclick="selectTheme('darkCyan')" />
+            <label for="darkcyan-theme" class="color-label">Dark Cyan</label>
           </div>
         </li>
       </ul>
       <ul>
         <li>
           <div>
-            <input type="radio" id="black-theme" name="theme" onclick="selectTheme('black')" />
-            <label for="black-theme">Black & White</label>
+            <input type="radio" id="black-theme" class="color-label" name="theme" onclick="selectTheme('black')" />
+            <label for="black-theme" class="color-label">Black & White</label>
           </div>
         </li>
       </ul>
@@ -119,7 +119,9 @@
           <label for="neon-theme" class="color-label">Dark Neon</label>
         </div>
       </li>
-      <li>
+      </ul>
+      <ul>
+        <li>
         <div>
           <input type="radio" id="cyberpunk-theme" class="color-label" name="theme" onclick="selectTheme('cyberpunk')" />
           <label for="cyberpunk-theme"  class="color-label">Cyberpunk</label>
@@ -197,16 +199,21 @@
         </li>
       </ul>
       </div>
-      <div class="history has-dropdown animate" style="font-size: 1.24rem; cursor: pointer;">History</div>
+      <div class="history has-dropdown animate" style=" cursor: pointer;">History</div>
       <div class="history-container animate"></div>
       <div class="game-rules has-dropdown animate">
-        <button class="game-rules has-dropdown" style="font-size: 1.24rem; margin-left:-1.7rem; padding-top:3px;" onclick="location.href='gamerules.html'">
+        <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer;" onclick="location.href='gamerules.html'">
           Game Rules
         </button>
        
       </div>
-      <div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
+      <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         <span>About</span>
+    </div>-->
+    <div class="about has-dropdown animate">
+      <button class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
+        About
+      </button>
     </div>
       <div class="about-container animate"></div>
     </div>
