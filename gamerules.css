@@ -11,6 +11,18 @@
   --scrollbar-color: #555555;
 }
 
+.home-icon {
+  margin: -15px;  
+  margin-left: -40px;
+} 
+
+@media screen and (max-width: 768px) {  
+  .home-icon {
+    margin: -4px;  
+    margin-left: 15px; 
+  }
+}
+
 .container {
   max-width: 1200px;
   width: 100%;
