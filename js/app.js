@@ -27,9 +27,9 @@ let isGridVisible = true;
 let aliveCount = 0;
 
 
-//function to change grid size
+// //function to change grid size
 document.addEventListener("DOMContentLoaded", () => {
-  initializeGrid();
+  // initializeGrid();
 });
 
 function initializeGrid() {

@@ -536,10 +536,10 @@ body{
 
   .grid-container {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    border: solid 0.2rem var(--border-color1);
+    /* border: solid 0.2rem var(--border-color1); */
     max-width: 80vw;
     max-height: 82vw;
     transition: border-color 0.3s ease;
