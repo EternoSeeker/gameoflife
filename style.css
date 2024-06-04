@@ -83,6 +83,9 @@ body{
   transform: scale(1.025);
 }
 .heading {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -116,7 +119,7 @@ body{
 .full-width{
   margin-left: 0;
 }
-.grid-container {
+/* .grid-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -125,30 +128,76 @@ body{
   max-width: 62vw;
   max-height: 31vw;
   transition: border-color 0.3s ease;
-}
+} */
 
-.main-grid {
+/* .main-grid {
   display: grid;
   justify-content: center;
   margin: auto;
   background-color: inherit;
-}
+} */
 
-.cell {
+/* .cell {
   display: flex;
   justify-content: center;
   align-items: center;
   border: solid 0.001rem var(--border-color1);
   cursor: pointer;
   transition:0.2s ease;
+} */
+
+
+
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* transition: border-color 0.3s ease; */
 }
+
+.main-grid {
+  display: grid;
+  width: 60vw;
+  height: 30vw;
+  min-width: 60vw;
+  min-height: 30vw;
+  /* border: 1px solid #ccc; */
+}
+
+.cell {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: solid 0.001rem var(--border-color1);
+  background-color: #CADCFC;
+  cursor: pointer;
+  transition:0.2s ease;
+}
+
+.cell.alive {
+  background-color: #00246B;
+}
+
+
 .cell:hover{
   transform: scale(1.3);
   border:1px solid white ;
+  z-index: 1;
 }
 .cell:active{
   scale: 1;
 }
+
+.controls input{
+  height: auto;
+  width:auto;
+  border-radius: 6px;
+  gap: 10px;
+}
+
 .controls {
   display: flex;
   flex-direction: row; /* Ensure buttons are in a row */
@@ -166,6 +215,7 @@ body{
   cursor: pointer;
   outline: none;
   transition: transform 0.2s ease;
+  font-size: 1.1rem;
 }
 
 .control-button:hover {
@@ -312,6 +362,7 @@ body{
   text-decoration: none;
   font-size: 1rem;
   color: #818181;
+  cursor: pointer;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;

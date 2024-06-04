@@ -372,8 +372,19 @@ border-radius: 50%;
     <button class="random-button button-73" id="random-button" onclick="randomGrid()">Random</button>
     <span class="tooltip-text">Random</span>
   </div>
+  
+<div class="controls">
+  <div class="tooltip-container">
+  <button class="random-button button-73" id="change-grid-button" onclick="changeGridSize()">Change Grid Size</button>
+  <span class="tooltip-text">change grid size</span>
+</div>
+<div class="tooltip-container">
+  <input type="number" id="new-height" placeholder="Height" min="1" />
+  <span class="tooltip-text">height</span>
+</div>
 </div>
 
+</div>
   </div>
   <script src="node_modules/animejs/lib/anime.min.js"></script>
   <script src="./js/app.js"></script>
