@@ -28,7 +28,10 @@ let aliveCount = 0;
 
 
 // //function to change grid size
+
 document.addEventListener("DOMContentLoaded", () => {
+
+
 });
 
 function initializeGrid() {
