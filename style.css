@@ -82,6 +82,8 @@ body{
 }
 .heading {
   position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom:0.5rem;
