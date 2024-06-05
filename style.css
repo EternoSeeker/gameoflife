@@ -82,12 +82,12 @@ body{
 }
 .heading {
   position: relative;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  /* margin-top: 1rem; */
+  margin-bottom:0.5rem;
   text-align: center;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  margin-top: 0.5rem;
+  padding-bottom:0.5rem;
+  margin-top: 2rem;
   font-size: 3rem;
   font-weight: bold;
   color: var(--primary-color);
