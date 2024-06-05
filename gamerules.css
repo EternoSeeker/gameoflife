@@ -210,7 +210,19 @@ hr {
     transform: translateX(-50%);
     text-align: center;
 }
-
+.back-up{
+  position: fixed;
+  left: 4%;
+  text-align: center;
+  width:50px;
+  height: 50px;
+  background: #7582b2;
+  bottom: 40px;
+  right: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+}
 .home-icon {
     width: 50px;
     height: 50px;
