@@ -106,7 +106,7 @@ function onResizeAboveThreshold() {
 
   if (currentWidth >= thresholdWidth) {
     document.querySelector(".sidenav").style.left = "0px"
-  }else{
+  } else {
     document.querySelector(".sidenav").style.left = "0px"
   }
 }
@@ -172,7 +172,7 @@ function drawCells() {
       const newColor = cell === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
       // Only update if colour changes
       if (cellDiv.style.backgroundColor !== newColor) {
-          cellDiv.style.backgroundColor = newColor;
+        cellDiv.style.backgroundColor = newColor;
       }
     });
   });
@@ -209,7 +209,7 @@ function handleClick(i) {
   // Toggle cell state
   cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
 
-  if(cells[row][col] == ALIVE) aliveCount++;
+  if (cells[row][col] == ALIVE) aliveCount++;
   else aliveCount--;
 
   // Redraw cells
@@ -338,7 +338,7 @@ function decreaseSpeed() {
 }
 
 function isEmpty() {
-  return (aliveCount==0);
+  return (aliveCount == 0);
 }
 
 function startAnimation() {
@@ -350,7 +350,7 @@ function startAnimation() {
   }
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
-    playPauseIcon.src = DEAD_COLOR=="#80ffff"?"./images/Play-Button-Dark.svg": "./images/Play-Button.svg";
+    playPauseIcon.src = DEAD_COLOR == "#80ffff" ? "./images/Play-Button-Dark.svg" : "./images/Play-Button.svg";
     // playPauseIcon.src = "./images/Play-Button.svg";
     if (!areEventListenersAdded) {
       addEventListenersToCells();
@@ -371,12 +371,12 @@ function startAnimation() {
       appendPatternButtons();
     }
     // change the icon according to the state
-    if(DEAD_COLOR=="#80ffff"){
+    if (DEAD_COLOR == "#80ffff") {
       console.log('ggggg')
-      playPauseIcon.src=isAnimating
-      ? "./images/Pause-Button-Dark.svg"
-      : "./images/Play-Button-Dark.svg";
-    }else{
+      playPauseIcon.src = isAnimating
+        ? "./images/Pause-Button-Dark.svg"
+        : "./images/Play-Button-Dark.svg";
+    } else {
       playPauseIcon.src = isAnimating
         ? "./images/Pause-Button.svg"
         : "./images/Play-Button.svg";
@@ -401,7 +401,7 @@ function randomGrid() {
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
-        if(cells[i][j] == ALIVE) aliveCount++;
+        if (cells[i][j] == ALIVE) aliveCount++;
       }
     }
     drawCells();
@@ -447,9 +447,9 @@ function toggleGrid() {
 
 function countNeighbors(cells, x, y, wrapEdges) {
   const positions = [
-    [-1,-1], [-1, 0], [-1, 1],
-    [ 0,-1],          [ 0, 1],
-    [ 1,-1], [ 1, 0], [ 1, 1]
+    [-1, -1], [-1, 0], [-1, 1],
+    [0, -1], [0, 1],
+    [1, -1], [1, 0], [1, 1]
   ];
 
   return positions.reduce((acc, [dx, dy]) => {
@@ -602,7 +602,7 @@ function appendPatternButtons() {
 document.querySelectorAll('[data-tooltip]').forEach(elem => {
   let tooltipTimeout;
 
-  elem.addEventListener('mouseenter', function() {
+  elem.addEventListener('mouseenter', function () {
     tooltipTimeout = setTimeout(() => {
       const tooltip = document.createElement('div');
       tooltip.className = 'tooltip';
@@ -617,7 +617,7 @@ document.querySelectorAll('[data-tooltip]').forEach(elem => {
     }, 500); // Delay of 500ms
   });
 
-  elem.addEventListener('mouseleave', function() {
+  elem.addEventListener('mouseleave', function () {
     clearTimeout(tooltipTimeout);
     if (elem._tooltip) {
       elem._tooltip.remove();
