@@ -406,7 +406,7 @@ function randomGrid() {
 function clearGrid() {
   // if the game is paused
   // then allow user to clear the grid
-  if (true) {
+  if (!isAnimating) {
     aliveCount = 0;
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
@@ -415,14 +415,11 @@ function clearGrid() {
     }
     drawCells();
   }
+  isStarted = false;
   if (!areEventListenersAdded) {
     addEventListenersToCells();
     areEventListenersAdded = true;
   }
-  isAnimating = false;
-  isStarted = false;
-  const playPauseIcon = document.getElementById("play-pause-icon");
-  playPauseIcon.src ="./images/Pause-Button.svg"
 }
 
 function toggleWarp() {
