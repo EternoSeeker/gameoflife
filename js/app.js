@@ -1,6 +1,6 @@
 // const { get } = require("animejs");
-const WIDTH = 60;
-const HEIGHT = 30;
+let WIDTH = 60;
+let HEIGHT = 30;
 
 let ALIVE_COLOR = "#00246B";
 let DEAD_COLOR = "#CADCFC";
@@ -10,10 +10,12 @@ const DEAD = 0;
 
 
 // 2D array to hold cell states
-let cells = new Array(HEIGHT);
-for (let i = 0; i < HEIGHT; i++) {
-  cells[i] = new Array(WIDTH);
-}
+// let cells = new Array(HEIGHT);
+// for (let i = 0; i < HEIGHT; i++) {
+//   cells[i] = new Array(WIDTH);
+// }
+let cells = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(DEAD));//added for change in grid size
+
 
 let animationSpeed = 400;
 let randomValue = 20;
@@ -23,6 +25,73 @@ let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
 let aliveCount = 0;
+
+
+//function to change grid size
+document.addEventListener("DOMContentLoaded", () => {
+  initializeGrid();
+});
+
+function initializeGrid() {
+  const gridContainer = document.getElementById("main-grid");
+
+  gridContainer.style.gridTemplateRows = `repeat(${HEIGHT}, calc(100% / ${HEIGHT}))`;
+  gridContainer.style.gridTemplateColumns = `repeat(${WIDTH}, calc(100% / ${WIDTH}))`;
+
+  for (let i = 0; i < HEIGHT; i++) {
+    for (let j = 0; j < WIDTH; j++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.dataset.row = i;
+      cell.dataset.col = j;
+      cell.addEventListener("click", () => toggleCellState(i, j));
+      gridContainer.appendChild(cell);
+    }
+  }
+
+  drawCells();
+}
+
+function drawCells() {
+  const gridContainer = document.getElementById("main-grid");
+  const cellElements = gridContainer.getElementsByClassName("cell");
+
+  Array.from(cellElements).forEach(cell => {
+    const row = parseInt(cell.dataset.row);
+    const col = parseInt(cell.dataset.col);
+    cell.style.backgroundColor = cells[row][col] === ALIVE ? ALIVE_COLOR : DEAD_COLOR;
+  });
+}
+
+function toggleCellState(row, col) {
+  cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
+  drawCells();
+}
+
+function changeGridSize() {
+  const newHeight = parseInt(document.getElementById("new-height").value);
+  if (isNaN(newHeight) || newHeight <= 0) {
+    alert("Please enter a valid height value.");
+    return;
+  }
+
+  const newWidth = newHeight * 2;
+  WIDTH = newWidth;
+  HEIGHT = newHeight;
+
+  cells = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(DEAD));
+
+  const gridContainer = document.getElementById("main-grid");
+  gridContainer.style.gridTemplateRows = `repeat(${HEIGHT}, calc(100% / ${HEIGHT}))`;
+  gridContainer.style.gridTemplateColumns = `repeat(${WIDTH}, calc(100% / ${WIDTH}))`;
+
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
+  }
+
+  initializeGrid();
+}
+
 
 
 
@@ -36,8 +105,8 @@ function onResizeAboveThreshold() {
     document.querySelector(".sidenav").style.left = "0px"
   }
 }
-onResizeAboveThreshold();
-window.addEventListener('resize', onResizeAboveThreshold);
+// onResizeAboveThreshold();
+// window.addEventListener('resize', onResizeAboveThreshold);
 
 
 document.querySelector(".hamburger").addEventListener("click", () => {
@@ -61,6 +130,7 @@ slider.oninput = function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
+  const gridContainer = document.getElementById('main-grid');
   for (let i = 0; i < HEIGHT; i++) {
     // Push an empty array for each row
     for (let j = 0; j < WIDTH; j++) {
@@ -78,14 +148,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // set grid container size according to ratio
   gridContainer.style.minHeight = "30vw";
   gridContainer.style.minWidth = "60vw";
-  handleDropdowns();
-  addEventListenersToCells();
   drawCells();
+  addEventListenersToCells();
+  handleDropdowns();
+  onResizeAboveThreshold();
+  window.addEventListener('resize', onResizeAboveThreshold);
 });
+
 
 // draw the cells according to the state
 // using style of "cell" class to change the color of the cell, iterate over it
 function drawCells() {
+  const gridContainer = document.getElementById('main-grid');
   const cellElements = gridContainer.querySelectorAll(".cell");
   cells.forEach((row, i) => {
     row.forEach((cell, j) => {
@@ -186,29 +260,6 @@ async function getThemes() {
   }
 }
 
-// async function selectTheme(themeName) {
-//   try {
-//     const themesList = await getThemes();
-//     if (!themesList) {
-//       return;
-//     }
-
-//     const theme = themesList[themeName];
-//     if (theme) {
-//       const root = document.documentElement;
-//       for (const key in theme) {
-//         root.style.setProperty(key, theme[key]);
-//       }
-//       ALIVE_COLOR = theme["ALIVE_COLOR"];
-//       DEAD_COLOR = theme["DEAD_COLOR"];
-//     } else {
-//       console.error("Theme not found");
-//     }
-//     drawCells();
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// }
 
 async function selectTheme(themeName) {
   try {
@@ -295,6 +346,7 @@ function startAnimation() {
   const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
     playPauseIcon.src = DEAD_COLOR=="#80ffff"?"./images/Play-Button-Dark.svg": "./images/Play-Button.svg";
+    // playPauseIcon.src = "./images/Play-Button.svg";
     if (!areEventListenersAdded) {
       addEventListenersToCells();
       areEventListenersAdded = true;
@@ -328,6 +380,11 @@ function startAnimation() {
   if (isAnimating) {
     animate();
   }
+}
+
+
+function toggleWarp() {
+  isWarpEnabled = !isWarpEnabled;
 }
 
 //randomGrid()
