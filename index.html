@@ -344,8 +344,10 @@ border-radius: 50%;
     <div class="heading great-vibes-regular">Conway's Game of Life</div>
     <div class="grid-container">
       <div id="main-grid" class="main-grid"></div>
-    </div>
+    </div> 
     <div class="controls">
+    <div class="mobile">             <!--  for responsive in phone -->
+    <div class="mobile1">
   <div class="tooltip-container">
     <button class="clear-button button-73" id="clear-button" onclick="clearGrid()">Clear</button>
     <span class="tooltip-text">Clear the grid</span>
@@ -382,6 +384,19 @@ border-radius: 50%;
   <input type="number" id="new-height" placeholder="Height" min="1" />
   <span class="tooltip-text">height</span>
 </div>
+</div>
+  
+<div class="controls">
+  <div class="tooltip-container">
+  <button class="random-button button-73" id="change-grid-button" onclick="changeGridSize()">Change Grid Size</button>
+  <span class="tooltip-text">change grid size</span>
+</div>
+<div class="tooltip-container">
+  <input type="number" id="new-height" placeholder="Height" min="1" />
+  <span class="tooltip-text">height</span>
+</div>
+</div>
+ 
 </div>
 
 </div>
