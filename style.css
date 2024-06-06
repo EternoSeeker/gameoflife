@@ -88,9 +88,8 @@ body{
   margin-bottom: 1rem;
   text-align: center;
   padding-top: 1.5rem;
-  padding-bottom:0.5rem;
-  margin-top: 2rem;
-  margin-bottom:0.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 0.5rem;
   font-size: 3rem;
   font-weight: bold;
   color: var(--primary-color);
@@ -601,10 +600,10 @@ body{
 
   .grid-container {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: solid 0.2rem var(--border-color1); */
+    border: solid 0.2rem var(--border-color1);
     max-width: 80vw;
     max-height: 82vw;
     transition: border-color 0.3s ease;
