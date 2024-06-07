@@ -494,6 +494,7 @@ body{
 }
 .color-label:hover{
   cursor: pointer;
+  color: aqua;
 }
 
 .randomness-value {
