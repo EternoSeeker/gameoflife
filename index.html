@@ -126,6 +126,10 @@ border-radius: 50%;
     function redirectToReadme() {
       window.location.href = "https://github.com/EternoSeeker/gameoflife/blob/main/README.md";
     }
+    function redirectToFeedback() {
+        window.location.href =
+          "feedback.html";
+      }
   </script>
 </head>
 
@@ -366,6 +370,15 @@ border-radius: 50%;
       </button>
     </div>
       <div class="about-container animate"></div>
+      <div class="feedback has-dropdown animate" style="cursor: pointer">
+        <button
+          class="about has-dropdown animate"
+          style="cursor: pointer"
+          onclick="redirectToFeedback()"
+        >
+          Feedback
+        </button>
+      </div>
     </div>
   </div>
   <div class="game">

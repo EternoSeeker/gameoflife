@@ -404,6 +404,18 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
+.feedback{
+    padding: 0.0rem 1.2rem 0.0rem 0rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    color: white;
+}
 
 .themes-container div{
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
