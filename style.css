@@ -792,3 +792,21 @@ body{
     transform: scale(1.4);
   }
 }
+#info-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--shadow-color2);
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
+  margin: 0 1rem; /* Add margin to separate buttons */
+}
+
+#generation-info, #status-info {
+  background-color: var(--background-col);
+  padding: 10px;
+  border-radius: 2px;
+}
+
+#generation-info p, #status-info p {
+  margin: 2px 0;
+}
