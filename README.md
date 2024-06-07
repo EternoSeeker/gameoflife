@@ -54,6 +54,7 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ### 🎨 The Themes
 
+#### Preset Themes :
 | Themes | The Colors |
 | --- | --- |
 | Blue (default) | ![#0f045a](https://placehold.co/15x15/0f045a/0f045a.png) ![#7582b2](https://placehold.co/15x15/7582b2/7582b2.png) ![#036c96](https://placehold.co/15x15/036c96/036c96.png) ![#ebf2ff](https://placehold.co/15x15/ebf2ff/ebf2ff.png) ![#352a7e](https://placehold.co/15x15/352a7e/352a7e.png) ![#101536](https://placehold.co/15x15/101536/101536.png) ![#080126](https://placehold.co/15x15/080126/080126.png) ![#c6cede](https://placehold.co/15x15/c6cede/c6cede.png) ![#00246B](https://placehold.co/15x15/00246B/00246B.png) ![#CADCFC](https://placehold.co/15x15/CADCFC/CADCFC.png) |
@@ -61,8 +62,15 @@ The first generation is created by applying the above rules simultaneously to ev
 | Green | ![#045a1e](https://placehold.co/15x15/045a1e/045a1e.png) ![#75B289](https://placehold.co/15x15/75B289/75B289.png) ![#03962f](https://placehold.co/15x15/03962f/03962f.png) ![#EBFFEF](https://placehold.co/15x15/EBFFEF/EBFFEF.png) ![#2A7E4D](https://placehold.co/15x15/2A7E4D/2A7E4D.png) ![#10361C](https://placehold.co/15x15/10361C/10361C.png) ![#01260B](https://placehold.co/15x15/01260B/01260B.png) ![#C6DECC](https://placehold.co/15x15/C6DECC/C6DECC.png) ![#006b2b](https://placehold.co/15x15/006b2b/006b2b.png) ![#cafcdd](https://placehold.co/15x15/cafcdd/cafcdd.png) |
 | Purple | ![#5a045a](https://placehold.co/15x15/5a045a/5a045a.png) ![#B275B2](https://placehold.co/15x15/B275B2/B275B2.png) ![#960396](https://placehold.co/15x15/960396/960396.png) ![#FFEBFF](https://placehold.co/15x15/FFEBFF/FFEBFF.png) ![#7E2A7E](https://placehold.co/15x15/7E2A7E/7E2A7E.png) ![#361036](https://placehold.co/15x15/361036/361036.png) ![#260126](https://placehold.co/15x15/260126/260126.png) ![#DEC6DE](https://placehold.co/15x15/DEC6DE/DEC6DE.png) ![#6b006b](https://placehold.co/15x15/6b006b/6b006b.png) ![#fcafcf](https://placehold.co/15x15/fcafcf/fcafcf.png) |
 | Dark Cyan | ![#045a5a](https://placehold.co/15x15/045a5a/045a5a.png) ![#75B2B2](https://placehold.co/15x15/75B2B2/75B2B2.png) ![#039696](https://placehold.co/15x15/039696/039696.png) ![#EBFFFF](https://placehold.co/15x15/EBFFFF/EBFFFF.png) ![#2A7E7E](https://placehold.co/15x15/2A7E7E/2A7E7E.png) ![#103636](https://placehold.co/15x15/103636/103636.png) ![#012626](https://placehold.co/15x15/012626/012626.png) ![#C6DEDE](https://placehold.co/15x15/C6DEDE/C6DEDE.png) ![#006b6b](https://placehold.co/15x15/006b6b/006b6b.png) ![#cafcfc](https://placehold.co/15x15/cafcfc/cafcfc.png) |
+| Black and White | ![#505050](https://placehold.co/15x15/505050/505050.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#C1C1C1](https://placehold.co/15x15/C1C1C1/C1C1C1.png) |
 | Dark Neon | ![#d0ff00](https://placehold.co/15x15/d0ff00/d0ff00.png) ![#00cc26](https://placehold.co/15x15/00cc26/00cc26.png) ![#00b81b](https://placehold.co/15x15/00b81b/00b81b.png) ![#004640](https://placehold.co/15x15/004640/004640.png) ![#fc0101](https://placehold.co/15x15/fc0101/fc0101.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#002628](https://placehold.co/15x15/002628/002628.png) ![#000525](https://placehold.co/15x15/000525/000525.png) ![#9800f5](https://placehold.co/15x15/9800f5/9800f5.png) ![#80ffff](https://placehold.co/15x15/80ffff/80ffff.png) |
+| Cyberpunk | ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#D81B60](https://placehold.co/15x15/D81B60/D81B60.png) ![#AD1457](https://placehold.co/15x15/AD1457/AD1457.png) ![#FF0056](https://placehold.co/15x15/FF0056/FF0056.png) ![#C2185B](https://placehold.co/15x15/C2185B/C2185B.png) ![#880E4F](https://placehold.co/15x15/880E4F/880E4F.png) ![#FFF0F5](https://placehold.co/15x15/FFF0F5/FFF0F5.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) |
 
+#### Custom Theme :
+- It also allows the user to choose colors according to their preferences to create their unique Custom Theme.
+
+#### Gradient Theme :
+- You can also choose 2 colors to create a Gradient Background.
 
 ### ⏳ History
 
