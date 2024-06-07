@@ -497,6 +497,10 @@ body{
   color: aqua;
 }
 
+.presets-list:hover{
+  color: aqua;
+}
+
 .randomness-value {
   max-width: 80%;
   padding-bottom: 0.6rem;
