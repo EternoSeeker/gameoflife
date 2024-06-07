@@ -31,6 +31,54 @@ body {
   transition: background 0.5s ease;
 }
 
+.color-picker-container {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid var(--border-color1);
+  box-shadow: 0 4px 8px var(--shadow-color1);
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.color-picker-container h2 {
+  color: var(--primary-color);
+}
+
+.color-picker-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-picker-container label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--theme-color1);
+}
+
+.color-picker-container input[type="color"] {
+  border: 1px solid var(--border-color1);
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#apply-theme-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--theme-color2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#apply-theme-btn:hover {
+  background-color: var(--theme-color3);
+}
+
+
 ::-webkit-scrollbar {
   width: 6px;
 }

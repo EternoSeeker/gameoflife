@@ -237,6 +237,41 @@ border-radius: 50%;
         </div>
       </li>
     </ul>
+
+      <div>
+        <button id="custom-theme-btn" class="has-dropdown  animate">
+          Switch to Custom Theme
+        </button>
+        <div id="custom-colors-container" style="display: none;">
+          <div class="custom-settings-container animate">
+            <label for="primary-color">Primary Text:</label>
+            <input type="color" id="primary-color" value="#0f045a">
+            <label for="theme-color1">Secondary Text:</label>
+            <input type="color" id="theme-color1" value="#7582b2">
+            <label for="theme-color2">Text Highlight:</label>
+            <input type="color" id="theme-color2" value="#036c96">
+            <label for="theme-color3">Text Bubble:</label>
+            <input type="color" id="theme-color3" value="#ebf2ff">
+            <label for="shadow-color1">Primary Shadow:</label>
+            <input type="color" id="shadow-color1" value="#352a7e">
+            <label for="border-color1">Navbar Colour:</label>
+            <input type="color" id="border-color1" value="#080126">
+            <label for="shadow-color2">Navbar Highlight:</label>
+            <input type="color" id="shadow-color2" value="#101536">
+            <label for="background-col">Background Color:</label>
+            <input type="color" id="background-col" value="#c6cede">
+            <label for="scrollbar-color">Scrollbar Color:</label>
+            <input type="color" id="scrollbar-color" value="#77bdec">
+            <label for="alive-color">Alive Cell:</label>
+            <input type="color" id="alive-color" value="#00246B">
+            <label for="dead-color">Dead Cell:</label>
+            <input type="color" id="dead-color" value="#CADCFC">
+          </div>
+            <button id="apply-custom-theme-btn" class="cuatom-button">Apply Theme</button>
+            <button id="reset-theme-btn" class="custom-button">Reset to Default</button>
+        </div>
+        </div>
+
         <div>
           <button id="gradient-theme-btn" class="has-dropdown  animate">
             Switch to Gradient Theme
@@ -388,6 +423,7 @@ border-radius: 50%;
   </div>
   <script src="node_modules/animejs/lib/anime.min.js"></script>
   <script src="./js/app.js"></script>
+  <script src="./js/customTheme.js"></script>
   <script src="./js/gradient.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -560,5 +596,6 @@ border-radius: 50%;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
   integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="animation.js"></script>
 </html>
