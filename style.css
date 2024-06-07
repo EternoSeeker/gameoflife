@@ -494,6 +494,11 @@ body{
 }
 .color-label:hover{
   cursor: pointer;
+  color: aqua;
+}
+
+.presets-list:hover{
+  color: aqua;
 }
 
 .randomness-value {

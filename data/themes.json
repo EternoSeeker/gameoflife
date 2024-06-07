@@ -81,7 +81,7 @@
     "--border-color1": "#000000",
     "--background-col": "#FFFFFF",
     "ALIVE_COLOR": "#000000",
-    "DEAD_COLOR": "#FFFFFF"
+    "DEAD_COLOR": "#C1C1C1"
   },"cyberpunk": {
     "--primary-color": "#FCE4EC",       
     "--theme-color1": "#EC407A",       
