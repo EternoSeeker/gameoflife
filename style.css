@@ -312,7 +312,7 @@ body{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
-  color: #818181;
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
@@ -361,7 +361,7 @@ body{
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #818181;
+  color: #FFFFFF;
   cursor: pointer;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
@@ -379,7 +379,7 @@ body{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #818181;
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
