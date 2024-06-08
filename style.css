@@ -237,8 +237,7 @@ body{
 
 .clear-button,
 .random-button {
-  border: solid 0.1rem var(--border-color1);
-  border-radius: 0.6rem;
+  
   height: calc((100%) / 1.8);
   width: auto;
   text-align: center;
