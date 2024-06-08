@@ -31,6 +31,54 @@ body {
   transition: background 0.5s ease;
 }
 
+.color-picker-container {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid var(--border-color1);
+  box-shadow: 0 4px 8px var(--shadow-color1);
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.color-picker-container h2 {
+  color: var(--primary-color);
+}
+
+.color-picker-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-picker-container label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--theme-color1);
+}
+
+.color-picker-container input[type="color"] {
+  border: 1px solid var(--border-color1);
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#apply-theme-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--theme-color2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#apply-theme-btn:hover {
+  background-color: var(--theme-color3);
+}
+
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -312,7 +360,7 @@ body{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
-  color: #818181;
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
@@ -356,12 +404,24 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
+.feedback{
+    padding: 0.0rem 1.2rem 0.0rem 0rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    color: white;
+}
 
 .themes-container div{
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #818181;
+  color: #FFFFFF;
   cursor: pointer;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
@@ -379,7 +439,7 @@ body{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #818181;
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
@@ -446,6 +506,11 @@ body{
 }
 .color-label:hover{
   cursor: pointer;
+  color: aqua;
+}
+
+.presets-list:hover{
+  color: aqua;
 }
 
 .randomness-value {

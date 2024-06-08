@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Feedback Form</h1>
+        <form id="feedback-form">
+            <a href="index.html" class="back-button">Back</a>
+            <label for="name">Your Name<span>*</span>:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email<span>*</span>:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your Phone :</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="feedback-type">Feedback Type<span>*</span>:</label>
+            <select id="feedback-type" name="feedback-type" required>
+                <option value="">Select Feedback Type</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Question">Question</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="message">Your Message<span>*</span>:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+        <div id="success-message" class="hidden">
+            <div class="checkbox">
+                <div class="main-container">
+                    <div class="check-container">
+                      <div class="check-background">
+                        <svg
+                          viewBox="0 0 65 51"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 25L27.3077 44L58.5 7"
+                            stroke="white"
+                            stroke-width="13"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            Thank you for your feedback!<br>
+            <span id="countdown-message">Redirecting in 5 seconds</span>
+        </div>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
