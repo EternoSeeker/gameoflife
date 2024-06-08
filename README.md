@@ -30,7 +30,7 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ### 🖼️ The Canvas / Grid
 
-![Game Grid](data/game-images/grid.png)
+![Game Grid](data/game-images/Game-Grid.png)
 
 | Buttons | What they do |
 | --- | --- |
