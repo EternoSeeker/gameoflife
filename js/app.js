@@ -388,7 +388,7 @@ function randomGrid() {
   // then allow user to set the cells to random state
   aliveCount = 0;
   if (!isStarted && !isAnimating) {
-
+    
     // Removes the older grid
     while (gridContainer.firstChild) {
       gridContainer.removeChild(gridContainer.firstChild);
@@ -412,7 +412,7 @@ function clearGrid() {
   // then allow user to clear the grid
   if (!isAnimating) {
     aliveCount = 0;
-
+    
     // Removes the older grid and creates a fresh new one with dead cells
     while (gridContainer.firstChild) {
       gridContainer.removeChild(gridContainer.firstChild);
