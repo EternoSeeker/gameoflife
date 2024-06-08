@@ -388,12 +388,21 @@ function randomGrid() {
   // then allow user to set the cells to random state
   aliveCount = 0;
   if (!isStarted && !isAnimating) {
+    
+    // Removes the older grid
+    while (gridContainer.firstChild) {
+      gridContainer.removeChild(gridContainer.firstChild);
+    }
+
+    // Sets grid stats
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = Math.random() * 100 < randomValue ? ALIVE : DEAD;
         if(cells[i][j] == ALIVE) aliveCount++;
       }
     }
+    // Initializes New Grid and draws random cells
+    initializeGrid();
     drawCells();
   }
 }
@@ -403,11 +412,22 @@ function clearGrid() {
   // then allow user to clear the grid
   if (!isAnimating) {
     aliveCount = 0;
+    
+    // Removes the older grid and creates a fresh new one with dead cells
+    while (gridContainer.firstChild) {
+      gridContainer.removeChild(gridContainer.firstChild);
+    }
+
+    //Sets cell value to dead
     for (let i = 0; i < HEIGHT; i++) {
       for (let j = 0; j < WIDTH; j++) {
         cells[i][j] = DEAD;
       }
     }
+
+    
+    // Initializes a new grid with dead cells
+    initializeGrid();
     drawCells();
   }
   isStarted = false;
