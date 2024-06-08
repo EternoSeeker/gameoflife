@@ -71,6 +71,8 @@ The first generation is created by applying the above rules simultaneously to ev
 
 #### Gradient Theme :
 - You can also choose 2 colors to create a Gradient Background.
+- The Gradient Theme setting also allows users to select the slope of linear Gradient.
+- The Gradient Theme also affects the color of Alive and Dead cells, so that it matches with the Gradient Background.
 
 ### ⏳ History
 
@@ -147,6 +149,11 @@ Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 
 ### More Configurations
 
 Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Category:Patterns).
+
+---
+## 💬 Feedback 
+- Now the page supports user feedback. Which redirects you to a Feedback.html page.
+- In the Feedback page, user can file a feedback for 'Complaint', 'Suggestion', 'Question', etc.*
 
 ---
 
