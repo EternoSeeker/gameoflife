@@ -278,16 +278,14 @@ border-radius: 50%;
           </button>
           <div id="gradient-colors-container" style="display: none;">
             <div class="gradient-settings-container animate">
+              <label for="Color 1 :">Color 1 :</label>
               <input type="color" id="color1" value="#ff7e5f">
+              <label for="Color 2 :">Color 2 :</label>
               <input type="color" id="color2" value="#feb47b">
-              <select id="gradient-direction" class="gradient-direction-select">
-                <option value="to top">Top</option>
-                <option value="to right">Right</option>
-                <option value="to bottom">Bottom</option>
-                <option value="to left">Left</option>
-              </select>    
+              <p>Gradient Direction: <span id="angleValue">180</span>°</p>
+              <input type="range" id="slopeSlider" min="0" max="360" value="180"> 
             </div>
-              <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
+            <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
           </div>
           </div>
       </div>
