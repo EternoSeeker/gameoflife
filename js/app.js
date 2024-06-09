@@ -227,9 +227,6 @@ async function drawPresetPattern(presetName) {
       if (!isStarted && !isAnimating) {
         // Clear the grid
         clearGrid();
-        while (gridContainer.firstChild) {
-          gridContainer.removeChild(gridContainer.firstChild);
-        }
 
         preset.forEach((coord) => {
           let [x, y] = coord;
@@ -240,7 +237,6 @@ async function drawPresetPattern(presetName) {
           }
         });
         // Call drawCells to update the grid
-        initializeGrid();
         drawCells();
       }
     }
