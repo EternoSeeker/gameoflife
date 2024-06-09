@@ -804,3 +804,8 @@ body{
     transform: scale(1.4);
   }
 }
+#new-height{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
