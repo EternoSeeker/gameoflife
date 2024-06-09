@@ -29,6 +29,7 @@ body {
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
+  background-repeat: no-repeat;
 }
 
 .color-picker-container {
@@ -548,9 +549,9 @@ body{
     position: fixed;
     padding-top: 0.5rem;
     left: -250px;
-    height: 100vh;
+    height: 200vh;
     transition: width 0.3s ease;
-    width: 20rem;
+    width: 100vw;
     padding-top: 2rem;
   }
 
@@ -773,7 +774,7 @@ body{
 
 @media screen and (max-width: 425px) {
   .sidenav {
-    width: 100vw;
+    width: 114vw;
     left: -550px ;
     transition: width 0.3s ease;
   }
