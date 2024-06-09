@@ -150,11 +150,11 @@ border-radius: 50%;
   </div>
   <div id="preloader">
     <div id="loader"></div>
- </div>
+ </div class="bor">
   <div class="game-settings">
     <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
     <div class="sidenav" id="sideNav">
-      <div class="other-settings animate">Settings</div>
+      <div class="other-settings animate" class="bor">Settings</div>
       <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
           color="#ffffff" fill="none">
           <path d="M19.0005 4.99988L5.00045 18.9999M5.00045 4.99988L19.0005 18.9999" stroke="currentColor"
@@ -175,7 +175,7 @@ border-radius: 50%;
           <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
         </p>
       </div>
-      <div class="color-themes has-dropdown animate" style="cursor: pointer;">Themes</div>
+      <div class="color-themes has-dropdown animate" style="cursor: pointer;" class="bor">Themes</div>
       <div class="themes-container animate">
         <ul>
         <li>
@@ -293,7 +293,7 @@ border-radius: 50%;
           </div>
           </div>
       </div>
-      <div class="presets has-dropdown animate" style="cursor: pointer;">Presets</div>
+      <div class="presets has-dropdown animate" style="cursor: pointer;" class="bor">Presets</div>
       <div class="presets-container animate">
         <ul>
         <li>
@@ -351,9 +351,9 @@ border-radius: 50%;
         </li>
       </ul>
       </div>
-      <div class="history has-dropdown animate" style=" cursor: pointer;">History</div>
+      <div class="history has-dropdown animate" style=" cursor: pointer;" class="bor">History</div>
       <div class="history-container animate"></div>
-      <div class="game-rules has-dropdown animate">
+      <div class="game-rules has-dropdown animate" class="bor">
         <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer;" onclick="location.href='gamerules.html'">
           Game Rules
         </button>
@@ -362,7 +362,7 @@ border-radius: 50%;
       <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         <span>About</span>
     </div>-->
-    <div class="about has-dropdown animate">
+    <div class="about has-dropdown animate" class="bor">
       <button class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         About
       </button>
@@ -379,6 +379,7 @@ border-radius: 50%;
       </div>
     </div>
   </div>
+  
   <div class="game">
     <div class="hamburger">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
@@ -431,7 +432,12 @@ border-radius: 50%;
 </div>
 
 </div>
-  </div>
+</div>
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+</div>
   <script src="node_modules/animejs/lib/anime.min.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/customTheme.js"></script>
@@ -587,7 +593,6 @@ border-radius: 50%;
       }
     });
   </script>
-</body>
 
 <script>
   document.getElementById("toggleButton").addEventListener("click", function () {
@@ -601,6 +606,30 @@ border-radius: 50%;
       sideNav.classList.toggle("hide-nav");
       document.querySelector(".game").classList.toggle("full-width");
   });
+
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const snowflakesContainer = document.querySelector('.snowflakes');
+
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = ['❅', '❆', '❄'][Math.floor(Math.random() * 3)];
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2 and 5 seconds
+        snowflake.style.fontSize = Math.random() * 1 + 1 + 'em'; // between 1em and 2em
+        snowflake.style.opacity = Math.random();
+
+        snowflakesContainer.appendChild(snowflake);
+
+        setTimeout(() => {
+            snowflake.remove();
+        }, 5000); // remove snowflake after 5 seconds
+    }
+
+    setInterval(createSnowflake, 200);
+});
 </script>
 
 
@@ -609,4 +638,5 @@ border-radius: 50%;
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="animation.js"></script>
+</body>
 </html>

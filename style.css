@@ -29,6 +29,8 @@ body {
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 
 .color-picker-container {
@@ -163,6 +165,8 @@ body{
   margin-left: 20vw;
   background-color: var(--background-col);
   transition: background-color 0.5s ease;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 .full-width{
   margin-left: 0;
@@ -203,6 +207,8 @@ body{
   align-items: center;
   width: 100%;
   height: 100%;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   /* transition: border-color 0.3s ease; */
 }
 
@@ -212,6 +218,8 @@ body{
   height: 30vw;
   min-width: 60vw;
   min-height: 30vw;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   /* border: 1px solid #ccc; */
 }
 
@@ -277,8 +285,7 @@ body{
 
 .clear-button,
 .random-button {
-  border: solid 0.1rem var(--border-color1);
-  border-radius: 0.6rem;
+  
   height: calc((100%) / 1.8);
   width: auto;
   text-align: center;
@@ -326,6 +333,8 @@ body{
     top: 1.8rem;
 }
 .sidenav {
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   height: 100vh;
   width: 20vw;
   position: fixed;
@@ -348,6 +357,8 @@ body{
   top: 45px;
   right: 15px;
   display: block;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 
 .sidenav button,
@@ -364,7 +375,8 @@ body{
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
-  border: none;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   background: none;
   width: 100%;
   text-align: left;
@@ -380,7 +392,8 @@ body{
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
-  border: none;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   background: none;
   width: 100%;
   text-align: left;
@@ -396,7 +409,8 @@ body{
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
-  border: none;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   background: none;
   width: 100%;
   text-align: left;
@@ -426,7 +440,8 @@ body{
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
-  border: none;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   background: none;
   width: 100%;
   text-align: left;
@@ -443,7 +458,8 @@ body{
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
-  border: none;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
   background: none;
   width: 100%;
   text-align: left;
@@ -474,6 +490,8 @@ body{
 .about,
 .game-rules{
   font-size: 1.2rem;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 
 .about button{
@@ -483,10 +501,14 @@ body{
 .other-settings {
   font-weight: bold;
   color: var(--theme-color1);
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 
 .other-settings-container {
   background-color: var(--shadow-color2);
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 
 .themes-container,
@@ -497,12 +519,16 @@ body{
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 
 .presets-list:active,
 .history-container,
 .about-container button:active {
   color: #ffffff;
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
 .color-label:hover{
   cursor: pointer;
@@ -552,6 +578,8 @@ body{
     transition: width 0.3s ease;
     width: 20rem;
     padding-top: 2rem;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
 
   .hamburger {
@@ -559,6 +587,8 @@ body{
     left: 10px;
     top: 5px;
     display: none;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
 
   .sidenav .cross {
@@ -568,6 +598,8 @@ body{
     right: 10px;
     display: block;
     padding-top: 1.6rem;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
   .sidenav .randomness-container input {
     text-decoration: none;
@@ -579,6 +611,8 @@ body{
     cursor: pointer;
     outline: none;
     align-items:center;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
 
   .sidenav .randomness-container label {
@@ -591,6 +625,8 @@ body{
     width: 50%;
     cursor: pointer;
     outline: none;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
   /*.about a {
     text-decoration: none; 
@@ -612,22 +648,24 @@ body{
     text-decoration: none;
     font-size: 1rem;
     display: block;
-    border: none;
     background: none;
     width: 100%;
     cursor: pointer;
     outline: none;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
   .about{
     padding: 0.0rem 0.4rem 0.0rem 1rem;
     text-decoration: none;
     font-size: 1rem;
     display: block;
-    border: none;
     background: none;
     width: 100%;
     cursor: pointer;
     outline: none;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
 
   .other-settings{
@@ -635,11 +673,15 @@ body{
     text-align: left;
     padding-left: 15px;
     padding-bottom: 10px;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
   
   .game {
     width: 100vw;
     margin: 0;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
   .controls {
     display: flex;
@@ -684,6 +726,8 @@ body{
     text-align: center;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
+    border: solid 0.1rem var(--border-color1);
+    border-radius: 0.3rem;
   }
 }
 
@@ -803,4 +847,41 @@ body{
   .control-button {
     transform: scale(1.4);
   }
+}
+
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  color: white;
+  font-size: 1em;
+  will-change: transform;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+  }
+}
+
+.bor {
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.3rem;
 }
