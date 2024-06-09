@@ -226,6 +226,7 @@ async function drawPresetPattern(presetName) {
     if (preset) {
       if (!isStarted && !isAnimating) {
         // Clear the grid
+        clearGrid();
         while (gridContainer.firstChild) {
           gridContainer.removeChild(gridContainer.firstChild);
         }
