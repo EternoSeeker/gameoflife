@@ -413,6 +413,11 @@ function clearGrid() {
   // then allow user to clear the grid
   if (!isAnimating) {
     aliveCount = 0;
+    
+    // Removes the older grid and creates a fresh new one with dead cells
+    while (gridContainer.firstChild) {
+      gridContainer.removeChild(gridContainer.firstChild);
+    }
 
     //Sets cell value to dead
     for (let i = 0; i < HEIGHT; i++) {
@@ -422,6 +427,7 @@ function clearGrid() {
     }
 
     // Initializes a new grid with dead cells
+    initializeGrid();
     drawCells();
   }
   isStarted = false;
