@@ -66,7 +66,12 @@ function toggleCellState(row, col) {
   cells[row][col] = cells[row][col] === ALIVE ? DEAD : ALIVE;
   drawCells();
 }
-
+function updateInfoDisplay() {
+  document.getElementById("generation").innerText = generation;
+  document.getElementById("alive").innerText = aliveCount;
+  document.getElementById("births").innerText = births;
+  document.getElementById("deaths").innerText = deaths;
+}
 function changeGridSize() {
   const newHeight = parseInt(document.getElementById("new-height").value);
   if (isNaN(newHeight) || newHeight <= 0) {
@@ -220,6 +225,7 @@ function updateInfoDisplay() {
   document.getElementById("births").innerText = births;
   document.getElementById("deaths").innerText = deaths;
 }
+
 async function getPresets() {
   try {
     const response = await fetch("../data/presets.json");
@@ -501,6 +507,7 @@ function calculateNextGeneration(cells, wrapEdges) {
   return nextGeneration;
 }
 
+
 function animate() {
   // If animation is starting, capture the start time
   if (!startTime) {
@@ -691,3 +698,97 @@ document.querySelectorAll('.tooltip-container').forEach(container => {
 
 
 const gridContainer = document.getElementById("main-grid");
+
+const showGraphButton = document.getElementById('showGraphButton');
+const overlay = document.getElementById('overlay');
+const closeGraphButton = document.getElementById('closeGraphButton');
+const populationGraph = document.getElementById('populationGraph').getContext('2d');
+const birthDeathGraph = document.getElementById('birthDeathGraph').getContext('2d');
+showGraphButton.addEventListener('click', () => {
+  overlay.style.display = 'flex';
+  updateGraphs(); // Function to update the graphs with data
+});
+
+closeGraphButton.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+
+function updateGraphs() {
+  // Sample data for demonstration
+  const generations = Array.from({ length: 100 }, (_, i) => i);
+  const aliveData = Array.from({ length: 100 }, () => Math.floor(Math.random() * 100));
+  const birthData = Array.from({ length: 100 }, () => Math.floor(Math.random() * 50));
+  const deathData = Array.from({ length: 100 }, () => Math.floor(Math.random() * 50));
+
+
+  // Population graph (alive stats)
+  new Chart(populationGraph, {
+      type: 'line',
+      data: {
+          labels: generations,
+          datasets: [{
+              label: 'Alive',
+              data: aliveData,
+              borderColor: 'black',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              fill: false
+          }]
+      },
+      options: {
+          scales: {
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Generation'
+                  }
+              },
+              y: {
+                  title: {
+                      display: true,
+                      text: 'Population'
+                  }
+              }
+          }
+      }
+  });
+
+  // Birth/Death graph
+  new Chart(birthDeathGraph, {
+      type: 'line',
+      data: {
+          labels: generations,
+          datasets: [
+              {
+                  label: 'Births',
+                  data: birthData,
+                  borderColor: 'green',
+                  backgroundColor: 'rgba(0, 255, 0, 0.5)',
+                  fill: false
+              },
+              {
+                  label: 'Deaths',
+                  data: deathData,
+                  borderColor: 'red',
+                  backgroundColor: 'rgba(255, 0, 0, 0.5)',
+                  fill: false
+              }
+          ]
+      },
+      options: {
+          scales: {
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Generation'
+                  }
+              },
+              y: {
+                  title: {
+                      display: true,
+                      text: 'Count'
+                  }
+              }
+          }
+      }
+  });
+}

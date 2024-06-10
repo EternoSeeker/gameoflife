@@ -848,3 +848,46 @@ body {
       opacity: 0;
   }
 }
+#info-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--background-col);
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
+}
+
+#generation-info, #status-info {
+  background-color: var(--background-col);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#generation-info p, #status-info p {
+  margin: 5px 0;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#populationGraph, #birthDeathGraph {
+  display: block;
+  margin: 10px auto;
+}
