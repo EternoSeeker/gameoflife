@@ -37,6 +37,13 @@ const defaultColors = {
   }
 
   function applyColors() {
+    
+    while (gridContainer.firstChild) {
+      gridContainer.removeChild(gridContainer.firstChild);
+    }
+  
+    initializeGrid();
+
     const root = document.documentElement;
 
     root.style.setProperty('--primary-color', document.getElementById('primary-color').value);
@@ -51,6 +58,8 @@ const defaultColors = {
     ALIVE_COLOR = document.getElementById('alive-color').value;
     DEAD_COLOR = document.getElementById('dead-color').value;
 
+    drawCells();
+
     saveColors();
     title.style.color = isDark(color1) ? '#ffffff' : '#000000';
   }
@@ -64,6 +73,8 @@ const defaultColors = {
     ALIVE_COLOR = "#00246B";
     DEAD_COLOR = "#CADCFC";
     loadColorInputs();  // Update the color pickers to reflect default values
+    document.getElementById('custom-colors-container').style.display = 'none'; //Hide the Container if reset to default
+    drawCells();
   }
 
 
@@ -101,3 +112,17 @@ function isDark(color) {
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance < 0.5;
 }
+
+
+slopeSlider.addEventListener('input', function() {
+  ALIVE_COLOR = document.getElementById('color1').value;
+  DEAD_COLOR = document.getElementById('color2').value;
+  drawCells();
+});
+
+// Event listener for the Apply Gradient button
+document.getElementById('apply-gradient-btn').addEventListener('click', function() {
+  ALIVE_COLOR = document.getElementById('color1').value;
+  DEAD_COLOR = document.getElementById('color2').value;
+  drawCells();
+});

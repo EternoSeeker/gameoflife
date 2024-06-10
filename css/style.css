@@ -29,6 +29,7 @@ body {
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
+  background-repeat: no-repeat;
 }
 
 .color-picker-container {
@@ -404,6 +405,18 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
+.feedback{
+    padding: 0.0rem 1.2rem 0.0rem 0rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    color: white;
+}
 
 .themes-container div{
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
@@ -536,9 +549,9 @@ body{
     position: fixed;
     padding-top: 0.5rem;
     left: -250px;
-    height: 100vh;
+    height: 200vh;
     transition: width 0.3s ease;
-    width: 20rem;
+    width: 100vw;
     padding-top: 2rem;
   }
 
@@ -761,7 +774,7 @@ body{
 
 @media screen and (max-width: 425px) {
   .sidenav {
-    width: 100vw;
+    width: 114vw;
     left: -550px ;
     transition: width 0.3s ease;
   }
@@ -792,21 +805,46 @@ body{
     transform: scale(1.4);
   }
 }
-#info-container {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--shadow-color2);
-  color: var(--primary-color);
+
+body {
   font-family: Arial, sans-serif;
-  margin: 0 1rem; /* Add margin to separate buttons */
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
-#generation-info, #status-info {
-  background-color: var(--background-col);
-  padding: 10px;
-  border-radius: 2px;
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-#generation-info p, #status-info p {
-  margin: 2px 0;
+.snowflake {
+  position: absolute;
+  top: -10px;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  color: white;
+  font-size: 1em;
+  will-change: transform;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+  }
 }

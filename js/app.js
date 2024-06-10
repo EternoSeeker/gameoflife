@@ -31,11 +31,6 @@ let deathCount = 0;
 let startTime = null;
 
 
-//function to change grid size
-document.addEventListener("DOMContentLoaded", () => {
-  initializeGrid();
-});
-
 function initializeGrid() {
   const gridContainer = document.getElementById("main-grid");
 
@@ -695,3 +690,4 @@ document.querySelectorAll('.tooltip-container').forEach(container => {
 });
 
 
+const gridContainer = document.getElementById("main-grid");
