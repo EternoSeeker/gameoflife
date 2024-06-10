@@ -30,7 +30,7 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ### 🖼️ The Canvas / Grid
 
-![Game Grid](data/game-images/grid.png)
+![Game Grid](./images/grid.png)
 
 | Buttons | What they do |
 | --- | --- |
@@ -71,6 +71,8 @@ The first generation is created by applying the above rules simultaneously to ev
 
 #### Gradient Theme :
 - You can also choose 2 colors to create a Gradient Background.
+- The Gradient Theme setting also allows users to select the slope of linear Gradient.
+- The Gradient Theme also affects the color of Alive and Dead cells, so that it matches with the Gradient Background.
 
 ### ⏳ History
 
@@ -85,7 +87,7 @@ Stores history of patterns that user has played with, up to 5 recent patterns.
 The glider is the smallest, most common, and first-discovered spaceship in Game of Life. It travels diagonally across the grid. Gliders are important because they are easily produced, can be collided with each other to form more complicated patterns, and can be used to transmit information over long distances.
 
 <div>
-  <img src="data/game-images/Small-Glider.png" alt="Small Glider" height="150">
+  <img src="images/Small-Glider.png" alt="Small Glider" height="150">
   <img src="https://conwaylife.com/w/images/8/81/Glider.gif" height="150">
 </div>
 
@@ -94,7 +96,7 @@ The glider is the smallest, most common, and first-discovered spaceship in Game 
 The big glider was found by Dean Hickerson in December 1989 and was the first known diagonal spaceship other than the glider. Two gliders can be temporarily seen at the front of the ship; these do not stay gliders but still move like them.
 
 <div>
-  <img src="data/game-images/Big-Glider.png" alt="Big Glider" height="150">
+  <img src="images/Big-Glider.png" alt="Big Glider" height="150">
   <img src="https://conwaylife.com/w/images/f/fd/Bigglider.gif" height="150">
 </div>
 
@@ -103,7 +105,7 @@ The big glider was found by Dean Hickerson in December 1989 and was the first kn
 The Gosper glider gun is the first known gun, and indeed the first known finite pattern with unbounded growth, found by Bill Gosper in November 1970. It consists of two queen bee shuttles stabilized by two blocks.
 
 <div>
-  <img src="data/game-images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150">
+  <img src="images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" height="150">
   <img src="https://conwaylife.com/w/images/b/b6/Gosperglidergun.gif" height="150">
 </div>
 
@@ -113,7 +115,7 @@ The Gosper glider gun is the first known gun, and indeed the first known finite 
 The pulsar is a period-3 oscillator, meaning it returns to its initial state after three generations. It’s a symmetric pattern and one of the most recognized oscillators in the Game of Life.
 
 <div>
-  <img src="data/game-images/Pulsar.png" alt="Pulsar" height="150">
+  <img src="images/Pulsar.png" alt="Pulsar" height="150">
   <img src="https://conwaylife.com/w/images/e/ef/Pulsar.gif" height="150">
 </div>
 
@@ -122,7 +124,7 @@ The pulsar is a period-3 oscillator, meaning it returns to its initial state aft
 This term isn’t standard in the Game of Life nomenclature but could refer to a specific type of oscillator or a similar repeating pattern that creates a visual effect resembling a circle of fire.
 
 <div>
-  <img src="data/game-images/Circle-of-Fire.png" alt="Circle-of-Fire" height="150">
+  <img src="images/Circle-of-Fire.png" alt="Circle-of-Fire" height="150">
   <img src="https://conwaylife.com/w/images/5/50/Circleoffire.gif" height="150">
 </div>
 
@@ -131,7 +133,7 @@ This term isn’t standard in the Game of Life nomenclature but could refer to a
 The quadpole is the eighth most common oscillator in Achim Flammenkamp's census, being less common than the bipole but more common than the great on-off. It is the eighth most common oscillator on Adam P. Goucher's Catagolue.
 
 <div>
-  <img src="data/game-images/Quadpole.png" alt="Quadpole" height="150">
+  <img src="images/Quadpole.png" alt="Quadpole" height="150">
   <img src="https://conwaylife.com/w/images/6/6d/Quadpole.gif" height="150">
 </div>
 
@@ -140,13 +142,18 @@ The quadpole is the eighth most common oscillator in Achim Flammenkamp's census,
 Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 14, 1997. It is the smallest known c/5 orthogonal spaceship. Its side sparks have proven to be very useful in constructing puffers and rakes.
 
 <div>
-  <img src="data/game-images/Spider.png" alt="Spider" height="150">
+  <img src="images/Spider.png" alt="Spider" height="150">
   <img src="https://conwaylife.com/w/images/9/9f/Spider.gif" height="150">
 </div>
 
 ### More Configurations
 
 Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Category:Patterns).
+
+---
+## 💬 Feedback 
+- Now the page supports user feedback. Which redirects you to a Feedback.html page.
+- In the Feedback page, user can file a feedback for 'Complaint', 'Suggestion', 'Question', etc.*
 
 ---
 
