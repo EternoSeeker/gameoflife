@@ -261,7 +261,7 @@
     <div class="game-settings">
       <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
       <div class="sidenav" id="sideNav">
-        <div class="other-settings animate">Settings</div>
+        <div class="other-settings animate" class="hov">Settings</div>
         <div class="cross">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -290,7 +290,7 @@
               class="grid-checkbox"
               onclick="toggleGrid()"
             />
-            <label for="grid-toggle" style="cursor: pointer">Gridlines</label>
+            <label for="grid-toggle" style="cursor: pointer" class="hov">Gridlines</label>
           </div>
           <div class="warp-on-edges">
             <input
@@ -300,13 +300,13 @@
               class="warp-checkbox"
               onclick="toggleWarp()"
             />
-            <label for="warp-on-edges" style="cursor: pointer"
+            <label for="warp-on-edges" style="cursor: pointer" class="hov"
               >Warp on Edges</label
             >
           </div>
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
-              ><span>Randomness</span
+              ><span class="hov">Randomness</span
               ><span id="randomValOutput">20</span></label
             >
             <input
