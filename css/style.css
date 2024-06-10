@@ -221,13 +221,13 @@ body{
   width: 100%;
   height: 100%;
   border: solid 0.001rem var(--border-color1);
-  background-color: #CADCFC;
+  background-color: #103e8eb0;
   cursor: pointer;
   transition:0.2s ease;
 }
 
 .cell.alive {
-  background-color: #00246B;
+  background-color: #ffffff;
 }
 
 
