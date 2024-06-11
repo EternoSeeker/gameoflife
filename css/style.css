@@ -26,6 +26,7 @@ body {
 
 body {
   font-family: 'Roboto Mono', monospace;
+  overflow-y: scroll;
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
@@ -151,6 +152,7 @@ body{
   /* font-weight: 400; */
   letter-spacing: 1px;
   font-style: normal;
+  margin: 1rem 0;
 }
 
 .game {
@@ -159,11 +161,12 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   max-width: 100vw;
   margin-left: 20vw;
   background-color: var(--background-col);
   transition: background-color 0.5s ease;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 .full-width{
   margin-left: 0;
@@ -203,7 +206,7 @@ body{
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto; /* Allow it to grow as needed */
   /* transition: border-color 0.3s ease; */
 }
 
@@ -214,6 +217,21 @@ body{
   min-width: 60vw;
   min-height: 30vw;
   /* border: 1px solid #ccc; */
+}
+
+/* Additional scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shadow-color2);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 30px;
 }
 
 .cell {
