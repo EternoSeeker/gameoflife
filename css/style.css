@@ -884,3 +884,8 @@ body {
 #generation-info p, #status-info p {
   margin: 5px 0;
 }
+
+.hov:hover{
+  color: aqua;
+}
+
