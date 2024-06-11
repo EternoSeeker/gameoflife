@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <h1>Feedback Form</h1>
-      <form id="feedback-form">
+      <form id="feedback-form" onsubmit="return validationcheck(event)">
         <a href="index.html" class="back-button">Back</a>
         <label for="name">Your Name<span>*</span>:</label>
         <input type="text" id="name" name="name" required />
