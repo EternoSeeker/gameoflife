@@ -9,19 +9,23 @@
   </head>
   <body>
     <div class="container">
-      <h1>Feedback Form</h1>
+      <h1
+        style="text-align: center;"      
+      
+        
+        >Feedback Form</h1>
       <form id="feedback-form" onsubmit="return validationcheck(event)">
-        <a href="index.html" class="back-button">Back</a>
+        <a href="index.html" class="back-button">Back</a><br>
         <label for="name">Your Name<span>*</span>:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required /><br>
 
         <label for="email">Your Email<span>*</span>:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required /><br>
 
         <label for="phone">Your Phone :</label>
-        <input type="tel" id="phone" name="phone" />
+        <input type="tel" id="phone" name="phone" /><br>
 
-        <label for="feedback-type">Feedback Type<span>*</span>:</label>
+        <label for="feedback-type">Feedback Type<span>*</span>:</label><br>
         <select id="feedback-type" name="feedback-type" required>
           <option value="">Select Feedback Type</option>
           <option value="Complaint">Complaint</option>
@@ -30,7 +34,7 @@
           <option value="Other">Other</option>
         </select>
 
-        <label for="message">Your Message<span>*</span>:</label>
+        <label for="message">Your Message<span>*</span>:</label><br>
         <textarea id="message" name="message" required></textarea>
 
         <button type="submit">Send</button>
@@ -57,7 +61,8 @@
             </div>
           </div>
         </div>
-        Thank you for your feedback!<br />
+       
+        <h4>Thank you for your feedback!</h4><br />
         <span id="countdown-message">Redirecting in 5 seconds</span>
       </div>
     </div>
