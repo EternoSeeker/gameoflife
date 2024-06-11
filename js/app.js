@@ -313,20 +313,6 @@ async function selectTheme(themeName) {
   }
 }
 
-
-
-function increaseSpeed() {
-  // increase the speed of the animation
-  if (animationSpeed > 1) {
-    animationSpeed /= 1.1;
-  }
-}
-
-function decreaseSpeed() {
-  // decrease the speed of the animation
-  animationSpeed *= 1.1;
-}
-
 function isEmpty() {
   return (aliveCount==0);
 }
