@@ -27,16 +27,6 @@ let isGridVisible = true;
 let aliveCount = 0;
 
 
-
-
-//function to change grid size
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-});
-
-
 function initializeGrid() {
   const gridContainer = document.getElementById("main-grid");
 
@@ -321,20 +311,6 @@ async function selectTheme(themeName) {
   } catch (error) {
     console.error("Error:", error);
   }
-}
-
-
-
-function increaseSpeed() {
-  // increase the speed of the animation
-  if (animationSpeed > 1) {
-    animationSpeed /= 1.1;
-  }
-}
-
-function decreaseSpeed() {
-  // decrease the speed of the animation
-  animationSpeed *= 1.1;
 }
 
 function isEmpty() {

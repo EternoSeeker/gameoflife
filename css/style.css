@@ -21,7 +21,7 @@ body {
   --shadow-color2: #101536;
   --border-color1: #080126;
   --background-col: #c6cede;
-  --scrollbar-color: #555555;
+  --scrollbar-color: #77bdec;
 }
 
 body {
@@ -29,18 +29,69 @@ body {
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
+  background-repeat: no-repeat;
 }
 
+.color-picker-container {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid var(--border-color1);
+  box-shadow: 0 4px 8px var(--shadow-color1);
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.color-picker-container h2 {
+  color: var(--primary-color);
+}
+
+.color-picker-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-picker-container label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--theme-color1);
+}
+
+.color-picker-container input[type="color"] {
+  border: 1px solid var(--border-color1);
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#apply-theme-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--theme-color2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#apply-theme-btn:hover {
+  background-color: var(--theme-color3);
+}
+
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--shadow-color2);
+  border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
+  border-radius: 30px;
 }
 body{
   background-color: var(--background-col);
@@ -86,9 +137,8 @@ body{
   margin-bottom: 1rem;
   text-align: center;
   padding-top: 1.5rem;
-  padding-bottom:0.5rem;
-  margin-top: 2rem;
-  margin-bottom:0.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 0.5rem;
   font-size: 3rem;
   font-weight: bold;
   color: var(--primary-color);
@@ -306,16 +356,73 @@ body{
 .other-settings-container div,
 .presets-container div,
 .color-themes,
-.themes-container div,
 .presets,
-.history,
-.about,
-.game-rules,
-.game-rules-container{
+.history{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+.game-rules{
+  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
   color: #818181;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+.about{
+  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+.feedback{
+    padding: 0.0rem 1.2rem 0.0rem 0rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    color: white;
+}
+
+.themes-container div{
+  padding: 0.4rem 0.5rem 0.0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #FFFFFF;
   cursor: pointer;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
@@ -333,7 +440,7 @@ body{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #818181;
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-weight: lighter;
   display: block;
@@ -364,10 +471,14 @@ body{
 .other-settings,
 .color-themes,
 .presets,
-.history
+.history,
 .about,
 .game-rules{
   font-size: 1.2rem;
+}
+
+.about button{
+  margin-left: -1.7rem;
 }
 
 .other-settings {
@@ -396,6 +507,11 @@ body{
 }
 .color-label:hover{
   cursor: pointer;
+  color: aqua;
+}
+
+.presets-list:hover{
+  color: aqua;
 }
 
 .randomness-value {
@@ -433,9 +549,9 @@ body{
     position: fixed;
     padding-top: 0.5rem;
     left: -250px;
-    height: 100vh;
+    height: 200vh;
     transition: width 0.3s ease;
-    width: 20rem;
+    /* width: 100vw; */
     padding-top: 2rem;
   }
 
@@ -454,18 +570,16 @@ body{
     display: block;
     padding-top: 1.6rem;
   }
-
   .sidenav .randomness-container input {
     text-decoration: none;
     font-size: 0.8rem;
     display: block;
     border: none;
     background: none;
-    width: 50%;
-    text-align: center;
+    width: 90%;
     cursor: pointer;
     outline: none;
-    align-items: center;
+    align-items:center;
   }
 
   .sidenav .randomness-container label {
@@ -479,10 +593,13 @@ body{
     cursor: pointer;
     outline: none;
   }
-  .about a {
+  /*.about a {
     text-decoration: none; 
     color: inherit; 
     cursor: pointer; 
+  }*/
+  .about button{
+    margin-left: -1.1rem;
   }
 
   .sidenav button,
@@ -491,9 +608,19 @@ body{
   .color-themes,
   .themes-container div,
   .presets,
-  .history,
+  .history{
+    padding: 0.3rem 0.4rem 0.3rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+  }
   .about{
-    padding: 0.6rem 0.4rem 0.6rem 1rem;
+    padding: 0.0rem 0.4rem 0.0rem 1rem;
     text-decoration: none;
     font-size: 1rem;
     display: block;
@@ -506,7 +633,9 @@ body{
 
   .other-settings{
     padding: 3px;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 10px;
   }
   
   .game {
@@ -537,7 +666,7 @@ body{
 
   .grid-container {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: solid 0.2rem var(--border-color1); */
@@ -644,12 +773,22 @@ body{
 }
 
 @media screen and (max-width: 425px) {
+  .controls {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: center; /* Center buttons vertically */
+    /* min-width: 25vw; */
+    margin: none;
+  }
+
   .sidenav {
     width: 100vw;
     left: -550px ;
     transition: width 0.3s ease;
   }
-
+  .tooltip-text{
+    position: absolute;
+    top: -15px;
+  }
   #toggleButton {
     left: 1.4rem;
     top: 1rem;
@@ -662,17 +801,64 @@ body{
     height: calc((100%) / 1.8);
     width: auto;
     text-align: center;
-    padding: 0.3rem;
+    /* padding: 0.3rem; */
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     font-size: 0.5rem;
     color: var(--primary-color);
     background-color: var(--theme-color3);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
-    margin: 0 0.5rem; /* Add margin to separate buttons */
+    /* margin: 0 0.5rem; Add margin to separate buttons */
   }
 
   .control-button {
     transform: scale(1.4);
   }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  color: white;
+  font-size: 1em;
+  will-change: transform;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+  }
+}
+
+.hov:hover{
+  color: aqua;
 }
