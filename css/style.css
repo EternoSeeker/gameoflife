@@ -551,7 +551,7 @@ body{
     left: -250px;
     height: 200vh;
     transition: width 0.3s ease;
-    /* width: 100vw; */
+  
     padding-top: 2rem;
   }
 
@@ -669,7 +669,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: solid 0.2rem var(--border-color1); */
+    
     max-width: 80vw;
     max-height: 82vw;
     transition: border-color 0.3s ease;
@@ -776,7 +776,7 @@ body{
   .controls {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
     align-items: center; /* Center buttons vertically */
-    /* min-width: 25vw; */
+    
     margin: none;
   }
 
@@ -801,14 +801,14 @@ body{
     height: calc((100%) / 1.8);
     width: auto;
     text-align: center;
-    /* padding: 0.3rem; */
+   
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     font-size: 0.5rem;
     color: var(--primary-color);
     background-color: var(--theme-color3);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
-    /* margin: 0 0.5rem; Add margin to separate buttons */
+   
   }
 
   .control-button {
