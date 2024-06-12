@@ -81,3 +81,11 @@ function changeToGif7() {
 function changeToStatic7() {
     document.getElementById('image7').src = 'images/Spider.png';
 }
+
+function changeToGif8() {
+    document.getElementById('image8').src = 'images/Moving-Spaceship.gif';
+}
+
+function changeToStatic8() {
+    document.getElementById('image8').src = 'images/Spaceship.png';
+}
