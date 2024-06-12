@@ -848,3 +848,7 @@ body {
       opacity: 0;
   }
 }
+
+.hov:hover{
+  color: aqua;
+}
