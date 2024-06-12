@@ -176,12 +176,17 @@ function addEventListenersToCells() {
     const listener = function () {
       handleClick(index);
     };
-    cellEventListeners.set(cell, listener);
+    const mouseoverlistener = function(event) {
+      if (event.buttons == 1) listener(event);
+    };
+    cellEventListeners.set(cell, {mousedown:listener,mouseover:mouseoverlistener});
     //cell.addEventListener("click", listener);
     cell.addEventListener("mousedown", listener);
-    cell.addEventListener("mouseover", listener);
+    cell.addEventListener("mouseover", mouseoverlistener);
   });
 }
+
+var timer=null;
 
 function removeEventListenersFromCells() {
   const cellElements = document.querySelectorAll(".cell");
@@ -189,8 +194,8 @@ function removeEventListenersFromCells() {
     const listener = cellEventListeners.get(cell);
     if (listener) {
       //cell.removeEventListener("click", listener);
-      cell.removeEventListener("mousedown",listener);
-      cell.removeEventListener("mouseover",listener);
+      cell.removeEventListener("mousedown",listener.mousedown);
+      cell.removeEventListener("mouseover",listener.mouseover);
       cellEventListeners.delete(cell);
     }
   });
@@ -211,6 +216,7 @@ function handleClick(i) {
   drawCells();
   
 }
+
 
 async function getPresets() {
   try {
