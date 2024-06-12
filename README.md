@@ -154,7 +154,7 @@ Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Categ
 ---
 ## 💬 Feedback 
 - Now the page supports user feedback. Which redirects you to a Feedback.html page.
-- In the Feedback page, user can file a feedback for 'Complaint', 'Suggestion', 'Question', etc.*
+- In the Feedback page, user can file a feedback for 'Complaint', 'Suggestion', 'Question', etc.*
 
 ---
 
