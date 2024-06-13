@@ -155,6 +155,15 @@ Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 
   <img src="images/Moving-Spaceship.gif" height="150">
 </div>
 
+### Boat-Tie
+
+Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue, being less common than shillelagh but more common than snake.It is also the twenty-seventh most common object overall on Catagolue.Two copies of boat-tie can be seen in a symmetric constellation that evolves from two traffic light predecessors.
+
+ <div>
+  <img src="images/Boat-Tie.png" alt="Spaceship" height="150">
+  <img src="images/Moving-Boat-Tie.gif" height="150">
+</div>
+
 
 ### More Configurations
 
