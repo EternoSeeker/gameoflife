@@ -96,7 +96,7 @@
   }, 
   "sunset": {
     "--primary-color": "#ff5e5b",
-    "--theme-color1": "#ff9966",
+    "--theme-color1": "#ff5e5b",
     "--theme-color2": "#ffcc66",
     "--theme-color3": "#fff3e6",
     "--shadow-color1": "#ff9933",
