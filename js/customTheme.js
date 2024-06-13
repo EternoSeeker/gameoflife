@@ -88,6 +88,8 @@ const defaultColors = {
     document.getElementById('border-color1').value = localStorage.getItem('--border-color1') || defaultColors['--border-color1'];
     document.getElementById('background-col').value = localStorage.getItem('--background-col') || defaultColors['--background-col'];
     document.getElementById('scrollbar-color').value = localStorage.getItem('--scrollbar-color') || defaultColors['--scrollbar-color'];
+    document.getElementById('alive-color').value = ALIVE_COLOR;
+    document.getElementById('dead-color').value = DEAD_COLOR;    
   }
 
   customThemeBtn.addEventListener('click', function () {

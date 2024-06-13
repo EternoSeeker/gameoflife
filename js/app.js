@@ -16,7 +16,6 @@ const DEAD = 0;
 // }
 let cells = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(DEAD));//added for change in grid size
 
-
 let animationSpeed = 400;
 let randomValue = 20;
 let isAnimating = false;
@@ -177,23 +176,34 @@ function addEventListenersToCells() {
     const listener = function () {
       handleClick(index);
     };
-    cellEventListeners.set(cell, listener);
-    cell.addEventListener("click", listener);
+    const mouseoverlistener = function(event) {
+      if (event.buttons == 1) listener(event);
+    };
+    cellEventListeners.set(cell, {mousedown:listener,mouseover:mouseoverlistener});
+    //cell.addEventListener("click", listener);
+    cell.addEventListener("mousedown", listener);
+    cell.addEventListener("mouseover", mouseoverlistener);
   });
 }
+
+var timer=null;
 
 function removeEventListenersFromCells() {
   const cellElements = document.querySelectorAll(".cell");
   cellElements.forEach(function (cell) {
     const listener = cellEventListeners.get(cell);
     if (listener) {
-      cell.removeEventListener("click", listener);
+      //cell.removeEventListener("click", listener);
+      cell.removeEventListener("mousedown",listener.mousedown);
+      cell.removeEventListener("mouseover",listener.mouseover);
       cellEventListeners.delete(cell);
     }
   });
 }
 
 function handleClick(i) {
+  clearTimeout(timer);
+
   const row = Math.floor(i / WIDTH);
   const col = i % WIDTH;
   // Toggle cell state
@@ -204,7 +214,9 @@ function handleClick(i) {
 
   // Redraw cells
   drawCells();
+  
 }
+
 
 async function getPresets() {
   try {
@@ -311,20 +323,6 @@ async function selectTheme(themeName) {
   } catch (error) {
     console.error("Error:", error);
   }
-}
-
-
-
-function increaseSpeed() {
-  // increase the speed of the animation
-  if (animationSpeed > 1) {
-    animationSpeed /= 1.1;
-  }
-}
-
-function decreaseSpeed() {
-  // decrease the speed of the animation
-  animationSpeed *= 1.1;
 }
 
 function isEmpty() {
