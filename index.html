@@ -464,6 +464,24 @@
             </li>
           </ul>
 
+          <!-- new theme sunset -->
+          <ul>
+            <li>
+              <div>
+                <input
+                  type="radio"
+                  class="color-label"
+                  id="sunset-theme"
+                  name="theme"
+                  onclick="selectTheme('sunset')"
+                />
+                <label for="sunset-theme" class="color-label"
+                  >Sunset</label
+                >
+              </div>
+            </li>
+          </ul>          
+
           <div>
             <button id="custom-theme-btn" class="has-dropdown animate">
               Switch to Custom Theme
@@ -629,6 +647,14 @@
               </button>
             </li>
           </ul>
+          <!-- adding new presets -->
+          <ul>
+            <li>
+              <button class="presets-list" onclick="drawPresetPattern('Pentadecathlon')">
+                <i class="fa-solid fa-solar-panel"></i> Pentadecathlon
+              </button>
+            </li>
+          </ul>
         </div>
         <div class="history has-dropdown animate" style="cursor: pointer">
           History
@@ -777,7 +803,7 @@
             >
               Change Grid Size
             </button>
-            <span class="tooltip-text">change grid size</span>
+            <span class="tooltip-text">Change grid size</span>
           </div>
           <div class="tooltip-container">
             <input type="number" id="new-height" placeholder="Height" min="1" />

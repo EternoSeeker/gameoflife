@@ -122,6 +122,42 @@ body{
   touch-action: manipulation;
 }
 
+/* Unified Button Styling */
+.button {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex; /* Use flexbox to center content */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+}
+
+.button:hover {
+  background-color: #FFC229;
+  box-shadow: #FF6314 0 -6px 8px inset;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(1.03);
+}
+
+
 .button-73:hover {
   background-color: #FFC229;
   box-shadow: #FF6314 0 -6px 8px inset;
@@ -245,6 +281,8 @@ body{
   width:auto;
   border-radius: 6px;
   gap: 10px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .controls {
