@@ -146,6 +146,25 @@ Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 
   <img src="https://conwaylife.com/w/images/9/9f/Spider.gif" height="150">
 </div>
 
+### Spaceship
+
+ The middleweight spaceship (commonly abbreviated to MWSS) or (rarely) medium fish is the third most common spaceship after the glider and lightweight spaceship.It was found by John Conway in 1970 and travels at c/2 orthogonally.
+
+ <div>
+  <img src="images/Spaceship.png" alt="Spaceship" height="150">
+  <img src="images/Moving-Spaceship.gif" height="150">
+</div>
+
+### Boat-Tie
+
+Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue, being less common than shillelagh but more common than snake.It is also the twenty-seventh most common object overall on Catagolue.Two copies of boat-tie can be seen in a symmetric constellation that evolves from two traffic light predecessors.
+
+ <div>
+  <img src="images/Boat-Tie.png" alt="Spaceship" height="150">
+  <img src="images/Moving-Boat-Tie.gif" height="150">
+</div>
+
+
 ### More Configurations
 
 Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Category:Patterns).
