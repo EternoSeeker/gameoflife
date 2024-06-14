@@ -65,6 +65,7 @@ The first generation is created by applying the above rules simultaneously to ev
 | Black and White | ![#505050](https://placehold.co/15x15/505050/505050.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#C1C1C1](https://placehold.co/15x15/C1C1C1/C1C1C1.png) |
 | Dark Neon | ![#d0ff00](https://placehold.co/15x15/d0ff00/d0ff00.png) ![#00cc26](https://placehold.co/15x15/00cc26/00cc26.png) ![#00b81b](https://placehold.co/15x15/00b81b/00b81b.png) ![#004640](https://placehold.co/15x15/004640/004640.png) ![#fc0101](https://placehold.co/15x15/fc0101/fc0101.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#002628](https://placehold.co/15x15/002628/002628.png) ![#000525](https://placehold.co/15x15/000525/000525.png) ![#9800f5](https://placehold.co/15x15/9800f5/9800f5.png) ![#80ffff](https://placehold.co/15x15/80ffff/80ffff.png) |
 | Cyberpunk | ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#D81B60](https://placehold.co/15x15/D81B60/D81B60.png) ![#AD1457](https://placehold.co/15x15/AD1457/AD1457.png) ![#FF0056](https://placehold.co/15x15/FF0056/FF0056.png) ![#C2185B](https://placehold.co/15x15/C2185B/C2185B.png) ![#880E4F](https://placehold.co/15x15/880E4F/880E4F.png) ![#FFF0F5](https://placehold.co/15x15/FFF0F5/FFF0F5.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) |
+| Sunset | ![#FF4500](https://placehold.co/15x15/FF4500/FF4500.png) ![#FF6347](https://placehold.co/15x15/FF6347/FF6347.png) ![#FFD700](https://placehold.co/15x15/FFD700/FFD700.png) ![#FFA500](https://placehold.co/15x15/FFA500/FFA500.png) ![#FF8C00](https://placehold.co/15x15/FF8C00/FF8C00.png) ![#FF1493](https://placehold.co/15x15/FF1493/FF1493.png) ![#FF69B4](https://placehold.co/15x15/FF69B4/FF69B4.png) ![#FFB6C1](https://placehold.co/15x15/FFB6C1/FFB6C1.png) ![#FFC0CB](https://placehold.co/15x15/FFC0CB/FFC0CB.png) ![#FF00FF](https://placehold.co/15x15/FF00FF/FF00FF.png) |
 
 #### Custom Theme :
 - It also allows the user to choose colors according to their preferences to create their unique Custom Theme.
@@ -162,6 +163,15 @@ Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue,
  <div>
   <img src="images/Boat-Tie.png" alt="Spaceship" height="150">
   <img src="images/Moving-Boat-Tie.gif" height="150">
+</div>
+
+### Pentadecathlon
+
+The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conway. It is one of the most well-known patterns in the Game of Life, notable for its longevity and distinctive structure.
+
+<div>
+  <img src="images/Pentadecathlon.png" alt="Pentadecathlon" height="150">
+  <img src="images/Moving-Pentadecathlon.gif" alt="Pentadecathlon" height="150">
 </div>
 
 
