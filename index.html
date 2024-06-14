@@ -1,127 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet" />
   <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970." />
+  <meta name="description"
+    content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970." />
   <meta name="keywords" content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970" />
   <title>Conway's Game of Life</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.js" integrity="sha512-docBEeq28CCaXCXN7cINkyQs0pRszdQsVBFWUd+pLNlEk3LDlSDDtN7i1H+nTB8tshJPQHS0yu0GW9YGFd/CRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js" integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.js"
+    integrity="sha512-docBEeq28CCaXCXN7cINkyQs0pRszdQsVBFWUd+pLNlEk3LDlSDDtN7i1H+nTB8tshJPQHS0yu0GW9YGFd/CRg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
+    integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+    integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js"
+    integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YetnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css" />
   <style>
     ul {
-        list-style-type: none;
+      list-style-type: none;
     }
-</style>
-<!--Preloade-->
-<style>
-  /*Preloader CSS*/
-#preloader {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%; 
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: black;
-transition: opacity 2s ease-out, visibility 2s ease-out;
-opacity: 1;
-visibility: visible;
-z-index: 9999; 
-}
+  </style>
+  <!--Preloade-->
+  <style>
+    /*Preloader CSS*/
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      transition: opacity 2s ease-out, visibility 2s ease-out;
+      opacity: 1;
+      visibility: visible;
+      z-index: 9999;
+    }
 
-#preloader.hidden {
-opacity: 0;
-visibility: hidden;
-}
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
 
-#loader {
-display: block;
-position: relative;
-width: 150px;
-height: 150px;
-border-radius: 50%;
-border: 3px solid transparent;
-border-top-color: #55a5ea;
-animation: spin 3s linear infinite;
-}
+    #loader {
+      display: block;
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #55a5ea;
+      animation: spin 3s linear infinite;
+    }
 
-#loader:before {
-content: "";
-position: absolute;
-top: 5px;
-left: 5px;
-right: 5px;
-bottom: 5px;
-border-radius: 50%;
-border: 3px solid transparent;
-border-top-color: #3fbcc0c6;
-animation: spin 3s linear infinite;
-}
+    #loader:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #3fbcc0c6;
+      animation: spin 3s linear infinite;
+    }
 
-#loader:after {
-content: "";
-position: absolute;
-top: 15px;
-left: 15px;
-right: 15px;
-bottom: 15px;
-border-radius: 50%;
-border: 3px solid transparent;
-border-top-color: #fff;
-animation: spin 1.5s linear infinite;
-}
+    #loader:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #fff;
+      animation: spin 1.5s linear infinite;
+    }
 
-@keyframes spin {
-0% {
-  transform: rotate(0deg);
-}
-100% {
-  transform: rotate(360deg);
-}
-}
-</style>
-<!--Cursor-->
-<style>
-  .circle{
-z-index: 10000;
-width: 20px;
-height: 20px;
-border-radius: 50%;
-pointer-events: none;
-animation: colors 5s infinite;
-position: fixed;
-transform: translate(-50%,-50%);
-}
-.circle::before {
-content: "";
-position: fixed;
-width: 50px;
-height: 50px;
-opacity: 0.2;
-transform: translate(-30%,-30%);
-border-radius: 50%;
-}
-</style>
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <!--Cursor-->
+  <style>
+    .circle {
+      z-index: 10000;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: colors 5s infinite;
+      position: fixed;
+      transform: translate(-50%, -50%);
+    }
+
+    .circle::before {
+      content: "";
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      opacity: 0.2;
+      transform: translate(-30%, -30%);
+      border-radius: 50%;
+    }
+  </style>
   <script>
     function redirectToReadme() {
       window.location.href = "https://github.com/EternoSeeker/gameoflife/blob/main/README.md";
@@ -146,7 +173,7 @@ border-radius: 50%;
   </div>
   <div id="preloader">
     <div id="loader"></div>
- </div>
+  </div>
   <div class="game-settings">
     <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
     <div class="sidenav" id="sideNav">
@@ -167,76 +194,78 @@ border-radius: 50%;
           <label for="warp-on-edges" style="cursor: pointer;">Warp on Edges</label>
         </div>
         <p class="randomness-container">
-          <label class="randomness-value" style="cursor: pointer;"><span>Randomness</span><span id="randomValOutput">20</span></label>
+          <label class="randomness-value" style="cursor: pointer;"><span>Randomness</span><span
+              id="randomValOutput">20</span></label>
           <input type="range" min="1" max="100" value="20" class="slider" id="randomVal" />
         </p>
       </div>
       <div class="color-themes has-dropdown animate" style="cursor: pointer;">Themes</div>
       <div class="themes-container animate">
         <ul>
-        <li>
-          <div>
-            <input type="radio" class="color-label" id="red-theme" name="theme" onclick="selectTheme('red')" />
-            <label for="red-theme" class="color-label">Red</label>
-          </div>
-        </li>
-      </ul>
-      <ul>
-        <li>
+          <li>
             <div>
-            <input type="radio" class="color-label" id="green-theme" name="theme" onclick="selectTheme('green')" />
-            <label for="green-theme" class="color-label" style="cursor: pointer;">Green</label>
-          </div>
-        </li>
-      </ul>
-      <ul>
-        <li>
-        <div>
-          <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
-          <label for="blue-theme" style="cursor: pointer;">Blue</label>
-        </div>
-      </li>
-    </ul>
-    <ul> 
-        <li>
-          <div>
-            <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
-            <label for="purple-theme" style="cursor: pointer;">Purple</label>
-          </div>
-        </li>
-      </ul> 
-      <ul>
-        <li>
-          <div>
-            <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
-            <label for="darkcyan-theme" style="cursor: pointer;">Dark Cyan</label>
-          </div>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <div>
-            <input type="radio" id="black-theme" name="theme" onclick="selectTheme('black')" />
-            <label for="black-theme" style="cursor: pointer;">Black & White</label>
-          </div>
-        </li>
-      </ul>
-    <ul>
-      <li>
-        <div>
-          <input type="radio" id="neon-theme" class="color-label" name="theme" onclick="selectTheme('neon')" />
-          <label for="neon-theme" class="color-label">Dark Neon</label>
-        </div>
-      </li>
-      </ul>
-      <ul>
-        <li>
-        <div>
-          <input type="radio" id="cyberpunk-theme" class="color-label" name="theme" onclick="selectTheme('cyberpunk')" />
-          <label for="cyberpunk-theme"  class="color-label">Cyberpunk</label>
-        </div>
-      </li>
-    </ul>
+              <input type="radio" class="color-label" id="red-theme" name="theme" onclick="selectTheme('red')" />
+              <label for="red-theme" class="color-label">Red</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input type="radio" class="color-label" id="green-theme" name="theme" onclick="selectTheme('green')" />
+              <label for="green-theme" class="color-label" style="cursor: pointer;">Green</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input checked type="radio" id="blue-theme" name="theme" onclick="selectTheme('blue')" />
+              <label for="blue-theme" style="cursor: pointer;">Blue</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input type="radio" id="purple-theme" name="theme" onclick="selectTheme('purple')" />
+              <label for="purple-theme" style="cursor: pointer;">Purple</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input type="radio" id="darkcyan-theme" name="theme" onclick="selectTheme('darkCyan')" />
+              <label for="darkcyan-theme" style="cursor: pointer;">Dark Cyan</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input type="radio" id="black-theme" name="theme" onclick="selectTheme('black')" />
+              <label for="black-theme" style="cursor: pointer;">Black & White</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input type="radio" id="neon-theme" class="color-label" name="theme" onclick="selectTheme('neon')" />
+              <label for="neon-theme" class="color-label">Dark Neon</label>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div>
+              <input type="radio" id="cyberpunk-theme" class="color-label" name="theme"
+                onclick="selectTheme('cyberpunk')" />
+              <label for="cyberpunk-theme" class="color-label">Cyberpunk</label>
+            </div>
+          </li>
+        </ul>
         <div>
           <button id="gradient-theme-btn" class="has-dropdown  animate">
             Switch to Gradient Theme
@@ -250,86 +279,87 @@ border-radius: 50%;
                 <option value="to right">Right</option>
                 <option value="to bottom">Bottom</option>
                 <option value="to left">Left</option>
-              </select>    
+              </select>
             </div>
-              <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
+            <button id="apply-gradient-btn" class="gradient-button">Apply Gradient</button>
           </div>
-          </div>
+        </div>
       </div>
       <div class="presets has-dropdown animate" style="cursor: pointer;">Presets</div>
       <div class="presets-container animate">
         <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
-            <i class="fa-solid fa-gun"></i> Glider Gun
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('smallGlider')">
-            <i class="fa-brands fa-glide"></i>
-            Small Glider
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
-            <i class="fa-brands fa-glide-g"></i>
-            Big Glider
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('Pulsar')">
-            <i class="fa-solid fa-stairs"></i>
-            Pulsar
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('CircleOfFire')">
-            <i class="fa-solid fa-circle-plus"></i>
-            Circle of Fire
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('Quadpole')">
-            <i class="fa-solid fa-bolt"></i>
-            Quadpole
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button class="presets-list" onclick="drawPresetPattern('Spider')">
-            <i class="fa-solid fa-spider"></i>
-            Spider
-          </button>
-        </li>
-      </ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('GliderGun')">
+              <i class="fa-solid fa-gun"></i> Glider Gun
+            </button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('smallGlider')">
+              <i class="fa-brands fa-glide"></i>
+              Small Glider
+            </button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('bigGlider')">
+              <i class="fa-brands fa-glide-g"></i>
+              Big Glider
+            </button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('Pulsar')">
+              <i class="fa-solid fa-stairs"></i>
+              Pulsar
+            </button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('CircleOfFire')">
+              <i class="fa-solid fa-circle-plus"></i>
+              Circle of Fire
+            </button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('Quadpole')">
+              <i class="fa-solid fa-bolt"></i>
+              Quadpole
+            </button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button class="presets-list" onclick="drawPresetPattern('Spider')">
+              <i class="fa-solid fa-spider"></i>
+              Spider
+            </button>
+          </li>
+        </ul>
       </div>
       <div class="history has-dropdown animate" style=" cursor: pointer;">History</div>
       <div class="history-container animate"></div>
       <div class="game-rules has-dropdown animate">
-        <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer;" onclick="location.href='gamerules.html'">
+        <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer;"
+          onclick="location.href='gamerules.html'">
           Game Rules
         </button>
-       
+
       </div>
       <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         <span>About</span>
     </div>-->
-    <div class="about has-dropdown animate">
-      <button class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
-        About
-      </button>
-    </div>
+      <div class="about has-dropdown animate">
+        <button class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
+          About
+        </button>
+      </div>
       <div class="about-container animate"></div>
     </div>
   </div>
@@ -346,64 +376,65 @@ border-radius: 50%;
       <div id="main-grid" class="main-grid"></div>
     </div>
     <div class="controls">
-  <div class="tooltip-container">
-    <button class="clear-button button-73" id="clear-button" onclick="clearGrid()">Clear</button>
-    <span class="tooltip-text">Clear the grid</span>
-  </div>
-  <div class="tooltip-container">
-    <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
-      <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Rewind" />
-    </button>
-    <span class="tooltip-text">Rewind</span>
-  </div>
-  <div class="tooltip-container">
-    <button class="control-button" id="play-pause-button" onclick="startAnimation()">
-      <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Start or Pause" />
-    </button>
-    <span class="tooltip-text">Start or Pause the animation</span>
-  </div>
-  <div class="tooltip-container">
-    <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
-      <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast Forward" />
-    </button>
-    <span class="tooltip-text">Fast Forward</span>
-  </div>
-  <div class="tooltip-container">
-    <button class="random-button button-73" id="random-button" onclick="randomGrid()">Random</button>
-    <span class="tooltip-text">Random</span>
-  </div>
-  
-<div class="controls">
-  <div class="tooltip-container">
-  <button class="random-button button-73" id="change-grid-button" onclick="changeGridSize()">Change Grid Size</button>
-  <span class="tooltip-text">change grid size</span>
-</div>
-<div class="tooltip-container">
-  <input type="number" id="new-height" placeholder="Height" min="1" />
-  <span class="tooltip-text">height</span>
-</div>
-</div>
+      <div class="tooltip-container">
+        <button class="clear-button button-73" id="clear-button" onclick="clearGrid()">Clear</button>
+        <span class="tooltip-text">Clear the grid</span>
+      </div>
+      <div class="tooltip-container">
+        <button class="control-button" id="fast-reverse-button" onclick="decreaseSpeed()">
+          <img class="icon" id="fast-reverse-icon" src="./images/Fast-Reverse-Button.svg" alt="Rewind" />
+        </button>
+        <span class="tooltip-text">Rewind</span>
+      </div>
+      <div class="tooltip-container">
+        <button class="control-button" id="play-pause-button" onclick="startAnimation()">
+          <img class="icon" id="play-pause-icon" src="./images/Play-Button.svg" alt="Start or Pause" />
+        </button>
+        <span class="tooltip-text">Start or Pause the animation</span>
+      </div>
+      <div class="tooltip-container">
+        <button class="control-button" id="fast-forward-button" onclick="increaseSpeed()">
+          <img class="icon" id="fast-forward-icon" src="./images/Fast-Forward-Button.svg" alt="Fast Forward" />
+        </button>
+        <span class="tooltip-text">Fast Forward</span>
+      </div>
+      <div class="tooltip-container">
+        <button class="random-button button-73" id="random-button" onclick="randomGrid()">Random</button>
+        <span class="tooltip-text">Random</span>
+      </div>
 
-</div>
+      <div class="controls">
+        <div class="tooltip-container">
+          <button class="random-button button-73" id="change-grid-button" onclick="changeGridSize()">Change Grid
+            Size</button>
+          <span class="tooltip-text">change grid size</span>
+        </div>
+        <div class="tooltip-container">
+          <input type="number" id="new-height" placeholder="Height" min="1" />
+          <span class="tooltip-text">height</span>
+        </div>
+      </div>
+
+    </div>
   </div>
   <script src="node_modules/animejs/lib/anime.min.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/gradient.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const preloader = document.getElementById('preloader');
-    const mainContent = document.getElementById('main-content');
+    document.addEventListener("DOMContentLoaded", function () {
+      const preloader = document.getElementById('preloader');
+      const mainContent = document.getElementById('main-content');
 
-    // Listen for the window load event
-    window.addEventListener('load', function() {
+      // Listen for the window load event
+      window.addEventListener('load', function () {
         // Set a delay before transitioning the preloader and main content
-        setTimeout(function() {
-            preloader.classList.add('hidden');
-            mainContent.classList.remove('hidden');
-            mainContent.classList.add('visible');
+        setTimeout(function () {
+          preloader.classList.add('hidden');
+          mainContent.classList.remove('hidden');
+          mainContent.classList.add('visible');
         }, 300); // 2000 milliseconds = 2 seconds delay
+      });
     });
-});
 
   </script>
   <!--Cursor-->
@@ -544,15 +575,15 @@ border-radius: 50%;
 
 <script>
   document.getElementById("toggleButton").addEventListener("click", function () {
-      const sideNav = document.getElementById("sideNav");
-      sideNav.classList.toggle("hide-nav");
-      document.querySelector(".game").classList.toggle("full-width");
+    const sideNav = document.getElementById("sideNav");
+    sideNav.classList.toggle("hide-nav");
+    document.querySelector(".game").classList.toggle("full-width");
   });
 
   document.querySelector(".cross").addEventListener("click", function () {
     const sideNav = document.getElementById("sideNav");
-      sideNav.classList.toggle("hide-nav");
-      document.querySelector(".game").classList.toggle("full-width");
+    sideNav.classList.toggle("hide-nav");
+    document.querySelector(".game").classList.toggle("full-width");
   });
 </script>
 
@@ -561,4 +592,5 @@ border-radius: 50%;
   integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="animation.js"></script>
+
 </html>
