@@ -515,6 +515,15 @@ body{
   font-size: 1.2rem;
 }
 
+.other-settings:hover,
+.color-themes:hover,
+.presets:hover,
+.history:hover,
+.about:hover,
+.game-rules:hover {
+  color: #00c2fd; 
+}
+
 .about button{
   margin-left: -1.7rem;
 }
