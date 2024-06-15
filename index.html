@@ -307,8 +307,8 @@
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
               ><span class="hov">Randomness</span
-              ><span id="randomValOutput">20</span></label
-            >
+              ><span id="randomValOutput">20</span>
+            </label>
             <input
               type="range"
               min="1"
@@ -733,7 +733,7 @@
       <div class="controls">
         <div class="tooltip-container">
           <button
-            class="clear-button button-73"
+            class="random-button button-73"
             id="clear-button"
             onclick="clearGrid()"
           >
@@ -743,7 +743,7 @@
         </div>
         <div class="tooltip-container">
           <button
-            class="control-button"
+            class="random-button button-73"
             id="play-pause-button"
             onclick="startAnimation()"
           >
@@ -758,7 +758,7 @@
         </div>
         <div class="tooltip-container">
           <button
-            class="control-button"
+            class="random-button button-73"
             id="fast-reverse-button"
             onclick="decreaseSpeed()"
           >
@@ -769,9 +769,9 @@
             alt="Slow Down"
           />
           </button>
-          <input type= "number" value = '1' id="speedInput" size="0.3" min="0.15" max="25" step="0.25" ></input>
+          <input class="random-button button-73" type= "number" value = '1' id="speedInput" size="0.3" min="0.15" max="25" step="0.25" readonly ></input>
             <button             
-              class="control-button"
+              class="random-button button-73"
               id="fast-forward-button"
               >
             <img
@@ -794,21 +794,14 @@
           <span class="tooltip-text">Random</span>
         </div>
 
-        <div class="controls">
-          <div class="tooltip-container">
+        <div class="tooltip-container">
+            <input class= "random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height" min="1" />
             <button
               class="random-button button-73"
               id="change-grid-button"
-              onclick="changeGridSize()"
-            >
-              Change Grid Size
-            </button>
-            <span class="tooltip-text">Change grid size</span>
-          </div>
-          <div class="tooltip-container">
-            <input type="number" id="new-height" placeholder="Height" min="1" />
-            <span class="tooltip-text">height</span>
-          </div>
+              onclick="changeGridSize()">
+              Apply</button>
+          <span class="tooltip-text">Change Grid Height</span>
         </div>
       </div>
     </div>
