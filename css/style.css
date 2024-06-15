@@ -309,9 +309,8 @@ body{
   transform: scale(1.1);
 }
 
-.icon {
-  width: 100%;
-  height: 100%;
+.icon-svg {
+  --fill-col : var(--primary-color);
 }
 
 .random-button {
