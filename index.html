@@ -464,6 +464,24 @@
             </li>
           </ul>
 
+          <!-- new theme sunset -->
+          <ul>
+            <li>
+              <div>
+                <input
+                  type="radio"
+                  class="color-label"
+                  id="sunset-theme"
+                  name="theme"
+                  onclick="selectTheme('sunset')"
+                />
+                <label for="sunset-theme" class="color-label"
+                  >Sunset</label
+                >
+              </div>
+            </li>
+          </ul>          
+
           <div>
             <button id="custom-theme-btn" class="has-dropdown animate">
               Switch to Custom Theme
@@ -626,6 +644,14 @@
               >
                 <i class="fa-solid fa-sailboat"></i>
                Boat-Tie
+              </button>
+            </li>
+          </ul>
+          <!-- adding new presets -->
+          <ul>
+            <li>
+              <button class="presets-list" onclick="drawPresetPattern('Pentadecathlon')">
+                <i class="fa-solid fa-solar-panel"></i> Pentadecathlon
               </button>
             </li>
           </ul>
