@@ -312,6 +312,30 @@ async function selectTheme(themeName) {
   }
 }
 
+function togglePlayPause() {
+  /*
+  change the svg icon according to the state
+  play-pause-border -> svg path for the border -> NO CHANGES
+  play-icon -> Play icon svg filled with colour by default and changes to transparent when pressed.
+  pause-icon1 & pause-icon2 -> Initially fill is transparent and colour is filled when pressed.
+  */
+
+  if (isAnimating) {
+    // play-icon transparent
+    document.getElementById('play-icon').setAttribute('fill', "none");
+    //pause-icon coloured
+    document.getElementById('pause-icon1').setAttribute('fill', "var(--fill-col)");
+    document.getElementById('pause-icon2').setAttribute('fill', "var(--fill-col)");
+  }
+  else {
+    // play-icon coloured
+    document.getElementById('play-icon').setAttribute('fill', "var(--fill-col)");
+    //pause-icon transparent
+    document.getElementById('pause-icon1').setAttribute('fill', "none");
+    document.getElementById('pause-icon2').setAttribute('fill', "none");
+  }
+}
+
 function isEmpty() {
   return (aliveCount==0);
 }
@@ -323,7 +347,6 @@ function startAnimation() {
     removeEventListenersFromCells();
     areEventListenersAdded = false;
   }
-  const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
     if (!areEventListenersAdded) {
       addEventListenersToCells();
@@ -343,10 +366,8 @@ function startAnimation() {
       storePattern(cells, aliveCount);
       appendPatternButtons();
     }
-    // change the icon according to the state
-      playPauseIcon.src = isAnimating
-        ? "./images/Pause-Button.svg"
-        : "./images/Play-Button.svg";
+    
+    togglePlayPause();
   }
   if (isAnimating) {
     animate();
