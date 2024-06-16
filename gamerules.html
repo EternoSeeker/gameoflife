@@ -16,11 +16,9 @@
             <img src="./images/home1.png" alt="Back to Home" class="home-icon">
         </a>
     </div>
-    <div class="back-up" >
-      <a class="gotopbtn" href=""><i class="fa fa-arrow-up" aria-hidden="true"></i></a></div>
-
+    <div class="back-up">
+      <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
     </div>
-   
     <div class="container">
 
       <h1>How To Play?</h1>
@@ -266,7 +264,24 @@
     </div>
     </div>
     <div>
-     
+     <script>
+//Scrollto top button 
+const topButton = document.querySelector('.back-up');
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() 
+{
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topButton.style.display = "block";
+  } else {
+    topButton.style.display = "none";
+  }
+}
+topButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+     </script>
   
   </body>
 </html>
