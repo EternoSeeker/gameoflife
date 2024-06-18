@@ -1,19 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: blinkGradient 5s infinite;
+  transition: background 0.5s ease-in-out;
+}
+
+@keyframes blinkGradient {
+  0% {
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
   }
+  25% {
+      background: linear-gradient(45deg, #2a5298, #243f5a);
+  }
+  50% {
+      background: linear-gradient(45deg, #25598c, #07325e);
+  }
+  75% {
+      background: linear-gradient(45deg, #0d3761, #1e3c72);
+  }
+  100% {
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
+  }
+}
+
+/* Add styles for file upload input */
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="file"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
   
   .container {
     background: #fff;
     padding: 20px 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 12px 36px rgba(161, 195, 232, 0.3);
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
@@ -22,7 +56,7 @@ body {
   }
   
   .container:hover {
-    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
   }
   
   h1 {
