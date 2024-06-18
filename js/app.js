@@ -340,6 +340,17 @@ function isEmpty() {
   return (aliveCount==0);
 }
 
+function stopAnimation() {
+  // stop animation if grid is empty
+  if (!areEventListenersAdded) {
+    addEventListenersToCells();
+    areEventListenersAdded = true;
+  }
+  isAnimating = false;
+  isStarted = false;
+  togglePlayPause();
+}
+
 function startAnimation() {
   // check if the grid is empty,
   // if not then start the animation and start the game
@@ -348,12 +359,7 @@ function startAnimation() {
     areEventListenersAdded = false;
   }
   if (isEmpty()) {
-    if (!areEventListenersAdded) {
-      addEventListenersToCells();
-      areEventListenersAdded = true;
-    }
-    isAnimating = false;
-    isStarted = false;
+    stopAnimation();
   } else {
     // if game is not started, set it to true
     // if pause is clicked, pause the game
@@ -478,6 +484,11 @@ function animate() {
   setTimeout(() => {
     drawCells(); // Draw cells after a delay
     if (isAnimating) {
+
+      //if All cells are dead stop animating
+      if (isEmpty()) {
+        stopAnimation();
+      }
       requestAnimationFrame(animate); // Keep animating
     }
   }, animationSpeed);
