@@ -260,3 +260,9 @@ hr {
     border-radius: 5px;
     font-size: 18px;
 }
+.back-to-home:hover
+{
+  transform: scale(0.99);
+  background-color: #4922ac;
+  box-shadow: 0 8px 12px rgba(0, 21, 255, 0.2);
+}
