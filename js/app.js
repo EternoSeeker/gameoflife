@@ -298,19 +298,6 @@ async function selectTheme(themeName) {
       root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
-      let reverse_button = document.getElementById('fast-reverse-button');
-      let forward = document.getElementById('fast-forward-button');
-      let pause_button = document.getElementById('play-pause-button');
-
-      if (theme["DEAD_COLOR"] == "#80ffff") {
-        reverse_button.innerHTML = "<img class=icon id=fast-reverse-icon src=./images/Fast-Reverse-Button-Dark.svg alt=Play />";
-        forward.innerHTML = "<img class=icon id=fast-forward-icon src=./images/Fast-Forward-Button-Dark.svg alt=Fast />";
-        pause_button.innerHTML = "<img class=icon id=play-pause-icon src=./images/Play-Button-Dark.svg alt=Slow />";
-      } else {
-        reverse_button.innerHTML = "<img class=icon id=fast-reverse-icon src=./images/Fast-Reverse-Button.svg alt=Play />";
-        forward.innerHTML = "<img class=icon id=fast-forward-icon src=./images/Fast-Forward-Button.svg alt=Fast />";
-        pause_button.innerHTML = "<img class=icon id=play-pause-icon src=./images/Play-Button.svg alt=Slow />";
-      }
 
       // If switching from a gradient theme to a solid color theme, reset the background
       if (!theme["background-image"]) {
@@ -325,8 +312,43 @@ async function selectTheme(themeName) {
   }
 }
 
+function togglePlayPause() {
+  /*
+  change the svg icon according to the state
+  play-pause-border -> svg path for the border -> NO CHANGES
+  play-icon -> Play icon svg filled with colour by default and changes to transparent when pressed.
+  pause-icon1 & pause-icon2 -> Initially fill is transparent and colour is filled when pressed.
+  */
+
+  if (isAnimating) {
+    // play-icon transparent
+    document.getElementById('play-icon').setAttribute('fill', "none");
+    //pause-icon coloured
+    document.getElementById('pause-icon1').setAttribute('fill', "var(--fill-col)");
+    document.getElementById('pause-icon2').setAttribute('fill', "var(--fill-col)");
+  }
+  else {
+    // play-icon coloured
+    document.getElementById('play-icon').setAttribute('fill', "var(--fill-col)");
+    //pause-icon transparent
+    document.getElementById('pause-icon1').setAttribute('fill', "none");
+    document.getElementById('pause-icon2').setAttribute('fill', "none");
+  }
+}
+
 function isEmpty() {
   return (aliveCount==0);
+}
+
+function stopAnimation() {
+  // stop animation if grid is empty
+  if (!areEventListenersAdded) {
+    addEventListenersToCells();
+    areEventListenersAdded = true;
+  }
+  isAnimating = false;
+  isStarted = false;
+  togglePlayPause();
 }
 
 function startAnimation() {
@@ -336,16 +358,8 @@ function startAnimation() {
     removeEventListenersFromCells();
     areEventListenersAdded = false;
   }
-  const playPauseIcon = document.getElementById("play-pause-icon");
   if (isEmpty()) {
-    playPauseIcon.src = DEAD_COLOR=="#80ffff"?"./images/Play-Button-Dark.svg": "./images/Play-Button.svg";
-    // playPauseIcon.src = "./images/Play-Button.svg";
-    if (!areEventListenersAdded) {
-      addEventListenersToCells();
-      areEventListenersAdded = true;
-    }
-    isAnimating = false;
-    isStarted = false;
+    stopAnimation();
   } else {
     // if game is not started, set it to true
     // if pause is clicked, pause the game
@@ -358,17 +372,8 @@ function startAnimation() {
       storePattern(cells, aliveCount);
       appendPatternButtons();
     }
-    // change the icon according to the state
-    if(DEAD_COLOR=="#80ffff"){
-      console.log('ggggg')
-      playPauseIcon.src=isAnimating
-      ? "./images/Pause-Button-Dark.svg"
-      : "./images/Play-Button-Dark.svg";
-    }else{
-      playPauseIcon.src = isAnimating
-        ? "./images/Pause-Button.svg"
-        : "./images/Play-Button.svg";
-    }
+    
+    togglePlayPause();
   }
   if (isAnimating) {
     animate();
@@ -479,6 +484,11 @@ function animate() {
   setTimeout(() => {
     drawCells(); // Draw cells after a delay
     if (isAnimating) {
+
+      //if All cells are dead stop animating
+      if (isEmpty()) {
+        stopAnimation();
+      }
       requestAnimationFrame(animate); // Keep animating
     }
   }, animationSpeed);
