@@ -4,6 +4,33 @@
 </div>
 
 ---
+## GitHub Repository Stats 
+
+<div align = "center">
+
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td ><b>🌟 Stars</b></td>
+            <td ><b>🍴 Forks</b></td>
+            <td ><b>🐛 Issues</b></td>
+            <td ><b>🔔 Open PRs</b></td>
+            <td ><b>🔕 Closed PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/EternoSeeker/gameoflife?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+---
 ## ✨ What is it?
 
 Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
