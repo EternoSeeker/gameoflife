@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="gamerules.css" />
-  <title>Game Rules</title>
-  <link rel="icon" href="./images/registerpage-favicon.png" type="images/png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./css/gamerules.css" />
+<title>Game Rules</title>
+<link rel="icon" href="./images/registerpage-favicon.png" type="images/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 </head>
@@ -22,8 +18,9 @@
     </a>
   </div>
   <div class="back-up">
-    <a class="gotopbtn" href=""><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
   </div>
+  <div class="container">
 
   </div>
 
@@ -79,7 +76,7 @@
       </p>
     </div>
     <h2>The Game</h2>
-    <img src="images/Grid.png" alt="Game Grid" class="center" />
+    <img src="images/grid.png" alt="Game Grid" class="center" />
     <table>
       <caption>
         Button Functions
@@ -138,7 +135,7 @@
         </p>
         <img id="image1" src="images/Small-Glider.png" alt="Small Glider" class="center" onmouseover="changeToGif1()"
           onmouseout="changeToStatic1()">
-        <script src="animation.js"></script>
+        <script src="./js/animation.js"></script>
       </div>
       <div class="card">
         <h3>Big Glider</h3>
@@ -200,6 +197,41 @@
         <img id="image7" src="images/Spider.png" alt="Spider" class="center" onmouseover="changeToGif7()"
           onmouseout="changeToStatic7()" />
       </div>
+      <div class="card">
+        <h3>Spaceship</h3>
+        <p>
+          The middleweight spaceship (commonly abbreviated to MWSS) or (rarely) medium fish is the third most common
+          spaceship after the glider and lightweight spaceship.
+          It was found by John Conway in 1970 and travels at c/2 orthogonally.
+          It can support various non-standard components, such as pushalong 1.
+        </p>
+        <img id="image8" src="images/Spaceship.png" alt="Spaceship" class="center" onmouseover="changeToGif8()"
+          onmouseout="changeToStatic8()" />
+      </div>
+      <div class="card">
+        <h3>Boat-Tie</h3>
+        <p>
+          Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue, being less common than
+          shillelagh but more common than snake.
+          It is also the twenty-seventh most common object overall on Catagolue.
+          Two copies of boat-tie can be seen in a symmetric constellation that evolves from two traffic light
+          predecessors.
+        </p>
+        <img id="image9" src="images/Boat-Tie.png" alt="Boat-Tie" class="center" onmouseover="changeToGif9()"
+          onmouseout="changeToStatic9()" />
+      </div>
+      <div class="card">
+        <h3>Pentadecathlon</h3>
+        <p>
+          The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conway.
+          It is one of the most well-known patterns in the Game of Life, notable for its longevity and distinctive
+          structure.
+          It is composed of 10 cells in a row that form a stable pattern with a period of 15 generations,
+          making it a popular subject of study and demonstration in the Game of Life.
+        </p>
+        <img id="image10" src="images/Pentadecathlon.png" alt="Pentadecathlon" class="center"
+          onmouseover="changeToGif10()" onmouseout="changeToStatic10()" />
+      </div>
     </div>
     <hr />
     <h2>Summary</h2>
@@ -215,11 +247,26 @@
 
     <div class="homeButton">
       <a href="index.html" class="back-to-home">Back to Home</a>
-    </div>
-  </div>
-  <div>
 
+      <script>
+        //Scrollto top button 
+        const topButton = document.querySelector('.back-up');
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topButton.style.display = "block";
+          } else {
+            topButton.style.display = "none";
+          }
+        }
+        topButton.addEventListener('click', function (event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+      </script>
 
 </body>
+>>>>>>> a11b162568bda833d09765c46a62a109ab0b46af
 
 </html>

@@ -81,7 +81,7 @@
     "--border-color1": "#000000",
     "--background-col": "#FFFFFF",
     "ALIVE_COLOR": "#000000",
-    "DEAD_COLOR": "#FFFFFF"
+    "DEAD_COLOR": "#C1C1C1"
   },"cyberpunk": {
     "--primary-color": "#FCE4EC",       
     "--theme-color1": "#EC407A",       
@@ -93,6 +93,18 @@
     "--background-col": "#FFF0F5",       
     "ALIVE_COLOR": "#EC407A",           
     "DEAD_COLOR": "#FCE4EC"            
+  }, 
+  "sunset": {
+    "--primary-color": "#ff5e5b",
+    "--theme-color1": "#ffb54d",
+    "--theme-color2": "#ffcc66",
+    "--theme-color3": "#fff3e6",
+    "--shadow-color1": "#ff9933",
+    "--shadow-color2": "#ff704d",
+    "--border-color1": "#b33e00",
+    "--background-col": "#ffebcc",
+    "ALIVE_COLOR": "#ff704d",
+    "DEAD_COLOR": "#ffdab3"
 }
 
 }

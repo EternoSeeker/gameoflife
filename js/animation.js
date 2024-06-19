@@ -1,36 +1,29 @@
-// used to animate side navbar
+// Animate side navbar on page load
 gsap.from(".game-settings .sidenav .animate", {
     duration: 1,
     x: -500,
     ease: "power1.inOut",
-    stagger: 0.2
+    stagger: 0.1
 });
-document.getElementById("toggleButton").addEventListener("click", function animateNav() {
-    gsap.set(".game-settings .sidenav .animate", { x: -500 });
 
-    gsap.to(".game-settings .sidenav .animate", {
-        duration: 1,
-        x: 0,
-        ease: "power1.inOut",
-        stagger: 0.3
-    });
-});
-// used to animate the heading
+// Animate the heading on page load
 gsap.from(".heading", {
     duration: 1,
-            y: -500,
+    y: -500,
+    ease: "power1.inOut",
+    stagger: 0.2,
+    onComplete: function() {
+        // Start the yoyo bouncing effect after the initial animation
+        gsap.to(".heading", {
+            duration: 1,
+            y: -5,
             ease: "power1.inOut",
-            stagger: 0.2,
-            onComplete: function() {
-                // After the initial animation, start the yoyo bouncing effect
-                gsap.to(".heading", {
-                    duration: 1,
-                    y: -5,
-                    ease: "power1.inOut",
-                    yoyo: true,
-                    repeat: -1
-                });}
+            yoyo: true,
+            repeat: -1
+        });
+    }
 });
+
 // used to animate the grid
 gsap.from(".grid-container", {
     duration: 1,
@@ -87,4 +80,28 @@ function changeToGif7() {
 
 function changeToStatic7() {
     document.getElementById('image7').src = 'images/Spider.png';
+}
+
+function changeToGif8() {
+    document.getElementById('image8').src = 'images/Moving-Spaceship.gif';
+}
+
+function changeToStatic8() {
+    document.getElementById('image8').src = 'images/Spaceship.png';
+}
+
+function changeToGif9() {
+    document.getElementById('image9').src = 'images/Moving-Boat-Tie.gif';
+}
+
+function changeToStatic9() {
+    document.getElementById('image9').src = 'images/Boat-Tie.png';
+}
+
+function changeToGif10() {
+    document.getElementById('image10').src = 'images/Moving-Pentadecathlon.gif';
+}
+
+function changeToStatic10() {
+    document.getElementById('image10').src = 'images/Pentadecathlon.png';
 }
