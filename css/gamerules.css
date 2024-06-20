@@ -267,6 +267,7 @@ hr {
 }
 
 .back-to-home {
+<<<<<<< HEAD
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -275,4 +276,20 @@ hr {
   text-decoration: none;
   border-radius: 5px;
   font-size: 18px;
+=======
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4a3286;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.back-to-home:hover
+{
+  transform: scale(0.99);
+  background-color: #4922ac;
+  box-shadow: 0 8px 12px rgba(0, 21, 255, 0.2);
+>>>>>>> 733ebdd5439ac20b95e6cc4b818386e7e2dedf90
 }

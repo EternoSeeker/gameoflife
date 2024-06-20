@@ -38,6 +38,11 @@
         <label for="message">Your Message<span>*</span>:</label>
         <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
       </div>
+      <!-- Inserted the file upload input here -->
+      <div class="form-group">
+        <label for="file-upload">Attach File:</label>
+        <input type="file" id="file-upload" name="file-upload" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx">
+      </div>
       <button type="submit">Send</button>
     </form>
     <div id="success-message" class="hidden">
