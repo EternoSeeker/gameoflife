@@ -1,4 +1,17 @@
-:-webkit-scrollbar-track {
+:root {
+    --primary-color: #0f045a;
+    --theme-color1: #7582b2;
+    --theme-color2: #036c96;
+    --theme-color3: #ebf2ff;
+    --shadow-color1: #352a7e;
+    --shadow-color2: #101536;
+    --border-color1: #080126;
+    --background-col: #c6cede;
+    --container-bg-color: #b0b8c4;
+    --scrollbar-color: #555555;
+}
+
+::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
     border-radius: 10px;
