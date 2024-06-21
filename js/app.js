@@ -62,11 +62,13 @@ function toggleCellState(row, col) {
   drawCells();
 }
 
+//Get height from input box and return the value
 function getHeight() {
   const newHeight = parseInt(document.getElementById("new-height").value);
   return newHeight;
 }
 
+// Function to change the grid Size
 function changeGridSize(newHeight) {
   if (isNaN(newHeight) || newHeight <= 0) {
     alert("Please enter a valid height value.");
