@@ -2,14 +2,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  user-select:none;
+  user-select: none;
 }
 
 body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Standard syntax */
 }
 
 :root {
@@ -93,9 +97,12 @@ body {
   background: var(--scrollbar-color);
   border-radius: 30px;
 }
-body{
+
+body {
   background-color: var(--background-col);
-}/* button  */
+}
+
+/* button  */
 .button-73 {
   appearance: none;
   background-color: var(--background-col);
@@ -106,7 +113,7 @@ body{
   color: var(--shadow-color2);
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,sans-serif;
+  font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -.24px;
@@ -132,10 +139,13 @@ body{
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
-  display: inline-flex; /* Use flexbox to center content */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  font-family: -apple-system,sans-serif;
+  display: inline-flex;
+  /* Use flexbox to center content */
+  align-items: center;
+  /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -.24px;
@@ -167,6 +177,7 @@ body{
 .button-73:active {
   transform: scale(1.025);
 }
+
 .heading {
   position: relative;
   margin-top: 1rem;
@@ -201,9 +212,11 @@ body{
   background-color: var(--background-col);
   transition: background-color 0.5s ease;
 }
-.full-width{
+
+.full-width {
   margin-left: 0;
 }
+
 /* .grid-container {
   display: flex;
   flex-direction: row;
@@ -259,7 +272,7 @@ body{
   border: solid 0.001rem var(--border-color1);
   background-color: #CADCFC;
   cursor: pointer;
-  transition:0.2s ease;
+  transition: 0.2s ease;
 }
 
 .cell.alive {
@@ -267,18 +280,19 @@ body{
 }
 
 
-.cell:hover{
+.cell:hover {
   transform: scale(1.3);
-  border:1px solid white ;
+  border: 1px solid white;
   z-index: 1;
 }
-.cell:active{
+
+.cell:active {
   scale: 1;
 }
 
-.controls input{
+.controls input {
   height: auto;
-  width:auto;
+  width: auto;
   border-radius: 6px;
   gap: 10px;
   text-align: center;
@@ -287,7 +301,8 @@ body{
 
 .controls {
   display: flex;
-  flex-direction: row; /* Ensure buttons are in a row */
+  flex-direction: row;
+  /* Ensure buttons are in a row */
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
@@ -310,7 +325,7 @@ body{
 }
 
 .icon-svg {
-  --fill-col : var(--primary-color);
+  --fill-col: var(--primary-color);
 }
 
 .random-button {
@@ -326,7 +341,8 @@ body{
   color: var(--primary-color);
   background-color: var(--theme-color3);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
-  margin: 0 0.5rem; /* Add margin to separate buttons */
+  margin: 0 0.5rem;
+  /* Add margin to separate buttons */
 }
 
 .random-button:hover {
@@ -341,34 +357,48 @@ body{
 .icon:active {
   transform: translateY(0.1rem);
 }
+
 #toggleButton {
-    color: black;
-    border-radius: 5px;
-    border-style: none;
-    font-size: 1.7rem;
-    background: none;
-    margin: 1px;
-    z-index: 1;
-    position: absolute;
-    left: 2rem;
-    top: 1.8rem;
+  color: black;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 1.7rem;
+  background: none;
+  margin: 1px;
+  z-index: 1;
+  position: absolute;
+  left: 2rem;
+  top: 1.8rem;
 }
+
+
 .sidenav {
   height: 100vh;
-  width: 20vw;
+  width: 30vw;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
   background-color: var(--border-color1);
-  overflow-x:hidden;
+  overflow-x: hidden;
   padding-top: 2rem;
   transition: left 0.3s ease, width 0.3s ease;
 }
+
+.logo {
+  margin: 0px;
+  position: absolute;
+  height: 50px;
+  left: 14px;
+  width: 300px;
+}
+
 /* Hide the nav bar */
-.hide-nav  {
+.hide-nav {
   display: none;
 }
+
+
 
 .sidenav .cross {
   cursor: pointer;
@@ -384,7 +414,7 @@ body{
 .presets-container div,
 .color-themes,
 .presets,
-.history{
+.history {
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
@@ -400,7 +430,8 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
-.game-rules{
+
+.game-rules {
   padding: 0.0rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
@@ -415,37 +446,39 @@ body{
   /* cursor: pointer; */
   outline: none;
   transition: color 0.3s ease;
-}
-.about{
-  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #818181;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: lighter;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  /* cursor: pointer; */
-  outline: none;
-  transition: color 0.3s ease;
-}
-.feedback{
-    padding: 0.0rem 1.2rem 0.0rem 0rem;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    color: white;
 }
 
-.themes-container div{
+.about {
+  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  /* cursor: pointer; */
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.feedback {
+  padding: 0.0rem 1.2rem 0.0rem 0rem;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  color: white;
+}
+
+.themes-container div {
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
@@ -500,7 +533,7 @@ body{
 .presets,
 .history,
 .about,
-.game-rules{
+.game-rules {
   font-size: 1.2rem;
 }
 
@@ -510,10 +543,10 @@ body{
 .history:hover,
 .about:hover,
 .game-rules:hover {
-  color: #00c2fd; 
+  color: #00c2fd;
 }
 
-.about button{
+.about button {
   margin-left: -1.7rem;
 }
 
@@ -530,7 +563,7 @@ body{
 .presets-container,
 .history-container,
 .about-container,
-.game-rules-container{
+.game-rules-container {
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
@@ -541,12 +574,13 @@ body{
 .about-container button:active {
   color: #ffffff;
 }
-.color-label:hover{
+
+.color-label:hover {
   cursor: pointer;
   color: aqua;
 }
 
-.presets-list:hover{
+.presets-list:hover {
   color: aqua;
 }
 
@@ -574,8 +608,10 @@ body{
 
 @media screen and (max-width: 768px) {
   .controls {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-    align-items: center; /* Center buttons vertically */
+    flex-direction: column;
+    /* Stack buttons vertically on smaller screens */
+    align-items: center;
+    /* Center buttons vertically */
     min-width: 25vw;
     margin: none;
   }
@@ -606,6 +642,7 @@ body{
     display: block;
     padding-top: 1.6rem;
   }
+
   .sidenav .randomness-container input {
     text-decoration: none;
     font-size: 0.8rem;
@@ -615,7 +652,7 @@ body{
     width: 90%;
     cursor: pointer;
     outline: none;
-    align-items:center;
+    align-items: center;
   }
 
   .sidenav .randomness-container label {
@@ -629,12 +666,13 @@ body{
     cursor: pointer;
     outline: none;
   }
+
   /*.about a {
     text-decoration: none; 
     color: inherit; 
     cursor: pointer; 
   }*/
-  .about button{
+  .about button {
     margin-left: -1.1rem;
   }
 
@@ -644,7 +682,7 @@ body{
   .color-themes,
   .themes-container div,
   .presets,
-  .history{
+  .history {
     padding: 0.3rem 0.4rem 0.3rem 1rem;
     text-decoration: none;
     font-size: 1rem;
@@ -655,7 +693,8 @@ body{
     cursor: pointer;
     outline: none;
   }
-  .about{
+
+  .about {
     padding: 0.0rem 0.4rem 0.0rem 1rem;
     text-decoration: none;
     font-size: 1rem;
@@ -667,17 +706,18 @@ body{
     outline: none;
   }
 
-  .other-settings{
+  .other-settings {
     padding: 3px;
     text-align: left;
     padding-left: 15px;
     padding-bottom: 10px;
   }
-  
+
   .game {
     width: 100vw;
     margin: 0;
   }
+
   .controls {
     display: flex;
     flex-direction: row;
@@ -692,11 +732,11 @@ body{
 
   .clear-button,
   .random-button {
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     /* Adjust font size for smaller screens */
-    padding: 0.3rem 0.8rem; 
+    padding: 0.3rem 0.8rem;
     /* Adjust padding for smaller screens */
-    margin: 0.5rem 0; 
+    margin: 0.5rem 0;
     /* Add margin to separate buttons vertically */
   }
 
@@ -739,11 +779,14 @@ body{
   text-decoration: none;
   padding: 10px;
   background-color: #fff;
-  margin: 10px; /* Reduced margin */
+  margin: 10px;
+  /* Reduced margin */
   border-radius: 50%;
 }
+
 .socialIcons a img {
-  width: 20px; /* Adjusted icon size */
+  width: 20px;
+  /* Adjusted icon size */
   height: 20px;
 }
 
@@ -753,7 +796,8 @@ body{
 }
 
 .socialIcons a:hover img {
-  filter: invert(1); /* Invert icon color on hover */
+  filter: invert(1);
+  /* Invert icon color on hover */
   transition: 0.5s;
 
 }
@@ -761,9 +805,10 @@ body{
 /* Hover Effects  */
 .warp-on-edges:hover,
 .grid-toggle:hover,
-.randomness-container:hover{
-  color:white;
+.randomness-container:hover {
+  color: white;
 }
+
 /*-----------------------------------------*/
 
 
@@ -784,7 +829,8 @@ body{
   border-radius: 6px;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Position the tooltip above the button */
+  bottom: 125%;
+  /* Position the tooltip above the button */
   left: 50%;
   margin-left: -60px;
   opacity: 0;
@@ -811,7 +857,7 @@ body{
 @media screen and (max-width: 425px) {
   .sidenav {
     width: 114vw;
-    left: -550px ;
+    left: -550px;
     transition: width 0.3s ease;
   }
 
@@ -834,7 +880,8 @@ body{
     color: var(--primary-color);
     background-color: var(--theme-color3);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
-    margin: 0 0.5rem; /* Add margin to separate buttons */
+    margin: 0 0.5rem;
+    /* Add margin to separate buttons */
   }
 
   .control-button {
@@ -876,15 +923,16 @@ body {
 
 @keyframes fall {
   0% {
-      transform: translateY(-100vh) rotate(0deg);
-      opacity: 1;
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
   }
+
   100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
-.hov:hover{
+.hov:hover {
   color: aqua;
 }
