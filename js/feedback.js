@@ -10,7 +10,7 @@ function validationcheck(event){
     const phone = formData.get('phone').trim();
     const feedbackType = formData.get('feedback-type').trim();
     const message = formData.get('message').trim();
-
+    const fileUpload = document.getElementById('file-upload').files[0]; // Get file upload input
         const namePattern = /^[a-zA-Z]{2,}$/; //added proper name format
         const emailPattern = /^([a-zA-Z 0-9]{3,20})@([a-zA-Z]{3,6}).([a-z]{3})$/;// added email validation
         const phonePattern = /^[7-9]{1}[0-9]{9}$/; // 10 digits phone number(as per indian format)
@@ -22,13 +22,19 @@ function validationcheck(event){
         alert('Please enter a valid email address.');
         return false;
     }
-    else if(!phonePattern.test(phone)){
+    else if(phone !== '' & !phonePattern.test(phone)){
         alert('Please enter valid phone number');
         return false;
     }
     //added validation of message
     else if(message === ''){
         alert('Please enter the message');
+        return false;
+    }
+    // Checking if the file upload has a valid file type 
+    const allowedFileTypes = ['image/jpeg', 'image/png', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    if (fileUpload && fileUpload.size > 0 && !allowedFileTypes.includes(fileUpload.type)) {
+        alert('Please upload a valid file (JPG, PNG, PDF, DOC, DOCX).');
         return false;
     }
     
