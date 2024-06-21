@@ -294,15 +294,10 @@ async function selectTheme(themeName) {
         var container = document.querySelector('.game');
         container.style.background = '';
       }
-
       root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
 
-      // If switching from a gradient theme to a solid color theme, reset the background
-      if (!theme["background-image"]) {
-        backgroundContainer.style.backgroundImage = 'none';
-      }
     } else {
       console.error("Theme not found");
     }
