@@ -17,7 +17,18 @@ The increment and decrement happens in a step of 0.25 for values above 0.75 and 
 For zero division error, we have limited the minimum speed to 0.15x and maximum speed to 25x
 */
 
-
+//Change the tooltip text of speed tooltip container
+function changeSpeedTooltip() {
+    let currentValue = getInputFieldValue();
+    const speedTooltip = document.getElementById('speed-tooltip-text');
+    if (currentValue<=0.15){
+        speedTooltip.innerHTML = "Speed cannot be decreased any further" ;
+    } else if (currentValue>=10){
+        speedTooltip.innerHTML = "Speed cannot be increased any further" ;
+    } else {
+        speedTooltip.innerHTML = "Speed Controls" ;
+    }
+}
 
 document.getElementById('fast-reverse-button').addEventListener('click', function() {
     let currentValue = getInputFieldValue();
@@ -28,6 +39,10 @@ document.getElementById('fast-reverse-button').addEventListener('click', functio
         inputField.value = (currentValue - 0.10).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
         animationSpeed = 400 * (1 / currentValue);
     }
+
+    // Change tooltip text after updating the current value
+    changeSpeedTooltip();
+
 });
 
 document.getElementById('fast-forward-button').addEventListener('click', function() {
@@ -35,8 +50,12 @@ document.getElementById('fast-forward-button').addEventListener('click', functio
     if (currentValue < 0.75) {
         inputField.value = (currentValue + 0.10).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
         animationSpeed = 400 * (1 / currentValue);
-    } else if ( currentValue < 25) {
+    } else if ( currentValue < 10) {
         inputField.value = (currentValue + 0.25).toFixed(2);  // Add 0.25 and limit to 2 decimal places
         animationSpeed = 400 * (1 / currentValue);
     }
+
+    // Change tooltip text after updating the current value
+    changeSpeedTooltip();
+
 });
