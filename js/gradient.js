@@ -4,6 +4,8 @@ function applyGradientTheme(color1, color2, direction) {
   container.style.background = ('linear-gradient('+direction+'deg, ' + color1 + ', ' + color2 + ')');
   var title = document.querySelector('.heading');
   title.style.color = isDark(color1) ? '#ffffff' : '#000000';
+  document.getElementById('alive-color').value = ALIVE_COLOR;
+  document.getElementById('dead-color').value = DEAD_COLOR;  
 }
 
 // Event listener for the gradient theme button

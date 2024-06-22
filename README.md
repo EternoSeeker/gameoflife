@@ -4,6 +4,33 @@
 </div>
 
 ---
+## GitHub Repository Stats 
+
+<div align = "center">
+
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td ><b>🌟 Stars</b></td>
+            <td ><b>🍴 Forks</b></td>
+            <td ><b>🐛 Issues</b></td>
+            <td ><b>🔔 Open PRs</b></td>
+            <td ><b>🔕 Closed PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/EternoSeeker/gameoflife?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+---
 ## ✨ What is it?
 
 Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
@@ -30,7 +57,7 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ### 🖼️ The Canvas / Grid
 
-![Game Grid](./images/grid.png)
+![Game Grid](./images/GRID.png)
 
 | Buttons | What they do |
 | --- | --- |
@@ -65,6 +92,7 @@ The first generation is created by applying the above rules simultaneously to ev
 | Black and White | ![#505050](https://placehold.co/15x15/505050/505050.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#C1C1C1](https://placehold.co/15x15/C1C1C1/C1C1C1.png) |
 | Dark Neon | ![#d0ff00](https://placehold.co/15x15/d0ff00/d0ff00.png) ![#00cc26](https://placehold.co/15x15/00cc26/00cc26.png) ![#00b81b](https://placehold.co/15x15/00b81b/00b81b.png) ![#004640](https://placehold.co/15x15/004640/004640.png) ![#fc0101](https://placehold.co/15x15/fc0101/fc0101.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#002628](https://placehold.co/15x15/002628/002628.png) ![#000525](https://placehold.co/15x15/000525/000525.png) ![#9800f5](https://placehold.co/15x15/9800f5/9800f5.png) ![#80ffff](https://placehold.co/15x15/80ffff/80ffff.png) |
 | Cyberpunk | ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#D81B60](https://placehold.co/15x15/D81B60/D81B60.png) ![#AD1457](https://placehold.co/15x15/AD1457/AD1457.png) ![#FF0056](https://placehold.co/15x15/FF0056/FF0056.png) ![#C2185B](https://placehold.co/15x15/C2185B/C2185B.png) ![#880E4F](https://placehold.co/15x15/880E4F/880E4F.png) ![#FFF0F5](https://placehold.co/15x15/FFF0F5/FFF0F5.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) |
+| Sunset | ![#ff5e5b](https://placehold.co/15x15/ff5e5b/ff5e5b.png) ![#ffb54d](https://placehold.co/15x15/ffb54d/ffb54d.png) ![#ffcc66](https://placehold.co/15x15/ffcc66/ffcc66.png) ![#fff3e6](https://placehold.co/15x15/fff3e6/fff3e6.png) ![#ff9933](https://placehold.co/15x15/ff9933/ff9933.png) ![#ff704d](https://placehold.co/15x15/ff704d/ff704d.png) ![#b33e00](https://placehold.co/15x15/b33e00/b33e00.png) ![#ffebcc](https://placehold.co/15x15/ffebcc/ffebcc.png) ![#ff704d](https://placehold.co/15x15/ff704d/ff704d.png) ![#ffdab3](https://placehold.co/15x15/ffdab3/ffdab3.png) |
 
 #### Custom Theme :
 - It also allows the user to choose colors according to their preferences to create their unique Custom Theme.
@@ -145,6 +173,34 @@ Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 
   <img src="images/Spider.png" alt="Spider" height="150">
   <img src="https://conwaylife.com/w/images/9/9f/Spider.gif" height="150">
 </div>
+
+### Spaceship
+
+ The middleweight spaceship (commonly abbreviated to MWSS) or (rarely) medium fish is the third most common spaceship after the glider and lightweight spaceship.It was found by John Conway in 1970 and travels at c/2 orthogonally.
+
+ <div>
+  <img src="images/Spaceship.png" alt="Spaceship" height="150">
+  <img src="images/Moving-Spaceship.gif" height="150">
+</div>
+
+### Boat-Tie
+
+Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue, being less common than shillelagh but more common than snake.It is also the twenty-seventh most common object overall on Catagolue.Two copies of boat-tie can be seen in a symmetric constellation that evolves from two traffic light predecessors.
+
+ <div>
+  <img src="images/Boat-Tie.png" alt="Spaceship" height="150">
+  <img src="images/Moving-Boat-Tie.gif" height="150">
+</div>
+
+### Pentadecathlon
+
+The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conway. It is one of the most well-known patterns in the Game of Life, notable for its longevity and distinctive structure.
+
+<div>
+  <img src="images/Pentadecathlon.png" alt="Pentadecathlon" height="150">
+  <img src="images/Moving-Pentadecathlon.gif" alt="Pentadecathlon" height="150">
+</div>
+
 
 ### More Configurations
 

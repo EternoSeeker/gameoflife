@@ -81,3 +81,27 @@ function changeToGif7() {
 function changeToStatic7() {
     document.getElementById('image7').src = 'images/Spider.png';
 }
+
+function changeToGif8() {
+    document.getElementById('image8').src = 'images/Moving-Spaceship.gif';
+}
+
+function changeToStatic8() {
+    document.getElementById('image8').src = 'images/Spaceship.png';
+}
+
+function changeToGif9() {
+    document.getElementById('image9').src = 'images/Moving-Boat-Tie.gif';
+}
+
+function changeToStatic9() {
+    document.getElementById('image9').src = 'images/Boat-Tie.png';
+}
+
+function changeToGif10() {
+    document.getElementById('image10').src = 'images/Moving-Pentadecathlon.gif';
+}
+
+function changeToStatic10() {
+    document.getElementById('image10').src = 'images/Pentadecathlon.png';
+}
