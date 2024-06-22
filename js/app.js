@@ -318,8 +318,15 @@ function togglePlayPause() {
   var playIcon = document.getElementById("play-icon");
 
   // change the display parameter between block and none.
-  pauseIcon.style.display = (pauseIcon.style.display === "none") ? "block" : "none";
-  playIcon.style.display = (playIcon.style.display === "none") ? "block" : "none";
+
+  if (isAnimating) {
+    pauseIcon.style.display = "block";
+    playIcon.style.display = "none";
+  }
+  else {
+    pauseIcon.style.display = "none";
+    playIcon.style.display = "block";
+  }
 
 }
 
