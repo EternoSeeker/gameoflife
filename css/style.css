@@ -341,6 +341,16 @@ body{
 .icon:active {
   transform: translateY(0.1rem);
 }
+#change-grid-button
+{
+ 
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#random-button
+{
+  margin-right: 20px;
+}
 #toggleButton {
     color: black;
     border-radius: 5px;
