@@ -239,7 +239,9 @@ async function drawPresetPattern(presetName) {
     if (!presetsList) {
       return;
     }
-    changeGridSize(30);
+    if (HEIGHT <30) {
+      changeGridSize(30);
+    }
     const preset = presetsList[presetName];
     if (preset) {
       if (!isStarted && !isAnimating) {
