@@ -490,7 +490,10 @@
           </ul>          
 
           <div>
-            <button id="custom-theme-btn" class="has-dropdown animate">
+            <button
+              id="custom-theme-btn"
+              class="has-dropdown animate"
+              onclick="customColorsContainer.style.display = customColorsContainer.style.display === 'none' ? 'block' : 'none';">
               Switch to Custom Theme
             </button>
             <div id="custom-colors-container" style="display: none">
@@ -518,10 +521,16 @@
                 <label for="dead-color">Dead Cell:</label>
                 <input type="color" id="dead-color" value="#CADCFC" />
               </div>
-              <button id="apply-custom-theme-btn" class="custom-button">
+              <button
+                id="apply-custom-theme-btn"
+                class="custom-button"
+                onclick="applyColors()">
                 Apply Theme
               </button>
-              <button id="reset-theme-btn" class="custom-button">
+              <button
+                id="reset-theme-btn"
+                class="custom-button"
+                onclick="resetColors()">
                 Reset to Default
               </button>
             </div>

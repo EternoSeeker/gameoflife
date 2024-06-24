@@ -1,10 +1,4 @@
 // scripts.js
-
-document.addEventListener('DOMContentLoaded', function () {
-  const customThemeBtn = document.getElementById('custom-theme-btn');
-  const customColorsContainer = document.getElementById('custom-colors-container');
-  const applyCustomThemeBtn = document.getElementById('apply-custom-theme-btn');
-  const resetThemeBtn = document.getElementById('reset-theme-btn');
   
 // Define default colors
 var defaultColors = {
@@ -93,20 +87,6 @@ var defaultColors = {
     document.getElementById('alive-color').value = ALIVE_COLOR;
     document.getElementById('dead-color').value = DEAD_COLOR;    
   }
-
-  customThemeBtn.addEventListener('click', function () {
-    customColorsContainer.style.display = customColorsContainer.style.display === 'none' ? 'block' : 'none';
-  });
-
-  applyCustomThemeBtn.addEventListener('click', applyColors);
-  resetThemeBtn.addEventListener('click', resetColors);
-
-  // Load colors on page load
-  loadColors();
-  loadColorInputs();
-
-}
-);
 
 function isDark(color) {
   const rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
