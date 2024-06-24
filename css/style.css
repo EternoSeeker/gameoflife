@@ -776,7 +776,7 @@ body{
 /* Tooltip text */
 .tooltip-text {
   visibility: hidden;
-  width: 120px;
+  width: 180px;
   background-color: var(--theme-color2);
   color: #fff;
   text-align: center;
@@ -786,7 +786,7 @@ body{
   z-index: 1;
   bottom: 125%; /* Position the tooltip above the button */
   left: 50%;
-  margin-left: -60px;
+  margin-left: -90px;
   opacity: 0;
   transition: opacity 0.3s;
 }
