@@ -1,11 +1,11 @@
 // Function to apply gradient theme
 function applyGradientTheme(color1, color2, direction) {
   var container = document.querySelector('.game');
-  container.style.background = ('linear-gradient('+direction+'deg, ' + color1 + ', ' + color2 + ')');
+  container.style.backgroundImage = ('linear-gradient('+direction+'deg, ' + color1 + ', ' + color2 + ')');
   var title = document.querySelector('.heading');
   title.style.color = isDark(color1) ? '#ffffff' : '#000000';
-  document.getElementById('alive-color').value = ALIVE_COLOR;
-  document.getElementById('dead-color').value = DEAD_COLOR;  
+  // document.getElementById('alive-color').value = ALIVE_COLOR;
+  // document.getElementById('dead-color').value = DEAD_COLOR;  
 }
 
 // Event listener for the gradient theme button
@@ -30,6 +30,18 @@ document.getElementById('apply-gradient-btn').addEventListener('click', function
   var color2 = document.getElementById('color2').value;
   applyGradientTheme(color1, color2, slopeSlider.value);
 });
+
+function removeGradient() {
+  var container = document.querySelector('.game');
+  container.style.backgroundImage = 'none';
+
+  document.getElementById('gradient-colors-container').style.display = 'none'; //Hide the Container if reset to default
+}
+
+// Event listener for the Remove Gradient button
+document.getElementById('remove-gradient-btn').addEventListener('click', removeGradient);
+
+// Event listener for the Remove Cell Color button is under customTheme.js
 
 // Function to check the brightness of a color
 function isDark(color) {

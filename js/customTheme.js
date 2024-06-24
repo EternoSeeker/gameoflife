@@ -37,6 +37,7 @@ var defaultColors = {
   }
 
   function applyColors() {
+        removeGradient(); // Reset Gradient Background
     
     while (gridContainer.firstChild) {
       gridContainer.removeChild(gridContainer.firstChild);
@@ -66,6 +67,7 @@ var defaultColors = {
 
   function resetColors() {
     const root = document.documentElement;
+    removeGradient(); // Reset gradient Background
     Object.keys(defaultColors).forEach(key => {
       root.style.setProperty(key, defaultColors[key]);
       localStorage.removeItem(key);
@@ -182,5 +184,11 @@ slopeSlider.addEventListener('input', function() {
 document.getElementById('apply-gradient-btn').addEventListener('click', function() {
   ALIVE_COLOR = document.getElementById('color1').value;
   DEAD_COLOR = document.getElementById('color2').value;
+  drawCells();
+});
+
+document.getElementById('remove-cell-color-btn').addEventListener('click', function() {
+  ALIVE_COLOR = document.getElementById('alive-color').value;
+  DEAD_COLOR = document.getElementById('dead-color').value;
   drawCells();
 });
