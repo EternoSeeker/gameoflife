@@ -342,7 +342,7 @@ body{
   transform: translateY(0.1rem);
 }
 #toggleButton {
-    color: black;
+    color: var(--primary-color);
     border-radius: 5px;
     border-style: none;
     font-size: 1.7rem;
