@@ -105,6 +105,18 @@ var defaultColors = {
   loadColors();
   loadColorInputs();
 
+}
+);
+
+function isDark(color) {
+  const rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
+  const r = parseInt(rgb[1], 16);
+  const g = parseInt(rgb[2], 16);
+  const b = parseInt(rgb[3], 16);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance < 0.5;
+}
+
 async function getThemes() {
   try {
     const response = await fetch("../data/themes.json");
@@ -114,7 +126,6 @@ async function getThemes() {
     return null;
   }
 }
-
 
 async function selectTheme(themeName) {
   try {
@@ -161,18 +172,6 @@ async function selectTheme(themeName) {
     console.error("Error:", error);
   }
 }
-}
-);
-
-function isDark(color) {
-  const rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
-  const r = parseInt(rgb[1], 16);
-  const g = parseInt(rgb[2], 16);
-  const b = parseInt(rgb[3], 16);
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance < 0.5;
-}
-
 
 slopeSlider.addEventListener('input', function() {
   ALIVE_COLOR = document.getElementById('color1').value;
