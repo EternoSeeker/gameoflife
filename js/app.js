@@ -257,61 +257,6 @@ async function drawPresetPattern(presetName) {
   }
 }
 
-async function getThemes() {
-  try {
-    const response = await fetch("../data/themes.json");
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    return null;
-  }
-}
-
-
-async function selectTheme(themeName) {
-  try {
-    const themesList = await getThemes();
-    if (!themesList) {
-      return;
-    }
-
-    const theme = themesList[themeName];
-    if (theme) {
-      const root = document.documentElement;
-      const backgroundContainer = document.body; // Change this to the appropriate container if needed
-
-      for (const key in theme) {
-        root.style.setProperty(key, theme[key]);
-      }
-
-      // Check if the theme contains a gradient
-      if (theme["background-image"]) {
-        backgroundContainer.style.backgroundImage = theme["background-image"];
-        backgroundContainer.style.backgroundColor = ''; // Reset background color
-      } else {
-        backgroundContainer.style.backgroundImage = 'none'; // Remove gradient
-        backgroundContainer.style.backgroundColor = theme["background-color"]; // Apply solid color
-        var container = document.querySelector('.game');
-        container.style.background = '';
-      }
-
-      root.style.setProperty('--scrollbar-color', theme['--primary-color']);
-      ALIVE_COLOR = theme["ALIVE_COLOR"];
-      DEAD_COLOR = theme["DEAD_COLOR"];
-
-      // If switching from a gradient theme to a solid color theme, reset the background
-      if (!theme["background-image"]) {
-        backgroundContainer.style.backgroundImage = 'none';
-      }
-    } else {
-      console.error("Theme not found");
-    }
-    drawCells();
-  } catch (error) {
-    console.error("Error:", error);
-  }
-}
-
 function togglePlayPause() {
   /*
   change the svg icon according to the state

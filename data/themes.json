@@ -8,6 +8,7 @@
     "--shadow-color2": "#101536",
     "--border-color1": "#080126",
     "--background-col": "#c6cede",
+    "--scrollbar-color": "#77bdec",
     "ALIVE_COLOR": "#00246B",
     "DEAD_COLOR": "#CADCFC"
   },
@@ -20,6 +21,7 @@
     "--shadow-color2": "#10361C",
     "--border-color1": "#01260B",
     "--background-col": "#C6DECC",
+    "--scrollbar-color": "#045a1e",
     "ALIVE_COLOR": "#006b2b",
     "DEAD_COLOR": "#cafcdd"
   },
@@ -32,6 +34,7 @@
     "--shadow-color2": "#361015",
     "--border-color1": "#260106",
     "--background-col": "#DEC6C6",
+    "--scrollbar-color": "#5a0404",
     "ALIVE_COLOR": "#6b0000",
     "DEAD_COLOR": "#fccaca"
   },
@@ -44,6 +47,7 @@
     "--shadow-color2": "#361036",
     "--border-color1": "#260126",
     "--background-col": "#DEC6DE",
+    "--scrollbar-color": "#5a045a",
     "ALIVE_COLOR": "#6b006b",
     "DEAD_COLOR": "#fcafcf"
   },
@@ -56,6 +60,7 @@
     "--shadow-color2": "#103636",
     "--border-color1": "#012626",
     "--background-col": "#C6DEDE",
+    "--scrollbar-color": "#045a5a",
     "ALIVE_COLOR": "#006b6b",
     "DEAD_COLOR": "#cafcfc"
   },
@@ -68,6 +73,7 @@
     "--shadow-color2": "#000000",
     "--border-color1": "#002628",
     "--background-col": "#000525",
+    "--scrollbar-color": "#d0ff00",
     "ALIVE_COLOR": "#9800f5",
     "DEAD_COLOR": "#80ffff"
   },
@@ -80,6 +86,7 @@
     "--shadow-color2": "#000000",
     "--border-color1": "#000000",
     "--background-col": "#FFFFFF",
+    "--scrollbar-color": "#505050",
     "ALIVE_COLOR": "#000000",
     "DEAD_COLOR": "#C1C1C1"
   },"cyberpunk": {
@@ -90,7 +97,8 @@
     "--shadow-color1": "#FF0056",       
     "--shadow-color2": "#C2185B",       
     "--border-color1": "#880E4F",       
-    "--background-col": "#FFF0F5",       
+    "--background-col": "#FFF0F5",
+    "--scrollbar-color": "#FCE4EC",       
     "ALIVE_COLOR": "#EC407A",           
     "DEAD_COLOR": "#FCE4EC"            
   }, 
@@ -103,6 +111,7 @@
     "--shadow-color2": "#ff704d",
     "--border-color1": "#b33e00",
     "--background-col": "#ffebcc",
+    "--scrollbar-color": "#ff704d",
     "ALIVE_COLOR": "#ff704d",
     "DEAD_COLOR": "#ffdab3"
 }
