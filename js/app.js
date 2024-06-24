@@ -62,13 +62,18 @@ function toggleCellState(row, col) {
   drawCells();
 }
 
-function changeGridSize() {
+//Get height from input box and return the value
+function getHeight() {
   const newHeight = parseInt(document.getElementById("new-height").value);
+  return newHeight;
+}
+
+// Function to change the grid Size
+function changeGridSize(newHeight) {
   if (isNaN(newHeight) || newHeight <= 0) {
     alert("Please enter a valid height value.");
     return;
   }
-
   const newWidth = newHeight * 2;
   WIDTH = newWidth;
   HEIGHT = newHeight;
@@ -233,6 +238,9 @@ async function drawPresetPattern(presetName) {
     const presetsList = await getPresets();
     if (!presetsList) {
       return;
+    }
+    if (HEIGHT <30) {
+      changeGridSize(30);
     }
     const preset = presetsList[presetName];
     if (preset) {
