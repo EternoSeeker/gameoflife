@@ -1,4 +1,5 @@
 // scripts.js
+const customColorsContainer = document.getElementById('custom-colors-container');
   
 // Define default colors
 var defaultColors = {
@@ -69,7 +70,7 @@ var defaultColors = {
     ALIVE_COLOR = "#00246B";
     DEAD_COLOR = "#CADCFC";
     loadColorInputs();  // Update the color pickers to reflect default values
-    document.getElementById('custom-colors-container').style.display = 'none'; //Hide the Container if reset to default
+    customColorsContainer.style.display = 'none'; //Hide the Container if reset to default
     drawCells();
   }
 
