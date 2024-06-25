@@ -328,7 +328,9 @@ body{
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   margin: 0 0.5rem; /* Add margin to separate buttons */
 }
-
+#new-height::placeholder {
+  color: var(--primary-color); /* Set placeholder text color */
+}
 .random-button:hover {
   box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
 }
