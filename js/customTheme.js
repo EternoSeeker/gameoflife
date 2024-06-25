@@ -2,7 +2,7 @@
 const customColorsContainer = document.getElementById('custom-colors-container');
   
 // Define default colors
-var defaultColors = {
+defaultColors = {
   '--primary-color': '#0f045a',
   '--theme-color1': '#7582b2',
   '--theme-color2': '#036c96',
