@@ -343,6 +343,13 @@ body{
 .icon:active {
   transform: translateY(0.1rem);
 }
+#change-grid-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#random-button {
+  margin-right: 1.25rem;
+}
 #toggleButton {
     color: var(--primary-color);
     border-radius: 5px;
