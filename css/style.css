@@ -358,20 +358,6 @@ body {
   transform: translateY(0.1rem);
 }
 
-#toggleButton {
-  color: black;
-  border-radius: 5px;
-  border-style: none;
-  font-size: 1.7rem;
-  background: none;
-  margin: 1px;
-  z-index: 1;
-  position: absolute;
-  left: 2rem;
-  top: 1.8rem;
-}
-
-
 .sidenav {
   height: 100vh;
   width: 30vw;
