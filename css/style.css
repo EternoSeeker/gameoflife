@@ -393,6 +393,8 @@ body {
   width: 300px;
 }
 
+
+
 /* Hide the nav bar */
 .hide-nav {
   display: none;
@@ -935,4 +937,9 @@ body {
 
 .hov:hover {
   color: aqua;
+}
+
+.sidenav {
+  width: 250px;
+  /* or any other value you prefer */
 }
