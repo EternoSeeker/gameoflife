@@ -324,7 +324,9 @@ body {
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   margin: 0 0.5rem; /* Add margin to separate buttons */
 }
-
+#new-height::placeholder {
+  color: var(--primary-color); /* Set placeholder text color */
+}
 .random-button:hover {
   box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
 }
@@ -337,8 +339,15 @@ body {
 .icon:active {
   transform: translateY(0.1rem);
 }
+#change-grid-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#random-button {
+  margin-right: 1.25rem;
+}
 #toggleButton {
-  color: black;
+  color: var(--primary-color);
   border-radius: 5px;
   border-style: none;
   font-size: 1.7rem;
