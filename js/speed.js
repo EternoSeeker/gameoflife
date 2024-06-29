@@ -32,12 +32,6 @@ function changeSpeedTooltip() {
 
 document.getElementById('fast-reverse-button').addEventListener('click', function() {
     let currentValue = getInputFieldValue();
-    if (currentValue <= 0.15) {
-        swal(
-            "You have reached the minimum speed",
-            "The speed cannot be decreased any further",
-        );
-    }
     if (currentValue > 0.75) {
         inputField.value = (currentValue - 0.25).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
         animationSpeed = 400 * (1 / currentValue);
@@ -53,12 +47,6 @@ document.getElementById('fast-reverse-button').addEventListener('click', functio
 
 document.getElementById('fast-forward-button').addEventListener('click', function() {
     let currentValue = getInputFieldValue();
-    if (currentValue >= 10) {
-        swal(
-            "You have reached the maximum speed",
-            "The speed cannot be increased any further",
-        );
-    }
     if (currentValue < 0.75) {
         inputField.value = (currentValue + 0.10).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
         animationSpeed = 400 * (1 / currentValue);

@@ -71,11 +71,7 @@ function getHeight() {
 // Function to change the grid Size
 function changeGridSize(newHeight) {
   if (isNaN(newHeight) || newHeight <= 0) {
-    swal(
-      "Invalid Height",
-      "Please enter a valid Height",
-      "error"
-    );
+    alert("Please enter a valid height value.");
     return;
   }
   const newWidth = newHeight * 2;

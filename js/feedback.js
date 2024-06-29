@@ -15,26 +15,26 @@ function validationcheck(event){
         const emailPattern = /^([a-zA-Z 0-9]{3,20})@([a-zA-Z]{3,6}).([a-z]{3})$/;// added email validation
         const phonePattern = /^[7-9]{1}[0-9]{9}$/; // 10 digits phone number(as per indian format)
     if(!namePattern.test(name)){
-            swal("Invalid Name",'Please enter Valid Name',"warning");
+            alert('Please enter Valid Name');
             return false;
         }
     else if (!emailPattern.test(email)) {
-        swal("Invalid E-mail",'Please enter a valid email address.',"warning");
+        alert('Please enter a valid email address.');
         return false;
     }
     else if(phone !== '' & !phonePattern.test(phone)){
-        swal("Invalid Phone number",'Please enter Valid phone number',"warning");
+        alert('Please enter valid phone number');
         return false;
     }
     //added validation of message
     else if(message === ''){
-        swal("No message",'Please enter a message',"warning");
+        alert('Please enter the message');
         return false;
     }
     // Checking if the file upload has a valid file type 
     const allowedFileTypes = ['image/jpeg', 'image/png', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
     if (fileUpload && fileUpload.size > 0 && !allowedFileTypes.includes(fileUpload.type)) {
-        swal("File type not supported",'Please upload a valid file (JPG, PNG, PDF, DOC, DOCX).',"error");
+        alert('Please upload a valid file (JPG, PNG, PDF, DOC, DOCX).');
         return false;
     }
     
