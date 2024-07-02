@@ -62,13 +62,22 @@ function toggleCellState(row, col) {
   drawCells();
 }
 
-function changeGridSize() {
+//Get height from input box and return the value
+function getHeight() {
   const newHeight = parseInt(document.getElementById("new-height").value);
+  return newHeight;
+}
+
+// Function to change the grid Size
+function changeGridSize(newHeight) {
   if (isNaN(newHeight) || newHeight <= 0) {
-    alert("Please enter a valid height value.");
+    swal(
+      "Invalid Height",
+      "Please enter a valid Height",
+      "error"
+    );
     return;
   }
-
   const newWidth = newHeight * 2;
   WIDTH = newWidth;
   HEIGHT = newHeight;
@@ -234,6 +243,9 @@ async function drawPresetPattern(presetName) {
     if (!presetsList) {
       return;
     }
+    if (HEIGHT <30) {
+      changeGridSize(30);
+    }
     const preset = presetsList[presetName];
     if (preset) {
       if (!isStarted && !isAnimating) {
@@ -308,27 +320,21 @@ async function selectTheme(themeName) {
 }
 
 function togglePlayPause() {
-  /*
-  change the svg icon according to the state
-  play-pause-border -> svg path for the border -> NO CHANGES
-  play-icon -> Play icon svg filled with colour by default and changes to transparent when pressed.
-  pause-icon1 & pause-icon2 -> Initially fill is transparent and colour is filled when pressed.
-  */
+
+  var pauseIcon = document.getElementById("pause-icon");
+  var playIcon = document.getElementById("play-icon");
+
+  // change the display parameter between block and none.
 
   if (isAnimating) {
-    // play-icon transparent
-    document.getElementById('play-icon').setAttribute('fill', "none");
-    //pause-icon coloured
-    document.getElementById('pause-icon1').setAttribute('fill', "var(--fill-col)");
-    document.getElementById('pause-icon2').setAttribute('fill', "var(--fill-col)");
+    pauseIcon.style.display = "block";
+    playIcon.style.display = "none";
   }
   else {
-    // play-icon coloured
-    document.getElementById('play-icon').setAttribute('fill', "var(--fill-col)");
-    //pause-icon transparent
-    document.getElementById('pause-icon1').setAttribute('fill', "none");
-    document.getElementById('pause-icon2').setAttribute('fill', "none");
+    pauseIcon.style.display = "none";
+    playIcon.style.display = "block";
   }
+
 }
 
 function isEmpty() {
