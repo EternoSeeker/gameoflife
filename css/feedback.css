@@ -45,7 +45,7 @@ input[type="file"]:focus {
   
   .container {
     background: #fff;
-    padding: 20px 30px;
+    padding: 8px 30px;
     border-radius: 8px;
     box-shadow: 0 12px 36px rgba(161, 195, 232, 0.3);
     width: 100%;
@@ -59,8 +59,13 @@ input[type="file"]:focus {
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
   }
   
+  #feedback-form{
+  margin-top: 2px;
+  margin-bottom: 2px;
+ }
+
   h1 {
-    margin-top: 0;
+    margin-top: 10px;
     font-size: 24px;
     text-align: center;
     color: #333;
