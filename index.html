@@ -739,7 +739,8 @@
         <div id="main-grid" class="main-grid"></div>
       </div>
       <div class="controls">
-        <div class="tooltip-container">
+
+        <div class="tooltip-container"> <!--Clear Button-->
           <button
             class="random-button button-73"
             id="clear-button"
@@ -749,7 +750,8 @@
           </button>
           <span class="tooltip-text">Clear the grid</span>
         </div>
-        <div class="tooltip-container">
+
+        <div class="tooltip-container"> <!--Play button-->
           <button
             class="random-button button-73"
             id="play-pause-button"
@@ -767,29 +769,41 @@
           </button>
           <span class="tooltip-text">Start or Pause the animation</span>
         </div>
-        <div class="tooltip-container">
+
+        <div class="tooltip-container"> <!--Reduce Speed -->
           <button
             class="random-button button-73"
             id="fast-reverse-button"
-          >
+            >
           <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z" fill="var(--fill-col)"/>
             <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
             </svg>
           </button>
+          <span id="reduce-speed-tooltip" class="tooltip-text">Reduce Speed</span>
+        </div>
+          
+      
+        <div class="tooltip-container">
           <input class="random-button button-73" type= "number" value = '1' id="speedInput" size="0.3" min="0.15" max="25" step="0.25" readonly ></input>
-            <button             
+            <!--Current Speed input-->
+          <span class="tooltip-text">Current Speed</span>
+        </div>
+
+        
+        <div class="tooltip-container"> <!--Increase Speed-->
+          <button             
               class="random-button button-73"
-              id="fast-forward-button"
-              >
+              id="fast-forward-button">
             <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z" fill="var(--fill-col)"/>
               <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
             </svg>
             </button>
-          <span class="tooltip-text" id="speed-tooltip-text">Speed Controls</span>
+          <span id="increase-speed-tooltip" class="tooltip-text">Increase Speed</span>
         </div>
-        <div class="tooltip-container">
+
+        <div class="tooltip-container"> <!--Random Button-->
           <button
             class="random-button button-73"
             id="random-button"
@@ -800,17 +814,37 @@
           <span class="tooltip-text">Random</span>
         </div>
 
-        <div class="tooltip-container">
-            <input class= "random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height" min="1" />
+        <div class="tooltip-container"> <!--Grid Height-->
+            <input class= "random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height" min="1" onchange="GridHeightChange()" />
+          <span class="tooltip-text">Grid Height</span>
+          </div>
+
+            
+        <div class="tooltip-container"> <!--Apply Grid-->
             <button
               class="random-button button-73"
               id="change-grid-button"
               onclick="changeGridSize(getHeight())">
-              Apply</button>
-          <span class="tooltip-text">Change Grid Height</span>
+              Apply</button>  <!--Random button-->
+          <span class="tooltip-text" id="apply-tooltip">Invalid Grid Height</span>
         </div>
+
+        <script>
+          GridHeightChange();
+          function GridHeightChange() {
+            height = document.getElementById("new-height").value
+            if (height && height>0)
+            {
+              document.getElementById("apply-tooltip").innerHTML = "Apply Grid Height";
+            } else {
+              document.getElementById("apply-tooltip").innerHTML = "Invalid Grid Height";
+            }
+          }
+        
+        </script>
       </div>
     </div>
+
     <div class="snowflakes">
       <div class="snowflake">❅</div>
       <div class="snowflake">❆</div>
