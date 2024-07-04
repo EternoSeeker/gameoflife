@@ -698,9 +698,13 @@
           >
             Feedback
           </button>
+          <div>
+            <button class="toggle-button" onclick="toggleMusic()">Music On</button>
+          </div>
         </div>
       </div>
     </div>
+    
     <div class="game">
       <div class="hamburger">
         <svg
@@ -735,6 +739,36 @@
         </svg>
       </div>
       <div class="heading great-vibes-regular">Conway's Game of Life</div>
+      <audio id="bg-music" src="bgmusic.mp3" loop></audio>
+
+<script>
+  const bgMusic = document.getElementById('bg-music');
+
+  function toggleMusic() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      document.querySelector('.toggle-button').textContent = 'Music Off'; // Change button text
+    } else {
+      bgMusic.pause();
+      document.querySelector('.toggle-button').textContent = 'Music On'; // Change button text
+    }
+  }
+</script>
+<style>
+  /* Optional: Styling for the toggle button */
+  .toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: none;
+  }
+</style>
       <div class="grid-container">
         <div id="main-grid" class="main-grid"></div>
       </div>
