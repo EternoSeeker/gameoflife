@@ -17,18 +17,14 @@ The increment and decrement happens in a step of 0.25 for values above 0.75 and 
 For zero division error, we have limited the minimum speed to 0.15x and maximum speed to 25x
 */
 
-//Change the tooltip text of speed tooltip container
-function changeSpeedTooltip() {
-    let currentValue = getInputFieldValue();
-    const speedTooltip = document.getElementById('speed-tooltip-text');
-    if (currentValue<=0.15){
-        speedTooltip.innerHTML = "Speed cannot be decreased any further" ;
-    } else if (currentValue>=10){
-        speedTooltip.innerHTML = "Speed cannot be increased any further" ;
-    } else {
-        speedTooltip.innerHTML = "Speed Controls" ;
-    }
+
+currentValue = getInputFieldValue();
+if (currentValue <= 0.15) {
+    document.getElementById("reduce-speed-tooltip").innerHTML = "Speed cannot be reduced any further";
+} else if (currentValue >=10) {
+    document.getElementById("increase-speed-tooltip").innerHTML = "Speed cannot be increased any further";
 }
+
 
 document.getElementById('fast-reverse-button').addEventListener('click', function() {
     let currentValue = getInputFieldValue();
@@ -38,6 +34,8 @@ document.getElementById('fast-reverse-button').addEventListener('click', functio
             "The speed cannot be decreased any further",
         );
     }
+
+
     if (currentValue > 0.75) {
         inputField.value = (currentValue - 0.25).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
         animationSpeed = 400 * (1 / currentValue);
@@ -47,7 +45,14 @@ document.getElementById('fast-reverse-button').addEventListener('click', functio
     }
 
     // Change tooltip text after updating the current value
-    changeSpeedTooltip();
+    let newValue = getInputFieldValue();
+    document.getElementById("increase-speed-tooltip").innerHTML = "Increase Speed";
+    let reduce = document.getElementById("reduce-speed-tooltip");
+    reduce.innerHTML = "Reduce Speed";
+    console.log(currentValue)
+    if (newValue <= 0.15) {
+        reduce.innerHTML = "Speed cannot be reduced any further" ;
+    }
 
 });
 
@@ -68,6 +73,12 @@ document.getElementById('fast-forward-button').addEventListener('click', functio
     }
 
     // Change tooltip text after updating the current value
-    changeSpeedTooltip();
+    let newValue = getInputFieldValue();
+    document.getElementById("reduce-speed-tooltip").innerHTML = "Reduce Speed";
+    let increase = document.getElementById("increase-speed-tooltip");
+    increase.innerHTML = "Increasee Speed";
+    if (newValue >= 10) {
+        increase.innerHTML = "Speed cannot be increased any further" ;
+    }
 
 });
