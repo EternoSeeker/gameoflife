@@ -308,8 +308,8 @@
           </div>
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
-              ><span class="hov">Randomness</span
-              ><span id="randomValOutput">20</span>
+              ><span class="hov">Randomness</span>
+              <span><span id="randomValOutput">20</span>%</span>
             </label>
             <input
               type="range"
@@ -741,19 +741,6 @@
       <div class="heading great-vibes-regular">Conway's Game of Life</div>
       <audio id="bg-music" src="bgmusic.mp3" loop></audio>
 
-<script>
-  const bgMusic = document.getElementById('bg-music');
-
-  function toggleMusic() {
-    if (bgMusic.paused) {
-      bgMusic.play();
-      document.querySelector('.toggle-button').textContent = 'Music Off'; // Change button text
-    } else {
-      bgMusic.pause();
-      document.querySelector('.toggle-button').textContent = 'Music On'; // Change button text
-    }
-  }
-</script>
 <style>
   /* Optional: Styling for the toggle button */
   .toggle-button {
@@ -892,6 +879,7 @@
     <script src="./js/gradient.js"></script>
     <script src="./js/speed.js"></script>
     <script src="./js/animation.js"></script>
+    <script src="./js/music.js"></script>
     <script src="./js/keyboard-shortcut.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {

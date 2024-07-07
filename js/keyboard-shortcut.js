@@ -8,6 +8,7 @@ document.addEventListener("keydown", function (event) {
     // Key mapping to functions
     const keyMap = {
       " " : startAnimation,
+      P: startAnimation,
       ARROWRIGHT: fastForward,
       F: fastForward,
       ARROWLEFT: slowDown,
@@ -18,6 +19,7 @@ document.addEventListener("keydown", function (event) {
       ARROWUP: () => updateRandomValue(5),
       ARROWDOWN: () => updateRandomValue(-5),
       G: toggleGrid,
+      M: toggleMusic,
     };
   
     // Check if a function is mapped to the pressed key
