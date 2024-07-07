@@ -1,7 +1,6 @@
 // The following code will use the keyboard inputs to control the game
 
 document.addEventListener("keydown", function (event) {
-    event.preventDefault()
     // standardises the keyboard input to capital letters
     const keyPressed = event.key.toUpperCase();
   
@@ -24,6 +23,7 @@ document.addEventListener("keydown", function (event) {
   
     // Check if a function is mapped to the pressed key
     if (keyMap.hasOwnProperty(keyPressed)) {
+      event.preventDefault();
       keyMap[keyPressed]();
     }
   });
