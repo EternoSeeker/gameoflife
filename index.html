@@ -5,6 +5,10 @@
       href="https://fonts.googleapis.com/css?family=Roboto Mono"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/b08b6de27e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
     <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -263,7 +267,7 @@
     <div class="game-settings">
       <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
       <div class="sidenav" id="sideNav">
-        <div class="other-settings animate" class="hov">Settings</div>
+        <div class="other-settings animate" class="hov"><i class="fa-solid fa-gear"></i> Settings</div>
         <div class="cross">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -322,7 +326,7 @@
           </p>
         </div>
         <div class="color-themes has-dropdown animate" style="cursor: pointer">
-          Themes
+          <i class="fa-solid fa-palette"></i> Themes
         </div>
         <div class="themes-container animate">
           <ul>
@@ -554,7 +558,7 @@
           </div>
         </div>
         <div class="presets has-dropdown animate" style="cursor: pointer">
-          Presets
+          <i class="fa-solid fa-list"></i> Presets
         </div>
         <div class="presets-container animate">
           <ul>
@@ -665,7 +669,7 @@
           </ul>
         </div>
         <div class="history has-dropdown animate" style="cursor: pointer">
-          History
+          <i class="fa-solid fa-clock"></i> History
         </div>
         <div class="history-container animate"></div>
         <div class="game-rules has-dropdown animate">
@@ -674,7 +678,7 @@
             style="margin-left: -1.7rem; cursor: pointer"
             onclick="location.href='gamerules.html'"
           >
-            Game Rules
+          <i class="fa-solid fa-chess"></i> Game Rules
           </button>
         </div>
         <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
@@ -686,6 +690,8 @@
             style="cursor: pointer"
             onclick="redirectToReadme()"
           >
+          <i class="fa-solid fa-circle-info"></i>
+
             About
           </button>
         </div>
@@ -696,10 +702,10 @@
             style="cursor: pointer"
             onclick="redirectToFeedback()"
           >
-            Feedback
+          <i class="fa-solid fa-rss"></i> Feedback
           </button>
           <div>
-            <button class="toggle-button" onclick="toggleMusic()">Music On</button>
+            <button class="toggle-button" onclick="toggleMusic()"> <i class="fa-solid fa-music"></i> Music On</button>
           </div>
         </div>
       </div>
