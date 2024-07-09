@@ -936,16 +936,29 @@
         "#55a5ea",
         "#55a5ea",
       ];
+      const mainGrid = document.querySelector(".main-grid");
 
       circles.forEach(function (circle, index) {
         circle.x = 0;
         circle.y = 0;
         circle.style.backgroundColor = colors[index % colors.length];
       });
+      
+      mainGrid.addEventListener("mouseenter", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "block";
+        });
+      });
 
-      window.addEventListener("mousemove", function (e) {
+      mainGrid.addEventListener("mousemove", function (e) {
         coords.x = e.clientX;
         coords.y = e.clientY;
+      });
+      
+      mainGrid.addEventListener("mouseleave", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "none";
+        });
       });
 
       function animateCircles() {
