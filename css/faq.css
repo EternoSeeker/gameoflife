@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #0f045a;
+  --theme-color1: #7582b2;
+  --theme-color2: #036c96;
+  --theme-color3: #ebf2ff;
+  --shadow-color1: #352a7e;
+  --shadow-color2: #101536;
+  --border-color1: #080126;
+  --background-col: #c6cede;
+  --container-bg-color: #b0b8c4;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-col);
+  color: var(--primary-color);
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  padding: 30px;
+  background-color: var(--container-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: blink 3s linear infinite;
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-toggle {
+  display: none;
+}
+
+.faq-question {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  background-color: var(--theme-color1);
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 7px 7px 20px 0 darkblue;
+}
+
+.faq-question:hover {
+  background-color: var(--theme-color2);
+}
+
+.faq-answer {
+  padding: 10px 20px;
+  display: none;
+  background-color: white;
+  border: 1px solid var(--theme-color1);
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 7px 7px 20px 0 darkblue;
+}
+
+.faq-toggle:checked + .faq-question + .faq-answer {
+  display: block;
+}
+
+.faq-toggle + .faq-question::after {
+  content: '\f0d7';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  float: right;
+}
+
+.faq-toggle:checked + .faq-question::after {
+  content: '\f0d8';
+}
+
+.home-icon {
+  width: 50px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .home-icon {
+    width: 30px;
+    margin: 10px;
+  }
+}

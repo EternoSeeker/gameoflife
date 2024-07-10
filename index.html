@@ -225,6 +225,9 @@
       function redirectToFeedback() {
         window.location.href = "feedback.html";
       }
+      function redirectToFAQ() {
+        window.location.href = "faq.html";
+      }
     </script>
   </head>
 
@@ -722,6 +725,15 @@
           >
           <i class="fa-solid fa-rss"></i> Feedback
           </button>
+          <div class="about-container animate"></div>
+          <div class="feedback has-dropdown animate" style="cursor: pointer">
+            <button
+              class="about has-dropdown animate"
+              style="cursor: pointer"
+              onclick="redirectToFAQ()"
+            >
+            <i class="fa-solid fa-rss"></i> FAQ
+            </button>
           <div>
             <button class="toggle-button" onclick="toggleMusic()"> <i class="fa-solid fa-music"></i> Music On</button>
           </div>
