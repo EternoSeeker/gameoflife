@@ -203,6 +203,8 @@ body {
 }
 .full-width {
   margin-left: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 /* .grid-container {
   display: flex;
@@ -358,6 +360,7 @@ body {
   left: 2rem;
   top: 1.8rem;
 }
+
 .sidenav {
   height: 100vh;
   width: 20vw;
@@ -580,132 +583,19 @@ body {
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
-  .controls {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-    align-items: center; /* Center buttons vertically */
-    min-width: 25vw;
-    margin: none;
+@media screen and (max-width: 568px) {
+  
+  .full-width {
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .sidenav {
-    height: auto;
-    position: fixed;
-    padding-top: 0.5rem;
-    left: -250px;
-    height: 200vh;
+    overflow-y: auto;
+    height: 100%;
+    width: 100vw;
+    left: -550px;
     transition: width 0.3s ease;
-    width: 100vw;
-    padding-top: 2rem;
-  }
-
-  .hamburger {
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    display: none;
-  }
-
-  .sidenav .cross {
-    cursor: pointer;
-    position: absolute;
-    top: 13px;
-    right: 10px;
-    display: block;
-    padding-top: 1.6rem;
-  }
-  .sidenav .randomness-container input {
-    text-decoration: none;
-    font-size: 0.8rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 90%;
-    cursor: pointer;
-    outline: none;
-    align-items: center;
-  }
-
-  .sidenav .randomness-container label {
-    padding: 0.6rem 4.4rem 0.6rem 0;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 50%;
-    cursor: pointer;
-    outline: none;
-  }
-  /*.about a {
-    text-decoration: none; 
-    color: inherit; 
-    cursor: pointer; 
-  }*/
-  .about button {
-    margin-left: -1.1rem;
-  }
-
-  .sidenav button,
-  .other-settings-container div,
-  .presets-container div,
-  .color-themes,
-  .themes-container div,
-  .presets,
-  .history {
-    padding: 0.3rem 0.4rem 0.3rem 1rem;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-  }
-  .about {
-    padding: 0rem 0.4rem 0rem 1rem;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-  }
-
-  .other-settings {
-    padding: 3px;
-    text-align: left;
-    padding-left: 15px;
-    padding-bottom: 10px;
-  }
-
-  .game {
-    width: 100vw;
-    margin: 0;
-  }
-  .controls {
-    display: flex;
-    flex-direction: row;
-    min-width: 25vw;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-  }
-
-  .clear-button,
-  .random-button {
-    font-size: 0.8rem;
-    /* Adjust font size for smaller screens */
-    padding: 0.3rem 0.8rem;
-    /* Adjust padding for smaller screens */
-    margin: 0.5rem 0;
-    /* Add margin to separate buttons vertically */
   }
 
   .grid-container {
@@ -713,7 +603,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 0.2rem var(--border-color1);
+    border: solid 0.01rem var(--border-color1);
     max-width: 80vw;
     max-height: 82vw;
     transition: border-color 0.3s ease;
@@ -815,11 +705,7 @@ body {
 }
 
 @media screen and (max-width: 425px) {
-  .sidenav {
-    width: 100vw;
-    left: -550px;
-    transition: width 0.3s ease;
-  }
+
 
   /* #toggleButton {
     left: 1.4rem;
@@ -848,19 +734,22 @@ body {
   }
 }
 /* Added new values for maxwidth sidenav button */
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 728px) and (min-width: 568px) {
   .sidenav {
-    width: 92%;
+    /* width: 92%; */
     left: -550px;
     transition: width 0.3s ease;
+    width: 50vw;
   }
   .controls {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 799px) and (min-width: 728px) {
   .controls {
     flex-wrap: wrap;
+  }  .sidenav {
+    width: 40vw;
   }
 }
 @media screen and (max-width: 860px) {
@@ -868,14 +757,18 @@ body {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1099px) and (min-width: 800px) {
   .controls {
     flex-wrap: wrap;
+  }  .sidenav {
+    width: 30vw;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (min-wideth: 1100px) {
   .controls {
     flex-wrap: wrap;
+  }  .sidenav {
+    width: 25vw;
   }
 }
 
