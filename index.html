@@ -5,18 +5,40 @@
       href="https://fonts.googleapis.com/css?family=Roboto Mono"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/b08b6de27e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
     <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
+
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
     <meta
       name="description"
-      content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
-    />
+      content="Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. Dive into the eternal patterns and captivating simulations at Eternal Game of Life."/>
     <meta
       name="keywords"
-      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970"
-    />
-    <title>Conway's Game of Life</title>
+      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970,Conway's Game of Life, cellular automaton, John Horton Conway, 1970, eternal game of life, game of life patterns, life simulation, mathematical game, game of life rules, Conway game, interactive game of life, game of life website, play Conway's Game of Life, online game of life, Conway automaton, game of life examples, cellular automaton game, game of life history, Conway game simulator, eternal patterns in life. "/>
+      <meta name="author" content="Shrihari Magar">
+      <meta name="title" content="Eternal Game of Life">
+      <meta name='URL' content='https://eternalgameoflife.netlify.app/'>
+      <meta name='identifier-URL' content='https://eternalgameoflife.netlify.app/'>
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
+
+      <!-- Open Graph -->
+       <meta property="og:title" content="Eternal Game of Life" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content='https://eternalgameoflife.netlify.app/' />
+      <meta property="og:description"
+        content="Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. Dive into the eternal patterns and captivating simulations at Eternal Game of Life." />  
+      <meta property="og:image" content="https://github.com/EternoSeeker/gameoflife/blob/main/images/glider-icon.png">    
+      
+
+      <title>Conway's Game of Life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -263,7 +285,7 @@
     <div class="game-settings">
       <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
       <div class="sidenav" id="sideNav">
-        <div class="other-settings animate" class="hov">Settings</div>
+        <div class="other-settings animate" class="hov"><i class="fa-solid fa-gear"></i> Settings</div>
         <div class="cross">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -322,7 +344,7 @@
           </p>
         </div>
         <div class="color-themes has-dropdown animate" style="cursor: pointer">
-          Themes
+          <i class="fa-solid fa-palette"></i> Themes
         </div>
         <div class="themes-container animate">
           <ul>
@@ -554,7 +576,7 @@
           </div>
         </div>
         <div class="presets has-dropdown animate" style="cursor: pointer">
-          Presets
+          <i class="fa-solid fa-list"></i> Presets
         </div>
         <div class="presets-container animate">
           <ul>
@@ -665,7 +687,7 @@
           </ul>
         </div>
         <div class="history has-dropdown animate" style="cursor: pointer">
-          History
+          <i class="fa-solid fa-clock"></i> History
         </div>
         <div class="history-container animate"></div>
         <div class="game-rules has-dropdown animate">
@@ -674,7 +696,7 @@
             style="margin-left: -1.7rem; cursor: pointer"
             onclick="location.href='gamerules.html'"
           >
-            Game Rules
+          <i class="fa-solid fa-chess"></i> Game Rules
           </button>
         </div>
         <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
@@ -686,6 +708,8 @@
             style="cursor: pointer"
             onclick="redirectToReadme()"
           >
+          <i class="fa-solid fa-circle-info"></i>
+
             About
           </button>
         </div>
@@ -696,10 +720,10 @@
             style="cursor: pointer"
             onclick="redirectToFeedback()"
           >
-            Feedback
+          <i class="fa-solid fa-rss"></i> Feedback
           </button>
           <div>
-            <button class="toggle-button" onclick="toggleMusic()">Music On</button>
+            <button class="toggle-button" onclick="toggleMusic()"> <i class="fa-solid fa-music"></i> Music On</button>
           </div>
         </div>
       </div>
@@ -929,16 +953,29 @@
         "#55a5ea",
         "#55a5ea",
       ];
+      const mainGrid = document.querySelector(".main-grid");
 
       circles.forEach(function (circle, index) {
         circle.x = 0;
         circle.y = 0;
         circle.style.backgroundColor = colors[index % colors.length];
       });
+      
+      mainGrid.addEventListener("mouseenter", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "block";
+        });
+      });
 
-      window.addEventListener("mousemove", function (e) {
+      mainGrid.addEventListener("mousemove", function (e) {
         coords.x = e.clientX;
         coords.y = e.clientY;
+      });
+      
+      mainGrid.addEventListener("mouseleave", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "none";
+        });
       });
 
       function animateCircles() {
