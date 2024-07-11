@@ -706,6 +706,8 @@ body {
     /* Adjust padding for smaller screens */
     margin: 0.5rem 0;
     /* Add margin to separate buttons vertically */
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
   }
 
   .grid-container {
@@ -729,6 +731,16 @@ body {
     text-align: center;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 700px) 
+{
+  .clear-button,
+  .random-button {
+    font-size: 0.8rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
   }
 }
 
