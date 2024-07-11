@@ -12,29 +12,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-zylVviXvY3s/jybGKHrJgy1NdxDwA6/sP1m3ymUedL+XXKkBhZMKdeLRPhMb2DfykP4XK6eWCT9w1TmD4Ek1TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .back-button { 
-    position: fixed;
-    bottom: 90%;
-    left: 4%;
-    transform: translateX(-50%);
-    text-align: center;
-}
+      position: fixed;
+      bottom: 90%;
+      left: 4%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
 
-.back-up{
-  position: fixed;
-  left: 4%;
-  text-align: center;
-  width:50px;
-  height: 50px;
-  background: #7582b2;
-  bottom: 40px;
-  right: 50px;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-.back-up:hover{
-  cursor: pointer; 
-}
+    .back-up {
+      display: none; /* Initially hide the button */
+      position: fixed;
+      left: 4%;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      background: #7582b2;
+      bottom: 40px;
+      right: 50px;
+      line-height: 50px;
+      font-size: 22px;
+    }
+
+    .back-up:hover {
+      cursor: pointer; 
+    }
   </style>
   <title>FAQ - Conway's Game of Life</title>
 </head>
@@ -141,15 +142,14 @@
     <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
   </div>
   <script>
-    //Scroll to top button 
+    // Scroll to top button 
     const topButton = document.querySelector('.gotopbtn');
     window.onscroll = function() {scrollFunction()};
-    function scrollFunction() 
-    {
+    function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        topButton.style.display = "block";
+        topButton.parentElement.style.display = "block"; // Show button
       } else {
-        topButton.style.display = "none";
+        topButton.parentElement.style.display = "none"; // Hide button
       }
     }
     topButton.addEventListener('click', function(event) {
