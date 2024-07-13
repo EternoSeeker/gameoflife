@@ -1,0 +1,236 @@
+/* Notes:
+closeIntro series wale fucntion mein animation properties lga, and welcome box se pehle hta. */
+
+.intro-page{ /* transparent layer to separate neeche wala sab kuch with the layer pop up is present on*/
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.popup{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #080126;
+    padding: 1rem;
+    /* display: none; */
+    width: 30%;
+    height: 12rem;
+    z-index: 1000;
+}
+#popup1, #popup9{ /* first and last pop ups should be in the center*/
+    animation: slide-down 0.3s ease-out;
+    width: 35%;
+    margin: auto;
+    height: 30vh;
+    margin-top: 35vh;
+    position:relative;
+}
+
+@keyframes slide-down { /* consider some transition for the other popups too, somehting subtle idk*/
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.popup-cross{
+    position: absolute;
+    font-size: 1rem;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: white;
+    /* margin-left: 90%; */
+}
+
+.intro-head{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+.intro-content{
+    /* padding-top: 2rem; */
+    font-size: 1rem;
+}
+
+#popup1, #popup9 .intro-head{ /*start and end wale boxes need different padding inside so */
+    padding-top: 25px;
+}
+#popup1 .intro-content{        
+    padding-top: 1.7rem;
+}
+#popup9 .intro-content{        
+    padding-top: 1.7rem;
+}
+.bottom-btns{
+    padding: 1.4rem;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+}
+#popup1 .bottom-btns{
+    padding: 1.4rem;
+    padding-top:2.4rem; 
+}
+
+.intro-bottom-btn{
+    /* padding: 2px 8px 2px 8px; */
+    margin: 2px;
+    width: 60px;
+    font-size: 0.9rem;
+}
+#popup1 .intro-bottom-btn{
+    padding: 2px 8px 2px 8px;
+    font-size: 1rem;
+}
+
+#pop-prev{
+    position: absolute;
+    right: 6.5rem;
+}
+.introduction-series button{
+    border: none;
+    border-radius: 5px;
+}
+/* the start button in the 8th and last popup*/
+.bottom-btn-end{
+    align-items: center;
+    margin-top: 30px;
+}
+#pop-end{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.5rem;
+    color:rgb(3, 3, 4);
+    width: 100px;
+    transition: 0.5s ease;
+    font-weight:bold;
+}
+#pop-end:hover{
+    transform: scale(1.1);
+}
+/* first page ka backdrop blur acha lgega*/
+#page1, #page9{
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* positioning of all popups accoridng to their purpose*/
+#popup2{
+    position: absolute;
+    right: 9%;
+    bottom: 10%;
+}
+/* the arrow thing */
+#popup2::before {
+    content: "";
+    position: absolute;
+    top: -20px; 
+    left: 30px; 
+    border-width: 0 50px 50px 50px;
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
+
+#popup3{
+    position: absolute;
+    right: 30%;
+    bottom: 13%;
+}
+#popup3::before {
+    content: "";
+    position: absolute;
+    top: 85%; 
+    left: 9%; 
+    border-width: 0px 50px 50px 50px;
+    transform: rotate(-180deg);
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
+#popup4{
+    position: absolute;
+    right: 17%;
+    bottom: 13%;
+}
+#popup4::before {
+    content: "";
+    position: absolute;
+    top: 85%; 
+    left: 9%; 
+    border-width: 0px 50px 50px 50px;
+    transform: rotate(-180deg);
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
+#popup5{
+    position: absolute;
+    right: 6%;
+    bottom: 13%;
+}
+#popup5::before {
+    content: "";
+    position: absolute;
+    top: 85%; 
+    left: 9%; 
+    border-width: 0px 50px 50px 50px;
+    transform: rotate(-180deg);
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
+
+#popup6{
+    position: absolute;
+    left: 22%;
+    top: 14%;
+}
+#popup6::before {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 0px; 
+    border-width: 50px 50px 30px 0px;
+    transform: rotate(45deg);
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
+
+#popup7{
+    position: absolute;
+    left: 22%;
+    top: 50%;
+}
+#popup7::before {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 0px; 
+    border-width: 50px 50px 30px 0px;
+    transform: rotate(45deg);
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
+#popup8{
+    position: absolute;
+    left: 30%;
+    bottom: 13%;
+}
+#popup8::before {
+    content: "";
+    position: absolute;
+    top: 85%; 
+    left: 9%; 
+    border-width: 0px 50px 50px 50px;
+    transform: rotate(-180deg);
+    border-style: solid;
+    border-color: transparent transparent #080126 transparent;
+}
