@@ -97,3 +97,11 @@ function changeToGif9() {
 function changeToStatic9() {
     document.getElementById('image9').src = 'images/Boat-Tie.png';
 }
+
+function changeToGif10() {
+    document.getElementById('image10').src = 'images/Moving-Pentadecathlon.gif';
+}
+
+function changeToStatic10() {
+    document.getElementById('image10').src = 'images/Pentadecathlon.png';
+}

@@ -10,7 +10,27 @@
   --container-bg-color: #b0b8c4;
   --scrollbar-color: #555555;
 }
-
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
 .home-icon {
   margin: -15px;  
   margin-left: -40px;
@@ -203,13 +223,14 @@ hr {
   background: linear-gradient(to right, var(--primary-color), var(--theme-color3), var(--primary-color));
   margin: 30px 0;
 }
-  .back-button { 
+.back-button { 
     position: fixed;
     bottom: 90%;
     left: 4%;
     transform: translateX(-50%);
     text-align: center;
 }
+
 .back-up{
   position: fixed;
   left: 4%;
@@ -222,6 +243,9 @@ hr {
   text-align: center;
   line-height: 50px;
   font-size: 22px;
+}
+.back-up:hover{
+  cursor: pointer; 
 }
 .home-icon {
     width: 50px;
@@ -239,4 +263,10 @@ hr {
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
+}
+.back-to-home:hover
+{
+  transform: scale(0.99);
+  background-color: #4922ac;
+  box-shadow: 0 8px 12px rgba(0, 21, 255, 0.2);
 }

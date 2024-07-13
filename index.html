@@ -5,18 +5,40 @@
       href="https://fonts.googleapis.com/css?family=Roboto Mono"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/b08b6de27e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
     <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
+
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
     <meta
       name="description"
-      content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
-    />
+      content="Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. Dive into the eternal patterns and captivating simulations at Eternal Game of Life."/>
     <meta
       name="keywords"
-      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970"
-    />
-    <title>Conway's Game of Life</title>
+      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970,Conway's Game of Life, cellular automaton, John Horton Conway, 1970, eternal game of life, game of life patterns, life simulation, mathematical game, game of life rules, Conway game, interactive game of life, game of life website, play Conway's Game of Life, online game of life, Conway automaton, game of life examples, cellular automaton game, game of life history, Conway game simulator, eternal patterns in life. "/>
+      <meta name="author" content="Shrihari Magar">
+      <meta name="title" content="Eternal Game of Life">
+      <meta name='URL' content='https://eternalgameoflife.netlify.app/'>
+      <meta name='identifier-URL' content='https://eternalgameoflife.netlify.app/'>
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
+
+      <!-- Open Graph -->
+       <meta property="og:title" content="Eternal Game of Life" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content='https://eternalgameoflife.netlify.app/' />
+      <meta property="og:description"
+        content="Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. Dive into the eternal patterns and captivating simulations at Eternal Game of Life." />  
+      <meta property="og:image" content="https://github.com/EternoSeeker/gameoflife/blob/main/images/glider-icon.png">    
+      
+
+      <title>Conway's Game of Life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -97,6 +119,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./css/sweet-alert.css" />
     <style>
       ul {
         list-style-type: none;
@@ -262,7 +286,7 @@
     <div class="game-settings">
       <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
       <div class="sidenav" id="sideNav">
-        <div class="other-settings animate" class="hov">Settings</div>
+        <div class="other-settings animate" class="hov"><i class="fa-solid fa-gear"></i> Settings</div>
         <div class="cross">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -308,8 +332,8 @@
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
               ><span class="hov">Randomness</span
-              ><span id="randomValOutput">20</span></label
-            >
+              ><span id="randomValOutput">20</span>
+            </label>
             <input
               type="range"
               min="1"
@@ -321,7 +345,7 @@
           </p>
         </div>
         <div class="color-themes has-dropdown animate" style="cursor: pointer">
-          Themes
+          <i class="fa-solid fa-palette"></i> Themes
         </div>
         <div class="themes-container animate">
           <ul>
@@ -512,7 +536,7 @@
                 <label for="dead-color">Dead Cell:</label>
                 <input type="color" id="dead-color" value="#CADCFC" />
               </div>
-              <button id="apply-custom-theme-btn" class="cuatom-button">
+              <button id="apply-custom-theme-btn" class="custom-button">
                 Apply Theme
               </button>
               <button id="reset-theme-btn" class="custom-button">
@@ -543,11 +567,17 @@
               <button id="apply-gradient-btn" class="gradient-button">
                 Apply Gradient
               </button>
+              <button id="remove-gradient-btn" class="gradient-button">
+                Remove Gradient
+              </button>
+              <button id="remove-cell-color-btn" class="gradient-button">
+                Reset Cell Colors
+              </button>
             </div>
           </div>
         </div>
         <div class="presets has-dropdown animate" style="cursor: pointer">
-          Presets
+          <i class="fa-solid fa-list"></i> Presets
         </div>
         <div class="presets-container animate">
           <ul>
@@ -658,7 +688,7 @@
           </ul>
         </div>
         <div class="history has-dropdown animate" style="cursor: pointer">
-          History
+          <i class="fa-solid fa-clock"></i> History
         </div>
         <div class="history-container animate"></div>
         <div class="game-rules has-dropdown animate">
@@ -667,7 +697,7 @@
             style="margin-left: -1.7rem; cursor: pointer"
             onclick="location.href='gamerules.html'"
           >
-            Game Rules
+          <i class="fa-solid fa-chess"></i> Game Rules
           </button>
         </div>
         <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
@@ -679,6 +709,8 @@
             style="cursor: pointer"
             onclick="redirectToReadme()"
           >
+          <i class="fa-solid fa-circle-info"></i>
+
             About
           </button>
         </div>
@@ -689,11 +721,15 @@
             style="cursor: pointer"
             onclick="redirectToFeedback()"
           >
-            Feedback
+          <i class="fa-solid fa-rss"></i> Feedback
           </button>
+          <div>
+            <button class="toggle-button" onclick="toggleMusic()"> <i class="fa-solid fa-music"></i> Music On</button>
+          </div>
         </div>
       </div>
     </div>
+    
     <div class="game">
       <div class="hamburger">
         <svg
@@ -728,13 +764,43 @@
         </svg>
       </div>
       <div class="heading great-vibes-regular">Conway's Game of Life</div>
+      <audio id="bg-music" src="bgmusic.mp3" loop></audio>
+
+<script>
+  const bgMusic = document.getElementById('bg-music');
+
+  function toggleMusic() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      document.querySelector('.toggle-button').textContent = 'Music Off'; // Change button text
+    } else {
+      bgMusic.pause();
+      document.querySelector('.toggle-button').textContent = 'Music On'; // Change button text
+    }
+  }
+</script>
+<style>
+  /* Optional: Styling for the toggle button */
+  .toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: none;
+  }
+</style>
       <div class="grid-container">
         <div id="main-grid" class="main-grid"></div>
       </div>
-      <div class="controls">  
-        <div class="tooltip-container">
+      <div class="controls">
+        <div class="tooltip-container"> <!--Clear Button-->
           <button
-            class="clear-button button-73"
+            class="random-button button-73"
             id="clear-button"
             onclick="clearGrid()"
           >
@@ -742,49 +808,60 @@
           </button>
           <span class="tooltip-text">Clear the grid</span>
         </div>
-        <div class="tooltip-container">
+
+        <div class="tooltip-container"> <!--Play button-->
           <button
-            class="control-button"
+            class="random-button button-73"
             id="play-pause-button"
             onclick="startAnimation()"
           >
-            <img
-              class="icon"
-              id="play-pause-icon"
-              src="./images/Play-Button.svg"
-              alt="Start or Pause"
-            />
+          <svg id="play-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" style="display: block" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
+            <path d="M23.5 16.866C24.1667 16.4811 24.1667 15.5189 23.5 15.134L11.5 8.20577C10.8333 7.82087 10 8.302 10 9.0718L10 22.9282C10 23.698 10.8333 24.1791 11.5 23.7942L23.5 16.866Z" fill="var(--fill-col)"/>
+            </svg>
+          <svg id="pause-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" style="display: none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
+            <path d="M11 10C11 9.44772 11.4477 9 12 9H14C14.5523 9 15 9.44772 15 10V22C15 22.5523 14.5523 23 14 23H12C11.4477 23 11 22.5523 11 22V10Z" fill="var(--fill-col)"/>
+            <path d="M18 9C17.4477 9 17 9.44772 17 10V22C17 22.5523 17.4477 23 18 23H20C20.5523 23 21 22.5523 21 22V10C21 9.44772 20.5523 9 20 9H18Z" fill="var(--fill-col)"/>
+            </svg>
           </button>
           <span class="tooltip-text">Start or Pause the animation</span>
         </div>
-        <div class="tooltip-container">
+
+        <div class="tooltip-container"> <!--Reduce Speed -->
           <button
-            class="control-button"
+            class="random-button button-73"
             id="fast-reverse-button"
-            onclick="decreaseSpeed()"
-          >
-          <img
-            class="icon"
-            id="fast-reverse-icon"
-            src="./images/Fast-Reverse-Button.svg"
-            alt="Slow Down"
-          />
+            >
+          <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z" fill="var(--fill-col)"/>
+            <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
+            </svg>
           </button>
-          <input type= "number" value = '1' id="speedInput" size="0.3" min="0.15" max="25" step="0.25" ></input>
-            <button             
-              class="control-button"
-              id="fast-forward-button"
-              >
-            <img
-              class="icon"
-              id="fast-forward-icon"
-              src="./images/Fast-Forward-Button.svg"
-              alt="Speed Up"
-            />
-            </button>
-          <span class="tooltip-text">Speed</span>
+          <span id="reduce-speed-tooltip" class="tooltip-text">Reduce Speed</span>
         </div>
+          
+      
         <div class="tooltip-container">
+          <input class="random-button button-73" type= "number" value = '1' id="speedInput" size="0.3" min="0.15" max="25" step="0.25" readonly ></input>
+            <!--Current Speed input-->
+          <span class="tooltip-text">Current Speed</span>
+        </div>
+
+        
+        <div class="tooltip-container"> <!--Increase Speed-->
+          <button             
+              class="random-button button-73"
+              id="fast-forward-button">
+            <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z" fill="var(--fill-col)"/>
+              <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
+            </svg>
+            </button>
+          <span id="increase-speed-tooltip" class="tooltip-text">Increase Speed</span>
+        </div>
+
+        <div class="tooltip-container"> <!--Random Button-->
           <button
             class="random-button button-73"
             id="random-button"
@@ -795,22 +872,34 @@
           <span class="tooltip-text">Random</span>
         </div>
 
-        <div class="controls">
-          <div class="tooltip-container">
+        <div class="tooltip-container"> <!--Grid Height-->
+            <input class= "random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height" min="1" onchange="GridHeightChange()" />
+          <span class="tooltip-text">Grid Height</span>
+          </div>
+
+            
+        <div class="tooltip-container"> <!--Apply Grid-->
             <button
               class="random-button button-73"
               id="change-grid-button"
-              onclick="changeGridSize()"
-            >
-              Change Grid Size
-            </button>
-            <span class="tooltip-text">Change grid size</span>
-          </div>
-          <div class="tooltip-container">
-            <input type="number" id="new-height" placeholder="Height" min="1" />
-            <span class="tooltip-text">height</span>
-          </div>
+              onclick="changeGridSize(getHeight())">
+              Apply</button>  <!--Random button-->
+          <span class="tooltip-text" id="apply-tooltip">Invalid Grid Height</span>
         </div>
+
+        <script>
+          GridHeightChange();
+          function GridHeightChange() {
+            height = document.getElementById("new-height").value
+            if (height && height>0)
+            {
+              document.getElementById("apply-tooltip").innerHTML = "Apply Grid Height";
+            } else {
+              document.getElementById("apply-tooltip").innerHTML = "Invalid Grid Height";
+            }
+          }
+        
+        </script>
       </div>
       <div id="info-container">
         <div id="generation-info"> 
@@ -822,12 +911,12 @@
           <p>Deaths <span id="deaths">0</span> </p>
         </div>
     </div>
+
     <div class="snowflakes">
       <div class="snowflake">❅</div>
       <div class="snowflake">❆</div>
       <div class="snowflake">❄</div>
     </div>
-    <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/customTheme.js"></script>
     <script src="./js/gradient.js"></script>
@@ -880,16 +969,29 @@
         "#55a5ea",
         "#55a5ea",
       ];
+      const mainGrid = document.querySelector(".main-grid");
 
       circles.forEach(function (circle, index) {
         circle.x = 0;
         circle.y = 0;
         circle.style.backgroundColor = colors[index % colors.length];
       });
+      
+      mainGrid.addEventListener("mouseenter", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "block";
+        });
+      });
 
-      window.addEventListener("mousemove", function (e) {
+      mainGrid.addEventListener("mousemove", function (e) {
         coords.x = e.clientX;
         coords.y = e.clientY;
+      });
+      
+      mainGrid.addEventListener("mouseleave", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "none";
+        });
       });
 
       function animateCircles() {

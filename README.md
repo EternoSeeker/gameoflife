@@ -4,18 +4,84 @@
 </div>
 
 ---
-## ✨ What is it?
+## GitHub Repository Stats 
 
-Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
+<div align = "center">
+
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td ><b>🌟 Stars</b></td>
+            <td ><b>🍴 Forks</b></td>
+            <td ><b>🐛 Issues</b></td>
+            <td ><b>🔔 Open PRs</b></td>
+            <td ><b>🔕 Closed PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/EternoSeeker/gameoflife?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/EternoSeeker/gameoflife?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+  ## 🏆 Featured in:
+
+<table>
+    <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+    </tr>
+    <tr>
+        <td><img src="images/Gssoc Label.png" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+        <td>GirlScript Summer of Code 2024</td>
+        <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development. 
+    </tr>
+</table>
+
+---
+## Table of Contents
+
+1. [What is it?](#what-is-it)
+   1. [The Universe](#the-universe)
+   2. [The Rules](#the-rules)
+   3. [The Game](#the-game)
+2. [The Canvas / Grid](#the-canvas--grid)
+3. [The Settings](#the-settings)
+4. [The Themes](#the-themes)
+5. [The Presets](#the-presets)
+   1. [Glider](#glider)
+   2. [Big Glider](#big-glider)
+   3. [Gosper Glider Gun](#gosper-glider-gun)
+   4. [Pulsar](#pulsar)
+   5. [Circle of Fire](#circle-of-fire)
+   6. [Quadpole](#quadpole)
+   7. [Spider](#spider)
+   8. [Spaceship](#spaceship)
+   9. [Boat-Tie](#boat-tie)
+   10. [Pentadecathlon](#pentadecathlon)
+6. [Feedback](#feedback)
+7. [Resources](#resources)
+
+---
+## What is it?
+
+✨ Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
 
 ---
 
-## 🌌 The Universe
+## The Universe
 
-The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells. Each cell is in one of two possible states: `ALIVE` or `DEAD`. Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
+🌌 The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells. Each cell is in one of two possible states: `ALIVE` or `DEAD`. Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
 
 ---
-## 📜 The Rules
+## The Rules
 
 1. Any live cell with fewer than two live neighbors dies, as if by **underpopulation**.
 2. Any live cell with two or three live neighbors lives on to the next generation.
@@ -26,11 +92,11 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ---
 
-## 🎮 The Game
+## The Game
 
-### 🖼️ The Canvas / Grid
+### The Canvas / Grid
 
-![Game Grid](./images/grid.png)
+![Game Grid](./images/GRID.png)
 
 | Buttons | What they do |
 | --- | --- |
@@ -43,19 +109,19 @@ The first generation is created by applying the above rules simultaneously to ev
 |`Change grid size`| This function allow you to change the size of grid according to your preference|
 
 
-### ⚙️ The Settings
+### The Settings
 
-| Settings | What are they for? |
+| ⚙️  Settings | What are they for? |
 | --- | --- |
 | `Gridlines` | Toggles visibility of the gridlines |
 | `Warp on Edges` | Warps the patterns across the edges - Initially set as true |
 | `Randomness` | Allows you to set custom randomness percent for random initialization |
 
 
-### 🎨 The Themes
+### The Themes
 
 #### Preset Themes :
-| Themes | The Colors |
+| 🎨 Themes | The Colors |
 | --- | --- |
 | Blue (default) | ![#0f045a](https://placehold.co/15x15/0f045a/0f045a.png) ![#7582b2](https://placehold.co/15x15/7582b2/7582b2.png) ![#036c96](https://placehold.co/15x15/036c96/036c96.png) ![#ebf2ff](https://placehold.co/15x15/ebf2ff/ebf2ff.png) ![#352a7e](https://placehold.co/15x15/352a7e/352a7e.png) ![#101536](https://placehold.co/15x15/101536/101536.png) ![#080126](https://placehold.co/15x15/080126/080126.png) ![#c6cede](https://placehold.co/15x15/c6cede/c6cede.png) ![#00246B](https://placehold.co/15x15/00246B/00246B.png) ![#CADCFC](https://placehold.co/15x15/CADCFC/CADCFC.png) |
 | Red | ![#5a0404](https://placehold.co/15x15/5a0404/5a0404.png) ![#B27575](https://placehold.co/15x15/B27575/B27575.png) ![#960320](https://placehold.co/15x15/960320/960320.png) ![#FFEBEB](https://placehold.co/15x15/FFEBEB/FFEBEB.png) ![#7E2A37](https://placehold.co/15x15/7E2A37/7E2A37.png) ![#361015](https://placehold.co/15x15/361015/361015.png) ![#260106](https://placehold.co/15x15/260106/260106.png) ![#DEC6C6](https://placehold.co/15x15/DEC6C6/DEC6C6.png) ![#6b0000](https://placehold.co/15x15/6b0000/6b0000.png) ![#fccaca](https://placehold.co/15x15/fccaca/fccaca.png) |
@@ -65,6 +131,7 @@ The first generation is created by applying the above rules simultaneously to ev
 | Black and White | ![#505050](https://placehold.co/15x15/505050/505050.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#808080](https://placehold.co/15x15/808080/808080.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#C1C1C1](https://placehold.co/15x15/C1C1C1/C1C1C1.png) |
 | Dark Neon | ![#d0ff00](https://placehold.co/15x15/d0ff00/d0ff00.png) ![#00cc26](https://placehold.co/15x15/00cc26/00cc26.png) ![#00b81b](https://placehold.co/15x15/00b81b/00b81b.png) ![#004640](https://placehold.co/15x15/004640/004640.png) ![#fc0101](https://placehold.co/15x15/fc0101/fc0101.png) ![#000000](https://placehold.co/15x15/000000/000000.png) ![#002628](https://placehold.co/15x15/002628/002628.png) ![#000525](https://placehold.co/15x15/000525/000525.png) ![#9800f5](https://placehold.co/15x15/9800f5/9800f5.png) ![#80ffff](https://placehold.co/15x15/80ffff/80ffff.png) |
 | Cyberpunk | ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#D81B60](https://placehold.co/15x15/D81B60/D81B60.png) ![#AD1457](https://placehold.co/15x15/AD1457/AD1457.png) ![#FF0056](https://placehold.co/15x15/FF0056/FF0056.png) ![#C2185B](https://placehold.co/15x15/C2185B/C2185B.png) ![#880E4F](https://placehold.co/15x15/880E4F/880E4F.png) ![#FFF0F5](https://placehold.co/15x15/FFF0F5/FFF0F5.png) ![#EC407A](https://placehold.co/15x15/EC407A/EC407A.png) ![#FCE4EC](https://placehold.co/15x15/FCE4EC/FCE4EC.png) |
+| Sunset | ![#ff5e5b](https://placehold.co/15x15/ff5e5b/ff5e5b.png) ![#ffb54d](https://placehold.co/15x15/ffb54d/ffb54d.png) ![#ffcc66](https://placehold.co/15x15/ffcc66/ffcc66.png) ![#fff3e6](https://placehold.co/15x15/fff3e6/fff3e6.png) ![#ff9933](https://placehold.co/15x15/ff9933/ff9933.png) ![#ff704d](https://placehold.co/15x15/ff704d/ff704d.png) ![#b33e00](https://placehold.co/15x15/b33e00/b33e00.png) ![#ffebcc](https://placehold.co/15x15/ffebcc/ffebcc.png) ![#ff704d](https://placehold.co/15x15/ff704d/ff704d.png) ![#ffdab3](https://placehold.co/15x15/ffdab3/ffdab3.png) |
 
 #### Custom Theme :
 - It also allows the user to choose colors according to their preferences to create their unique Custom Theme.
@@ -80,7 +147,7 @@ Stores history of patterns that user has played with, up to 5 recent patterns.
 
 ---
 
-## 🔮 The Presets
+## The Presets
 
 ### Glider
 
@@ -164,21 +231,30 @@ Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue,
   <img src="images/Moving-Boat-Tie.gif" height="150">
 </div>
 
+### Pentadecathlon
+
+The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conway. It is one of the most well-known patterns in the Game of Life, notable for its longevity and distinctive structure.
+
+<div>
+  <img src="images/Pentadecathlon.png" alt="Pentadecathlon" height="150">
+  <img src="images/Moving-Pentadecathlon.gif" alt="Pentadecathlon" height="150">
+</div>
+
 
 ### More Configurations
 
 Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Category:Patterns).
 
 ---
-## 💬 Feedback 
-- Now the page supports user feedback. Which redirects you to a Feedback.html page.
-- In the Feedback page, user can file a feedback for 'Complaint', 'Suggestion', 'Question', etc.*
+## Feedback 
+- 💬 Now the page supports user feedback. Which redirects you to a Feedback.html page.
+- 💬 In the Feedback page, user can file a feedback for 'Complaint', 'Suggestion', 'Question', etc.*
 
 ---
 
-## 📚 Resources
+## Resources
 
-### Spark your interest
+### Spark your interest 
 
 - [The Game of Life | John Conway | TEDxDanubia](https://www.youtube.com/watch?v=R9Plq-D1gEk)
 - [Conway's Game of Life Explained](https://youtu.be/C2vgICfQawE?si=yWqN0BOSBOMaujkI)
@@ -199,14 +275,6 @@ Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Categ
   <h2>Conway's Game of Life offers a unique way to explore the unpredictable beauty of life itself.</h2>
 </div>
 
-<!-- Open Source Programs -->
-  <div>
-    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" >Open Source Programs</h2>
-  </div>
-
-  This project is part of GirlScript Summer of Code. We welcome contributions from the community to help enhance gameoflife.
-  
-![gssoc](https://github.com/d1vyadharsh1n1/Flipkart_Clone/assets/146218077/dd4ffa29-2d52-47ad-9967-d0d6f8aff717)
 
 <hr>
 

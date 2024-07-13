@@ -1,15 +1,17 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  overflow-wrap: break-word;
   padding: 0;
-  user-select:none;
+  user-select: none;
 }
 
 body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  overflow-x: hidden;
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard syntax */
 }
 
 :root {
@@ -80,7 +82,6 @@ body {
   background-color: var(--theme-color3);
 }
 
-
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -94,30 +95,30 @@ body {
   background: var(--scrollbar-color);
   border-radius: 30px;
 }
-body{
+body {
   background-color: var(--background-col);
-}/* button  */
+} /* button  */
 .button-73 {
   appearance: none;
-  background-color: #FFFFFF;
+  background-color: var(--background-col);
   border-radius: 40em;
   border-style: none;
-  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-shadow: var(--theme-color1) 0 -12px 6px inset;
   box-sizing: border-box;
-  color: #000000;
+  color: var(--shadow-color2);
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,sans-serif;
+  font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: -.24px;
+  letter-spacing: -0.24px;
   margin: 0;
   outline: none;
   padding: 1rem 1.3rem;
   quotes: auto;
   text-align: center;
   text-decoration: none;
-  transition: all .15s;
+  transition: all 0.15s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -126,31 +127,31 @@ body{
 /* Unified Button Styling */
 .button {
   appearance: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 40em;
   border-style: none;
-  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-shadow: #adcfff 0 -12px 6px inset;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
   display: inline-flex; /* Use flexbox to center content */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
-  font-family: -apple-system,sans-serif;
+  font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: -.24px;
+  letter-spacing: -0.24px;
   margin: 0;
   outline: none;
   padding: 1rem 1.3rem;
   text-align: center;
   text-decoration: none;
-  transition: all .15s;
+  transition: all 0.15s;
 }
 
 .button:hover {
-  background-color: #FFC229;
-  box-shadow: #FF6314 0 -6px 8px inset;
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
   transform: scale(1.05);
 }
 
@@ -158,10 +159,9 @@ body{
   transform: scale(1.03);
 }
 
-
 .button-73:hover {
-  background-color: #FFC229;
-  box-shadow: #FF6314 0 -6px 8px inset;
+  background-color: var(--theme-color1);
+  box-shadow: var(--shadow-color1) 0 -6px 8px inset;
   transform: scale(1.125);
 }
 
@@ -204,7 +204,7 @@ body{
   transition: background-color 0.5s ease;
   overflow-y: auto; /* Enable vertical scrolling */
 }
-.full-width{
+.full-width {
   margin-left: 0;
 }
 /* .grid-container {
@@ -233,9 +233,6 @@ body{
   cursor: pointer;
   transition:0.2s ease;
 } */
-
-
-
 
 .grid-container {
   display: flex;
@@ -275,30 +272,29 @@ body{
   width: 100%;
   height: 100%;
   border: solid 0.001rem var(--border-color1);
-  background-color: #CADCFC;
+  background-color: #cadcfc;
   cursor: pointer;
-  transition:0.2s ease;
+  transition: 0.2s ease;
 }
 
 .cell.alive {
-  background-color: #00246B;
+  background-color: #00246b;
 }
 
-
-.cell:hover{
+.cell:hover {
   transform: scale(1.3);
-  border:1px solid white ;
+  border: 1px solid white;
   z-index: 1;
 }
-.cell:active{
+.cell:active {
   scale: 1;
 }
 
-.controls input{
-  height: auto;
-  width:auto;
+.controls input {
+  /* height: auto;
+  width: 80vw;*/
   border-radius: 6px;
-  gap: 10px;
+  gap: 30%;
   text-align: center;
   margin: 0 auto;
 }
@@ -314,11 +310,11 @@ body{
 }
 
 .control-button {
-  border: none;
+  /* border: none;
   background: none;
   padding: 1rem;
   cursor: pointer;
-  outline: none;
+  outline: none; */
   transition: transform 0.2s ease;
   font-size: 1.1rem;
 }
@@ -327,12 +323,10 @@ body{
   transform: scale(1.1);
 }
 
-.icon {
-  width: calc((30vw) / 8);
-  height: calc((30vw) / 8);
+.icon-svg {
+  --fill-col: var(--primary-color);
 }
 
-.clear-button,
 .random-button {
   border: solid 0.1rem var(--border-color1);
   border-radius: 0.6rem;
@@ -340,7 +334,7 @@ body{
   width: auto;
   text-align: center;
   padding: 0.5rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bold;
   font-size: 1.1rem;
   color: var(--primary-color);
@@ -348,39 +342,39 @@ body{
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   margin: 0 0.5rem; /* Add margin to separate buttons */
 }
-.clear-button {
-  margin-right: 1rem;
+#new-height::placeholder {
+  color: var(--primary-color); /* Set placeholder text color */
 }
-
-.random-button {
-  margin-left: 1rem;
-}
-
-.clear-button:hover,
 .random-button:hover {
-  box-shadow: 0.1rem 0.1rem var(--shadow-color1);
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
 }
 
-.clear-button:active,
 .random-button:active {
-  box-shadow: 0.1rem 0.1rem var(--shadow-color2);
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
   transform: translateY(0.1rem);
 }
 
 .icon:active {
   transform: translateY(0.1rem);
 }
+#change-grid-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#random-button {
+  margin-right: 1.25rem;
+}
 #toggleButton {
-    color: black;
-    border-radius: 5px;
-    border-style: none;
-    font-size: 1.7rem;
-    background: none;
-    margin: 1px;
-    z-index: 1;
-    position: absolute;
-    left: 2rem;
-    top: 1.8rem;
+  color: var(--primary-color);
+  border-radius: 5px;
+  border-style: none;
+  font-size: 1.7rem;
+  background: none;
+  margin: 1px;
+  z-index: 1;
+  position: absolute;
+  left: 2rem;
+  top: 1.8rem;
 }
 .sidenav {
   height: 100vh;
@@ -390,20 +384,21 @@ body{
   left: 0;
   z-index: 2;
   background-color: var(--border-color1);
-  overflow-x:hidden;
+  overflow-x: hidden;
   padding-top: 2rem;
   transition: left 0.3s ease, width 0.3s ease;
 }
 /* Hide the nav bar */
-.hide-nav  {
+.hide-nav {
   display: none;
 }
-
+/* updated sidenav */
 .sidenav .cross {
   cursor: pointer;
   position: absolute;
+  z-index: 10000;
   top: 45px;
-  right: 15px;
+  right: 40px;
   display: block;
 }
 
@@ -413,12 +408,12 @@ body{
 .presets-container div,
 .color-themes,
 .presets,
-.history{
+.history {
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
-  color: #FFFFFF;
-  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -429,12 +424,12 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
-.game-rules{
-  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+.game-rules {
+  padding: 0rem 0.5rem 0rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
   color: #818181;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -445,12 +440,12 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
-.about{
-  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+.about {
+  padding: 0rem 0.5rem 0rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
   color: #818181;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -461,26 +456,26 @@ body{
   outline: none;
   transition: color 0.3s ease;
 }
-.feedback{
-    padding: 0.0rem 1.2rem 0.0rem 0rem;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    color: white;
-}
-
-.themes-container div{
-  padding: 0.4rem 0.5rem 0.0rem 1.6rem;
+.feedback {
+  padding: 0rem 1.2rem 0rem 0rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #FFFFFF;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
   cursor: pointer;
-  font-family: 'Roboto Mono', monospace;
+  outline: none;
+  color: white;
+}
+
+.themes-container div {
+  padding: 0.4rem 0.5rem 0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -496,8 +491,8 @@ body{
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #FFFFFF;
-  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -512,6 +507,8 @@ body{
   position: absolute;
   left: 10px;
   top: 5px;
+
+  color: black;
   display: none;
 }
 
@@ -529,11 +526,20 @@ body{
 .presets,
 .history,
 .about,
-.game-rules{
+.game-rules {
   font-size: 1.2rem;
 }
 
-.about button{
+.other-settings:hover,
+.color-themes:hover,
+.presets:hover,
+.history:hover,
+.about:hover,
+.game-rules:hover {
+  color: #00c2fd;
+}
+
+.about button {
   margin-left: -1.7rem;
 }
 
@@ -550,7 +556,7 @@ body{
 .presets-container,
 .history-container,
 .about-container,
-.game-rules-container{
+.game-rules-container {
   display: none;
   background-color: var(--shadow-color2);
   padding-left: 0.2rem;
@@ -561,12 +567,12 @@ body{
 .about-container button:active {
   color: #ffffff;
 }
-.color-label:hover{
+.color-label:hover {
   cursor: pointer;
   color: aqua;
 }
 
-.presets-list:hover{
+.presets-list:hover {
   color: aqua;
 }
 
@@ -635,7 +641,7 @@ body{
     width: 90%;
     cursor: pointer;
     outline: none;
-    align-items:center;
+    align-items: center;
   }
 
   .sidenav .randomness-container label {
@@ -654,7 +660,7 @@ body{
     color: inherit; 
     cursor: pointer; 
   }*/
-  .about button{
+  .about button {
     margin-left: -1.1rem;
   }
 
@@ -664,7 +670,7 @@ body{
   .color-themes,
   .themes-container div,
   .presets,
-  .history{
+  .history {
     padding: 0.3rem 0.4rem 0.3rem 1rem;
     text-decoration: none;
     font-size: 1rem;
@@ -675,8 +681,8 @@ body{
     cursor: pointer;
     outline: none;
   }
-  .about{
-    padding: 0.0rem 0.4rem 0.0rem 1rem;
+  .about {
+    padding: 0rem 0.4rem 0rem 1rem;
     text-decoration: none;
     font-size: 1rem;
     display: block;
@@ -687,13 +693,13 @@ body{
     outline: none;
   }
 
-  .other-settings{
+  .other-settings {
     padding: 3px;
     text-align: left;
     padding-left: 15px;
     padding-bottom: 10px;
   }
-  
+
   .game {
     width: 100vw;
     margin: 0;
@@ -712,11 +718,11 @@ body{
 
   .clear-button,
   .random-button {
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     /* Adjust font size for smaller screens */
-    padding: 0.3rem 0.8rem; 
+    padding: 0.3rem 0.8rem;
     /* Adjust padding for smaller screens */
-    margin: 0.5rem 0; 
+    margin: 0.5rem 0;
     /* Add margin to separate buttons vertically */
   }
 
@@ -775,17 +781,15 @@ body{
 .socialIcons a:hover img {
   filter: invert(1); /* Invert icon color on hover */
   transition: 0.5s;
-
 }
 
 /* Hover Effects  */
 .warp-on-edges:hover,
 .grid-toggle:hover,
-.randomness-container:hover{
-  color:white;
+.randomness-container:hover {
+  color: white;
 }
 /*-----------------------------------------*/
-
 
 /* Tooltip container */
 .tooltip-container {
@@ -796,7 +800,7 @@ body{
 /* Tooltip text */
 .tooltip-text {
   visibility: hidden;
-  width: 120px;
+  width: 180px;
   background-color: var(--theme-color2);
   color: #fff;
   text-align: center;
@@ -806,7 +810,7 @@ body{
   z-index: 1;
   bottom: 125%; /* Position the tooltip above the button */
   left: 50%;
-  margin-left: -60px;
+  margin-left: -90px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -830,15 +834,15 @@ body{
 
 @media screen and (max-width: 425px) {
   .sidenav {
-    width: 114vw;
-    left: -550px ;
+    width: 100vw;
+    left: -550px;
     transition: width 0.3s ease;
   }
 
-  #toggleButton {
+  /* #toggleButton {
     left: 1.4rem;
     top: 1rem;
-  }
+  } */
 
   .clear-button,
   .random-button {
@@ -848,7 +852,7 @@ body{
     width: auto;
     text-align: center;
     padding: 0.3rem;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
     font-weight: bold;
     font-size: 0.5rem;
     color: var(--primary-color);
@@ -859,6 +863,37 @@ body{
 
   .control-button {
     transform: scale(1.4);
+  }
+}
+/* Added new values for maxwidth sidenav button */
+@media screen and (max-width: 728px) {
+  .sidenav {
+    width: 92%;
+    left: -550px;
+    transition: width 0.3s ease;
+  }
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 799px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 860px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 999px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .controls {
+    flex-wrap: wrap;
   }
 }
 
@@ -896,12 +931,12 @@ body {
 
 @keyframes fall {
   0% {
-      transform: translateY(-100vh) rotate(0deg);
-      opacity: 1;
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
   }
   100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
 }
 #info-container {
@@ -923,7 +958,6 @@ body {
   margin: 5px 0;
 }
 
-.hov:hover{
+.hov:hover {
   color: aqua;
 }
-
