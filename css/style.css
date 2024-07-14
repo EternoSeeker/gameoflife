@@ -535,7 +535,8 @@ body {
 .presets:hover,
 .history:hover,
 .about:hover,
-.game-rules:hover {
+.game-rules:hover,
+.toggle-button:hover {
   color: #00c2fd;
 }
 
