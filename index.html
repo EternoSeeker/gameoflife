@@ -767,26 +767,7 @@
         </svg>
       </div>
       <div class="heading great-vibes-regular">Conway's Game of Life</div>
-      <audio id="bg-music" src="bgmusic.mp3" loop></audio>
-
-<script>
-  const bgMusic = document.getElementById('bg-music');
-    let musicOn = true;
-
-    function toggleMusic() {
-      if (musicOn) {
-        bgMusic.pause();
-        document.querySelector('.music-text').textContent = 'Music Off'; // Change button text
-        document.querySelector('.toggle-button i').className = 'fa-solid fa-volume-xmark';
-      } else {
-        bgMusic.play();
-        document.querySelector('.music-text').textContent = 'Music On'; // Change button text
-        document.querySelector('.toggle-button i').className = 'fa-solid fa-volume-high'; 
-      }
-      musicOn = !musicOn; 
-    }
-</script>
-      
+      <audio id="bg-music" src="bgmusic.mp3" loop></audio>      
 <style>
   /* Optional: Styling for the toggle button */
   .toggle-button {
