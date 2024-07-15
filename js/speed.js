@@ -76,7 +76,7 @@ document.getElementById('fast-forward-button').addEventListener('click', functio
     let newValue = getInputFieldValue();
     document.getElementById("reduce-speed-tooltip").innerHTML = "Reduce Speed";
     let increase = document.getElementById("increase-speed-tooltip");
-    increase.innerHTML = "Increasee Speed";
+    increase.innerHTML = "Increase Speed";
     if (newValue >= 10) {
         increase.innerHTML = "Speed cannot be increased any further" ;
     }
