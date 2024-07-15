@@ -190,11 +190,24 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0056b3;
-  box-shadow: 0 0 10px rgba(0, 128, 255, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
 
-.hidden {
-  display: none;
+.back-button {
+  margin-left: -15px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button i {
+  margin-right: 8px; /* Space between the icon and the text */
 }
 
 .checkbox {

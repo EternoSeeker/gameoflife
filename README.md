@@ -98,6 +98,8 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ![Game Grid](./images/GRID.png)
 
+### Buttons
+
 | Buttons | What they do |
 | --- | --- |
 |   ▶️   | Starts the animation after you've set the initial pattern |
@@ -109,7 +111,22 @@ The first generation is created by applying the above rules simultaneously to ev
 |`Change grid size`| This function allow you to change the size of grid according to your preference|
 
 
-### The Settings
+### ⌨️ Keyboard Shortcuts
+
+
+| Keybind | What they do |
+| --- | --- |
+|   `P` or `Space Bar`   | Starts the animation after you've set the initial pattern and Pauses an ongoing animation |
+|    `F` or `[→]` (Arrow Right)  | Increases the speed of the animation |
+|   `S` or `[←]` (Arrow Left)             | Decreases the speed of the animation |
+| `D` or `Delete` | Clears the grid on click, only if the game is not animating at that moment |
+| `R` | Randomly initializes the grid with initial randomness as 20% |
+| `[↑]` (Arrow Up) | Increases the Randomness value by 5% |
+| `[↓]` (Arrow Down) | Decreases the Randomness value by 5% |
+| `G` | Toggles Gridlines On / Off |
+| `M` | Toggles Music On / Off |
+
+### ⚙️ The Settings
 
 | ⚙️  Settings | What are they for? |
 | --- | --- |
