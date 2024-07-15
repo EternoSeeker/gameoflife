@@ -26,7 +26,7 @@ if (currentValue <= 0.15) {
 }
 
 
-document.getElementById('fast-reverse-button').addEventListener('click', function() {
+function slowDown() {
     let currentValue = getInputFieldValue();
     if (currentValue <= 0.15) {
         swal(
@@ -54,9 +54,9 @@ document.getElementById('fast-reverse-button').addEventListener('click', functio
         reduce.innerHTML = "Speed cannot be reduced any further" ;
     }
 
-});
+}
 
-document.getElementById('fast-forward-button').addEventListener('click', function() {
+function fastForward() {
     let currentValue = getInputFieldValue();
     if (currentValue >= 10) {
         swal(
@@ -76,9 +76,9 @@ document.getElementById('fast-forward-button').addEventListener('click', functio
     let newValue = getInputFieldValue();
     document.getElementById("reduce-speed-tooltip").innerHTML = "Reduce Speed";
     let increase = document.getElementById("increase-speed-tooltip");
-    increase.innerHTML = "Increasee Speed";
+    increase.innerHTML = "Increase Speed";
     if (newValue >= 10) {
         increase.innerHTML = "Speed cannot be increased any further" ;
     }
 
-});
+};

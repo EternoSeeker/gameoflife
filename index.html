@@ -5,18 +5,40 @@
       href="https://fonts.googleapis.com/css?family=Roboto Mono"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/b08b6de27e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
     <link rel="icon" href="./images/glider-icon.png" type="image/gif" />
+
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
     <meta
       name="description"
-      content="Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
-    />
+      content="Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. Dive into the eternal patterns and captivating simulations at Eternal Game of Life."/>
     <meta
       name="keywords"
-      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970"
-    />
-    <title>Conway's Game of Life</title>
+      content="Conway's Game of Life, cellular automaton, John Horton Conway, 1970,Conway's Game of Life, cellular automaton, John Horton Conway, 1970, eternal game of life, game of life patterns, life simulation, mathematical game, game of life rules, Conway game, interactive game of life, game of life website, play Conway's Game of Life, online game of life, Conway automaton, game of life examples, cellular automaton game, game of life history, Conway game simulator, eternal patterns in life. "/>
+      <meta name="author" content="Shrihari Magar">
+      <meta name="title" content="Eternal Game of Life">
+      <meta name='URL' content='https://eternalgameoflife.netlify.app/'>
+      <meta name='identifier-URL' content='https://eternalgameoflife.netlify.app/'>
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
+
+      <!-- Open Graph -->
+       <meta property="og:title" content="Eternal Game of Life" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content='https://eternalgameoflife.netlify.app/' />
+      <meta property="og:description"
+        content="Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. Dive into the eternal patterns and captivating simulations at Eternal Game of Life." />  
+      <meta property="og:image" content="https://github.com/EternoSeeker/gameoflife/blob/main/images/glider-icon.png">    
+      
+
+      <title>Conway's Game of Life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -86,6 +108,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YetnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
     <link
@@ -203,6 +226,9 @@
       function redirectToFeedback() {
         window.location.href = "feedback.html";
       }
+      function redirectToFAQ() {
+        window.location.href = "faq.html";
+      }
     </script>
   </head>
 
@@ -263,7 +289,7 @@
     <div class="game-settings">
       <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
       <div class="sidenav" id="sideNav">
-        <div class="other-settings animate" class="hov">Settings</div>
+        <div class="other-settings animate" class="hov"><i class="fa-solid fa-gear"></i> Settings</div>
         <div class="cross">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -315,12 +341,12 @@
           </div>
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
-              ><span class="hov">Randomness</span
-              ><span id="randomValOutput">20</span>
+              ><span class="hov">Randomness</span>
+              <span><span id="randomValOutput">20</span>%</span>
             </label>
             <input
               type="range"
-              min="1"
+              min="0"
               max="100"
               value="20"
               class="slider"
@@ -329,7 +355,7 @@
           </p>
         </div>
         <div class="color-themes has-dropdown animate" style="cursor: pointer">
-          Themes
+          <i class="fa-solid fa-palette"></i> Themes
         </div>
         <div class="themes-container animate">
           <ul>
@@ -561,7 +587,7 @@
           </div>
         </div>
         <div class="presets has-dropdown animate" style="cursor: pointer">
-          Presets
+          <i class="fa-solid fa-list"></i> Presets
         </div>
         <div class="presets-container animate">
           <ul>
@@ -672,7 +698,7 @@
           </ul>
         </div>
         <div class="history has-dropdown animate" style="cursor: pointer">
-          History
+          <i class="fa-solid fa-clock"></i> History
         </div>
         <div class="history-container animate"></div>
         <div class="game-rules has-dropdown animate">
@@ -681,7 +707,7 @@
             style="margin-left: -1.7rem; cursor: pointer"
             onclick="location.href='gamerules.html'"
           >
-            Game Rules
+          <i class="fa-solid fa-chess"></i> Game Rules
           </button>
         </div>
         <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
@@ -693,6 +719,8 @@
             style="cursor: pointer"
             onclick="redirectToReadme()"
           >
+          <i class="fa-solid fa-circle-info"></i>
+
             About
           </button>
         </div>
@@ -703,8 +731,23 @@
             style="cursor: pointer"
             onclick="redirectToFeedback()"
           >
-            Feedback
+          <i class="fa-solid fa-rss"></i> Feedback
           </button>
+          <div class="about-container animate"></div>
+          <div class="feedback has-dropdown animate" style="cursor: pointer">
+            <button
+              class="about has-dropdown animate"
+              style="cursor: pointer"
+              onclick="redirectToFAQ()"
+            >
+            <i class="fa-solid fa-question-circle"></i> FAQ
+            </button>
+          <div>
+            <button class="toggle-button" onclick="toggleMusic()">
+              <i class="fa-solid fa-volume-xmark"></i>
+              <span class="music-text">Music Off</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -743,19 +786,7 @@
         </svg>
       </div>
       <div class="heading great-vibes-regular">Conway's Game of Life</div>
-      <audio id="bg-music" src="bgmusic.mp3" loop></audio>
-
-<script>
-  const bgMusic = document.getElementById('bg-music');
-
-  function toggleMusic() {
-    if (bgMusic.paused) {
-      bgMusic.play();
-    } else {
-      bgMusic.pause();
-    }
-  }
-</script>
+      <audio id="bg-music" src="bgmusic.mp3" loop></audio>      
 <style>
   /* Optional: Styling for the toggle button */
   .toggle-button {
@@ -775,7 +806,6 @@
         <div id="main-grid" class="main-grid"></div>
       </div>
       <div class="controls">
-
         <div class="tooltip-container"> <!--Clear Button-->
           <button
             class="random-button button-73"
@@ -810,6 +840,7 @@
           <button
             class="random-button button-73"
             id="fast-reverse-button"
+            onclick=slowDown()
             >
           <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z" fill="var(--fill-col)"/>
@@ -830,7 +861,9 @@
         <div class="tooltip-container"> <!--Increase Speed-->
           <button             
               class="random-button button-73"
-              id="fast-forward-button">
+              id="fast-forward-button"
+              onclick=fastForward()
+              >
             <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z" fill="var(--fill-col)"/>
               <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
@@ -878,8 +911,18 @@
           }
         
         </script>
+        <div id="info-container">
+          <div id="generation-info"> 
+            <p>Gen: <span id="generation">0</span></p>
+            <p>Alive <span id="alive">0</span> </p>
+          </div>  
+          <div id="status-info"> 
+            <p>Births <span id="births">0</span> </p>
+            <p>Deaths <span id="deaths">0</span> </p>
+          </div>
       </div>
-    </div>
+        
+      </div>
 
     <div class="snowflakes">
       <div class="snowflake">❅</div>
@@ -890,6 +933,9 @@
     <script src="./js/customTheme.js"></script>
     <script src="./js/gradient.js"></script>
     <script src="./js/speed.js"></script>
+    <script src="./js/animation.js"></script>
+    <script src="./js/music.js"></script>
+    <script src="./js/keyboard-shortcut.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const preloader = document.getElementById("preloader");
@@ -938,16 +984,29 @@
         "#55a5ea",
         "#55a5ea",
       ];
+      const mainGrid = document.querySelector(".main-grid");
 
       circles.forEach(function (circle, index) {
         circle.x = 0;
         circle.y = 0;
         circle.style.backgroundColor = colors[index % colors.length];
       });
+      
+      mainGrid.addEventListener("mouseenter", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "block";
+        });
+      });
 
-      window.addEventListener("mousemove", function (e) {
+      mainGrid.addEventListener("mousemove", function (e) {
         coords.x = e.clientX;
         coords.y = e.clientY;
+      });
+      
+      mainGrid.addEventListener("mouseleave", function (e) {
+        circles.forEach(function (circle) {
+          circle.style.display = "none";
+        });
       });
 
       function animateCircles() {
@@ -1089,5 +1148,4 @@ setInterval(createSnowflake, 200);
     referrerpolicy="no-referrer"
   ></script>
 
-  <script src="./js/animation.js"></script>
 </html>
