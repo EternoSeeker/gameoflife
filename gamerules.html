@@ -66,12 +66,12 @@
         of the preceding one.
       </p>
     </div>
+    <hr/>
       <h2>The Game</h2>
       <img src="images/grid.png" alt="Game Grid" class="center" />
+    <hr/>
+      <h2>Button Functions</h2>
       <table>
-        <caption>
-          Button Functions
-        </caption>
         <tr>
           <th>Button</th>
           <th>What they do</th>
@@ -116,22 +116,69 @@
           <td>Increases the speed of the animation</td>
         </tr>
         <tr>
-          <td>Clear</td>
+          <td><button class="random-button">Clear</button></td>
           <td>
             Clears the grid on click, only if the game is not animating at that
             moment
           </td>
         </tr>
         <tr>
-          <td>Random</td>
+          <td><button class="random-button">Random</button></td>
           <td>Randomly initializes the grid with initial randomness as 20%</td>
         </tr>
         <tr>
-          <td>Change grid size</td>
+          <td><button class="random-button">Change grid size</button></td>
           <td>change grid size by changing grid height</td>
         </tr>
       </table>
       <hr />
+      <h2>Keyboard Shortcuts</h2>
+      <table>
+        <tr>
+          <th>Keybind</th>
+          <th>What they do</th>
+        </tr>
+        <tr>
+          <td><button class="random-button">P</button>or<button class="random-button">Space Bar</button></td>
+          <td>Starts the animation after you've set the initial pattern and Pauses an ongoing animation.</td>
+        </tr>
+        <tr>
+          <td><button class="random-button">F</button>or<button class="random-button">Arrow Right [→]</button></td>
+          <td>Increases the speed of the animation</td>
+        </tr>
+        <tr>
+          <td><button class="random-button">S</button>or<button class="random-button">Arrow Left [←]</button></td>
+          <td>Decreases the speed of the animation</td>
+        </tr>
+        <tr>
+          <td><button class="random-button">D</button>or<button class="random-button">Delete</button></td>
+          <td>
+            Clears the grid on click, only if the game is not animating at that
+            moment
+          </td>
+        </tr>
+        <tr>
+          <td><button class="random-button">R</button></td>
+          <td>Randomly initializes the grid with initial randomness as 20%</td>
+        </tr>
+        <tr>
+          <td><button class="random-button">Arrow Up [↑]</button></td>
+          <td>Increases the Randomness value by 5%</td>
+        </tr>
+      <tr>
+        <td><button class="random-button">Arrow Down [↓]</button></td>
+        <td>Decreases the Randomness value by 5%</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">G</button></td>
+        <td>Toggles Gridlines On / Off</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">M</button></td>
+        <td>Toggles Music On / Off</td>
+      </tr>
+      </table>
+      <hr/>
       <h2>The Presets</h2>
       <div class="card-container">
         <div class="card">

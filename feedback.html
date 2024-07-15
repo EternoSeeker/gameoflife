@@ -6,12 +6,13 @@
   <link rel="icon" href="./images/registerpage-favicon.png" type="image/png">
   <title>Feedback Page</title>
   <link rel="stylesheet" href="./css/feedback.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <h1>Feedback Form</h1>
     <form id="feedback-form" onsubmit="return validationcheck(event)">
-      <a href="index.html" class="back-button">Back</a>
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
       <div class="form-group">
         <label for="name">Your Name<span>*</span>:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
