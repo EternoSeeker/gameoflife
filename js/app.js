@@ -142,6 +142,18 @@ slider.oninput = function () {
   randomValue = this.value;
 };
 
+function updateRandomValue(change) {
+  var slider = document.getElementById("randomVal");
+  var output = document.getElementById("randomValOutput");
+
+  var currentValue = parseFloat(slider.value) || 0;
+
+  var newValue = Math.max(0, Math.min(slider.max, currentValue + change));
+
+  slider.value = newValue;
+  output.innerHTML = newValue;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
   const gridContainer = document.getElementById('main-grid');
