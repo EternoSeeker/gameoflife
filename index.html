@@ -117,6 +117,29 @@
       transform: translate(-50%, -50%);
     }
 
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <!--Cursor-->
+  <style>
+    .circle {
+      z-index: 10000;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: colors 5s infinite;
+      position: fixed;
+      transform: translate(-50%, -50%);
+    }
+
     .circle::before {
       content: "";
       position: fixed;
@@ -135,7 +158,31 @@
     function redirectToFeedback() {
       window.location.href = "feedback.html";
     }
+    function redirectToFAQ() {
+      window.location.href = "faq.html";
+    }
   </script>
+</head>
+
+.circle::before {
+content: "";
+position: fixed;
+width: 50px;
+height: 50px;
+opacity: 0.2;
+transform: translate(-30%, -30%);
+border-radius: 50%;
+}
+</style>
+<script>
+  function redirectToReadme() {
+    window.location.href =
+      "https://github.com/EternoSeeker/gameoflife/blob/main/README.md";
+  }
+  function redirectToFeedback() {
+    window.location.href = "feedback.html";
+  }
+</script>
 </head>
 
 <body>
@@ -163,11 +210,11 @@
 
 
 
-    <<<<<<< HEAD <div class="sidenav" id="sideNav">
+    <div class="sidenav" id="sideNav">
       <div class="container">
 
         <div class="other-settings animate" class="hov">Settings </div>
-        =======
+
 
         <body>
           <div class="circle-container">
@@ -191,8 +238,91 @@
             <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
             <div class="sidenav" id="sideNav">
               <div class="other-settings animate" class="hov"><i class="fa-solid fa-gear"></i> Settings</div>
-              >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
+
               <div class="cross">
+                <p class="randomness-container">
+                  <label class="randomness-value" style="cursor: pointer"><span class="hov">Randomness</span>
+                    <span><span id="randomValOutput">20</span>%</span>
+                  </label>
+                  <input type="range" min="0" max="100" value="20" class="slider" id="randomVal" />
+                </p>
+              </div>
+              <div class="color-themes has-dropdown animate" style="cursor: pointer">
+                <i class="fa-solid fa-palette"></i> Themes
+              </div>
+              <div class="themes-container animate">
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" class="color-label" id="red-theme" name="theme"
+                        onclick="selectTheme('red')" />
+                      <label for="red-theme" class="color-label">Red</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" class="color-label" id="green-theme" name="theme"
+                        onclick="selectTheme('green')" />
+                      <label for="green-theme" class="color-label" style="cursor: pointer">Green</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input checked type="radio" class="color-label" id="blue-theme" name="theme"
+                        onclick="selectTheme('blue')" />
+                      <label for="blue-theme" class="color-label" style="cursor: pointer">Blue</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" class="color-label" id="purple-theme" name="theme"
+                        onclick="selectTheme('purple')" />
+                      <label for="purple-theme" class="color-label" style="cursor: pointer">Purple</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" class="color-label" id="darkcyan-theme" name="theme"
+                        onclick="selectTheme('darkCyan')" />
+                      <label for="darkcyan-theme" class="color-label" style="cursor: pointer">Dark Cyan</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" id="black-theme" class="color-label" name="theme"
+                        onclick="selectTheme('black')" />
+                      <label for="black-theme" class="color-label" style="cursor: pointer">Black & White</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" id="neon-theme" class="color-label" name="theme"
+                        onclick="selectTheme('neon')" />
+                      <label for="neon-theme" class="color-label">Dark Neon</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div>
+                      <input type="radio" id="cyberpunk-theme" class="color-label" name="theme"
+                        onclick="selectTheme('cyberpunk')" />
+                      <label for="cyberpunk-theme" class="color-label">Cyberpunk</label>
+                    </div>
+                  </li>
+                </ul>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#ffffff"
                   fill="none">
@@ -457,39 +587,36 @@
               </div>
               <div class="history-container animate"></div>
               <div class="game-rules has-dropdown animate">
-                <<<<<<< HEAD <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer"
+                <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer"
                   onclick="location.href='gamerules.html'">
                   Game Rules
-                  =======
+
                   <button class="game-rules has-dropdown" style="margin-left: -1.7rem; cursor: pointer"
                     onclick="location.href='gamerules.html'">
                     <i class="fa-solid fa-chess"></i> Game Rules
-                    >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
+
                   </button>
               </div>
               <!--<div class="about has-dropdown animate" style="cursor: pointer;" onclick="redirectToReadme()">
         <span>About</span>
     </div>-->
               <div class="about has-dropdown animate">
-                <<<<<<< HEAD <button class="about has-dropdown animate" style="cursor: pointer"
-                  onclick="redirectToReadme()">
-                  =======
+                <button class="about has-dropdown animate" style="cursor: pointer" onclick="redirectToReadme()">
+
                   <button class="about has-dropdown animate" style="cursor: pointer" onclick="redirectToReadme()">
                     <i class="fa-solid fa-circle-info"></i>
 
-                    >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
+
                     About
                   </button>
               </div>
               <div class="about-container animate"></div>
               <div class="feedback has-dropdown animate" style="cursor: pointer">
-                <<<<<<< HEAD <button class="about has-dropdown animate" style="cursor: pointer"
-                  onclick="redirectToFeedback()">
+                <button class="about has-dropdown animate" style="cursor: pointer" onclick="redirectToFeedback()">
                   Feedback
-                  =======
                   <button class="about has-dropdown animate" style="cursor: pointer" onclick="redirectToFeedback()">
                     <i class="fa-solid fa-rss"></i> Feedback
-                    >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
+
                   </button>
                   <div>
                     <button class="toggle-button" onclick="toggleMusic()">
@@ -499,6 +626,146 @@
                   </div>
               </div>
             </div>
+            About
+            </button>
+          </div>
+          <div class="about-container animate"></div>
+          <div class="feedback has-dropdown animate" style="cursor: pointer">
+            <button class="about has-dropdown animate" style="cursor: pointer" onclick="redirectToFeedback()">
+              <i class="fa-solid fa-rss"></i> Feedback
+            </button>
+            <div class="about-container animate"></div>
+            <div class="feedback has-dropdown animate" style="cursor: pointer">
+              <button class="about has-dropdown animate" style="cursor: pointer" onclick="redirectToFAQ()">
+                <i class="fa-solid fa-question-circle"></i> FAQ
+              </button>
+              <div>
+                <button class="toggle-button" onclick="toggleMusic()">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                  <span class="music-text">Music Off</span>
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="game">
+        <div class="hamburger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
+            fill="none">
+            <path d="M4 5L20 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M4 12L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M4 19L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="heading great-vibes-regular">Conway's Game of Life</div>
+        <audio id="bg-music" src="bgmusic.mp3" loop></audio>
+        <style>
+          /* Optional: Styling for the toggle button */
+          .toggle-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: lightblue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            outline: none;
+          }
+        </style>
+        <div class="grid-container">
+          <div id="main-grid" class="main-grid"></div>
+        </div>
+        <div class="controls">
+          <div class="tooltip-container"> <!--Clear Button-->
+            <button class="random-button button-73" id="clear-button" onclick="clearGrid()">
+              Clear
+            </button>
+            <span class="tooltip-text">Clear the grid</span>
+          </div>
+
+          <div class="tooltip-container"> <!--Play button-->
+            <button class="random-button button-73" id="play-pause-button" onclick="startAnimation()">
+              <svg id="play-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                style="display: block" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                  fill="var(--fill-col)" />
+                <path
+                  d="M23.5 16.866C24.1667 16.4811 24.1667 15.5189 23.5 15.134L11.5 8.20577C10.8333 7.82087 10 8.302 10 9.0718L10 22.9282C10 23.698 10.8333 24.1791 11.5 23.7942L23.5 16.866Z"
+                  fill="var(--fill-col)" />
+              </svg>
+              <svg id="pause-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                style="display: none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                  fill="var(--fill-col)" />
+                <path
+                  d="M11 10C11 9.44772 11.4477 9 12 9H14C14.5523 9 15 9.44772 15 10V22C15 22.5523 14.5523 23 14 23H12C11.4477 23 11 22.5523 11 22V10Z"
+                  fill="var(--fill-col)" />
+                <path
+                  d="M18 9C17.4477 9 17 9.44772 17 10V22C17 22.5523 17.4477 23 18 23H20C20.5523 23 21 22.5523 21 22V10C21 9.44772 20.5523 9 20 9H18Z"
+                  fill="var(--fill-col)" />
+              </svg>
+            </button>
+            <span class="tooltip-text">Start or Pause the animation</span>
+          </div>
+
+          <div class="tooltip-container"> <!--Reduce Speed -->
+            <button class="random-button button-73" id="fast-reverse-button" onclick=slowDown()>
+              <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z"
+                  fill="var(--fill-col)" />
+                <path
+                  d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                  fill="var(--fill-col)" />
+              </svg>
+            </button>
+            <span id="reduce-speed-tooltip" class="tooltip-text">Reduce Speed</span>
+          </div>
+
+
+          <div class="tooltip-container">
+            <input class="random-button button-73" type="number" value='1' id="speedInput" size="0.3" min="0.15"
+              max="25" step="0.25" readonly></input>
+            <!--Current Speed input-->
+            <span class="tooltip-text">Current Speed</span>
+          </div>
+
+
+          <div class="tooltip-container"> <!--Increase Speed-->
+            <button class="random-button button-73" id="fast-forward-button" onclick=fastForward()>
+              <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z"
+                  fill="var(--fill-col)" />
+                <path
+                  d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                  fill="var(--fill-col)" />
+              </svg>
+            </button>
+            <span id="increase-speed-tooltip" class="tooltip-text">Increase Speed</span>
+          </div>
+
+          <div class="tooltip-container"> <!--Random Button-->
+            <button class="random-button button-73" id="random-button" onclick="randomGrid()">
+              Random
+            </button>
+            <span class="tooltip-text">Random</span>
+          </div>
+
+          <div class="tooltip-container"> <!--Grid Height-->
+            <input class="random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height" min="1"
+              onchange="GridHeightChange()" />
+            <span class="tooltip-text">Grid Height</span>
           </div>
 
           <div class="game">
@@ -552,390 +819,396 @@
               <div id="main-grid" class="main-grid"></div>
             </div>
             <div class="controls">
-              <<<<<<< HEAD <div class="tooltip-container">
+              <div class="tooltip-container">
                 <button class="random-button button-73" id="clear-button" onclick="clearGrid()">
-                  =======
+
                   <div class="tooltip-container"> <!--Clear Button-->
                     <button class="random-button button-73" id="clear-button" onclick="clearGrid()">
-                      >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
+
                       Clear
                     </button>
                     <span class="tooltip-text">Clear the grid</span>
                   </div>
-                  <<<<<<< HEAD <div class="tooltip-container">
+                  <div class="tooltip-container">
                 </button>
                 <span class="tooltip-text">Start or Pause the animation</span>
-            </div>
-            <div class="tooltip-container">
-              <button class="random-button button-73" id="fast-reverse-button" onclick="decreaseSpeed()">
-                <svg class="icon-svg" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z"
-                    fill="var(--fill-col)" />
-                  <path
-                    d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
-                    fill="var(--fill-col)" />
-                </svg>
-              </button>
-              <input class="random-button button-73" type="number" value='1' id="speedInput" size="0.3" min="0.15"
-                max="25" step="0.25" readonly></input>
-              <button class="random-button button-73" id="fast-forward-button">
-                <svg class="icon-svg" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z"
-                    fill="var(--fill-col)" />
-                  <path
-                    d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
-                    fill="var(--fill-col)" />
-                </svg>
-              </button>
-              <span class="tooltip-text">Speed</span>
-            </div>
-            <div class="tooltip-container">
-              <button class="random-button button-73" id="random-button" onclick="randomGrid()">
-                =======
-
-                <div class="tooltip-container"> <!--Play button-->
-                  <button class="random-button button-73" id="play-pause-button" onclick="startAnimation()">
-                    <svg id="play-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
-                      style="display: block" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
-                        fill="var(--fill-col)" />
-                      <path
-                        d="M23.5 16.866C24.1667 16.4811 24.1667 15.5189 23.5 15.134L11.5 8.20577C10.8333 7.82087 10 8.302 10 9.0718L10 22.9282C10 23.698 10.8333 24.1791 11.5 23.7942L23.5 16.866Z"
-                        fill="var(--fill-col)" />
-                    </svg>
-                    <svg id="pause-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
-                      style="display: none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
-                        fill="var(--fill-col)" />
-                      <path
-                        d="M11 10C11 9.44772 11.4477 9 12 9H14C14.5523 9 15 9.44772 15 10V22C15 22.5523 14.5523 23 14 23H12C11.4477 23 11 22.5523 11 22V10Z"
-                        fill="var(--fill-col)" />
-                      <path
-                        d="M18 9C17.4477 9 17 9.44772 17 10V22C17 22.5523 17.4477 23 18 23H20C20.5523 23 21 22.5523 21 22V10C21 9.44772 20.5523 9 20 9H18Z"
-                        fill="var(--fill-col)" />
-                    </svg>
-                  </button>
-                  <span class="tooltip-text">Start or Pause the animation</span>
-                </div>
-
-                <div class="tooltip-container"> <!--Reduce Speed -->
-                  <button class="random-button button-73" id="fast-reverse-button">
-                    <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z"
-                        fill="var(--fill-col)" />
-                      <path
-                        d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
-                        fill="var(--fill-col)" />
-                    </svg>
-                  </button>
-                  <span id="reduce-speed-tooltip" class="tooltip-text">Reduce Speed</span>
-                </div>
+              </div>
+              <div class="tooltip-container">
+                <button class="random-button button-73" id="fast-reverse-button" onclick="decreaseSpeed()">
+                  <svg class="icon-svg" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z"
+                      fill="var(--fill-col)" />
+                    <path
+                      d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                      fill="var(--fill-col)" />
+                  </svg>
+                </button>
+                <input class="random-button button-73" type="number" value='1' id="speedInput" size="0.3" min="0.15"
+                  max="25" step="0.25" readonly></input>
+                <button class="random-button button-73" id="fast-forward-button">
+                  <svg class="icon-svg" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z"
+                      fill="var(--fill-col)" />
+                    <path
+                      d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                      fill="var(--fill-col)" />
+                  </svg>
+                </button>
+                <span class="tooltip-text">Speed</span>
+              </div>
+              <div class="tooltip-container">
+                <button class="random-button button-73" id="random-button" onclick="randomGrid()">
 
 
-                <div class="tooltip-container">
-                  <input class="random-button button-73" type="number" value='1' id="speedInput" size="0.3" min="0.15"
-                    max="25" step="0.25" readonly></input>
-                  <!--Current Speed input-->
-                  <span class="tooltip-text">Current Speed</span>
-                </div>
+                  <div class="tooltip-container"> <!--Play button-->
+                    <button class="random-button button-73" id="play-pause-button" onclick="startAnimation()">
+                      <svg id="play-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                        style="display: block" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                          fill="var(--fill-col)" />
+                        <path
+                          d="M23.5 16.866C24.1667 16.4811 24.1667 15.5189 23.5 15.134L11.5 8.20577C10.8333 7.82087 10 8.302 10 9.0718L10 22.9282C10 23.698 10.8333 24.1791 11.5 23.7942L23.5 16.866Z"
+                          fill="var(--fill-col)" />
+                      </svg>
+                      <svg id="pause-icon" class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                        style="display: none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                          fill="var(--fill-col)" />
+                        <path
+                          d="M11 10C11 9.44772 11.4477 9 12 9H14C14.5523 9 15 9.44772 15 10V22C15 22.5523 14.5523 23 14 23H12C11.4477 23 11 22.5523 11 22V10Z"
+                          fill="var(--fill-col)" />
+                        <path
+                          d="M18 9C17.4477 9 17 9.44772 17 10V22C17 22.5523 17.4477 23 18 23H20C20.5523 23 21 22.5523 21 22V10C21 9.44772 20.5523 9 20 9H18Z"
+                          fill="var(--fill-col)" />
+                      </svg>
+                    </button>
+                    <span class="tooltip-text">Start or Pause the animation</span>
+                  </div>
+
+                  <div class="tooltip-container"> <!--Reduce Speed -->
+                    <button class="random-button button-73" id="fast-reverse-button">
+                      <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z"
+                          fill="var(--fill-col)" />
+                        <path
+                          d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                          fill="var(--fill-col)" />
+                      </svg>
+                    </button>
+                    <span id="reduce-speed-tooltip" class="tooltip-text">Reduce Speed</span>
+                  </div>
 
 
-                <div class="tooltip-container"> <!--Increase Speed-->
-                  <button class="random-button button-73" id="fast-forward-button">
-                    <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z"
-                        fill="var(--fill-col)" />
-                      <path
-                        d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
-                        fill="var(--fill-col)" />
-                    </svg>
-                  </button>
-                  <span id="increase-speed-tooltip" class="tooltip-text">Increase Speed</span>
-                </div>
+                  <div class="tooltip-container">
+                    <input class="random-button button-73" type="number" value='1' id="speedInput" size="0.3" min="0.15"
+                      max="25" step="0.25" readonly></input>
+                    <!--Current Speed input-->
+                    <span class="tooltip-text">Current Speed</span>
+                  </div>
 
-                <div class="tooltip-container"> <!--Random Button-->
-                  <button class="random-button button-73" id="random-button" onclick="randomGrid()">
-                    >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
-                    Random
-                  </button>
-                  <span class="tooltip-text">Random</span>
-                </div>
 
-                <<<<<<< HEAD <div class="tooltip-container">
-                  <input class="random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height"
-                    min="1" />
-                  <button class="random-button button-73" id="change-grid-button" onclick="changeGridSize()">
-                    Apply</button>
-                  <span class="tooltip-text">Change Grid Height</span>
-                  =======
-                  <div class="tooltip-container"> <!--Grid Height-->
+                  <div class="tooltip-container"> <!--Increase Speed-->
+                    <button class="random-button button-73" id="fast-forward-button">
+                      <svg class="icon-svg" width="30" height="30" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z"
+                          fill="var(--fill-col)" />
+                        <path
+                          d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+                          fill="var(--fill-col)" />
+                      </svg>
+                    </button>
+                    <span id="increase-speed-tooltip" class="tooltip-text">Increase Speed</span>
+                  </div>
+
+                  <div class="tooltip-container"> <!--Random Button-->
+                    <button class="random-button button-73" id="random-button" onclick="randomGrid()">
+
+                      Random
+                    </button>
+                    <span class="tooltip-text">Random</span>
+                  </div>
+
+                  <div class="tooltip-container">
                     <input class="random-button button-73" type="number" id="new-height" placeholder="Enter Grid Height"
-                      min="1" onchange="GridHeightChange()" />
-                    <span class="tooltip-text">Grid Height</span>
+                      min="1" />
+                    <button class="random-button button-73" id="change-grid-button" onclick="changeGridSize()">
+                      Apply</button>
+                    <span class="tooltip-text">Change Grid Height</span>
+
+                    <div class="tooltip-container"> <!--Grid Height-->
+                      <input class="random-button button-73" type="number" id="new-height"
+                        placeholder="Enter Grid Height" min="1" onchange="GridHeightChange()" />
+                      <span class="tooltip-text">Grid Height</span>
+                    </div>
+
+
+                    <div class="tooltip-container"> <!--Apply Grid-->
+                      <button class="random-button button-73" id="change-grid-button"
+                        onclick="changeGridSize(getHeight())">
+                        Apply</button> <!--Random button-->
+                      <span class="tooltip-text" id="apply-tooltip">Invalid Grid Height</span>
+
+                    </div>
+
+                    <script>
+                      GridHeightChange();
+                      function GridHeightChange() {
+                        height = document.getElementById("new-height").value
+                        if (height && height > 0) {
+                          document.getElementById("apply-tooltip").innerHTML = "Apply Grid Height";
+                        } else {
+                          document.getElementById("apply-tooltip").innerHTML = "Invalid Grid Height";
+                        }
+                      }
+
+                    </script>
+                    <div id="info-container">
+                      <div id="generation-info">
+                        <p>Gen: <span id="generation">0</span></p>
+                        <p>Alive <span id="alive">0</span> </p>
+                      </div>
+                      <div id="status-info">
+                        <p>Births <span id="births">0</span> </p>
+                        <p>Deaths <span id="deaths">0</span> </p>
+                      </div>
+                    </div>
+
                   </div>
 
-
-                  <div class="tooltip-container"> <!--Apply Grid-->
-                    <button class="random-button button-73" id="change-grid-button"
-                      onclick="changeGridSize(getHeight())">
-                      Apply</button> <!--Random button-->
-                    <span class="tooltip-text" id="apply-tooltip">Invalid Grid Height</span>
-                    >>>>>>> 51aaa7276656c3cccbb397710e9a11edd43e574f
+                  <div class="snowflakes">
+                    <div class="snowflake">❅</div>
+                    <div class="snowflake">❆</div>
+                    <div class="snowflake">❄</div>
                   </div>
-
+                  <script src="./js/app.js"></script>
+                  <script src="./js/customTheme.js"></script>
+                  <script src="./js/gradient.js"></script>
+                  <script src="./js/speed.js"></script>
                   <script>
-                    GridHeightChange();
-                    function GridHeightChange() {
-                      height = document.getElementById("new-height").value
-                      if (height && height > 0) {
-                        document.getElementById("apply-tooltip").innerHTML = "Apply Grid Height";
+                    document.addEventListener("DOMContentLoaded", function () {
+                      const preloader = document.getElementById("preloader");
+                      const mainContent = document.getElementById("main-content");
+
+                      // Listen for the window load event
+                      window.addEventListener("load", function () {
+                        // Set a delay before transitioning the preloader and main content
+                        setTimeout(function () {
+                          preloader.classList.add("hidden");
+                          mainContent.classList.remove("hidden");
+                          mainContent.classList.add("visible");
+                        }, 300); // 2000 milliseconds = 2 seconds delay
+                      });
+                    });
+                  </script>
+                  <!--Cursor-->
+                  <script>
+                    //Custom Cursor
+
+                    const coords = { x: 0, y: 0 };
+                    const circles = document.querySelectorAll(".circle");
+
+                    const colors = [
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#3fbcc0c6",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#3fbcc0c6",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                      "#55a5ea",
+                    ];
+                    const mainGrid = document.querySelector(".main-grid");
+
+                    circles.forEach(function (circle, index) {
+                      circle.x = 0;
+                      circle.y = 0;
+                      circle.style.backgroundColor = colors[index % colors.length];
+                    });
+
+                    mainGrid.addEventListener("mouseenter", function (e) {
+                      circles.forEach(function (circle) {
+                        circle.style.display = "block";
+                      });
+                    });
+
+                    mainGrid.addEventListener("mousemove", function (e) {
+                      coords.x = e.clientX;
+                      coords.y = e.clientY;
+                    });
+
+                    mainGrid.addEventListener("mouseleave", function (e) {
+                      circles.forEach(function (circle) {
+                        circle.style.display = "none";
+                      });
+                    });
+
+                    function animateCircles() {
+                      let x = coords.x;
+                      let y = coords.y;
+
+                      circles.forEach(function (circle, index) {
+                        circle.style.left = x - 12 + "px";
+                        circle.style.top = y - 12 + "px";
+
+                        circle.style.scale = (circles.length - index) / circles.length;
+
+                        circle.x = x;
+                        circle.y = y;
+
+                        const nextCircle = circles[index + 1] || circles[0];
+                        x += (nextCircle.x - x) * 0.3;
+                        y += (nextCircle.y - y) * 0.3;
+                      });
+
+                      requestAnimationFrame(animateCircles);
+                    }
+
+                    animateCircles();
+
+                    // Function to toggle dark mode
+                    function toggleDarkMode() {
+                      const isDarkMode = isDarkModePreferred();
+                      setDarkModePreference(!isDarkMode);
+                      applyDarkModePreference();
+                    }
+
+                    // Function to apply dark mode preference
+                    function applyDarkModePreference() {
+                      const isDarkMode = isDarkModePreferred();
+                      if (isDarkMode) {
+                        document.body.classList.add("dark-mode");
+                        document.getElementById("theme-icon").src =
+                          "assets/images/icons8-sun.svg";
                       } else {
-                        document.getElementById("apply-tooltip").innerHTML = "Invalid Grid Height";
+                        document.body.classList.remove("dark-mode");
+                        document.getElementById("theme-icon").src =
+                          "assets/images/moon_solid.svg";
                       }
                     }
 
+                    // Function to set dark mode preference
+                    document.addEventListener("DOMContentLoaded", () => {
+                      const currentTheme = localStorage.getItem("theme");
+                      const switchCheckbox = document.getElementById("switch"); // Define switchCheckbox here
+                      const starRating = document.querySelector(".star_rating");
+                      const thankYouMessage = document.querySelector(".thank_you_message");
+                      if (switchCheckbox) {
+                        // Check if switchCheckbox is not null
+                        function applyDarkModeStyles() {
+                          document.body.classList.remove("light-mode");
+                          document.body.classList.add("dark-mode");
+                          starRating.style.backgroundColor = "#2d2828";
+                          thankYouMessage.style.backgroundColor = "#2d2828";
+                        }
+
+                        function applyLightModeStyles() {
+                          document.body.classList.remove("dark-mode");
+                          document.body.classList.add("light-mode");
+                          starRating.style.backgroundColor = "white";
+                          thankYouMessage.style.backgroundColor = "white";
+                        }
+
+                        if (currentTheme) {
+                          if (currentTheme === "dark-mode") {
+                            applyDarkModeStyles();
+                            switchCheckbox.checked = true;
+                          } else {
+                            applyLightModeStyles();
+                          }
+                        }
+
+                        switchCheckbox.addEventListener("change", () => {
+                          if (switchCheckbox.checked) {
+                            applyDarkModeStyles();
+                            localStorage.setItem("theme", "dark-mode");
+                          } else {
+                            applyLightModeStyles();
+                            localStorage.setItem("theme", "light-mode");
+                          }
+                        });
+                      } else {
+                        console.error("Switch checkbox not found!"); // Log an error if switchCheckbox is null
+                      }
+                    });
                   </script>
-                  <div id="info-container">
-                    <div id="generation-info">
-                      <p>Gen: <span id="generation">0</span></p>
-                      <p>Alive <span id="alive">0</span> </p>
-                    </div>
-                    <div id="status-info">
-                      <p>Births <span id="births">0</span> </p>
-                      <p>Deaths <span id="deaths">0</span> </p>
-                    </div>
-                  </div>
+</body>
 
-            </div>
+<script>
+  document
+    .getElementById("toggleButton")
+    .addEventListener("click", function () {
+      const sideNav = document.getElementById("sideNav");
+      sideNav.classList.toggle("hide-nav");
+      document.querySelector(".game").classList.toggle("full-width");
+    });
 
-            <div class="snowflakes">
-              <div class="snowflake">❅</div>
-              <div class="snowflake">❆</div>
-              <div class="snowflake">❄</div>
-            </div>
-            <script src="./js/app.js"></script>
-            <script src="./js/customTheme.js"></script>
-            <script src="./js/gradient.js"></script>
-            <script src="./js/speed.js"></script>
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                const preloader = document.getElementById("preloader");
-                const mainContent = document.getElementById("main-content");
 
-                // Listen for the window load event
-                window.addEventListener("load", function () {
-                  // Set a delay before transitioning the preloader and main content
-                  setTimeout(function () {
-                    preloader.classList.add("hidden");
-                    mainContent.classList.remove("hidden");
-                    mainContent.classList.add("visible");
-                  }, 300); // 2000 milliseconds = 2 seconds delay
-                });
-              });
-            </script>
-            <!--Cursor-->
-            <script>
-              //Custom Cursor
+  document.querySelector(".cross").addEventListener("click", function () {
+    const sideNav = document.getElementById("sideNav");
+    sideNav.classList.toggle("hide-nav");
+    document.querySelector(".game").classList.toggle("full-width");
 
-              const coords = { x: 0, y: 0 };
-              const circles = document.querySelectorAll(".circle");
+  });
+</script>
 
-              const colors = [
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#3fbcc0c6",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#3fbcc0c6",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-                "#55a5ea",
-              ];
-              const mainGrid = document.querySelector(".main-grid");
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const snowflakesContainer = document.querySelector('.snowflakes');
 
-              circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
-              });
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.textContent = ['❅', '❆', '❄'][Math.floor(Math.random() * 3)];
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2 and 5 seconds
+      snowflake.style.fontSize = Math.random() * 1 + 1 + 'em'; // between 1em and 2em
+      snowflake.style.opacity = Math.random();
 
-              mainGrid.addEventListener("mouseenter", function (e) {
-                circles.forEach(function (circle) {
-                  circle.style.display = "block";
-                });
-              });
+      snowflakesContainer.appendChild(snowflake);
 
-              mainGrid.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-              });
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000); // remove snowflake after 5 seconds
+    }
 
-              mainGrid.addEventListener("mouseleave", function (e) {
-                circles.forEach(function (circle) {
-                  circle.style.display = "none";
-                });
-              });
+    setInterval(createSnowflake, 200);
+  });
 
-              function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
+</script>
 
-                circles.forEach(function (circle, index) {
-                  circle.style.left = x - 12 + "px";
-                  circle.style.top = y - 12 + "px";
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-                  circle.style.scale = (circles.length - index) / circles.length;
+<script src="./js/animation.js"></script>
 
-                  circle.x = x;
-                  circle.y = y;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-                  const nextCircle = circles[index + 1] || circles[0];
-                  x += (nextCircle.x - x) * 0.3;
-                  y += (nextCircle.y - y) * 0.3;
-                });
-
-                requestAnimationFrame(animateCircles);
-              }
-
-              animateCircles();
-
-              // Function to toggle dark mode
-              function toggleDarkMode() {
-                const isDarkMode = isDarkModePreferred();
-                setDarkModePreference(!isDarkMode);
-                applyDarkModePreference();
-              }
-
-              // Function to apply dark mode preference
-              function applyDarkModePreference() {
-                const isDarkMode = isDarkModePreferred();
-                if (isDarkMode) {
-                  document.body.classList.add("dark-mode");
-                  document.getElementById("theme-icon").src =
-                    "assets/images/icons8-sun.svg";
-                } else {
-                  document.body.classList.remove("dark-mode");
-                  document.getElementById("theme-icon").src =
-                    "assets/images/moon_solid.svg";
-                }
-              }
-
-              // Function to set dark mode preference
-              document.addEventListener("DOMContentLoaded", () => {
-                const currentTheme = localStorage.getItem("theme");
-                const switchCheckbox = document.getElementById("switch"); // Define switchCheckbox here
-                const starRating = document.querySelector(".star_rating");
-                const thankYouMessage = document.querySelector(".thank_you_message");
-                if (switchCheckbox) {
-                  // Check if switchCheckbox is not null
-                  function applyDarkModeStyles() {
-                    document.body.classList.remove("light-mode");
-                    document.body.classList.add("dark-mode");
-                    starRating.style.backgroundColor = "#2d2828";
-                    thankYouMessage.style.backgroundColor = "#2d2828";
-                  }
-
-                  function applyLightModeStyles() {
-                    document.body.classList.remove("dark-mode");
-                    document.body.classList.add("light-mode");
-                    starRating.style.backgroundColor = "white";
-                    thankYouMessage.style.backgroundColor = "white";
-                  }
-
-                  if (currentTheme) {
-                    if (currentTheme === "dark-mode") {
-                      applyDarkModeStyles();
-                      switchCheckbox.checked = true;
-                    } else {
-                      applyLightModeStyles();
-                    }
-                  }
-
-                  switchCheckbox.addEventListener("change", () => {
-                    if (switchCheckbox.checked) {
-                      applyDarkModeStyles();
-                      localStorage.setItem("theme", "dark-mode");
-                    } else {
-                      applyLightModeStyles();
-                      localStorage.setItem("theme", "light-mode");
-                    }
-                  });
-                } else {
-                  console.error("Switch checkbox not found!"); // Log an error if switchCheckbox is null
-                }
-              });
-            </script>
-        </body>
-
-        <script>
-          document
-            .getElementById("toggleButton")
-            .addEventListener("click", function () {
-              const sideNav = document.getElementById("sideNav");
-              sideNav.classList.toggle("hide-nav");
-              document.querySelector(".game").classList.toggle("full-width");
-            });
-
-          document.querySelector(".cross").addEventListener("click", function () {
-            const sideNav = document.getElementById("sideNav");
-            sideNav.classList.toggle("hide-nav");
-            document.querySelector(".game").classList.toggle("full-width");
-          });
-        </script>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            const snowflakesContainer = document.querySelector('.snowflakes');
-
-            function createSnowflake() {
-              const snowflake = document.createElement('div');
-              snowflake.classList.add('snowflake');
-              snowflake.textContent = ['❅', '❆', '❄'][Math.floor(Math.random() * 3)];
-              snowflake.style.left = Math.random() * 100 + 'vw';
-              snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2 and 5 seconds
-              snowflake.style.fontSize = Math.random() * 1 + 1 + 'em'; // between 1em and 2em
-              snowflake.style.opacity = Math.random();
-
-              snowflakesContainer.appendChild(snowflake);
-
-              setTimeout(() => {
-                snowflake.remove();
-              }, 5000); // remove snowflake after 5 seconds
-            }
-
-            setInterval(createSnowflake, 200);
-          });
-
-        </script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-          integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <script src="./js/animation.js"></script>
-
-        </html>
+</html>

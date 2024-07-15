@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./css/faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-zylVviXvY3s/jybGKHrJgy1NdxDwA6/sP1m3ymUedL+XXKkBhZMKdeLRPhMb2DfykP4XK6eWCT9w1TmD4Ek1TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .back-button { 
+      position: fixed;
+      bottom: 90%;
+      left: 4%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .back-up {
+      display: none; /* Initially hide the button */
+      position: fixed;
+      left: 4%;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      background: #7582b2;
+      bottom: 40px;
+      right: 50px;
+      line-height: 50px;
+      font-size: 22px;
+    }
+
+    .back-up:hover {
+      cursor: pointer; 
+    }
+  </style>
+  <title>FAQ - Conway's Game of Life</title>
+</head>
+<body>
+  <div class="back-button">
+    <a href="index.html" title="Home">
+      <img src="./images/home1.png" alt="Back to Home" class="home-icon">
+    </a>
+  </div>
+  <div class="container">
+    <h1>FAQ</h1>
+    <div class="faq-item">
+      <input type="checkbox" id="faq1" class="faq-toggle">
+      <label for="faq1" class="faq-question">What is Conway's Game of Life?</label>
+      <div class="faq-answer">
+        <p>
+          Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970.
+          It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq2" class="faq-toggle">
+      <label for="faq2" class="faq-question">How does the universe of Game of Life work?</label>
+      <div class="faq-answer">
+        <p>
+          The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells.
+          Each cell is in one of two possible states: ALIVE or DEAD. Every cell interacts with its eight neighbors.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq3" class="faq-toggle">
+      <label for="faq3" class="faq-question">What are the rules of the Game of Life?</label>
+      <div class="faq-answer">
+        <p>
+          The Game of Life has four simple rules:
+          <ul>
+            <li>Any live cell with fewer than two live neighbors dies, as if by underpopulation.</li>
+            <li>Any live cell with two or three live neighbors lives on to the next generation.</li>
+            <li>Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
+            <li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq4" class="faq-toggle">
+      <label for="faq4" class="faq-question">Who created Conway's Game of Life?</label>
+      <div class="faq-answer">
+        <p>
+          Conway's Game of Life was created by the British mathematician John Horton Conway in 1970. It is one of the best-known examples of a cellular automaton.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq5" class="faq-toggle">
+      <label for="faq5" class="faq-question">What are some famous patterns in the Game of Life?</label>
+      <div class="faq-answer">
+        <p>
+          Some famous patterns in the Game of Life include the Glider, the LWSS (Lightweight Spaceship), and the Pulsar. These patterns exhibit interesting behaviors and are often studied by enthusiasts.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq6" class="faq-toggle">
+      <label for="faq6" class="faq-question">Is the Game of Life Turing complete?</label>
+      <div class="faq-answer">
+        <p>
+          Yes, the Game of Life is Turing complete. This means it can simulate a universal Turing machine and, therefore, perform any computation that can be done by a computer.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq7" class="faq-toggle">
+      <label for="faq7" class="faq-question">Can the Game of Life be used to solve real-world problems?</label>
+      <div class="faq-answer">
+        <p>
+          While the Game of Life is a mathematical abstraction, it has been used to explore concepts in computation, complexity theory, and even theoretical biology. It provides insights but is not directly used to solve practical real-world problems.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq8" class="faq-toggle">
+      <label for="faq8" class="faq-question">Are there other cellular automata like the Game of Life?</label>
+      <div class="faq-answer">
+        <p>
+          Yes, there are many other cellular automata with different rulesets and behaviors. Some examples include the Brian's Brain, Highlife, and Wireworld. Each has its unique set of rules and interesting properties.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq9" class="faq-toggle">
+      <label for="faq9" class="faq-question">How can I experiment with the Game of Life?</label>
+      <div class="faq-answer">
+        <p>
+          You can experiment with the Game of Life using various online simulators and software programs. Many programming languages also have libraries and frameworks for creating and exploring cellular automata.
+        </p>
+      </div>
+    </div>
+    <!-- Add more FAQ items as needed -->
+  </div>
+  <div class="back-up">
+    <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+  <script>
+    // Scroll to top button 
+    const topButton = document.querySelector('.gotopbtn');
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topButton.parentElement.style.display = "block"; // Show button
+      } else {
+        topButton.parentElement.style.display = "none"; // Hide button
+      }
+    }
+    topButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-jYByi51d2A2YvZq8h7CEyghZ+DrDRzzU2sDCQK4ldAFffMJZbCQrVxQuUkZ7V58gHsKyp0S0EaHPUA39RgG1zw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
