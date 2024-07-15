@@ -223,13 +223,14 @@ hr {
   background: linear-gradient(to right, var(--primary-color), var(--theme-color3), var(--primary-color));
   margin: 30px 0;
 }
-  .back-button { 
+.back-button { 
     position: fixed;
     bottom: 90%;
     left: 4%;
     transform: translateX(-50%);
     text-align: center;
 }
+
 .back-up{
   position: fixed;
   left: 4%;
@@ -242,6 +243,9 @@ hr {
   text-align: center;
   line-height: 50px;
   font-size: 22px;
+}
+.back-up:hover{
+  cursor: pointer; 
 }
 .home-icon {
     width: 50px;
