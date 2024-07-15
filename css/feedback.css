@@ -246,20 +246,19 @@ button[type="submit"]:hover {
 }
 
 .back-button {
-  display: inline-block;
+  margin-left: -15px;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 20px;
   padding: 8px 16px;
   color: #fff;
-  background-color: #007bff;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
 
-.back-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+.back-button i {
+  margin-right: 8px; /* Space between the icon and the text */
 }
 
 #success-message {
