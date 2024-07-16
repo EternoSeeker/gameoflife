@@ -1,3 +1,4 @@
+<a id="top"></a>
 <div align="center">
   <h1>Conway's Game of Life</h1>
   <p>A cellular automaton devised by British mathematician John Horton Conway in 1970.</p>
@@ -46,8 +47,10 @@
 </table>
 
 ---
-## Table of Contents
 
+<details>
+  <summary><h2>:pushpin:Table of Contents:</h2></summary>
+  
 1. [What is it?](#what-is-it)
    1. [The Universe](#the-universe)
    2. [The Rules](#the-rules)
@@ -68,8 +71,10 @@
    10. [Pentadecathlon](#pentadecathlon)
 6. [Feedback](#feedback)
 7. [Resources](#resources)
+   
+</details>
+<hr>
 
----
 ## What is it?
 
 ✨ Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a universal constructor or any other Turing machine.
@@ -92,7 +97,11 @@ The first generation is created by applying the above rules simultaneously to ev
 
 ---
 
-## The Game
+
+<details>
+  <summary><h2>🎮The Game</h2></summary>
+  
+
 
 ### The Canvas / Grid
 
@@ -162,9 +171,12 @@ The first generation is created by applying the above rules simultaneously to ev
 
 Stores history of patterns that user has played with, up to 5 recent patterns.
 
----
+</details>
 
-## The Presets
+<hr>
+
+<details>
+  <summary><h2>✨The Presets </h2></summary>
 
 ### Glider
 
@@ -257,10 +269,11 @@ The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conw
   <img src="images/Moving-Pentadecathlon.gif" alt="Pentadecathlon" height="150">
 </div>
 
-
 ### More Configurations
 
 Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Category:Patterns).
+
+</details>
 
 ---
 ## Feedback 
@@ -292,6 +305,32 @@ Explore more patterns at [ConwayLife Patterns](https://conwaylife.com/wiki/Categ
   <h2>Conway's Game of Life offers a unique way to explore the unpredictable beauty of life itself.</h2>
 </div>
 
+
+<hr>
+
+ <!---------------------------------------------------------------CONTRIBUTION GUIDELINES--------------------------------------------------------------------------->
+
+<details>
+ <summary><h2>⚡Contribution Guidelines:</h2></summary>
+ 
+ 
+ * **Checkout and make your changes for the develop branch only:** When working on your contributions, switch to the **develop** branch in your local repository. This ensures that you are working on the latest version of the codebase.
+
+* **Create pull requests only for the develop branch:** When you are ready to submit your changes, create a pull request (PR) targeting the **develop** branch. This allows the maintainers to review and merge your code into the main development branch.
+
+* **Maintain contribution guidelines:** Each project may have its specific contribution guidelines. It's important to familiarize yourself with these guidelines before submitting your contributions. Adhering to these guidelines ensures consistency and helps maintain the quality of the codebase.
+
+* **Format your commit message with the issue number:** When making commits related to an issue, follow the format **Fixes: #32 in your commit message. Replace 32 with the issue number you are addressing.** This helps track and manage issues more efficiently.
+
+* **Attach a Postman response screenshot for backend tasks:** For tasks related to the backend, it is recommended to include a screenshot of the Postman response along with your pull request. This provides additional context and helps reviewers understand the changes made and their impact on the backend functionality.
+
+* **Make your pull request descriptive and include examples:** When creating a pull request, provide a clear and descriptive explanation of the changes you made. This helps reviewers understand the purpose and significance of your contribution. Additionally, including at least one example that demonstrates the intended usage or effect of your changes can be beneficial.
+
+* **Rebase your commits and optimize file changes:** When submitting your pull request, consider rebasing your commits into one commit and optimizing your file changes. This helps keep the commit history clean and makes it easier for reviewers to understand your changes.
+
+Remember, following these guidelines will help ensure a smooth and efficient contribution process. Happy coding!
+
+</details>
 
 <hr>
 
@@ -331,3 +370,14 @@ Thank you for contributing to our project! Your help is greatly appreciated in m
   <img src="https://contrib.rocks/image?repo=EternoSeeker/gameoflife" />
 </a>
 </center>
+
+<hr>
+<div>
+  <h2><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f64f_1f3fb/512.webp" width="35" height="35"> Support </h2>
+</div>
+
+<div>
+  Don't forget to leave a star<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> for this project!
+</div> <br>
+
+<a href="#top" style="position: fixed; bottom: 20px; right: 20px; background-color: black ; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-family: Arial; font-size: 16px;">Go to Top</a>
