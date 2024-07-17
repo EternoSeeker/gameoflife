@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    startLoader ()
-    showBox(1); 
+    startLoader();  
+    if (!sessionStorage.getItem('introCompleted')) {
+        showBox(1);
+    }
 });
 
 function showBox(step) {
@@ -11,10 +13,10 @@ function showBox(step) {
 }
 
 function closeIntroSeries(){
-    console.log('ello?')
     document.querySelectorAll('.intro-page').forEach(stepDiv => {
         stepDiv.style.display='none';
     });
     startLoader()
     animateElements();
+    sessionStorage.setItem('introCompleted', 'true');
 }
