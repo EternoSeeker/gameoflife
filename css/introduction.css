@@ -61,7 +61,9 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     /* padding-top: 2rem; */
     font-size: 1rem;
 }
-
+.bottom-symbols{
+    display: none;
+}
 #popup1, #popup9 .intro-head{ /*start and end wale boxes need different padding inside so */
     padding-top: 25px;
 }
@@ -125,11 +127,12 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* positioning of all popups accoridng to their purpose*/
+/* positioning of all popups according to their purpose */
 #popup2{
     position: absolute;
     right: 9%;
     bottom: 10%;
+    z-index: 10;
 }
 /* the arrow thing */
 #popup2::before {
@@ -140,12 +143,14 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     border-width: 0 50px 50px 50px;
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: 1;
 }
 
 #popup3{
     position: absolute;
     right: 30%;
     bottom: 13%;
+    z-index: 10;
 }
 #popup3::before {
     content: "";
@@ -156,11 +161,13 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     transform: rotate(-180deg);
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: -1;
 }
 #popup4{
     position: absolute;
     right: 17%;
     bottom: 13%;
+    z-index: 10;
 }
 #popup4::before {
     content: "";
@@ -171,11 +178,14 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     transform: rotate(-180deg);
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: -1;
 }
+
 #popup5{
     position: absolute;
     right: 6%;
     bottom: 13%;
+    z-index: 10;
 }
 #popup5::before {
     content: "";
@@ -186,12 +196,14 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     transform: rotate(-180deg);
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: 1;
 }
 
 #popup6{
     position: absolute;
     left: 22%;
     top: 14%;
+    z-index: 10;
 }
 #popup6::before {
     content: "";
@@ -202,12 +214,14 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     transform: rotate(45deg);
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: 1;
 }
 
 #popup7{
     position: absolute;
     left: 22%;
     top: 50%;
+    z-index: 10;
 }
 #popup7::before {
     content: "";
@@ -218,11 +232,14 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     transform: rotate(45deg);
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: 1;
 }
+
 #popup8{
     position: absolute;
     left: 30%;
     bottom: 13%;
+    z-index: 100;
 }
 #popup8::before {
     content: "";
@@ -233,4 +250,33 @@ closeIntro series wale fucntion mein animation properties lga, and welcome box s
     transform: rotate(-180deg);
     border-style: solid;
     border-color: transparent transparent #080126 transparent;
+    z-index: -10;
+}
+
+@media screen and (max-width: 925px) {
+    /* change buttons to symbols */
+    .bottom-btns{
+        display: none;
+    }
+    .symbolintro{
+        color: white;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .bottom-symbols{
+        margin-top: 1rem;
+        display: flex;
+        font: 0.8rem;
+        /* color: white; */
+        cursor: pointer;
+        justify-content: space-evenly;
+    }
+    #prev-symbol{
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 530px) {
+    .bottom-btn-end{
+        margin: 5px;
+    }
+    
 }

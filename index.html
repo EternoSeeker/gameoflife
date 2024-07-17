@@ -293,6 +293,10 @@
             <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
             <button class="intro-bottom-btn" id="pop-next" onclick="showBox(2)">Next</button>
           </div>
+          <div class="bottom-symbols">
+            <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+            <button class="symbolintro" onclick="showBox(2)"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
         </div>
       </div>
 
@@ -306,6 +310,11 @@
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(1)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(3)">Next</button>
         </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(1)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(3)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
     <div class="intro-page" id="page3">
@@ -317,6 +326,11 @@
           <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(2)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(4)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(2)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(4)"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -330,6 +344,11 @@
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(3)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(5)">Next</button>
         </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(3)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(5)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
     <div class="intro-page" id="page5">
@@ -341,6 +360,11 @@
           <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(4)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(6)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(4)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(6)"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -354,6 +378,11 @@
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(5)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(7)">Next</button>
         </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(5)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(7)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
     <div class="intro-page" id="page7">
@@ -366,6 +395,11 @@
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(6)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(8)">Next</button>
         </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(6)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(8)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
     <div class="intro-page" id="page8">
@@ -377,6 +411,11 @@
           <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
           <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(7)">Prev</button>
           <button class="intro-bottom-btn" id="pop-next" onclick="showBox(9)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(7)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(9)"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -1203,6 +1242,20 @@
       sideNav.classList.toggle("hide-nav");
       document.querySelector(".game").classList.toggle("full-width");
     });
+
+    let isSmall;
+    function closeNavDeafult(){
+      const setWidth = 750;
+      const currentWidth = window.innerWidth;
+      isSmall=false;
+      const sideNav = document.getElementById("sideNav");
+      if(currentWidth < setWidth){
+        sideNav.classList.add("hide-nav");
+        document.querySelector(".game").classList.add("full-width");
+        isSmall=true;
+      }
+}
+
   </script>
 
 <script>
