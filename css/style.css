@@ -172,10 +172,35 @@ body {
   background-color: var(--theme-color1);
   box-shadow: var(--shadow-color1) 0 -6px 8px inset;
   transform: scale(1.125);
+  font-size: 1.25rem;
+  /* text-lg */
+  font-weight: bold;
+  /* font-bold */
+  color: black;
+  /* text-black */
+  text-transform: uppercase;
+  /* uppercase */
+  margin-top: 1rem;
+  /* mt-4 */
+  margin-bottom: 1rem;
+  /* mb-4 */
+}
+
+@media (min-width: 768px) {
+  .button-73:hover {
+    margin-top: 0;
+    /* md:mt-0 */
+  }
+}
+
+.button-73:hover {
+  text-decoration: underline;
+  /* hover:underline */
 }
 
 .button-73:active {
   transform: scale(1.025);
+
 }
 
 .heading {
@@ -343,6 +368,13 @@ body {
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   margin: 0 0.5rem;
   /* Add margin to separate buttons */
+<<<<<<< HEAD
+=======
+}
+
+.clear-button {
+  margin-right: 1rem;
+>>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 }
 
 .random-button:hover {
@@ -358,6 +390,22 @@ body {
   transform: translateY(0.1rem);
 }
 
+<<<<<<< HEAD
+=======
+#toggleButton {
+  color: black;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 1.7rem;
+  background: none;
+  margin: 1px;
+  z-index: 1;
+  position: absolute;
+  left: 2rem;
+  top: 1.8rem;
+}
+
+>>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 .sidenav {
   height: 100vh;
   width: 30vw;
@@ -371,6 +419,7 @@ body {
   transition: left 0.3s ease, width 0.3s ease;
 }
 
+<<<<<<< HEAD
 .logo {
   margin: 0px;
   position: absolute;
@@ -381,6 +430,8 @@ body {
 
 
 
+=======
+>>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 /* Hide the nav bar */
 .hide-nav {
   display: none;
@@ -436,6 +487,22 @@ body {
   transition: color 0.3s ease;
 }
 
+<<<<<<< HEAD
+=======
+.feedback {
+  padding: 0.0rem 1.2rem 0.0rem 0rem;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  color: white;
+}
+
+>>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 .about {
   padding: 0.0rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
@@ -453,6 +520,7 @@ body {
   transition: color 0.3s ease;
 }
 
+<<<<<<< HEAD
 .feedback {
   padding: 0.0rem 1.2rem 0.0rem 0rem;
   text-decoration: none;
@@ -466,6 +534,8 @@ body {
   color: white;
 }
 
+=======
+>>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 .themes-container div {
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
@@ -525,7 +595,7 @@ body {
   font-size: 1.2rem;
 }
 
-.other-settings:hover,
+.about button .other-settings:hover,
 .color-themes:hover,
 .presets:hover,
 .history:hover,
@@ -844,6 +914,8 @@ body {
 
 @media screen and (max-width: 425px) {
   .sidenav {
+    width: 100vw;
+    left: -550px;
     width: 114vw;
     left: -550px;
     transition: width 0.3s ease;
@@ -875,6 +947,8 @@ body {
   .control-button {
     transform: scale(1.4);
   }
+
+
 }
 
 body {
@@ -923,9 +997,12 @@ body {
 
 .hov:hover {
   color: aqua;
+<<<<<<< HEAD
 }
 
 .sidenav {
   width: 250px;
   /* or any other value you prefer */
+=======
+>>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 }
