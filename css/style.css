@@ -139,10 +139,13 @@ body {
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
-  display: inline-flex; /* Use flexbox to center content */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  font-family: -apple-system,sans-serif;
+  display: inline-flex;
+  /* Use flexbox to center content */
+  align-items: center;
+  /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -.24px;
@@ -347,7 +350,7 @@ body {
 }
 
 .icon-svg {
-  --fill-col : var(--primary-color);
+  --fill-col: var(--primary-color);
 }
 
 .random-button {
@@ -366,13 +369,10 @@ body {
   margin: 0 0.5rem;
   /* Add margin to separate buttons */
 }
-<<<<<<< HEAD:style.css
 
 .clear-button {
   margin-right: 1rem;
 }
-=======
->>>>>>> a11b162568bda833d09765c46a62a109ab0b46af:css/style.css
 
 .random-button:hover {
   box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
@@ -465,17 +465,18 @@ body {
   outline: none;
   transition: color 0.3s ease;
 }
-.feedback{
-    padding: 0.0rem 1.2rem 0.0rem 0rem;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    color: white;
+
+.feedback {
+  padding: 0.0rem 1.2rem 0.0rem 0rem;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  color: white;
 }
 
 .about {
@@ -554,20 +555,16 @@ body {
   font-size: 1.2rem;
 }
 
-<<<<<<< HEAD:style.css
-.about button {
-=======
-.other-settings:hover,
+.about button .other-settings:hover,
 .color-themes:hover,
 .presets:hover,
 .history:hover,
 .about:hover,
 .game-rules:hover {
-  color: #00c2fd; 
+  color: #00c2fd;
 }
 
-.about button{
->>>>>>> a11b162568bda833d09765c46a62a109ab0b46af:css/style.css
+.about button {
   margin-left: -1.7rem;
 }
 
@@ -601,7 +598,7 @@ body {
   color: aqua;
 }
 
-.presets-list:hover{
+.presets-list:hover {
   color: aqua;
 }
 
@@ -877,13 +874,10 @@ body {
 
 @media screen and (max-width: 425px) {
   .sidenav {
-<<<<<<< HEAD:style.css
     width: 100vw;
     left: -550px;
-=======
     width: 114vw;
-    left: -550px ;
->>>>>>> a11b162568bda833d09765c46a62a109ab0b46af:css/style.css
+    left: -550px;
     transition: width 0.3s ease;
   }
 
@@ -913,9 +907,8 @@ body {
   .control-button {
     transform: scale(1.4);
   }
-<<<<<<< HEAD:style.css
-}
-=======
+
+
 }
 
 body {
@@ -952,16 +945,16 @@ body {
 
 @keyframes fall {
   0% {
-      transform: translateY(-100vh) rotate(0deg);
-      opacity: 1;
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
   }
+
   100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
-.hov:hover{
+.hov:hover {
   color: aqua;
 }
->>>>>>> a11b162568bda833d09765c46a62a109ab0b46af:css/style.css
