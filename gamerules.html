@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./css/gamerules.css" />
-    <title>Game Rules</title>
-    <link rel="icon" href="./images/registerpage-favicon.png" type="images/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<link rel="stylesheet" href="./css/gamerules.css" />
+<title>Game Rules</title>
+<link rel="icon" href="./images/registerpage-favicon.png" type="images/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
 </head>
-  <body>
-    <div class="back-button">
-        <a href="index.html" title="Home">
-            <img src="./images/home1.png" alt="Back to Home" class="home-icon">
-        </a>
-    </div>
-    <div class="back-up">
-      <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-    </div>
-    <div class="container">
 
-      <h1>How To Play?</h1>
-      <hr />
-      <h2>Conway's Game of Life</h2>
-      <div class="card">
-        <p>Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton Conway in 1970.
-        It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. Players interact with 
-        the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can simulate a 
+<body>
+  <div class="back-button">
+    <a href="index.html" title="Home">
+      <img src="./images/home1.png" alt="Back to Home" class="home-icon">
+    </a>
+  </div>
+  <div class="back-up">
+    <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+  <div class="container">
+
+  </div>
+
+  <div class="container">
+
+    <h1>How To Play?</h1>
+    <hr />
+    <h2>Conway's Game of Life</h2>
+    <div class="card">
+      <p>Conway's Game of Life, or simply "Life," is a cellular automaton devised by British mathematician John Horton
+        Conway in 1970.
+        It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input.
+        Players interact with
+        the game by creating an initial configuration and observing how it evolves. The game is Turing complete and can
+        simulate a
         universal constructor or any other Turing machine.</p>
     </div>
-      <hr />
-      <h2>The Universe</h2>
-      <div class="card">
-        <p>The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells,
+    <hr />
+    <h2>The Universe</h2>
+    <div class="card">
+      <p>The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells,
         Each cell is in one of two possible states, ALIVE or DEAD.
-        Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.</p>
+        Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or
+        diagonally adjacent.</p>
     </div>
-      <hr />
-      <h2>Rules</h2>
-      <div class="card">
+    <hr />
+    <h2>Rules</h2>
+    <div class="card">
       <ol>
         <li>
           Any live cell with fewer than two live neighbors dies, as if by
@@ -66,105 +75,123 @@
         of the preceding one.
       </p>
     </div>
-    <hr/>
-      <h2>The Game</h2>
-      <img src="images/grid.png" alt="Game Grid" class="center" />
-    <hr/>
-      <h2>Button Functions</h2>
-      <table>
-        <tr>
-          <th>Button</th>
-          <th>What they do</th>
-        </tr>
-        <tr>
-          <td>
-          
-            <svg  width="30" height="30" viewBox="0 0 32 32"   xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
-              <path d="M23.5 16.866C24.1667 16.4811 24.1667 15.5189 23.5 15.134L11.5 8.20577C10.8333 7.82087 10 8.302 10 9.0718L10 22.9282C10 23.698 10.8333 24.1791 11.5 23.7942L23.5 16.866Z" fill="var(--fill-col)"/>
-              </svg>
+    <hr />
+    <h2>The Game</h2>
+    <img src="images/grid.png" alt="Game Grid" class="center" />
+    <hr />
+    <h2>Button Functions</h2>
+    <table>
+      <tr>
+        <th>Button</th>
+        <th>What they do</th>
+      </tr>
+      <tr>
+        <td>
 
-          </td>
-          <td>Starts the animation after you've set the initial pattern</td>
-        </tr>
-        <tr>
-          <td>
-            <svg width="30" height="30" viewBox="0 0 32 32"  xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
-              <path d="M11 10C11 9.44772 11.4477 9 12 9H14C14.5523 9 15 9.44772 15 10V22C15 22.5523 14.5523 23 14 23H12C11.4477 23 11 22.5523 11 22V10Z" fill="var(--fill-col)"/>
-              <path d="M18 9C17.4477 9 17 9.44772 17 10V22C17 22.5523 17.4477 23 18 23H20C20.5523 23 21 22.5523 21 22V10C21 9.44772 20.5523 9 20 9H18Z" fill="var(--fill-col)"/>
-              </svg>
-          </td>
-          <td>Pauses the animation</td>
-        </tr>
-        <tr>
-          <td>
-            <svg height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z" fill="var(--fill-col)"/>
-              <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
-              </svg>
-          </td>
-          <td>Decreases the speed of the animation</td>
-        </tr>
-        <tr>
-          <td>
-            <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z" fill="var(--fill-col)"/>
-              <path d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z" fill="var(--fill-col)"/>
-            </svg>
-          </td>
-          <td>Increases the speed of the animation</td>
-        </tr>
-        <tr>
-          <td><button class="random-button">Clear</button></td>
-          <td>
-            Clears the grid on click, only if the game is not animating at that
-            moment
-          </td>
-        </tr>
-        <tr>
-          <td><button class="random-button">Random</button></td>
-          <td>Randomly initializes the grid with initial randomness as 20%</td>
-        </tr>
-        <tr>
-          <td><button class="random-button">Change grid size</button></td>
-          <td>change grid size by changing grid height</td>
-        </tr>
-      </table>
-      <hr />
-      <h2>Keyboard Shortcuts</h2>
-      <table>
-        <tr>
-          <th>Keybind</th>
-          <th>What they do</th>
-        </tr>
-        <tr>
-          <td><button class="random-button">P</button>or<button class="random-button">Space Bar</button></td>
-          <td>Starts the animation after you've set the initial pattern and Pauses an ongoing animation.</td>
-        </tr>
-        <tr>
-          <td><button class="random-button">F</button>or<button class="random-button">Arrow Right [→]</button></td>
-          <td>Increases the speed of the animation</td>
-        </tr>
-        <tr>
-          <td><button class="random-button">S</button>or<button class="random-button">Arrow Left [←]</button></td>
-          <td>Decreases the speed of the animation</td>
-        </tr>
-        <tr>
-          <td><button class="random-button">D</button>or<button class="random-button">Delete</button></td>
-          <td>
-            Clears the grid on click, only if the game is not animating at that
-            moment
-          </td>
-        </tr>
-        <tr>
-          <td><button class="random-button">R</button></td>
-          <td>Randomly initializes the grid with initial randomness as 20%</td>
-        </tr>
-        <tr>
-          <td><button class="random-button">Arrow Up [↑]</button></td>
-          <td>Increases the Randomness value by 5%</td>
-        </tr>
+          <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+              fill="var(--fill-col)" />
+            <path
+              d="M23.5 16.866C24.1667 16.4811 24.1667 15.5189 23.5 15.134L11.5 8.20577C10.8333 7.82087 10 8.302 10 9.0718L10 22.9282C10 23.698 10.8333 24.1791 11.5 23.7942L23.5 16.866Z"
+              fill="var(--fill-col)" />
+          </svg>
+
+        </td>
+        <td>Starts the animation after you've set the initial pattern</td>
+      </tr>
+      <tr>
+        <td>
+          <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+              fill="var(--fill-col)" />
+            <path
+              d="M11 10C11 9.44772 11.4477 9 12 9H14C14.5523 9 15 9.44772 15 10V22C15 22.5523 14.5523 23 14 23H12C11.4477 23 11 22.5523 11 22V10Z"
+              fill="var(--fill-col)" />
+            <path
+              d="M18 9C17.4477 9 17 9.44772 17 10V22C17 22.5523 17.4477 23 18 23H20C20.5523 23 21 22.5523 21 22V10C21 9.44772 20.5523 9 20 9H18Z"
+              fill="var(--fill-col)" />
+          </svg>
+        </td>
+        <td>Pauses the animation</td>
+      </tr>
+      <tr>
+        <td>
+          <svg height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15 15.0378V9.68977C15 8.80811 13.9419 8.35788 13.3066 8.9692L6.74885 15.2794C6.34001 15.6728 6.34001 16.3272 6.74885 16.7206L13.3066 23.0308C13.9419 23.6421 15 23.1919 15 22.3102V16.9622L21.3066 23.0308C21.9419 23.6421 23 23.1919 23 22.3102V9.68977C23 8.80811 21.9419 8.35788 21.3066 8.9692L15 15.0378Z"
+              fill="var(--fill-col)" />
+            <path
+              d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+              fill="var(--fill-col)" />
+          </svg>
+        </td>
+        <td>Decreases the speed of the animation</td>
+      </tr>
+      <tr>
+        <td>
+          <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17 15.0377L10.6934 8.9692C10.0581 8.35788 9 8.80811 9 9.68977L9 22.3102C9 23.1919 10.0581 23.6421 10.6934 23.0308L17 16.9622V22.3102C17 23.1919 18.0581 23.6421 18.6934 23.0308L25.2512 16.7206C25.66 16.3272 25.66 15.6728 25.2512 15.2794L18.6934 8.9692C18.0581 8.35788 17 8.80811 17 9.68977V15.0377Z"
+              fill="var(--fill-col)" />
+            <path
+              d="M1 6C1 3.23858 3.23858 1 6 1H26C28.7614 1 31 3.23858 31 6V26C31 28.7614 28.7614 31 26 31H6C3.23858 31 1 28.7614 1 26V6ZM6 3C4.34315 3 3 4.34315 3 6V26C3 27.6569 4.34315 29 6 29H26C27.6569 29 29 27.6569 29 26V6C29 4.34315 27.6569 3 26 3H6Z"
+              fill="var(--fill-col)" />
+          </svg>
+        </td>
+        <td>Increases the speed of the animation</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">Clear</button></td>
+        <td>
+          Clears the grid on click, only if the game is not animating at that
+          moment
+        </td>
+      </tr>
+      <tr>
+        <td><button class="random-button">Random</button></td>
+        <td>Randomly initializes the grid with initial randomness as 20%</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">Change grid size</button></td>
+        <td>change grid size by changing grid height</td>
+      </tr>
+    </table>
+    <hr />
+    <h2>Keyboard Shortcuts</h2>
+    <table>
+      <tr>
+        <th>Keybind</th>
+        <th>What they do</th>
+      </tr>
+      <tr>
+        <td><button class="random-button">P</button>or<button class="random-button">Space Bar</button></td>
+        <td>Starts the animation after you've set the initial pattern and Pauses an ongoing animation.</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">F</button>or<button class="random-button">Arrow Right [→]</button></td>
+        <td>Increases the speed of the animation</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">S</button>or<button class="random-button">Arrow Left [←]</button></td>
+        <td>Decreases the speed of the animation</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">D</button>or<button class="random-button">Delete</button></td>
+        <td>
+          Clears the grid on click, only if the game is not animating at that
+          moment
+        </td>
+      </tr>
+      <tr>
+        <td><button class="random-button">R</button></td>
+        <td>Randomly initializes the grid with initial randomness as 20%</td>
+      </tr>
+      <tr>
+        <td><button class="random-button">Arrow Up [↑]</button></td>
+        <td>Increases the Randomness value by 5%</td>
+      </tr>
       <tr>
         <td><button class="random-button">Arrow Down [↓]</button></td>
         <td>Decreases the Randomness value by 5%</td>
@@ -177,11 +204,11 @@
         <td><button class="random-button">M</button></td>
         <td>Toggles Music On / Off</td>
       </tr>
-      </table>
-      <hr/>
-      <h2>The Presets</h2>
-      <div class="card-container">
-        <div class="card">
+    </table>
+    <hr />
+    <h2>The Presets</h2>
+    <div class="card-container">
+      <div class="card">
         <h3>Glider</h3>
         <p>
           The glider is the smallest, most common, and first-discovered
@@ -190,10 +217,11 @@
           and rakes), can be collided with each other to form more complicated
           patterns, and can be used to transmit information over long distances.
         </p>
-        <img id="image1" src="images/Small-Glider.png" alt="Small Glider" class="center" onmouseover="changeToGif1()" onmouseout="changeToStatic1()">
-    <script src="./js/animation.js"></script>
-        </div>
-        <div class="card"> 
+        <img id="image1" src="images/Small-Glider.png" alt="Small Glider" class="center" onmouseover="changeToGif1()"
+          onmouseout="changeToStatic1()">
+        <script src="./js/animation.js"></script>
+      </div>
+      <div class="card">
         <h3>Big Glider</h3>
         <p>
           The big glider was found by Dean Hickerson in December 1989 and was
@@ -201,10 +229,8 @@
           can be temporarily seen at the front of the ship; these do not stay
           gliders but still move like them.
         </p>
-        <img id="image2"
-          src="images/Big-Glider.png"
-          alt="Big Glider"
-          class="center" onmouseover="changeToGif2()" onmouseout="changeToStatic2()"/>
+        <img id="image2" src="images/Big-Glider.png" alt="Big Glider" class="center" onmouseover="changeToGif2()"
+          onmouseout="changeToStatic2()" />
       </div>
       <div class="card">
         <h3>Gosper Glider Gun</h3>
@@ -214,100 +240,86 @@
           November 1970. It consists of two queen bee shuttles stabilized by two
           blocks.
         </p>
-        <img id="image3"
-          src="images/Gosper-Glider-Gun.png"
-          alt="Gosper Glider Gun"
-          class="center"  onmouseover="changeToGif3()" onmouseout="changeToStatic3()"
-        />
+        <img id="image3" src="images/Gosper-Glider-Gun.png" alt="Gosper Glider Gun" class="center"
+          onmouseover="changeToGif3()" onmouseout="changeToStatic3()" />
       </div>
       <div class="card">
         <h3>Pulsar</h3>
         <p>
-          The pulsar is a period-3 oscillator, meaning it returns to its initial state after three generations. It’s a symmetric pattern and one of the most recognized oscillators in the Game of Life.
+          The pulsar is a period-3 oscillator, meaning it returns to its initial state after three generations. It’s a
+          symmetric pattern and one of the most recognized oscillators in the Game of Life.
         </p>
-        <img id="image4"
-          src="images/Pulsar.png"
-          alt="Pulsar"
-          class="center"  onmouseover="changeToGif4()" onmouseout="changeToStatic4()"
-        />
+        <img id="image4" src="images/Pulsar.png" alt="Pulsar" class="center" onmouseover="changeToGif4()"
+          onmouseout="changeToStatic4()" />
       </div>
       <div class="card">
         <h3>Circle of Fire</h3>
         <p>
-          This term isn’t standard in the Game of Life nomenclature but could refer to a specific type of oscillator or a similar repeating pattern that creates a visual effect resembling a circle of fire. 
+          This term isn’t standard in the Game of Life nomenclature but could refer to a specific type of oscillator or
+          a similar repeating pattern that creates a visual effect resembling a circle of fire.
         </p>
-        <img id="image5"
-          src="images/Circle-of-Fire.png"
-          alt="Circle-of-Fire"
-          class="center" 
-          onmouseover="changeToGif5()" onmouseout="changeToStatic5()"
-        />
+        <img id="image5" src="images/Circle-of-Fire.png" alt="Circle-of-Fire" class="center"
+          onmouseover="changeToGif5()" onmouseout="changeToStatic5()" />
       </div>
       <div class="card">
         <h3>Quadpole</h3>
         <p>
-          The quadpole is the eighth most common oscillator in Achim Flammenkamp's census, being less common than the bipole but more common than the great on-off. It is the eighth most common oscillator on Adam P. Goucher's Catagolue.
+          The quadpole is the eighth most common oscillator in Achim Flammenkamp's census, being less common than the
+          bipole but more common than the great on-off. It is the eighth most common oscillator on Adam P. Goucher's
+          Catagolue.
         </p>
-        <img  id="image6"
-          src="images/Quadpole.png"
-          alt="Quadpole"
-          class="center"
-          onmouseover="changeToGif6()" onmouseout="changeToStatic6()"
-        />
+        <img id="image6" src="images/Quadpole.png" alt="Quadpole" class="center" onmouseover="changeToGif6()"
+          onmouseout="changeToStatic6()" />
       </div>
       <div class="card">
         <h3>Spider</h3>
         <p>
-          Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 14, 1997. It is the smallest known c/5 orthogonal spaceship. Its side sparks have proven to be very useful in constructing puffers and rakes.
+          Spider is a c/5 orthogonal spaceship that was discovered by David Bell on April 14, 1997. It is the smallest
+          known c/5 orthogonal spaceship. Its side sparks have proven to be very useful in constructing puffers and
+          rakes.
         </p>
-        <img id="image7"
-          src="images/Spider.png"
-          alt="Spider"
-          class="center"
-          onmouseover="changeToGif7()" onmouseout="changeToStatic7()"
-        />
+        <img id="image7" src="images/Spider.png" alt="Spider" class="center" onmouseover="changeToGif7()"
+          onmouseout="changeToStatic7()" />
       </div>
-      <div class="card"> 
+      <div class="card">
         <h3>Spaceship</h3>
         <p>
-          The middleweight spaceship (commonly abbreviated to MWSS) or (rarely) medium fish is the third most common spaceship after the glider and lightweight spaceship. 
+          The middleweight spaceship (commonly abbreviated to MWSS) or (rarely) medium fish is the third most common
+          spaceship after the glider and lightweight spaceship.
           It was found by John Conway in 1970 and travels at c/2 orthogonally.
           It can support various non-standard components, such as pushalong 1.
         </p>
-        <img id="image8"
-          src="images/Spaceship.png"
-          alt="Spaceship"
-          class="center" onmouseover="changeToGif8()" onmouseout="changeToStatic8()"/>
+        <img id="image8" src="images/Spaceship.png" alt="Spaceship" class="center" onmouseover="changeToGif8()"
+          onmouseout="changeToStatic8()" />
       </div>
-      <div class="card"> 
+      <div class="card">
         <h3>Boat-Tie</h3>
         <p>
-          Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue, being less common than shillelagh but more common than snake.
+          Boat-tie is the twentieth most common still life on Adam P. Goucher's Catagolue, being less common than
+          shillelagh but more common than snake.
           It is also the twenty-seventh most common object overall on Catagolue.
-          Two copies of boat-tie can be seen in a symmetric constellation that evolves from two traffic light predecessors.
+          Two copies of boat-tie can be seen in a symmetric constellation that evolves from two traffic light
+          predecessors.
         </p>
-        <img id="image9"
-          src="images/Boat-Tie.png"
-          alt="Boat-Tie"
-          class="center" onmouseover="changeToGif9()" onmouseout="changeToStatic9()"/>
+        <img id="image9" src="images/Boat-Tie.png" alt="Boat-Tie" class="center" onmouseover="changeToGif9()"
+          onmouseout="changeToStatic9()" />
       </div>
-      <div class="card"> 
+      <div class="card">
         <h3>Pentadecathlon</h3>
         <p>
-          The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conway. 
-          It is one of the most well-known patterns in the Game of Life, notable for its longevity and distinctive structure. 
-          It is composed of 10 cells in a row that form a stable pattern with a period of 15 generations, 
+          The Pentadecathlon is a period-15 oscillator that was found in 1970 by John Conway.
+          It is one of the most well-known patterns in the Game of Life, notable for its longevity and distinctive
+          structure.
+          It is composed of 10 cells in a row that form a stable pattern with a period of 15 generations,
           making it a popular subject of study and demonstration in the Game of Life.
         </p>
-        <img id="image10" 
-          src="images/Pentadecathlon.png" 
-          alt="Pentadecathlon" 
-          class="center" onmouseover="changeToGif10()" onmouseout="changeToStatic10()"/>
+        <img id="image10" src="images/Pentadecathlon.png" alt="Pentadecathlon" class="center"
+          onmouseover="changeToGif10()" onmouseout="changeToStatic10()" />
       </div>
     </div>
-      <hr />
-      <h2>Summary</h2>
-      <div class="card">
+    <hr />
+    <h2>Summary</h2>
+    <div class="card">
       <p>
         Conway's Game of Life is a fascinating exploration of life, death, and
         the rules that govern them. Despite its simplicity, it can lead to
@@ -316,30 +328,35 @@
       </p>
       <p class="footer">Enjoy the Game!</p>
     </div>
-    
-      <div class = "homeButton">
-        <a href="index.html" class="back-to-home">Back to Home</a>
-    </div>
-    </div>
-    <div>
-     <script>
-//Scrollto top button 
-const topButton = document.querySelector('.back-up');
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() 
-{
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    topButton.style.display = "block";
-  } else {
-    topButton.style.display = "none";
-  }
-}
-topButton.addEventListener('click', function(event) {
-  event.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 
-     </script>
-  
-  </body>
+    <div class="homeButton">
+      <a href="index.html" class="back-to-home">Back to Home</a>
+
+      <script>
+        //Scrollto top button 
+        const topButton = document.querySelector('.back-up');
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topButton.style.display = "block";
+          } else {
+            topButton.style.display = "none";
+          }
+        }
+        topButton.addEventListener('click', function (event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+      </script>
+
+</body>
+
+
+</html>
+
+</script>
+
+</body>
+
 </html>
