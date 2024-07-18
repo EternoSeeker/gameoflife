@@ -60,6 +60,29 @@
   font-family: "Fantasy";
 }
 
+.random-button {
+  border: solid 0.1rem var(--border-color1);
+  border-radius: 0.6rem;
+  height: calc((100%) / 1.8);
+  width: auto;
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  background-color: var(--theme-color3);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  margin: 0 0.5rem; /* Add margin to separate buttons */
+}
+.random-button:hover {
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
+}
+.random-button:active {
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-color2);
+  transform: translateY(0.1rem);
+}
+
 body {
   line-height: 1.6;
   padding: 20px;
@@ -234,6 +257,7 @@ hr {
   background: linear-gradient(to right, var(--primary-color), var(--theme-color3), var(--primary-color));
   margin: 30px 0;
 }
+<<<<<<< HEAD
 
 .back-button {
   position: fixed;
@@ -244,6 +268,17 @@ hr {
 }
 
 .back-up {
+=======
+.back-button { 
+    position: fixed;
+    bottom: 90%;
+    left: 4%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.back-up{
+>>>>>>> 1ea5c3ee8f72e2dc9f0b6ebedeeaa324c183fff4
   position: fixed;
   left: 4%;
   text-align: center;
@@ -256,7 +291,13 @@ hr {
   line-height: 50px;
   font-size: 22px;
 }
+<<<<<<< HEAD
 
+=======
+.back-up:hover{
+  cursor: pointer; 
+}
+>>>>>>> 1ea5c3ee8f72e2dc9f0b6ebedeeaa324c183fff4
 .home-icon {
   width: 50px;
   height: 50px;

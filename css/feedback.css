@@ -1,12 +1,69 @@
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+  25% {
+      transform: translateX(-25%);
+  }
+  50% {
+      transform: translateX(-50%);
+  }
+  75% {
+      transform: translateX(-25%);
+  }
+  100% {
+      transform: translateX(1);
+  }
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Lato', serif;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  animation: blinkGradient 5s infinite;
+  height: 110vh;
+  background: linear-gradient(45deg, #0d0d0d, #1e1e1e);
+  animation: blinkGradient 10s infinite;
   transition: background 0.5s ease-in-out;
 }
 
@@ -28,178 +85,231 @@ body {
   }
 }
 
-/* Add styles for file upload input */
+.container {
+  background: #2c2c2c;
+  padding: 2rem 1.875rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  animation: animateContainer 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.container:hover {
+  box-shadow: 0 16px 48px rgba(0, 128, 255, 0.5);
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #f0f0f0;
+  animation: fadeInDown 1s ease;
+  font-family: 'Baskerville', serif;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #f0f0f0;
+  animation: fadeInLeft 1s ease;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea,
 input[type="file"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   border-radius: 4px;
   box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #333;
+  color: #fff;
+  animation: fadeInRight 1s ease;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus,
 input[type="file"]:focus {
-  border-color: #007bff;
+  border-color: #0080ff;
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.5);
+}
+
+textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
-  
-  .container {
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 12px 36px rgba(161, 195, 232, 0.3);
-    width: 100%;
-    max-width: 500px;
-    box-sizing: border-box;
-    animation: animateContainer 0.5s ease-in-out;
-    transition: box-shadow 0.3s ease;
+
+.back-button {
+  margin-left: -15px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button i {
+  margin-right: 8px; /* Space between the icon and the text */
+}
+
+.checkbox {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #23abff;
+  margin: 2rem auto;
+}
+
+.main-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-container {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #23abff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-background {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating {
+  margin-left: 110px;
+  margin-right: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: rtl;
+  animation: fadeInRight 1s ease;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  font-size: 30px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin: 0 2px; /* Reduced margin between stars */
+}
+
+.rating input[type="radio"]:checked ~ label {
+  color: #f7c00f;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f7c00f;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+  animation: fadeInLeft 1s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 128, 255, 0.5);
+}
+
+span {
+  color: red;
+}
+
+@keyframes animateContainer {
+  from {
+    transform: scale(0.9);
+    opacity: 0.8;
   }
-  
-  .container:hover {
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  h1 {
-    margin-top: 0;
-    font-size: 24px;
-    text-align: center;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  select,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="tel"]:focus,
-  select:focus,
-  textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
-  }
-  
-  textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
-  button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  .back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 8px 16px;
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .back-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  #success-message {
-    text-align: center;
-    padding: 20px;
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    border-radius: 4px;
-    margin-top: 20px;
-    display: none;
-    animation: animateCheck 0.5s ease-in-out;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .check-background {
-    background-color: #28a745;
-    border-radius: 50%;
-    padding: 10px;
-    animation: animateShadow 0.5s ease-in-out;
-  }
-  
-  svg {
-    width: 40px;
-    height: 40px;
-  }
-  
-  @keyframes animateContainer {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes animateCheck {
-    from {
-      stroke-dashoffset: 80;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  @keyframes animateShadow {
-    0% {
-      opacity: 0;
-      width: 100%;
-    }
-    100% {
-      opacity: 1;
-      width: 60px;
-    }
-  }
-  
+}

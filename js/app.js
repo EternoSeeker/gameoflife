@@ -23,7 +23,11 @@ let isStarted = false;
 let areEventListenersAdded = true;
 let isWarpEnabled = true;
 let isGridVisible = true;
+let generation = 0;
 let aliveCount = 0;
+let birthCount = 0;
+let deathCount = 0;
+let startTime = null;
 
 
 function initializeGrid() {
@@ -62,13 +66,29 @@ function toggleCellState(row, col) {
   drawCells();
 }
 
-function changeGridSize() {
+function updateInfoDisplay() {
+  document.getElementById("generation").innerText = generation;
+  document.getElementById("alive").innerText = aliveCount;
+  document.getElementById("births").innerText = births;
+  document.getElementById("deaths").innerText = deaths;
+}
+
+//Get height from input box and return the value
+function getHeight() {
   const newHeight = parseInt(document.getElementById("new-height").value);
+  return newHeight;
+}
+
+// Function to change the grid Size
+function changeGridSize(newHeight) {
   if (isNaN(newHeight) || newHeight <= 0) {
-    alert("Please enter a valid height value.");
+    swal(
+      "Invalid Height",
+      "Please enter a valid Height",
+      "error"
+    );
     return;
   }
-
   const newWidth = newHeight * 2;
   WIDTH = newWidth;
   HEIGHT = newHeight;
@@ -122,6 +142,18 @@ slider.oninput = function () {
   randomValue = this.value;
 };
 
+function updateRandomValue(change) {
+  var slider = document.getElementById("randomVal");
+  var output = document.getElementById("randomValOutput");
+
+  var currentValue = parseFloat(slider.value) || 0;
+
+  var newValue = Math.max(0, Math.min(slider.max, currentValue + change));
+
+  slider.value = newValue;
+  output.innerHTML = newValue;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Generate the grid
   const gridContainer = document.getElementById('main-grid');
@@ -147,7 +179,11 @@ document.addEventListener("DOMContentLoaded", function () {
   handleDropdowns();
   onResizeAboveThreshold();
   window.addEventListener('resize', onResizeAboveThreshold);
+
+  // Start updating the time counter every second
+  setInterval(updateTimeCounter, 1000);
 });
+
 
 
 // draw the cells according to the state
@@ -217,6 +253,12 @@ function handleClick(i) {
   
 }
 
+function updateInfoDisplay() {
+  document.getElementById("generation").innerText = generation;
+  document.getElementById("alive").innerText = aliveCount;
+  document.getElementById("births").innerText = births;
+  document.getElementById("deaths").innerText = deaths;
+}
 
 async function getPresets() {
   try {
@@ -233,6 +275,9 @@ async function drawPresetPattern(presetName) {
     const presetsList = await getPresets();
     if (!presetsList) {
       return;
+    }
+    if (HEIGHT <30) {
+      changeGridSize(30);
     }
     const preset = presetsList[presetName];
     if (preset) {
@@ -294,15 +339,10 @@ async function selectTheme(themeName) {
         var container = document.querySelector('.game');
         container.style.background = '';
       }
-
       root.style.setProperty('--scrollbar-color', theme['--primary-color']);
       ALIVE_COLOR = theme["ALIVE_COLOR"];
       DEAD_COLOR = theme["DEAD_COLOR"];
 
-      // If switching from a gradient theme to a solid color theme, reset the background
-      if (!theme["background-image"]) {
-        backgroundContainer.style.backgroundImage = 'none';
-      }
     } else {
       console.error("Theme not found");
     }
@@ -313,27 +353,21 @@ async function selectTheme(themeName) {
 }
 
 function togglePlayPause() {
-  /*
-  change the svg icon according to the state
-  play-pause-border -> svg path for the border -> NO CHANGES
-  play-icon -> Play icon svg filled with colour by default and changes to transparent when pressed.
-  pause-icon1 & pause-icon2 -> Initially fill is transparent and colour is filled when pressed.
-  */
+
+  var pauseIcon = document.getElementById("pause-icon");
+  var playIcon = document.getElementById("play-icon");
+
+  // change the display parameter between block and none.
 
   if (isAnimating) {
-    // play-icon transparent
-    document.getElementById('play-icon').setAttribute('fill', "none");
-    //pause-icon coloured
-    document.getElementById('pause-icon1').setAttribute('fill', "var(--fill-col)");
-    document.getElementById('pause-icon2').setAttribute('fill', "var(--fill-col)");
+    pauseIcon.style.display = "block";
+    playIcon.style.display = "none";
   }
   else {
-    // play-icon coloured
-    document.getElementById('play-icon').setAttribute('fill', "var(--fill-col)");
-    //pause-icon transparent
-    document.getElementById('pause-icon1').setAttribute('fill', "none");
-    document.getElementById('pause-icon2').setAttribute('fill', "none");
+    pauseIcon.style.display = "none";
+    playIcon.style.display = "block";
   }
+
 }
 
 function isEmpty() {
@@ -352,6 +386,10 @@ function stopAnimation() {
 }
 
 function startAnimation() {
+  // Initialize startTime only if it's null
+  if (!startTime) {
+    startTime = performance.now(); // Performance API to get high-resolution timestamps
+  } 
   // check if the grid is empty,
   // if not then start the animation and start the game
   if (areEventListenersAdded) {
@@ -456,33 +494,47 @@ function countNeighbors(cells, x, y, wrapEdges) {
 }
 
 function calculateNextGeneration(cells, wrapEdges) {
-  const nextGeneration = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(DEAD));
+  let nextGeneration = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(DEAD));
   let aliveCountTemp = 0;
+  let birthsTemp = 0;
+  let deathsTemp = 0;
 
   for (let i = 0; i < HEIGHT; i++) {
     for (let j = 0; j < WIDTH; j++) {
       const numNeighbors = countNeighbors(cells, i, j, wrapEdges);
+      const isAlive = cells[i][j] === ALIVE;
 
-      //Rule 1: Any live cell with fewer than two live neighbors dies, as if by underpopulation.
-      //Rule 2: Any live cell with two or three live neighbors lives on to the next generation.
-      //Rule 3: Any live cell with more than three live neighbors dies, as if by overpopulation.
-      //Rule 4: Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
-      const isAlive = (cells[i][j] === ALIVE);
       if ((isAlive && (numNeighbors === 2 || numNeighbors === 3)) || (!isAlive && numNeighbors === 3)) {
         nextGeneration[i][j] = ALIVE;
         aliveCountTemp++;
+        if (!isAlive) {
+          birthsTemp++;
+        }
+      } else {
+        if (isAlive) {
+          deathsTemp++;
+        }
       }
     }
   }
+
   aliveCount = aliveCountTemp;
+  births = birthsTemp;
+  deaths = deathsTemp;
   return nextGeneration;
 }
 
+
 function animate() {
-  // Update cells with the new generation
+  // If animation is starting, capture the start time
+  if (!startTime) {
+    startTime = performance.now(); // Performance API to get high-resolution timestamps
+  }
+
   cells = calculateNextGeneration(cells, isWarpEnabled);
+  generation++; // Increment generation counter
   setTimeout(() => {
-    drawCells(); // Draw cells after a delay
+    drawCells();
     if (isAnimating) {
 
       //if All cells are dead stop animating
@@ -491,8 +543,30 @@ function animate() {
       }
       requestAnimationFrame(animate); // Keep animating
     }
+    updateInfoDisplay(); // Call updateInfoDisplay after drawing cells
+    updateTimeCounter(); // Call updateTimeCounter after drawing cells
   }, animationSpeed);
 }
+function updateTimeCounter() {
+  const currentTime = performance.now(); // Get the current time
+  const elapsedTime = currentTime - startTime; // Calculate the elapsed time
+  const seconds = Math.floor(elapsedTime / 1000); // Convert milliseconds to seconds
+  const minutes = Math.floor(seconds / 60); // Calculate the minutes
+  const hours = Math.floor(minutes / 60); // Calculate the hours
+
+  // Format the time as HH:MM:SS
+  const formattedTime = `${pad(hours)}:${pad(minutes % 60)}:${pad(seconds % 60)}`;
+
+  // Update the time counter display
+  document.getElementById("time-counter").innerText = formattedTime;
+}
+
+
+// Helper function to pad single digits with leading zeros
+function pad(num) {
+  return num.toString().padStart(2, "0");
+}
+
 
 //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 function handleDropdowns() {
@@ -646,3 +720,4 @@ document.querySelectorAll('.tooltip-container').forEach(container => {
 
 
 const gridContainer = document.getElementById("main-grid");
+

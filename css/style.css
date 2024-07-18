@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  overflow-wrap: break-word;
   padding: 0;
   user-select: none;
 }
@@ -10,6 +11,7 @@ body {
   /* Safari */
   -moz-user-select: none;
   /* Firefox */
+  overflow-x: hidden;
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
@@ -30,6 +32,7 @@ body {
 
 body {
   font-family: 'Roboto Mono', monospace;
+  overflow-y: scroll;
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
@@ -83,7 +86,6 @@ body {
   background-color: var(--theme-color3);
 }
 
-
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -116,14 +118,14 @@ body {
   font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: -.24px;
+  letter-spacing: -0.24px;
   margin: 0;
   outline: none;
   padding: 1rem 1.3rem;
   quotes: auto;
   text-align: center;
   text-decoration: none;
-  transition: all .15s;
+  transition: all 0.15s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -132,10 +134,10 @@ body {
 /* Unified Button Styling */
 .button {
   appearance: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 40em;
   border-style: none;
-  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-shadow: #adcfff 0 -12px 6px inset;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
@@ -148,25 +150,24 @@ body {
   font-family: -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: -.24px;
+  letter-spacing: -0.24px;
   margin: 0;
   outline: none;
   padding: 1rem 1.3rem;
   text-align: center;
   text-decoration: none;
-  transition: all .15s;
+  transition: all 0.15s;
 }
 
 .button:hover {
-  background-color: #FFC229;
-  box-shadow: #FF6314 0 -6px 8px inset;
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
   transform: scale(1.05);
 }
 
 .button:active {
   transform: scale(1.03);
 }
-
 
 .button-73:hover {
   background-color: var(--theme-color1);
@@ -223,6 +224,7 @@ body {
   /* font-weight: 400; */
   letter-spacing: 1px;
   font-style: normal;
+  margin: 1rem 0;
 }
 
 .game {
@@ -231,15 +233,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   max-width: 100vw;
   margin-left: 20vw;
   background-color: var(--background-col);
   transition: background-color 0.5s ease;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
 }
 
 .full-width {
   margin-left: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* .grid-container {
@@ -269,15 +275,13 @@ body {
   transition:0.2s ease;
 } */
 
-
-
-
 .grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto;
+  /* Allow it to grow as needed */
   /* transition: border-color 0.3s ease; */
 }
 
@@ -290,20 +294,34 @@ body {
   /* border: 1px solid #ccc; */
 }
 
+/* Additional scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shadow-color2);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 30px;
+}
+
 .cell {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   border: solid 0.001rem var(--border-color1);
-  background-color: #CADCFC;
+  background-color: #cadcfc;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 .cell.alive {
-  background-color: #00246B;
+  background-color: #00246b;
 }
-
 
 .cell:hover {
   transform: scale(1.3);
@@ -319,7 +337,7 @@ body {
   height: auto;
   width: auto;
   border-radius: 6px;
-  gap: 10px;
+  gap: 30%;
   text-align: center;
   margin: 0 auto;
 }
@@ -336,11 +354,11 @@ body {
 }
 
 .control-button {
-  border: none;
+  /* border: none;
   background: none;
   padding: 1rem;
   cursor: pointer;
-  outline: none;
+  outline: none; */
   transition: transform 0.2s ease;
   font-size: 1.1rem;
 }
@@ -360,7 +378,7 @@ body {
   width: auto;
   text-align: center;
   padding: 0.5rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bold;
   font-size: 1.1rem;
   color: var(--primary-color);
@@ -368,13 +386,15 @@ body {
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   margin: 0 0.5rem;
   /* Add margin to separate buttons */
-<<<<<<< HEAD
-=======
 }
 
 .clear-button {
   margin-right: 1rem;
->>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
+}
+
+#new-height::placeholder {
+  color: var(--primary-color);
+  /* Set placeholder text color */
 }
 
 .random-button:hover {
@@ -390,8 +410,7 @@ body {
   transform: translateY(0.1rem);
 }
 
-<<<<<<< HEAD
-=======
+
 #toggleButton {
   color: black;
   border-radius: 5px;
@@ -405,7 +424,30 @@ body {
   top: 1.8rem;
 }
 
->>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
+
+#change-grid-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#random-button {
+  margin-right: 1.25rem;
+}
+
+#toggleButton {
+  color: var(--primary-color);
+  border-radius: 5px;
+  border-style: none;
+  font-size: 1.7rem;
+  background: none;
+  margin: 1px;
+  z-index: 1;
+  position: absolute;
+  left: 2rem;
+  top: 1.8rem;
+}
+
+
 .sidenav {
   height: 100vh;
   width: 30vw;
@@ -419,31 +461,18 @@ body {
   transition: left 0.3s ease, width 0.3s ease;
 }
 
-<<<<<<< HEAD
-.logo {
-  margin: 0px;
-  position: absolute;
-  height: 50px;
-  left: 14px;
-  width: 300px;
-}
-
-
-
-=======
->>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
 /* Hide the nav bar */
 .hide-nav {
   display: none;
 }
 
-
-
+/* updated sidenav */
 .sidenav .cross {
   cursor: pointer;
   position: absolute;
+  z-index: 10000;
   top: 45px;
-  right: 15px;
+  right: 40px;
   display: block;
 }
 
@@ -457,8 +486,8 @@ body {
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
-  color: #FFFFFF;
-  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -471,11 +500,11 @@ body {
 }
 
 .game-rules {
-  padding: 0.0rem 0.5rem 0.0rem 1.6rem;
+  padding: 0rem 0.5rem 0rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
   color: #818181;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -487,8 +516,6 @@ body {
   transition: color 0.3s ease;
 }
 
-<<<<<<< HEAD
-=======
 .feedback {
   padding: 0.0rem 1.2rem 0.0rem 0rem;
   text-decoration: none;
@@ -502,13 +529,22 @@ body {
   color: white;
 }
 
->>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
+
 .about {
   padding: 0.0rem 0.5rem 0.0rem 1.6rem;
   text-decoration: none;
   font-size: 1.2rem;
   color: #818181;
   font-family: 'Roboto Mono', monospace;
+}
+
+.about {
+  padding: 0rem 0.5rem 0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #818181;
+  font-family: "Roboto Mono", monospace;
+
   font-weight: lighter;
   display: block;
   border: none;
@@ -520,7 +556,6 @@ body {
   transition: color 0.3s ease;
 }
 
-<<<<<<< HEAD
 .feedback {
   padding: 0.0rem 1.2rem 0.0rem 0rem;
   text-decoration: none;
@@ -534,15 +569,32 @@ body {
   color: white;
 }
 
-=======
->>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
+
 .themes-container div {
   padding: 0.4rem 0.5rem 0.0rem 1.6rem;
+}
+
+.feedback {
+  padding: 0rem 1.2rem 0rem 0rem;
+
   text-decoration: none;
   font-size: 1rem;
-  color: #FFFFFF;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
   cursor: pointer;
-  font-family: 'Roboto Mono', monospace;
+  outline: none;
+  color: white;
+}
+
+.themes-container div {
+  padding: 0.4rem 0.5rem 0rem 1.6rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -558,8 +610,8 @@ body {
   padding: 0.8rem 0.5rem 0.8rem 1.6rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #FFFFFF;
-  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+  font-family: "Roboto Mono", monospace;
   font-weight: lighter;
   display: block;
   border: none;
@@ -574,6 +626,8 @@ body {
   position: absolute;
   left: 10px;
   top: 5px;
+
+  color: black;
   display: none;
 }
 
@@ -600,7 +654,8 @@ body {
 .presets:hover,
 .history:hover,
 .about:hover,
-.game-rules:hover {
+.game-rules:hover,
+.toggle-button:hover {
   color: #00c2fd;
 }
 
@@ -664,23 +719,16 @@ body {
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
-  .controls {
-    flex-direction: column;
-    /* Stack buttons vertically on smaller screens */
-    align-items: center;
-    /* Center buttons vertically */
-    min-width: 25vw;
-    margin: none;
+@media screen and (max-width: 568px) {
+
+  .full-width {
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .sidenav {
-    height: auto;
-    position: fixed;
-    padding-top: 0.5rem;
-    left: -250px;
-    height: 200vh;
-    transition: width 0.3s ease;
+    overflow-y: auto;
+    height: 100%;
     width: 100vw;
     padding-top: 2rem;
   }
@@ -799,26 +847,30 @@ body {
   }
 
   .grid-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
     align-items: center;
-    border: solid 0.2rem var(--border-color1);
-    max-width: 80vw;
-    max-height: 82vw;
-    transition: border-color 0.3s ease;
+    padding: 20px;
+    border: solid 1px var(--border-color1);
+    max-width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
   }
 
   .icon {
-    width: calc((30vw) / 8);
-    height: calc((30vw) / 8);
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
   }
 
   .heading {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-align: center;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 }
 
@@ -857,7 +909,6 @@ body {
   filter: invert(1);
   /* Invert icon color on hover */
   transition: 0.5s;
-
 }
 
 /* Hover Effects  */
@@ -869,7 +920,6 @@ body {
 
 /*-----------------------------------------*/
 
-
 /* Tooltip container */
 .tooltip-container {
   position: relative;
@@ -879,7 +929,7 @@ body {
 /* Tooltip text */
 .tooltip-text {
   visibility: hidden;
-  width: 120px;
+  width: 180px;
   background-color: var(--theme-color2);
   color: #fff;
   text-align: center;
@@ -890,7 +940,7 @@ body {
   bottom: 125%;
   /* Position the tooltip above the button */
   left: 50%;
-  margin-left: -60px;
+  margin-left: -90px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -921,10 +971,11 @@ body {
     transition: width 0.3s ease;
   }
 
-  #toggleButton {
+
+  /* #toggleButton {
     left: 1.4rem;
     top: 1rem;
-  }
+  } */
 
   .clear-button,
   .random-button {
@@ -934,7 +985,7 @@ body {
     width: auto;
     text-align: center;
     padding: 0.3rem;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
     font-weight: bold;
     font-size: 0.5rem;
     color: var(--primary-color);
@@ -949,6 +1000,56 @@ body {
   }
 
 
+}
+
+/* Added new values for maxwidth sidenav button */
+@media screen and (max-width: 728px) and (min-width: 568px) {
+  .sidenav {
+    /* width: 92%; */
+    left: -550px;
+    transition: width 0.3s ease;
+    width: 50vw;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 799px) and (min-width: 728px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .sidenav {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1099px) and (min-width: 800px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .sidenav {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-wideth: 1100px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .sidenav {
+    width: 25vw;
+  }
 }
 
 body {
@@ -995,14 +1096,27 @@ body {
   }
 }
 
-.hov:hover {
-  color: aqua;
-<<<<<<< HEAD
+#info-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--background-col);
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
 }
 
-.sidenav {
-  width: 250px;
-  /* or any other value you prefer */
-=======
->>>>>>> 46f452a6b0866ec65090e5ee3676eae9a63c27d2
+#generation-info,
+#status-info {
+  background-color: var(--background-col);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#generation-info p,
+#status-info p {
+  margin: 5px 0;
+}
+
+.hov:hover {
+  color: aqua;
 }
