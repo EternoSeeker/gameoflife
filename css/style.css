@@ -424,6 +424,9 @@ body {
   outline: none;
   transition: color 0.3s ease;
 }
+.other-settings-container div{
+  border-bottom: 4px solid var(--border-color1);
+}
 .game-rules {
   padding: 0rem 0.5rem 0rem 1.6rem;
   text-decoration: none;
