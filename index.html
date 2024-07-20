@@ -328,9 +328,16 @@
               class="warp-checkbox"
               onclick="toggleWarp()"
             />
-            <label for="warp-on-edges" style="cursor: pointer" class="hov"
-              >Warp on Edges</label
-            >
+            <label for="warp-on-edges" style="cursor: pointer" class="hov">Warp on Edges</label>
+          </div>
+          <div class="music-toggle-button">
+            <input
+              type="checkbox"
+              id="music-toggle"
+              class="music-checkbox"
+              onclick="toggleMusic()"
+            />
+            <label for="music-toggle" style="cursor: pointer" class="hov">Music</label>
           </div>
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
@@ -735,12 +742,6 @@
             >
             <i class="fa-solid fa-question-circle"></i> FAQ
             </button>
-          <div>
-            <button class="toggle-button" onclick="toggleMusic()">
-              <i class="fa-solid fa-volume-xmark"></i>
-              <span class="music-text">Music Off</span>
-            </button>
-          </div>
         </div>
       </div>
     </div>

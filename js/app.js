@@ -464,6 +464,7 @@ function toggleWarp() {
 
 function toggleGrid() {
   isGridVisible = !isGridVisible;
+  document.getElementById("grid-toggle").checked = isGridVisible;
   var root = document.documentElement;
   // Get the computed styles of the root element
   var style = getComputedStyle(root);
