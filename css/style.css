@@ -27,8 +27,7 @@ body {
 }
 
 body {
-  font-family: 'Roboto Mono', monospace;
-  overflow-y: scroll;
+  font-family: "Roboto Mono", monospace;
   background: linear-gradient(135deg, #ebf2ff 0%, #7582b2 100%);
   color: #333;
   transition: background 0.5s ease;
@@ -188,7 +187,6 @@ body {
   /* font-weight: 400; */
   letter-spacing: 1px;
   font-style: normal;
-  margin: 1rem 0;
 }
 
 .game {
@@ -197,17 +195,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   max-width: 100vw;
   margin-left: 20vw;
   background-color: var(--background-col);
   transition: background-color 0.5s ease;
-  overflow-y: auto; /* Enable vertical scrolling */
 }
 .full-width {
   margin-left: 0;
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 /* .grid-container {
   display: flex;
@@ -241,7 +236,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto; /* Allow it to grow as needed */
+  height: 100%;
   /* transition: border-color 0.3s ease; */
 }
 
@@ -252,21 +247,6 @@ body {
   min-width: 60vw;
   min-height: 30vw;
   /* border: 1px solid #ccc; */
-}
-
-/* Additional scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--shadow-color2);
-  border-radius: 30px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-color);
-  border-radius: 30px;
 }
 
 .cell {
@@ -378,7 +358,6 @@ body {
   left: 2rem;
   top: 1.8rem;
 }
-
 .sidenav {
   height: 100vh;
   width: 20vw;
@@ -426,9 +405,6 @@ body {
   /* cursor: pointer; */
   outline: none;
   transition: color 0.3s ease;
-}
-.other-settings-container div{
-  border-bottom: 4px solid var(--border-color1);
 }
 .game-rules {
   padding: 0rem 0.5rem 0rem 1.6rem;
@@ -541,8 +517,7 @@ body {
 .presets:hover,
 .history:hover,
 .about:hover,
-.game-rules:hover,
-.toggle-button:hover {
+.game-rules:hover {
   color: #00c2fd;
 }
 
@@ -604,48 +579,156 @@ body {
 .slider:hover {
   opacity: 1;
 }
-@media screen and (max-width: 568px) {
-  
-  .full-width {
-    overflow-x: hidden;
-    overflow-y: hidden;
+
+@media screen and (max-width: 768px) {
+  .controls {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: center; /* Center buttons vertically */
+    min-width: 25vw;
+    margin: none;
   }
 
   .sidenav {
-    overflow-y: auto;
-    height: 100%;
+    height: auto;
+    position: fixed;
+    padding-top: 0.5rem;
+    left: -250px;
+    height: 200vh;
+    transition: width 0.3s ease;
     width: 100vw;
-    left: -100%; /* Slide out the sidebar off-screen */
-    transition: transform 0.3s ease; /* Smoother animation */
-    position: fixed; /* Fixed position */
-    top: 0;
+    padding-top: 2rem;
+  }
+
+  .hamburger {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    display: none;
+  }
+
+  .sidenav .cross {
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    display: block;
+    padding-top: 1.6rem;
+  }
+  .sidenav .randomness-container input {
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 90%;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+  }
+
+  .sidenav .randomness-container label {
+    padding: 0.6rem 4.4rem 0.6rem 0;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 50%;
+    cursor: pointer;
+    outline: none;
+  }
+  /*.about a {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+  }*/
+  .about button {
+    margin-left: -1.1rem;
+  }
+
+  .sidenav button,
+  .other-settings-container div,
+  .presets-container div,
+  .color-themes,
+  .themes-container div,
+  .presets,
+  .history {
+    padding: 0.3rem 0.4rem 0.3rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+  }
+  .about {
+    padding: 0rem 0.4rem 0rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .other-settings {
+    padding: 3px;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 10px;
+  }
+
+  .game {
+    width: 100vw;
+    margin: 0;
+  }
+  .controls {
+    display: flex;
+    flex-direction: row;
+    min-width: 25vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .clear-button,
+  .random-button {
+    font-size: 0.8rem;
+    /* Adjust font size for smaller screens */
+    padding: 0.3rem 0.8rem;
+    /* Adjust padding for smaller screens */
+    margin: 0.5rem 0;
+    /* Add margin to separate buttons vertically */
   }
 
   .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    border: solid 1px var(--border-color1);
-    max-width: 90%;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    border: solid 0.2rem var(--border-color1);
+    max-width: 80vw;
+    max-height: 82vw;
+    transition: border-color 0.3s ease;
   }
 
   .icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: calc((30vw) / 8);
+    height: calc((30vw) / 8);
   }
 
   .heading {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
 }
 
@@ -732,7 +815,11 @@ body {
 }
 
 @media screen and (max-width: 425px) {
-
+  .sidenav {
+    width: 100vw;
+    left: -550px;
+    transition: width 0.3s ease;
+  }
 
   /* #toggleButton {
     left: 1.4rem;
@@ -761,22 +848,19 @@ body {
   }
 }
 /* Added new values for maxwidth sidenav button */
-@media screen and (max-width: 728px) and (min-width: 568px) {
+@media screen and (max-width: 728px) {
   .sidenav {
-    /* width: 92%; */
+    width: 92%;
     left: -550px;
     transition: width 0.3s ease;
-    width: 50vw;
   }
   .controls {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 799px) and (min-width: 728px) {
+@media screen and (max-width: 799px) {
   .controls {
     flex-wrap: wrap;
-  }  .sidenav {
-    width: 40vw;
   }
 }
 @media screen and (max-width: 860px) {
@@ -784,18 +868,14 @@ body {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 1099px) and (min-width: 800px) {
+@media screen and (max-width: 999px) {
   .controls {
     flex-wrap: wrap;
-  }  .sidenav {
-    width: 30vw;
   }
 }
-@media screen and (max-width: 1200px) and (min-wideth: 1100px) {
+@media screen and (max-width: 1200px) {
   .controls {
     flex-wrap: wrap;
-  }  .sidenav {
-    width: 25vw;
   }
 }
 
@@ -840,24 +920,6 @@ body {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
-}
-#info-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: var(--background-col);
-  color: var(--primary-color);
-  font-family: Arial, sans-serif;
-}
-
-#generation-info, #status-info {
-  background-color: var(--background-col);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-#generation-info p, #status-info p {
-  margin: 5px 0;
 }
 
 .hov:hover {
