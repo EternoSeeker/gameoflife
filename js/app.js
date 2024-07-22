@@ -427,6 +427,9 @@ function toggleWarp() {
 function randomGrid() {
   // if the game is not started and not animating
   // then allow user to set the cells to random state
+  var slider = document.getElementById("randomVal");
+
+  randomValue = slider.value;
   aliveCount = 0;
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
