@@ -310,35 +310,36 @@
         </div>
 
         <div class="other-settings-container animate">
-          <div class="grid-toggle">
-            <input
-              type="checkbox"
-              checked
-              id="grid-toggle"
-              class="grid-checkbox"
-              onclick="toggleGrid()"
-            />
-            <label for="grid-toggle" style="cursor: pointer" class="hov">Gridlines</label>
+          <div class="toggle-item">
+            <label for="grid-toggle" class="toggle-label">
+              <span class="toggle-switch">
+                <input type="checkbox" checked id="grid-toggle" class="toggle-input" onchange="toggleGrid()">
+                <span class="toggle-slider"></span>
+              </span>
+              <span class="toggle-text">Gridlines</span>
+            </label>
           </div>
-          <div class="warp-on-edges">
-            <input
-              type="checkbox"
-              checked
-              id="warp-on-edges"
-              class="warp-checkbox"
-              onclick="toggleWarp()"
-            />
-            <label for="warp-on-edges" style="cursor: pointer" class="hov">Warp on Edges</label>
+        
+          <div class="toggle-item">
+            <label for="warp-on-edges" class="toggle-label">
+              <span class="toggle-switch">
+                <input type="checkbox" checked id="warp-on-edges" class="toggle-input" onchange="toggleWarp()">
+                <span class="toggle-slider"></span>
+              </span>
+              <span class="toggle-text">Warp on Edges</span>
+            </label>
           </div>
-          <div class="music-toggle-button">
-            <input
-              type="checkbox"
-              id="music-toggle"
-              class="music-checkbox"
-              onclick="toggleMusic()"
-            />
-            <label for="music-toggle" style="cursor: pointer" class="hov">Music</label>
+          
+          <div class="toggle-item">
+            <label for="music-toggle" class="toggle-label">
+              <span class="toggle-switch">
+                <input type="checkbox" id="music-toggle" class="toggle-input" onchange="toggleMusic()">
+                <span class="toggle-slider"></span>
+              </span>
+              <span class="toggle-text">Music</span>
+            </label>
           </div>
+          
           <p class="randomness-container">
             <label class="randomness-value" style="cursor: pointer"
               ><span class="hov">Randomness</span>
