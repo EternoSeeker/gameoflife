@@ -142,7 +142,24 @@
     <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
   </div>
   <script>
-    // Scroll to top button 
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqToggles = document.querySelectorAll('.faq-toggle');
+      
+      faqToggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+          if (this.checked) {
+            // Close all other FAQ items
+            faqToggles.forEach(otherToggle => {
+              if (otherToggle !== this) {
+                otherToggle.checked = false;
+              }
+            });
+          }
+        });
+      });
+    });
+  
+    // Keep the existing scroll to top button functionality
     const topButton = document.querySelector('.gotopbtn');
     window.onscroll = function() {scrollFunction()};
     function scrollFunction() {
