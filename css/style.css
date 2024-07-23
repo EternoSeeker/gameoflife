@@ -825,7 +825,7 @@ body {
   z-index: 9999;
   user-select: none;
   pointer-events: none;
-  color: white;
+  color: aqua;
   font-size: 1em;
   will-change: transform;
   animation: fall linear infinite;
