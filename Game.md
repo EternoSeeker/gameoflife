@@ -1,2 +1,3 @@
-#My Game Logo
-![GameOL][images\GameOL.png]
+# My Game Logo
+
+![GameOL](/images/GameOL.png)
