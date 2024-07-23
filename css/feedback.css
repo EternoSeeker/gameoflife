@@ -313,3 +313,33 @@ span {
     opacity: 1;
   }
 }
+
+.rating-container button {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease; /* Added transition for smooth scaling */
+  margin: 18px;
+}
+.rating-container button:hover {
+  transform: scale(1.5);
+}
+
+
+@media screen and (max-width: 491px) {
+  .rating-container button {
+    margin: 10px;
+  }
+  .rating-container button:hover {
+      transform: scale(1.2); /* Adjust scaling for smaller screens */
+  }
+}
+@media screen and (max-width: 400px) {
+  .rating-container button {
+    margin: 5px;
+  }
+  .rating-container button:hover {
+      transform: scale(1.2); /* Adjust scaling for smaller screens */
+  }
+}
