@@ -588,7 +588,7 @@ body {
   justify-content: space-between;
 }
 
-.slider {
+.range {
   width: 80%;
   border-radius: 0.2rem;
   background: var(--theme-color3);
@@ -598,7 +598,7 @@ body {
   transition: opacity 0.2s;
 }
 
-.slider:hover {
+.range:hover {
   opacity: 1;
 }
 
