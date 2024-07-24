@@ -421,6 +421,7 @@ function startAnimation() {
 
 function toggleWarp() {
   isWarpEnabled = !isWarpEnabled;
+  document.getElementById("warp-on-edges").checked = isWarpEnabled;
 }
 
 //randomGrid()
@@ -461,9 +462,9 @@ function clearGrid() {
   }
 }
 
-function toggleWarp() {
-  isWarpEnabled = !isWarpEnabled;
-}
+// function toggleWarp() {
+//   isWarpEnabled = !isWarpEnabled;
+// }
 
 function toggleGrid() {
   isGridVisible = !isGridVisible;
