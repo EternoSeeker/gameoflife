@@ -1,2 +1,2 @@
 #My Game Logo
-![GameOL][images/GameOL.png]
+![GameOL][C:\Users\LENOVO\Documents\GitHub\gameoflife\images\GameOL.png/GameOL.png]
