@@ -905,3 +905,6 @@ svg{
 .soc5:hover {
   background-color: #0077b5;
 }
+.footer-left-social-icons:hover svg{
+  fill:white;
+}
