@@ -1,2 +1,2 @@
 #My Game Logo
-![GameOL][image/GameOL.png]
+![GameOL][images/GameOL.png]
