@@ -29,6 +29,17 @@ let birthCount = 0;
 let deathCount = 0;
 let startTime = null;
 
+function restartCounting() {
+  generation = 0;
+  aliveCount = 0;
+  birthCount = 0;
+  deathCount = 0;
+  
+  document.getElementById("generation").innerText = generation;
+  document.getElementById("alive").innerText = aliveCount;
+  document.getElementById("births").innerText = 0;
+  document.getElementById("deaths").innerText = 0;
+}
 
 function initializeGrid() {
   const gridContainer = document.getElementById("main-grid");
@@ -453,6 +464,7 @@ function clearGrid() {
       }
     }
     drawCells();
+    restartCounting();
   }
   isStarted = false;
   if (!areEventListenersAdded) {
