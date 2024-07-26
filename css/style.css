@@ -927,3 +927,48 @@ body {
 .hov:hover {
   color: aqua;
 }
+.right-social-icn {
+  position: fixed;
+  right: 10px;
+  top: 150px;
+  z-index: 100;
+}
+
+.footer-left-social-icons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all ease-in-out;
+}
+.right-social-icn div {
+  margin: 15px;
+}
+svg{
+  x: 0px;
+  y: 0px;
+  width: 24;
+  height: 24;
+  fill: var(--primary-color);
+}
+.soc1:hover {
+  background-color: #1877f2;
+}
+.soc2:hover {
+  background: linear-gradient(45deg, #833ab4, #e1306c, #fd1d1d, #fdcb5d);
+}
+.soc3:hover {
+  background-color: #25d366;
+}
+.soc4:hover {
+  background-color: black;
+}
+.soc5:hover {
+  background-color: #0077b5;
+}
+.footer-left-social-icons:hover svg{
+  fill:white;
+}
