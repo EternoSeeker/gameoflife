@@ -96,6 +96,7 @@ body {
   animation: animateContainer 0.5s ease-in-out;
   transition: box-shadow 0.3s ease;
   color: #fff;
+  padding: 30px;
 }
 
 .container:hover {
