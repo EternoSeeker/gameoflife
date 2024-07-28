@@ -591,7 +591,7 @@ body {
   justify-content: space-between;
 }
 
-.slider {
+.range {
   width: 80%;
   border-radius: 0.2rem;
   background: var(--theme-color3);
@@ -599,11 +599,75 @@ body {
   opacity: 0.7;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
+  accent-color: var(--theme-color1);
 }
 
-.slider:hover {
+.range:hover {
   opacity: 1;
 }
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.toggle-text {
+  white-space: nowrap;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.toggle-slider {
+  width: 48px;
+  height: 28px;
+  background-color: var(--background-col);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: var(--theme-color1);
+}
+
+.toggle-slider:before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--border-color1);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+  background-color: var(--border-color1);
+}
+
 @media screen and (max-width: 568px) {
   
   .full-width {
@@ -862,4 +926,49 @@ body {
 
 .hov:hover {
   color: aqua;
+}
+.right-social-icn {
+  position: fixed;
+  right: 10px;
+  top: 150px;
+  z-index: 100;
+}
+
+.footer-left-social-icons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all ease-in-out;
+}
+.right-social-icn div {
+  margin: 15px;
+}
+svg{
+  x: 0px;
+  y: 0px;
+  width: 24;
+  height: 24;
+  fill: var(--primary-color);
+}
+.soc1:hover {
+  background-color: #1877f2;
+}
+.soc2:hover {
+  background: linear-gradient(45deg, #833ab4, #e1306c, #fd1d1d, #fdcb5d);
+}
+.soc3:hover {
+  background-color: #25d366;
+}
+.soc4:hover {
+  background-color: black;
+}
+.soc5:hover {
+  background-color: #0077b5;
+}
+.footer-left-social-icons:hover svg{
+  fill:white;
 }

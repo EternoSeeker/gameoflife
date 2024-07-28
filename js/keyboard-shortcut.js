@@ -19,6 +19,7 @@ document.addEventListener("keydown", function (event) {
       ARROWDOWN: () => updateRandomValue(-5),
       G: toggleGrid,
       M: toggleMusic,
+      W: toggleWarp
     };
   
     // Check if a function is mapped to the pressed key
