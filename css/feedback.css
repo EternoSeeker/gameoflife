@@ -61,7 +61,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  min-height: 100vh;
   background: linear-gradient(45deg, #0d0d0d, #1e1e1e);
   animation: blinkGradient 10s infinite;
   transition: background 0.5s ease-in-out;
@@ -124,6 +124,8 @@ h1 {
 
 .form-group {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
@@ -252,8 +254,7 @@ button[type="submit"]:hover {
 }
 
 .rating {
-  margin-left: 110px;
-  margin-right: 110px;
+  margin: 0 auto 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -311,5 +312,43 @@ span {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .rating {
+    margin: 0 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea,
+  input[type="file"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  button[type="submit"] {
+    padding: 8px;
+  }
+
+  .back-button {
+    padding: 0.4rem 0.8rem;
+    margin-left: 0;
   }
 }
