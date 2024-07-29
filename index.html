@@ -118,6 +118,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./css/introduction.css">
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/sweet-alert.css" />
@@ -135,7 +136,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         background-color: black;
@@ -320,6 +321,154 @@
     </div>
     <div id="preloader">
       <div id="loader"></div>
+    </div>
+  <div class="introduction-series" id="intro-series">
+      <div class="intro-page" id="page1">
+        <div class="popup" id="popup1">   
+          <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+          <div class="intro-head">Welcome</div>
+          <div class="intro-content"> Let's get started with Conway's game of life!</div>
+          <div class="bottom-btns">
+            <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+            <button class="intro-bottom-btn" id="pop-next" onclick="showBox(2)">Next</button>
+          </div>
+          <div class="bottom-symbols">
+            <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+            <button class="symbolintro" onclick="showBox(2)"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    <div class="intro-page" id="page2">
+      <div class="popup" id="popup2">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Grid</div>
+        <div class="intro-content">Click on a cell in the grid to toggle between dead and alive state.</div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(1)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(3)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(1)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(3)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="intro-page" id="page3">
+      <div class="popup" id="popup3">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Speed settings</div>
+        <div class="intro-content">Increase or decrease the speed of the simulation from these buttons</div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(2)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(4)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(2)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(4)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="intro-page" id="page4">
+      <div class="popup" id="popup4">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Random</div>
+        <div class="intro-content">Randomly make a certain percentage of the grid alive</div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(3)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(5)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(3)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(5)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="intro-page" id="page5">
+      <div class="popup" id="popup5">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Grid height</div>
+        <div class="intro-content">Specify the number of tiles in the height of the grid</div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(4)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(6)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(4)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(6)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="intro-page" id="page6">
+      <div class="popup" id="popup6">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Settings</div>
+        <div class="intro-content">Change more specifications of the game like randomness of the simulation here </div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(5)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(7)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(5)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(7)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="intro-page" id="page7">
+      <div class="popup" id="popup7">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Presets</div>
+        <div class="intro-content">Discover preset arrangements and run them in the simulation</div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(6)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(8)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(6)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(8)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="intro-page" id="page8">
+      <div class="popup" id="popup8">   
+        <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+        <div class="intro-head">Start/Pause</div>
+        <div class="intro-content">After you are satisfied with the pattern on grid, press this button to start the simulation</div>
+        <div class="bottom-btns">
+          <button class="intro-bottom-btn" id="pop-skip" onclick="closeIntroSeries()">Skip</button>
+          <button class="intro-bottom-btn" id="pop-prev" onclick="showBox(7)">Prev</button>
+          <button class="intro-bottom-btn" id="pop-next" onclick="showBox(9)">Next</button>
+        </div>
+        <div class="bottom-symbols">
+          <button class="symbolintro" onclick="closeIntroSeries()"><i class="fa-solid fa-forward"></i></button>
+          <button class="symbolintro" onclick="showBox(7)" id="prev-symbol"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="symbolintro" onclick="showBox(9)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+      <div class="intro-page" id="page9">
+        <div class="popup" id="popup9">   
+        <!-- end wale ka code, beech mein aur daalna -->
+          <span class="popup-cross" onclick="closeIntroSeries()">X</span>
+          <div class="intro-head">End</div>
+          <div class="intro-content">Now youre all set and ready. Have fun!</div>
+          <div class="bottom-btn-end">
+            <button class="intro-bottom-btn" id="pop-end" onclick="closeIntroSeries()">Start</button>
+          </div>
+        </div>
+    </div>
     </div>
     <div class="game-settings">
       <button id="toggleButton"><i class="fa-solid fa-bars"></i></button>
@@ -968,26 +1117,29 @@
     <script src="./js/app.js"></script>
     <script src="./js/customTheme.js"></script>
     <script src="./js/gradient.js"></script>
+    <script src="./js/introduction.js"></script>
     <script src="./js/speed.js"></script>
     <script src="./js/animation.js"></script>
     <script src="./js/music.js"></script>
     <script src="./js/keyboard-shortcut.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const preloader = document.getElementById("preloader");
-        const mainContent = document.getElementById("main-content");
+      const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");
 
-        // Listen for the window load event
-        window.addEventListener("load", function () {
+
+      function startLoader () {
+          preloader.style.display='flex';
           // Set a delay before transitioning the preloader and main content
           setTimeout(function () {
             preloader.classList.add("hidden");
             mainContent.classList.remove("hidden");
             mainContent.classList.add("visible");
           }, 300); // 2000 milliseconds = 2 seconds delay
-        });
-      });
-    </script>
+        };
+
+
+        
+      </script>
     <!--Cursor-->
     <script>
       //Custom Cursor
@@ -1150,6 +1302,20 @@
       sideNav.classList.toggle("hide-nav");
       document.querySelector(".game").classList.toggle("full-width");
     });
+
+    let isSmall;
+    function closeNavDeafult(){
+      const setWidth = 750;
+      const currentWidth = window.innerWidth;
+      isSmall=false;
+      const sideNav = document.getElementById("sideNav");
+      if(currentWidth < setWidth){
+        sideNav.classList.add("hide-nav");
+        document.querySelector(".game").classList.add("full-width");
+        isSmall=true;
+      }
+}
+
   </script>
 
 <script>
