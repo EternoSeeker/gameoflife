@@ -795,6 +795,10 @@ body {
   border-color: var(--theme-color2) transparent transparent transparent;
 }
 
+#info-container div .tooltip-text {
+  bottom: 100% !important;
+}
+
 @media screen and (max-width: 425px) {
 
 
