@@ -25,6 +25,17 @@ let isWarpEnabled = true;
 let isGridVisible = true;
 let aliveCount = 0;
 
+function restartCounting() {
+  generation = 0;
+  aliveCount = 0;
+  birthCount = 0;
+  deathCount = 0;
+  
+  document.getElementById("generation").innerText = generation;
+  document.getElementById("alive").innerText = aliveCount;
+  document.getElementById("births").innerText = 0;
+  document.getElementById("deaths").innerText = 0;
+}
 
 function initializeGrid() {
   const gridContainer = document.getElementById("main-grid");
@@ -384,12 +395,16 @@ function startAnimation() {
 
 function toggleWarp() {
   isWarpEnabled = !isWarpEnabled;
+  document.getElementById("warp-on-edges").checked = isWarpEnabled;
 }
 
 //randomGrid()
 function randomGrid() {
   // if the game is not started and not animating
   // then allow user to set the cells to random state
+  var slider = document.getElementById("randomVal");
+
+  randomValue = slider.value;
   aliveCount = 0;
   if (!isStarted && !isAnimating) {
     for (let i = 0; i < HEIGHT; i++) {
@@ -413,6 +428,7 @@ function clearGrid() {
       }
     }
     drawCells();
+    restartCounting();
   }
   isStarted = false;
   if (!areEventListenersAdded) {
@@ -421,9 +437,9 @@ function clearGrid() {
   }
 }
 
-function toggleWarp() {
-  isWarpEnabled = !isWarpEnabled;
-}
+// function toggleWarp() {
+//   isWarpEnabled = !isWarpEnabled;
+// }
 
 function toggleGrid() {
   isGridVisible = !isGridVisible;

@@ -67,6 +67,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(45deg, #0d0d0d, #1e1e1e);
   animation: blinkGradient 10s infinite;
   transition: background 0.5s ease-in-out;
@@ -100,6 +101,7 @@ body {
   animation: animateContainer 0.5s ease-in-out;
   transition: box-shadow 0.3s ease;
   color: #fff;
+  padding: 30px;
 }
 
 .container h1, .container form {
@@ -151,6 +153,8 @@ h1 .highlight {
 
 .form-group {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
@@ -285,6 +289,57 @@ button[type="submit"]:hover {
   border-radius: 50%;
   padding: 10px;
   animation: animateShadow 0.5s ease-in-out;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating {
+  margin: 0 auto 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: rtl;
+  animation: fadeInRight 1s ease;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  font-size: 30px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin: 0 2px; /* Reduced margin between stars */
+}
+
+.rating input[type="radio"]:checked ~ label {
+  color: #f7c00f;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f7c00f;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+  animation: fadeInLeft 1s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 128, 255, 0.5);
 }
 
 svg {
@@ -303,6 +358,7 @@ svg {
   }
 }
 
+
 @keyframes animateShadow {
   0% {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
@@ -312,3 +368,68 @@ svg {
   }
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .rating {
+    margin: 0 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea,
+  input[type="file"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  button[type="submit"] {
+    padding: 8px;
+  }
+
+  .back-button {
+    padding: 0.4rem 0.8rem;
+    margin-left: 0;
+  }
+}
+.rating-container button {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease; /* Added transition for smooth scaling */
+  margin: 18px;
+}
+.rating-container button:hover {
+  transform: scale(1.5);
+}
+
+
+@media screen and (max-width: 491px) {
+  .rating-container button {
+    margin: 10px;
+  }
+  .rating-container button:hover {
+      transform: scale(1.2); /* Adjust scaling for smaller screens */
+  }
+}
+@media screen and (max-width: 400px) {
+  .rating-container button {
+    margin: 5px;
+  }
+  .rating-container button:hover {
+      transform: scale(1.2); /* Adjust scaling for smaller screens */
+  }
+}

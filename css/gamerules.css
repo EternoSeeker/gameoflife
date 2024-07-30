@@ -243,9 +243,14 @@ hr {
   text-align: center;
   line-height: 50px;
   font-size: 22px;
+  border-radius: 50%;
+  transition: transform ease 0.37s;
+  z-index: 9999;
 }
 .back-up:hover{
-  cursor: pointer; 
+  cursor: pointer;
+  transform: scale(1.1); 
+  background: #5365a5;
 }
 .home-icon {
     width: 50px;

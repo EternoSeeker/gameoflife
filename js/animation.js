@@ -1,3 +1,4 @@
+function animateElements() {
 // Animate side navbar on page load
 gsap.from(".game-settings .sidenav .animate", {
     duration: 1,
@@ -104,4 +105,5 @@ function changeToGif10() {
 
 function changeToStatic10() {
     document.getElementById('image10').src = 'images/Pentadecathlon.png';
+}
 }
