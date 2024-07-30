@@ -6,13 +6,13 @@
   <link rel="icon" href="./images/registerpage-favicon.png" type="image/png">
   <title>Feedback Page</title>
   <link rel="stylesheet" href="./css/feedback.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <div class="container">
+    <h1>Feedback Form</h1>
     <br><h1 style="margin-top: 60px;" >Feedback Form</h1>
     <form id="feedback-form" onsubmit="return validationcheck(event)">
-      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
+      <a href="index.html" class="back-button">Back</a>
       <div class="form-group">
         <label for="name">Your Name<span>*</span>:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -36,7 +36,7 @@
         </select>
       </div>
       <div class="form-group">
-        <!-- <label for="rating">Your Rating<span>*</span>:</label>
+        <label for="rating">Your Rating<span>*</span>:</label>
         <div class="rating">
           <input type="radio" id="star5" name="rating" value="5" required>
           <label for="star5" title="5 stars">&#9733;</label>
@@ -48,7 +48,6 @@
           <label for="star2" title="2 stars">&#9733;</label>
           <input type="radio" id="star1" name="rating" value="1" required>
           <label for="star1" title="1 star">&#9733;</label>
-        </div> -->
         <div>
           <label for="rating" class="rate-us"> <strong>Please Rate us below</strong></label>
             <div class="rating-container">
@@ -60,9 +59,11 @@
           </div>
       </div>
       <div class="form-group">
+
         <label for="message">Your Message<span>*</span>:</label>
         <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
       </div>
+      <!-- Inserted the file upload input here -->
       <div class="form-group">
         <label for="file-upload">Attach File:</label>
         <input type="file" id="file-upload" name="file-upload" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx">
@@ -86,10 +87,23 @@
     </div>
   </div>
   <div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-  </div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/66891af8eaf3bd8d4d18ca2d/1i24gr9s5';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
   <script src="./js/feedback.js"></script>
 </body>
 </html>
