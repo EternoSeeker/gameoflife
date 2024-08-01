@@ -381,3 +381,200 @@ span {
       transform: scale(1.2); /* Adjust scaling for smaller screens */
   }
 }
+
+/* Main container for the form */
+.form-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  background: #2c2c2c;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.form-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 128, 255, 0.5);
+}
+
+/* Add a border to the container with a gradient effect */
+.form-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.form-container:hover .form-border {
+  opacity: 1;
+}
+
+/* Enhance input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  animation: fadeInRight 1s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus,
+input[type="file"]:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+  transform: scale(1.02);
+}
+
+/* Enhance the submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+/* Add a smooth transition for labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  animation: fadeInLeft 1s ease;
+}
+
+/* Additional styles for textareas */
+textarea {
+  height: 120px;
+}
+
+/* Add focus animation to inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea,
+input[type="file"] {
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Add an animated border effect to inputs */
+@keyframes borderPulse {
+  0% {
+    border-color: #00bfff;
+  }
+  50% {
+    border-color: #007bff;
+  }
+  100% {
+    border-color: #00bfff;
+  }
+}
+
+input:focus,
+textarea:focus {
+  animation: borderPulse 1s infinite;
+}
+
+/* Add animations for the feedback section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1rem;
+  }
+
+  .form-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .form-container button[type="submit"] {
+    padding: 8px;
+  }
+}

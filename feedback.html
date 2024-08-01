@@ -91,5 +91,53 @@
     <div class="wave"></div>
   </div>
   <script src="./js/feedback.js"></script>
+
+<script>
+
+ document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('feedback-form');
+    const successMessage = document.getElementById('success-message');
+    const countdownMessage = document.getElementById('countdown-message');
+  
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+  
+      if (validationcheck()) {
+        // Show the success message
+        successMessage.classList.remove('hidden');
+        
+        // Start countdown
+        let countdown = 5;
+        const interval = setInterval(() => {
+          countdown--;
+          countdownMessage.textContent = `Redirecting in ${countdown} seconds`;
+          if (countdown <= 0) {
+            clearInterval(interval);
+            // Redirect logic here, e.g., window.location.href = 'index.html';
+          }
+        }, 1000);
+      }
+    });
+  });
+  
+  function validationcheck() {
+    // Example validation logic
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const feedbackType = document.getElementById('feedback-type').value;
+  
+    if (!name || !email || !message || !feedbackType) {
+      alert('Please fill all required fields.');
+      return false;
+    }
+    return true;
+  }
+  
+  function handleRatingChange(rating) {
+    console.log(`Rating selected: ${rating}`);
+    // Store or handle the rating value as needed
+  }
+</script>  
 </body>
 </html>
