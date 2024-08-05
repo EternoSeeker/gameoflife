@@ -388,7 +388,7 @@ body {
   z-index: 2;
   background-color: var(--border-color1);
   overflow-x: hidden;
-  padding-top: 2rem;
+  
   transition: left 0.3s ease, width 0.3s ease;
 }
 /* Hide the nav bar */
