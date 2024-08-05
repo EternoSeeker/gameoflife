@@ -400,7 +400,7 @@ body {
   cursor: pointer;
   position: absolute;
   z-index: 10000;
-  top: 45px;
+  top: 15px;
   right: 40px;
   display: block;
 }
