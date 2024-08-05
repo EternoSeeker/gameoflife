@@ -1,0 +1,147 @@
+body {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.content {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contributors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contributor-card {
+    background: linear-gradient(135deg, #6a93ff, #a9c7ff);
+    color: #ffffff;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(25% - 40px); 
+}
+
+.contributor-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.contributor-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.contributor-card p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.contributor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contributor-card {
+        width: calc(33.33% - 40px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .contributor-card {
+        width: calc(50% - 40px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .contributor-card {
+        width: calc(100% - 40px); 
+    }
+}
+
+.back-up {
+    display: none; 
+    position: fixed;
+    left: 4%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background: #7582b2;
+    bottom: 40px;
+    right: 50px;
+    line-height: 50px;
+    font-size: 22px;
+}
+
+.back-up:hover {
+    cursor: pointer;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.content {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: none; 
+    animation: none;
+}
+
+@media (max-width: 1024px) {
+    .container h1 {
+        font-size: 2rem; /
+    }
+}
+
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 1.75rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 1.5rem; 
+    }
+}
+
+
+
