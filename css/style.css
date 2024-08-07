@@ -388,7 +388,7 @@ body {
   z-index: 2;
   background-color: var(--border-color1);
   overflow-x: hidden;
-  padding-top: 2rem;
+  
   transition: left 0.3s ease, width 0.3s ease;
 }
 /* Hide the nav bar */
@@ -400,7 +400,7 @@ body {
   cursor: pointer;
   position: absolute;
   z-index: 10000;
-  top: 45px;
+  top: 15px;
   right: 40px;
   display: block;
 }
