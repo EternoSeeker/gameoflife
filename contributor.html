@@ -27,7 +27,7 @@
 
     <div class="content min-h-screen text-black dark:text-gray-200">
         <div class="container mx-auto py-8">
-            <h1 class="text-center text-3xl font-semibold mb-8">🤝Our Contributors</h1>
+            <h1 class="text-center text-3xl font-semibold mb-8">Our Contributors</h1>
             <div id="contributors" class="contributors"></div>
         </div>
     </div>
@@ -66,36 +66,47 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const contributorsContainer = document.getElementById('contributors');
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const contributorsContainer = document.getElementById('contributors');
 
-            async function fetchContributors() {
-                try {
-                    const response = await fetch('https://api.github.com/repos/EternoSeeker/gameoflife/contributors');
-                    const contributors = await response.json();
+      async function fetchContributors() {
+          try {
+              let page = 1;
+              const perPage = 100;
+              let totalContributors = [];
 
-                    contributors.forEach(contributor => {
-                        const contributorCard = document.createElement('a');
-                        contributorCard.href = contributor.html_url;
-                        contributorCard.target = '_blank';
-                        contributorCard.className = 'contributor-card';
-                        contributorCard.innerHTML = `
-                            <img src="${contributor.avatar_url}" alt="${contributor.login}">
-                            <h2>${contributor.login}</h2>
-                            <p>Contributions: ${contributor.contributions}</p>
-                            <p><i class="fa-brands fa-github mr-2"></i> GitHub Profile</p>
-                        `;
-                        contributorsContainer.appendChild(contributorCard);
-                    });
-                } catch (error) {
-                    console.error('Error fetching contributors:', error);
-                }
-            }
+              while (true) {
+                  const response = await fetch(`https://api.github.com/repos/EternoSeeker/gameoflife/contributors?per_page=${perPage}&page=${page}`);
+                  const contributors = await response.json();
 
-            fetchContributors();
-        });
-    </script>
+                  if (contributors.length === 0) break;
+
+                  totalContributors = totalContributors.concat(contributors);
+                  page++;
+              }
+
+              totalContributors.forEach(contributor => {
+                  const contributorCard = document.createElement('a');
+                  contributorCard.href = contributor.html_url;
+                  contributorCard.target = '_blank';
+                  contributorCard.className = 'contributor-card';
+                  contributorCard.innerHTML = `
+              <img src="${contributor.avatar_url}" alt="${contributor.login}">
+              <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">${contributor.login}</h2>
+              <p class="text-gray-700 dark:text-gray-400">Contributions: ${contributor.contributions}</p>
+              <p class="text-gray-700 dark:text-gray-400 flex-center"><i class="fab fa-github mr-1"></i> GitHub Profile</p>
+          `;
+                  contributorsContainer.appendChild(contributorCard);
+              });
+          } catch (error) {
+              console.error('Error fetching contributors:', error);
+          }
+      }
+
+      fetchContributors();
+  });
+</script>
 
     <div class="back-up">
         <a class="gotopbtn" href="javascript:void(0);"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
