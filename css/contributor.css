@@ -27,9 +27,9 @@ body {
 }
 
 .contributor-card {
-    background: linear-gradient(135deg, #6a93ff, #a9c7ff);
+    background: rgb(14, 14, 76);
     color: #ffffff;
-    border: 1px solid #333;
+    border: 3px solid rgb(52, 163, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -37,6 +37,7 @@ body {
     margin: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     width: calc(25% - 40px); 
+    text-decoration: none;
 }
 
 .contributor-card img {
@@ -45,21 +46,25 @@ body {
     height: 100px;
     object-fit: cover;
     margin-bottom: 10px;
+    border: 3px solid rgb(52, 163, 255);
 }
 
 .contributor-card h2 {
     font-size: 1.2em;
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 .contributor-card p {
     font-size: 0.9em;
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 .contributor-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background: rgb(0, 0, 42);
 }
 
 /* Responsive Design */
@@ -120,9 +125,20 @@ body {
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: rgb(14, 14, 76);
     text-shadow: none; 
     animation: none;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    background-color: #c6cede !important; 
+    border-radius: 10px;
+    box-shadow: none !important;
+
 }
 
 @media (max-width: 1024px) {
