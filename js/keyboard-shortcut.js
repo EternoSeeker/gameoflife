@@ -8,10 +8,10 @@ document.addEventListener("keydown", function (event) {
     const keyMap = {
       " " : startAnimation,
       P: startAnimation,
-      ARROWRIGHT: fastForward,
-      F: fastForward,
-      ARROWLEFT: slowDown,
-      S: slowDown,
+      ARROWRIGHT: increaseSpeed,
+      F: increaseSpeed,
+      ARROWLEFT: decreaseSpeed,
+      S: decreaseSpeed,
       DELETE: clearGrid,
       D: clearGrid,
       R: randomGrid,
@@ -50,3 +50,60 @@ function drawHistory(key) {
   }
   drawCells();
 }
+
+function decreaseSpeed() {
+  let currentValue = getInputFieldValue();
+  if (currentValue <= 0.15) {
+      swal(
+          "You have reached the minimum speed",
+          "The speed cannot be decreased any further",
+      );
+  }
+
+
+  if (currentValue > 0.75) {
+      inputField.value = (currentValue - 0.25).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
+      animationSpeed = 400 * (1 / currentValue);
+  } else if ( currentValue > 0.15) {
+      inputField.value = (currentValue - 0.10).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
+      animationSpeed = 400 * (1 / currentValue);
+  }
+
+  // Change tooltip text after updating the current value
+  let newValue = getInputFieldValue();
+  document.getElementById("increase-speed-tooltip").innerHTML = "Increase Speed";
+  let reduce = document.getElementById("reduce-speed-tooltip");
+  reduce.innerHTML = "Reduce Speed";
+  console.log(currentValue)
+  if (newValue <= 0.15) {
+      reduce.innerHTML = "Speed cannot be reduced any further" ;
+  }
+
+};
+
+function increaseSpeed() {
+  let currentValue = getInputFieldValue();
+  if (currentValue >= 10) {
+      swal(
+          "You have reached the maximum speed",
+          "The speed cannot be increased any further",
+      );
+  }
+  if (currentValue < 0.75) {
+      inputField.value = (currentValue + 0.10).toFixed(2);  // Subtract 0.25 and limit to 2 decimal places
+      animationSpeed = 400 * (1 / currentValue);
+  } else if ( currentValue < 10) {
+      inputField.value = (currentValue + 0.25).toFixed(2);  // Add 0.25 and limit to 2 decimal places
+      animationSpeed = 400 * (1 / currentValue);
+  }
+
+  // Change tooltip text after updating the current value
+  let newValue = getInputFieldValue();
+  document.getElementById("reduce-speed-tooltip").innerHTML = "Reduce Speed";
+  let increase = document.getElementById("increase-speed-tooltip");
+  increase.innerHTML = "Increasee Speed";
+  if (newValue >= 10) {
+      increase.innerHTML = "Speed cannot be increased any further" ;
+  }
+
+};
