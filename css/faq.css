@@ -23,9 +23,9 @@ body {
   width: 90%;
   margin: auto;
   padding: 30px;
-  background-color: var(--container-bg-color);
+  background-color: #c6cede !important; 
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
 }
 
 h1 {
@@ -34,7 +34,6 @@ h1 {
   color: var(--primary-color);
   font-weight: bold;
   margin-bottom: 10px;
-  animation: blink 3s linear infinite;
 }
 @keyframes blink {
   0%, 100% {
@@ -45,7 +44,7 @@ h1 {
   }
 }
 .faq-item {
-  margin-bottom: 20px;
+  margin-bottom: 31px;
 }
 
 .faq-toggle {
@@ -53,24 +52,27 @@ h1 {
 }
 
 .faq-question {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   display: block;
-  padding: 10px;
-  background-color: var(--theme-color1);
+  padding: 21px 65px;
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: rgb(35 35 102);
   color: white;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  box-shadow: 7px 7px 20px 0 darkblue;
+  box-shadow: 7px 7px 7px 0 darkblue;
 }
 
 .faq-question:hover {
-  background-color: var(--theme-color2);
+  background-color: rgb(0, 0, 42);
 }
 
 .faq-answer {
-  padding: 10px 20px;
-  display: none;
+  padding: 21px 65px;
+  max-width: 744px;
+  margin: 0 auto;  display: none;
   background-color: white;
   border: 1px solid var(--theme-color1);
   border-top: none;
@@ -93,14 +95,82 @@ h1 {
   content: '\f0d8';
 }
 
+.faq-answer {
+  height: 0;
+  overflow: hidden;
+  transition: height 3s ease;
+  padding: 0 1em;
+}
+
+.faq-toggle:checked + .faq-question + .faq-answer {
+  height: auto; 
+  padding: 1em; 
+}
+
+
 .home-icon {
   width: 50px;
   margin: 10px;
+  margin-bottom: -10px;
+  transition: transform 0.3s ease;
+  fill: rgb(35 35 102) ;
+  color: rgb(35 35 102) ;
+}
+
+
+.home-icon :hover{
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
   .home-icon {
-    width: 30px;
-    margin: 10px;
+      width: 51px;
+      margin: -3px;
+      margin-left: 66px;
+      margin-bottom: -18px;
   }
+}
+
+.back-up {
+  display: none;
+  color: #ffffff; 
+  position: fixed;
+  left: 4%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background: rgb(35 35 102) !important;
+  bottom: 40px;
+  right: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.back-up:hover {
+  background: rgb(26, 26, 195) !important;
+  transform: scale(1.1);
+}
+
+.back-up i {
+  color: #ffffff; 
+}
+
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background: rgb(35 35 102);
 }
