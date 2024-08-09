@@ -231,6 +231,164 @@
         window.location.href = "faq.html";
       }
     </script>
+
+<style>
+  /* Basic styling for the popup */
+  #popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: black;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Translucent background */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 10px;
+  }
+
+  /* Dark background behind the popup */
+  #popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  /* Close button style */
+  .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 17px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.5rem;
+  }
+
+ 
+  .button1:hover {
+    background-color: #0056b3;
+  }
+
+  /* Responsive design */
+  @media (max-width: 600px) {
+    #popup {
+      width: 95%;
+      padding: 10px;
+    }
+
+    .close-btn {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Ensure a smooth transition */
+  #popup, #popup-overlay {
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+<style>
+  /* Basic styling for the history popup */
+#history-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: black;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95); /* Translucent background */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+/* Dark background behind the popup */
+#history-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Close button style */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* Hover effect for the More button */
+.button1:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  #history-popup {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+  }
+}
+
+/* Ensure a smooth transition */
+#history-popup, #history-popup-overlay {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style for the table in the popup */
+#history-popup table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#history-popup th, #history-popup td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#history-popup th {
+  background-color: #07407e;
+  color: white;
+}
+
+#history-popup tr:nth-child(even) {
+  background-color: #d9ebff;
+}
+#history-popup tr:nth-child(odd) {
+  background-color: #eff6ff;
+}
+
+
+</style>
   </head>
 
   <body>
@@ -883,11 +1041,156 @@
             </li>
           </ul>
         </div>
-        <div class="history has-dropdown animate" style="cursor: pointer">
+
+        <!-- History -->
+        <div class="history has-dropdown animate" id="history-btn" style="cursor: pointer">
           <i class="fa-solid fa-clock"></i> History
         </div>
+        
+        <!-- Popup Overlay -->
+        <div id="history-popup-overlay" class="popup-overlay"></div>
+        
+        <!-- Popup Content -->
+        <div id="history-popup" class="popup">
+          <i class="fa-solid fa-times close-btn" id="history-close-btn" aria-label="Close"></i>
+          <h2>History of Conway's Game of Life</h2>
+          <p style="margin-top: 20px;">Explore Conway's Game of Life, a fascinating cellular automaton created by mathematician John Horton Conway in 1970. This game simulates the evolution of patterns based on simple rules, leading to intriguing and often complex behaviors. The game is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input.</p> 
+          <h4>Historical Background</h4>
+          <hr />
+          <p>Conway's Game of Life is a cellular automaton that involves a grid of cells, each of which can be either alive or dead. The state of each cell evolves over time according to a set of simple rules. This mathematical game has fascinated researchers and enthusiasts alike with its capability to produce a variety of patterns and simulations.</p>
+          <hr />
+          <h4>Famous Patterns</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Pattern</th>
+                <th>Description</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Glider</td>
+                <td>A pattern that moves across the grid, demonstrating self-replication and motion.</td>
+                <td><img src="images/Glider.png" alt="Glider Pattern" style="width: 100px; height: auto;"></td>
+              </tr>
+              <tr>
+                <td>Spaceship</td>
+                <td>A pattern that travels across the grid, showing the concept of motion in Life.</td>
+                <td><img src="images/Spaceships.png" alt="Spaceship Pattern" style="width: 100px; height: auto;"></td>
+              </tr>
+              <tr>
+                <td>Oscillator</td>
+                <td>A pattern that cycles through a set of states before returning to its original configuration.</td>
+                <td><img src="images/Ocillator.png" alt="Oscillator Pattern" style="width: 100px; height: auto;"></td>
+              </tr>
+              <tr>
+                <td>Gun</td>
+                <td>A pattern that generates gliders periodically, showcasing complex interactions and creation.</td>
+                <td><img src="images/Gun.png" alt="Gun Pattern" style="width: 100px; height: auto;"></td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h4>Significance and Impact</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Significance</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Computer Science</td>
+                <td>Introduced concepts of computational universality and algorithmic complexity.</td>
+                <td>Influenced algorithms and complexity theory, impacting computational research and development.</td>
+              </tr>
+              <tr>
+                <td>Mathematics</td>
+                <td>Provided a practical example of how complex patterns can emerge from simple rules.</td>
+                <td>Enhanced understanding of mathematical systems and chaotic behavior.</td>
+              </tr>
+              <tr>
+                <td>Artificial Life</td>
+                <td>Inspired research into artificial life and self-replicating systems.</td>
+                <td>Contributed to the development of artificial life simulations and evolutionary algorithms.</td>
+              </tr>
+              <tr>
+                <td>Art and Culture</td>
+                <td>The visual appeal of the evolving patterns has influenced art and digital design.</td>
+                <td>Inspired various art forms and digital designs, integrating mathematical beauty into creative works.</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h4>Major Milestones</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Milestone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1970</td>
+                <td>John Horton Conway introduces the Game of Life.</td>
+              </tr>
+              <tr>
+                <td>1971</td>
+                <td>The game gains attention from mathematicians and computer scientists.</td>
+              </tr>
+              <tr>
+                <td>1975</td>
+                <td>First computer simulations of the Game of Life are published.</td>
+              </tr>
+              <tr>
+                <td>1980s</td>
+                <td>The game influences the development of cellular automata theory.</td>
+              </tr>
+              <tr>
+                <td>2000s</td>
+                <td>The game finds applications in exploring complex systems and emergent behavior.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>For a deeper dive into the eternal patterns and captivating simulations of Conway’s Game of Life, visit the <a href="https://github.com/EternoSeeker/gameoflife" target="_blank" rel="noopener noreferrer">Eternal Game of Life</a> repository.</p>
+        </div>
+        
+        <script>
+          const historyPopup = document.getElementById('history-popup');
+          const historyPopupOverlay = document.getElementById('history-popup-overlay');
+          const historyBtn = document.getElementById('history-btn');
+          const historyCloseBtn = document.getElementById('history-close-btn');
+          const historyMoreBtn = document.getElementById('history-more-btn');
+        
+          historyBtn.onclick = function() {
+            historyPopup.style.display = 'block';
+            historyPopupOverlay.style.display = 'block';
+          };
+        
+          historyCloseBtn.onclick = function() {
+            historyPopup.style.display = 'none';
+            historyPopupOverlay.style.display = 'none';
+          };
+        
+          historyMoreBtn.onclick = function() {
+            window.location.href = 'history.html';
+          };
+        
+          historyPopupOverlay.onclick = function() {
+            historyPopup.style.display = 'none';
+            historyPopupOverlay.style.display = 'none';
+          };
+        </script>
+        
+        
+        
+        
   <!-----game rules-------------------------------------------------------->
-  <style>
+  <!-- <style>
     /* Basic styling for the popup */
     #popup {
       display: none;
@@ -951,9 +1254,7 @@
     #popup, #popup-overlay {
       transition: all 0.3s ease-in-out;
     }
-  </style>
-</head>
-<body>
+  </style> -->
   <div class="game-rules has-dropdown animate">
     <button
       class="game-rules has-dropdown"
