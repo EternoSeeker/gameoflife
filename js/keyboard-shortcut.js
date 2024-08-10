@@ -107,3 +107,15 @@ function increaseSpeed() {
   }
 
 };
+
+function updateRandomValue(change) {
+  var slider = document.getElementById("randomVal");
+  var output = document.getElementById("randomValOutput");
+
+  var currentValue = parseFloat(slider.value) || 0;
+
+  var newValue = Math.max(0, Math.min(slider.max, currentValue + change));
+
+  slider.value = newValue;
+  output.innerHTML = newValue;
+}
