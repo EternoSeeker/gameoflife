@@ -605,6 +605,17 @@ body {
 .range:hover {
   opacity: 1;
 }
+.cross:hover{
+
+
+  padding: 5px 5px 5px 5px;
+  background-color:#00c2fd;
+  -moz-border-radius:10px;
+  -webkit-border-radius:5px;
+  border-radius:20px;
+  text-shadow:0 1px 1px black;
+
+}
 
 .toggle-item {
   display: flex;
